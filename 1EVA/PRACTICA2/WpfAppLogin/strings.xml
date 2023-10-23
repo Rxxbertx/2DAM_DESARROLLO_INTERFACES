@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Strings>
+    <nombreLabel>Nombre</nombreLabel>
+    <primerApellidoLabel>Primer Apellido</primerApellidoLabel>
+    <segundoApellidoLabel>Segundo Apellido</segundoApellidoLabel>
+    <mail>Mail</mail>
+    <botonCompletar>COMPLETAR</botonCompletar>
+    <salirBoton>Salir</salirBoton>
+    <edad>Edad</edad>
+    <dni>Dni</dni>
+    <btnAceptar>Aceptar</btnAceptar>
+    <errorFormulario>REGISTRO ERRONEO, COMPRUEBA LA INFORMACION</errorFormulario>
+    <Y>Si</Y>
+    <N>No</N>
+    <preguntaSalir>¿Desea cerrar la aplicación?</preguntaSalir>
+	<registroExitoso>REGISTRO EXITOSO</registroExitoso>
+</Strings>

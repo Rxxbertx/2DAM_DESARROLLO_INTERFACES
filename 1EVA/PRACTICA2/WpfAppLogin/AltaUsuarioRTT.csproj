@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net7.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+        <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="bg.jpg" />
+        <None Remove="detras.png" />
+        <None Remove="logo.png" />
+        <None Remove="strings.xml" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="strings.xml">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Resource Include="bg.jpg" />
+        <Resource Include="detras.png" />
+        <Resource Include="logo.png" />
+    </ItemGroup>
+
+</Project>
