@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
         
         mc:Ignorable="d"  
-        Title="MainWindow"  
-        Loaded="Window_Loaded"  
-        SizeToContent="WidthAndHeight"  
-        PreviewKeyDown="Window_PreviewKeyDown">
+        Title="MainWindow"   
+         Width="800" Height="450">
     <Grid>
-        <ScrollViewer x:Name="CanvasViewer"   HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Hidden">
-            <Canvas x:Name="Canvas"  IsHitTestVisible="False" Background="Aquamarine">
-                
+       
+            <Canvas x:Name="canvas1" Background="Aquamarine">
+            <Canvas x:Name="canvas2" Background="Red" Width="2000" Height="2000">
+                <Rectangle x:Name="player" Fill="AliceBlue" Width="100" Height="100"> </Rectangle>
             </Canvas>
-        </ScrollViewer>
+            </Canvas>
+     
     </Grid>
 </Window>

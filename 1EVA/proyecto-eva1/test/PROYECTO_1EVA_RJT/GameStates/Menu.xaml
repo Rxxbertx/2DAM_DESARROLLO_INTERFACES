@@ -1,0 +1,62 @@
+﻿<Page x:Class="PROYECTO_1EVA_RJT.GameStates.Menu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROYECTO_1EVA_RJT.GameStates"
+      mc:Ignorable="d" 
+     Height="900" Width="1600" Title="Menu">
+
+    <Grid>
+        <Canvas x:Name="ventanaPrinicipal" Cursor="Cross">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC97D70"/>
+                    <GradientStop Color="#FF69A5C9" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+
+            <Image Height="736" Canvas.Left="128" Source="/recursos/windows.jpg" Stretch="Fill" Canvas.Top="54" Width="1337"/>
+            <Image Height="1019" Source="/recursos/componentesPC/pantalla.png" Stretch="Fill" Width="1418" Canvas.Left="91" Canvas.Top="10"/>
+            <Image Height="662" Canvas.Left="212" Source="/recursos/ExportedIcons/Item3.png" Stretch="Fill" Canvas.Top="80" Width="1176" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+            <Image Height="168" Canvas.Left="296" Source="/recursos/ExportedIcons/Item4.png" Stretch="Fill" Canvas.Top="177" Width="1008" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image MouseLeftButtonDown="Jugar_MouseLeftButtonDown" Height="130" Canvas.Left="488" Source="/recursos/ExportedIcons/Item5.png" Stretch="Fill" Canvas.Top="377" Width="624" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="Cross"/>
+            <Image Height="73" Canvas.Left="212" Source="/recursos/ExportedIcons/Item2.png" Stretch="Fill" Canvas.Top="80" Width="1176" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="salirX" MouseLeftButtonDown="Salir_MouseLeftButtonDown" MouseEnter="Image_MouseEnter" Height="49" Canvas.Left="1300" Source="/recursos/ExportedIcons/Icon_X.png" Stretch="Fill" Canvas.Top="92" Width="52"/>
+            <Image MouseLeftButtonDown="Ayuda_MouseLeftButtonDown" Height="100" Canvas.Left="264" Source="/recursos/ExportedIcons/Icon_Question.png" Stretch="Fill" Canvas.Top="604" Width="76"/>
+            <Image Height="48" Canvas.Left="249" Source="/recursos/ExportedIcons/Icon_DotsVertical.png" Stretch="Fill" Canvas.Top="92" Width="16" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="49" Canvas.Left="1235" Source="/recursos/ExportedIcons/Icon_Down.png" Stretch="Fill" Canvas.Top="91" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image MouseLeftButtonDown="Salir_MouseLeftButtonDown" Height="87" Canvas.Left="611" Source="/recursos/ExportedIcons/Item2.png" Stretch="Fill" Canvas.Top="567" Width="378" Cursor="Hand"/>
+            <Image Height="118" Canvas.Left="1192" Source="/recursos/ExportedIcons/Icon_Settings.png" Stretch="Fill" Canvas.Top="586" Width="134"/>
+            <Label MouseLeftButtonDown="Jugar_MouseLeftButtonDown" Content="JUGAR" Canvas.Left="671" Canvas.Top="387" FontFamily="Comic Sans MS" FontSize="72" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label MouseLeftButtonDown="Salir_MouseLeftButtonDown" Content="Salir" Canvas.Left="741" Canvas.Top="572" FontFamily="Comic Sans MS" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="BUSCA PC" Canvas.Left="679" Canvas.Top="184" FontFamily="Comic Sans MS" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#00000000" Foreground="White">
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
+            <Label Content="Proyecto-EVA1-RJT.exe" Canvas.Left="265" Canvas.Top="85" FontFamily="Comic Sans MS" FontSize="36" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+            </Label>
+
+        </Canvas>
+
+
+
+        
+
+
+
+    </Grid>
+
+</Page>

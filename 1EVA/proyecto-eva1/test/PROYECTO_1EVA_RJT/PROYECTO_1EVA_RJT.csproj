@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="GameStates\House Exterior.png" />
+    <None Remove="GameStates\torre.png" />
+    <None Remove="recursos\componentesPC\pantalla.png" />
+    <None Remove="recursos\ExportedIcons\Icon_DotsVertical.png" />
+    <None Remove="recursos\ExportedIcons\Icon_Down.png" />
+    <None Remove="recursos\ExportedIcons\Icon_Question.png" />
+    <None Remove="recursos\ExportedIcons\Icon_Settings.png" />
+    <None Remove="recursos\ExportedIcons\Icon_X.png" />
+    <None Remove="recursos\ExportedIcons\Item1.png" />
+    <None Remove="recursos\ExportedIcons\Item2.png" />
+    <None Remove="recursos\ExportedIcons\Item3.png" />
+    <None Remove="recursos\ExportedIcons\Item4.png" />
+    <None Remove="recursos\ExportedIcons\Item5.png" />
+    <None Remove="recursos\windows.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="recursos\componentesPC\pantalla.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Icon_DotsVertical.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Icon_Down.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Icon_Question.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Icon_Settings.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Icon_X.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Item1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Item2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Item3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Item4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Item5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\windows.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="GameStates\House Exterior.png" />
+    <Resource Include="GameStates\torre.png" />
+  </ItemGroup>
+
+</Project>

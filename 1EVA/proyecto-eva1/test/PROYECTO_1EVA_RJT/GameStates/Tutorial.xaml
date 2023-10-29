@@ -1,0 +1,259 @@
+﻿<Page x:Class="PROYECTO_1EVA_RJT.GameStates.Tutorial"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROYECTO_1EVA_RJT.GameStates"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="1600"
+      Title="Tutorial">
+
+    <Grid>
+
+        <Canvas x:Name="tutorial" Background="#FF80B372">
+
+
+            <Image Height="197" Canvas.Left="386" Source="/recursos/LandscapeMaterials/rocks.png" Stretch="Fill" Canvas.Top="428" Width="186"/>
+            <Image Height="198" Canvas.Left="1380" Source="/recursos/LandscapeMaterials/rocks.png" Stretch="Fill" Canvas.Top="678" Width="186" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+
+
+            <Image Height="94" Canvas.Left="1057" Source="/recursos/LandscapeMaterials/grass2.png" Stretch="Fill" Canvas.Top="164" Width="139" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-2.366"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="94" Canvas.Left="1234" Source="/recursos/LandscapeMaterials/grass2.png" Stretch="Fill" Canvas.Top="220" Width="139" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.222"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="94" Canvas.Left="1067" Source="/recursos/LandscapeMaterials/grass2.png" Stretch="Fill" Canvas.Top="274" Width="139" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-2.366"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="94" Canvas.Left="871" Source="/recursos/LandscapeMaterials/grass2.png" Stretch="Fill" Canvas.Top="330" Width="139" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-2.366"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="94" Canvas.Left="548" Source="/recursos/LandscapeMaterials/grass2.png" Stretch="Fill" Canvas.Top="614" Width="139" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-2.366"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="94" Canvas.Left="726" Source="/recursos/LandscapeMaterials/grass2.png" Stretch="Fill" Canvas.Top="670" Width="138" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.222"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="94" Canvas.Left="558" Source="/recursos/LandscapeMaterials/grass2.png" Stretch="Fill" Canvas.Top="724" Width="139" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-2.366"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="94" Canvas.Left="362" Source="/recursos/LandscapeMaterials/grass2.png" Stretch="Fill" Canvas.Top="780" Width="140" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-2.366"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+
+
+
+
+
+            <Image Height="52" Canvas.Left="89" Source="/recursos/LandscapeMaterials/fences.png" Stretch="Fill" Canvas.Top="216" Width="111" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="52" Source="/recursos/LandscapeMaterials/fences.png" Stretch="Fill" Canvas.Top="216" Width="111" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="164" Canvas.Left="523" Source="/recursos/LandscapeMaterials/fencesVertical.png" Stretch="Fill" Canvas.Top="28" Width="22" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+
+            <Image Height="52" Canvas.Left="266" Source="/recursos/LandscapeMaterials/fences.png" Stretch="Fill" Canvas.Top="216" Width="111"/>
+            <Image Height="52" Canvas.Left="177" Source="/recursos/LandscapeMaterials/fences.png" Stretch="Fill" Canvas.Top="216" Width="111" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+
+
+            <Image Height="285" Canvas.Left="36" Source="/recursos/LandscapeMaterials/tree.png" Stretch="Fill" Canvas.Top="186" Width="242"/>
+            <Image Height="285" Canvas.Left="679" Source="/recursos/LandscapeMaterials/tree.png" Stretch="Fill" Canvas.Top="73" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="285" Canvas.Left="182" Source="/recursos/LandscapeMaterials/tree.png" Stretch="Fill" Canvas.Top="536" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+
+
+            <Canvas x:Name="Bienvenida" Width="728" Height="604" Canvas.Left="-842" Canvas.Top="-624">
+                <Canvas.Background>
+                    <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
+                </Canvas.Background>
+
+                <TextBlock x:Name="Titulo" Text="Bienvenido a la aventura" FontSize="50" Foreground="White" Canvas.Left="85" Canvas.Top="54" FontFamily="Comic Sans MS">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="/recursos/ExportedIcons/Item2.png"/>
+                    </TextBlock.Background>
+                </TextBlock>
+                <TextBlock x:Name="Informacion" Text="Vamos a aprender diferentes componentes de hardware, que ilusión. POR AHORA TE VOY A AYUDAR A ENCONTRAR LA PRIMERA PIEZA" Canvas.Left="49" Canvas.Top="217" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="170" Width="630" TextAlignment="Center"/>
+
+            </Canvas>
+            <Canvas x:Name="piezaInfo" Width="728" Height="604" Canvas.Left="1849" Canvas.Top="179" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Canvas.Background>
+                    <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
+                </Canvas.Background>
+
+                <TextBlock x:Name="TituloPieza" Text="PRIMERA PIEZA" FontSize="50" Foreground="White" Canvas.Left="165" Canvas.Top="54" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="/recursos/ExportedIcons/Item2.png"/>
+                    </TextBlock.Background>
+                </TextBlock>
+                <TextBlock x:Name="nombrePieza" Text="Torre" Canvas.Left="49" Canvas.Top="151" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="88" Width="630" TextAlignment="Center"/>
+                <Image Height="272" Canvas.Left="284" Source="/recursos/componentesPC/torre.png" Stretch="Fill" Canvas.Top="216" Width="161" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Image.Effect>
+                        <DropShadowEffect/>
+                    </Image.Effect>
+                </Image>
+
+            </Canvas>
+
+            <Canvas x:Name="TorreInfo" Width="728" Height="604" Canvas.Left="-968" Canvas.Top="148" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Canvas.Background>
+                    <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
+                </Canvas.Background>
+
+                <TextBlock  Text="TORRE" FontSize="50" Foreground="White" Canvas.Left="280" Canvas.Top="34" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="/recursos/ExportedIcons/Item2.png"/>
+                    </TextBlock.Background>
+                </TextBlock>
+                <TextBlock x:Name="InformacionPieza" Text="Esta pieza es la principal para poder tener los demas componentes a salvo y bien guardados" Canvas.Left="49" Canvas.Top="151" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="134" Width="610" TextAlignment="Center"/>
+                <Image Height="272" Canvas.Left="274" Source="/recursos/componentesPC/torre.png" Stretch="Fill" Canvas.Top="285" Width="160" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Image.Effect>
+                        <DropShadowEffect/>
+                    </Image.Effect>
+                </Image>
+
+            </Canvas>
+
+
+            <Canvas x:Name="Casa" Width="728" Height="604" Canvas.Left="398" Canvas.Top="-713" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Canvas.Background>
+                    <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
+                </Canvas.Background>
+
+                <TextBlock  Text="CASAS" FontSize="50" Foreground="White" Canvas.Left="280" Canvas.Top="34" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="/recursos/ExportedIcons/Item2.png"/>
+                    </TextBlock.Background>
+                </TextBlock>
+                <TextBlock x:Name="casaInfo" Text="Busca en las casas para encontrar la pieza , pero ten cuidado, puedes encontrar algo peor" Canvas.Left="49" Canvas.Top="151" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="134" Width="610" TextAlignment="Center"/>
+
+            </Canvas>
+            <Canvas x:Name="E" Width="728" Height="604" Canvas.Left="1356" Canvas.Top="-713" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Canvas.Background>
+                    <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
+                </Canvas.Background>
+
+                <TextBlock  Text="Interactuar" FontSize="50" Foreground="White" Canvas.Left="215" Canvas.Top="28" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="/recursos/ExportedIcons/Item2.png"/>
+                    </TextBlock.Background>
+                </TextBlock>
+                <TextBlock x:Name="interactuarInfo" Text="Puedes interactuar con ciertos objetos pulsando la tecla" Canvas.Left="49" Canvas.Top="151" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="134" Width="610" TextAlignment="Center"/>
+                <TextBlock x:Name="interactuarInfo2" Text="Veras esa letra encima de los objetos interactuables" Canvas.Left="49" Canvas.Top="367" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="134" Width="610" TextAlignment="Center"/>
+                <Image Height="100" Canvas.Left="302" Source="/recursos/MV Icons Keyboard/Individual Icons/keyboard_116.png" Stretch="Fill" Canvas.Top="252" Width="104">
+                    <Image.Effect>
+                        <DropShadowEffect/>
+                    </Image.Effect>
+                </Image>
+
+            </Canvas>
+
+
+
+
+            <Canvas x:Name="ui" Width="1600" Height="900"  HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Image Height="31" Source="/recursos/ExportedIcons/Item2.png" Stretch="Fill" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Image.Effect>
+                        <DropShadowEffect/>
+                    </Image.Effect>
+                </Image>
+                <Image Height="106" Source="/recursos/ExportedIcons/Item2.png" Stretch="Fill" Width="386" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="1214">
+                    <Image.Effect>
+                        <DropShadowEffect/>
+                    </Image.Effect>
+                </Image>
+                <Label Content="Tutorial" Canvas.Left="1312" Canvas.Top="15" FontFamily="Comic Sans MS" FontSize="48"/>
+                <Ellipse Height="112" Canvas.Left="10" Canvas.Top="36" Width="117" HorizontalAlignment="Left" VerticalAlignment="Top" StrokeThickness="10">
+                    <Ellipse.Stroke>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FFBF7A6F" Offset="0.751"/>
+                            <GradientStop Color="#FF3D1E1D" Offset="1"/>
+                        </RadialGradientBrush>
+                    </Ellipse.Stroke>
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/GameStates/torre.png" Stretch="Uniform" TileMode="None"/>
+                    </Ellipse.Fill>
+
+                </Ellipse>
+
+                <Label Content="Encuentra la pieza" Canvas.Left="142" Canvas.Top="73" FontFamily="Comic Sans MS" FontSize="20" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+            </Canvas>
+
+
+            <TextBlock  Text="Pulsa AQUI para continuar" FontSize="30" Foreground="White" Canvas.Left="626" Canvas.Top="790" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="280" Canvas.Left="308" Source="/recursos/House Exterior.png" Stretch="Fill" Canvas.Top="148" Width="280" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle Height="122" Canvas.Left="448" Stroke="red" Canvas.Top="306" Width="97" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+
+
+            </Rectangle>
+            <Image Height="230" Canvas.Left="1323" Source="/recursos/LandscapeMaterials/sandSpaceGrass.png" Stretch="Fill" Canvas.Top="382" Width="229"/>
+            <Image Height="116" Canvas.Left="1368" Source="/recursos/Animals/cat/idle/cat-idle/cat-idle-1.png" Stretch="Fill" Canvas.Top="410" Width="138"/>
+            <Rectangle Height="46" Canvas.Left="278" Stroke="red" Canvas.Top="753" Width="44"/>
+            <Rectangle Height="46" Canvas.Left="131" Stroke="red" Canvas.Top="400" Width="44" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle Height="46" Canvas.Left="774" Stroke="red" Canvas.Top="288" Width="44" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle Height="46" Canvas.Left="1416" Stroke="red" Canvas.Top="474" Width="44" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle Height="268" Stroke="red" Width="545" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+
+        </Canvas>
+
+    </Grid>
+</Page>

@@ -20,105 +20,110 @@ namespace WpfApp1
     /// </summary>
     public partial class game : Window
     {
-        double _playerSize;
 
-        Rectangle _playerRect;
-        System.Windows.Vector _playerPosition;
+        private double playerX;
+        private double playerY;
+        private double canvas1Width;
+        private double canvas1Height;
+        private double canvas2Width;
+        private double canvas2Height;
+        private double viewportWidth;
+        private double viewportHeight;
+        private TranslateTransform cameraTransformCanvas1 = new TranslateTransform();
+        private TranslateTransform cameraTransformCanvas2 = new TranslateTransform();
+        private bool isMoving = false;
 
         public game()
         {
             InitializeComponent();
+
+            // Obtiene el tamaño de Canvas 1 (el principal)
+            canvas1Width = canvas1.Width;
+            canvas1Height = canvas1.Height;
+
+            // Obtiene el tamaño de Canvas 2 (donde se encuentra el rectángulo)
+            canvas2Width = canvas2.Width;
+            canvas2Height = canvas2.Height;
+
+
+            // Inicializa al jugador en el centro de Canvas 2
+            playerX = (canvas2Width - player.Width) / 2;
+            playerY = (canvas2Height - player.Height) / 2;
+
+            // Posiciona al jugador en Canvas 2
+            Canvas.SetLeft(player, playerX);
+            Canvas.SetTop(player, playerY);
+
+            canvas1.RenderTransform = cameraTransformCanvas1;
+            canvas2.RenderTransform = cameraTransformCanvas2;
+            CompositionTarget.Rendering += UpdateGame;
+
+            // Agrega el manejo de eventos para las teclas
+            KeyDown += MainWindow_KeyDown;
+            KeyUp += MainWindow_KeyUp;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void UpdateGame(object sender, EventArgs e)
         {
-            InitializeSizes();
-            InitializePlayerRect();
-        }
-
-        private void InitializeSizes()
-        {
-            _playerSize = 30;
-            Canvas.Width = 2000;
-            Canvas.Height = 2000;
-
-            CanvasViewer.Width = 400;
-            CanvasViewer.Height = 400;
-        }
-
-        private void InitializePlayerRect()
-        {
-            _playerRect = new Rectangle
+            if (isMoving)
             {
-                Fill = Brushes.LightPink,
-                Width = _playerSize,
-                Height = _playerSize,
-                HorizontalAlignment = HorizontalAlignment.Left,
-                VerticalAlignment = VerticalAlignment.Top
-            };
+                double playerSpeed = 5;
+                double deltaX = 0;
+                double deltaY = 0;
 
-            Canvas.Children.Add(_playerRect);
-            _playerPosition = new System.Windows.Vector(1000, 1000); // Posición inicial en el centro del Canvas
-            UpdatePlayerPositionAndCamera();
-        }
+                // Mueve al jugador en función de la dirección
+                if (Keyboard.IsKeyDown(Key.W) && playerY > 0)
+                {
+                    deltaY -= playerSpeed;
+                }
+                if (Keyboard.IsKeyDown(Key.S) && playerY + player.ActualHeight < canvas2Height)
+                {
+                    deltaY += playerSpeed;
+                }
+                if (Keyboard.IsKeyDown(Key.A) && playerX > 0)
+                {
+                    deltaX -= playerSpeed;
+                }
+                if (Keyboard.IsKeyDown(Key.D) && playerX + player.ActualWidth < canvas2Width)
+                {
+                    deltaX += playerSpeed;
+                }
 
-        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            switch (e.Key)
-            {
-                case Key.Left: MovePlayerLeft(); break;
-                case Key.Up: MovePlayerUp(); break;
-                case Key.Right: MovePlayerRight(); break;
-                case Key.Down: MovePlayerDown(); break;
+                // Calcula la posición del jugador en relación con los bordes de Canvas 2
+                double playerRight = playerX + player.ActualWidth;
+                double playerBottom = playerY + player.ActualHeight;
+
+                // Comprueba si el jugador está cerca del 80% de Canvas 1
+                if (playerX < canvas1Width * 0.2 || playerRight > canvas1Width * 0.8
+                    || playerY < canvas1Height * 0.2 || playerBottom > canvas1Height * 0.8)
+                {
+                    // Mueve Canvas 2 en lugar del jugador (ajustando la transformación de Canvas 2)
+                    cameraTransformCanvas2.X -= deltaX;
+                    cameraTransformCanvas2.Y -= deltaY;
+                }
+                else
+                {
+                    // Mueve al jugador libremente dentro de Canvas 2
+                    playerX += deltaX;
+                    playerY += deltaY;
+                    Canvas.SetLeft(player, playerX);
+                    Canvas.SetTop(player, playerY);
+                }
             }
         }
 
-        private void MovePlayerLeft()
+        private void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
-            var newX = _playerPosition.X - _playerSize;
-            _playerPosition.X = Math.Max(0, newX);
-            UpdatePlayerPositionAndCamera();
+            isMoving = true;
         }
 
-        private void MovePlayerUp()
+        private void MainWindow_KeyUp(object sender, KeyEventArgs e)
         {
-            var newY = _playerPosition.Y - _playerSize;
-            _playerPosition.Y = Math.Max(0, newY);
-            UpdatePlayerPositionAndCamera();
+            isMoving = false;
         }
 
-        private void MovePlayerRight()
-        {
-            var newX = _playerPosition.X + _playerSize;
-            _playerPosition.X = Math.Min(Canvas.Width - _playerSize, newX);
-            UpdatePlayerPositionAndCamera();
-        }
 
-        private void MovePlayerDown()
-        {
-            var newY = _playerPosition.Y + _playerSize;
-            _playerPosition.Y = Math.Min(Canvas.Height - _playerSize, newY);
-            UpdatePlayerPositionAndCamera();
-        }
 
-        private void UpdatePlayerPositionAndCamera()
-        {
-            UpdatePlayerPosition();
-            UpdateCamera();
-        }
-
-        private void UpdatePlayerPosition()
-        {
-            _playerRect.Margin = new Thickness(_playerPosition.X, _playerPosition.Y, 0, 0);
-        }
-
-        private void UpdateCamera()
-        {
-            var offsetX = _playerPosition.X - CanvasViewer.Width / 2;
-            var offsetY = _playerPosition.Y - CanvasViewer.Height / 2;
-            CanvasViewer.ScrollToHorizontalOffset(offsetX);
-            CanvasViewer.ScrollToVerticalOffset(offsetY);
-        }
     }
 
 }
