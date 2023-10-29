@@ -55,8 +55,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void Jugar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             
-            game.MainFrame.Navigate(new GameStates.Playing(game));
-            GameManager.state = GameState.PLAYING;
+            game.MainFrame.Navigate(game.tutorial);
+            GameManager.state = GameState.TUTORIAL;
 
         }
 

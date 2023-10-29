@@ -23,8 +23,13 @@ namespace PROYECTO_1EVA_RJT
     public partial class Game : Window
     {
         private DispatcherTimer gameLoopTimer;
+        public static double deltaTime { get; private set; }
 
         GameStates.Menu menu;
+       public GameStates.Tutorial tutorial { get; private set; }
+        
+        GameStates.Playing playing;
+
 
         public Game()
         {
@@ -37,34 +42,69 @@ namespace PROYECTO_1EVA_RJT
         {
 
             menu = new GameStates.Menu(this);
+            tutorial = new GameStates.Tutorial(this);
+            playing = new GameStates.Playing(this);
+
+
             MainFrame.Navigate(menu);
 
             gameLoopTimer = new DispatcherTimer();
             gameLoopTimer.Tick += GameLoop;
-            gameLoopTimer.Interval = TimeSpan.FromMilliseconds(1000 / 60); // 60 FPS por defecto
+            gameLoopTimer.Interval = TimeSpan.FromMilliseconds(1000 / 120); // 60 FPS por defecto
             gameLoopTimer.Start();
         }
 
         private void GameLoop(object sender, EventArgs e)
         {
-            double deltaTime = gameLoopTimer.Interval.TotalMilliseconds / 1000.0; // Calcula el delta time
+             deltaTime = gameLoopTimer.Interval.TotalMilliseconds / 1000.0; // Calcula el delta time
 
-            Update(deltaTime);
+            Update();
             Render();
         }
 
         private void Render()
         {
-            // throw new NotImplementedException();
+            
+
+            switch (GameManager.state)
+            {
+                case GameState.MENU:
+                    
+                    menu.render();
+
+                    break;
+                case GameState.TUTORIAL:
+                    
+                    tutorial.render();
+
+                    break;
+                case GameState.PAUSE:
+                    // Código para el estado de pausa
+                    break;
+                case GameState.WIN:
+                    // Código para el estado de victoria
+                    break;
+                case GameState.PLAYING:
+                     playing.render();
+                    break;
+                case GameState.QUIT:
+                    // Código para el estado de victoria
+                    break;
+            }
+
+
         }
 
-        public void Update(double deltaTime)
+        public void Update( )
         {
             switch (GameManager.state)
             {
                 case GameState.MENU:
                     // menu.Update();
                     break;
+                    case GameState.TUTORIAL:
+                       tutorial.update();
+                        break;
                 case GameState.PAUSE:
                     // Código para el estado de pausa
                     break;

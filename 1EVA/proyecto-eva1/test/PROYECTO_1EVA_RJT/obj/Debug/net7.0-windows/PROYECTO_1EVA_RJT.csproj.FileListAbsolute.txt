@@ -38,3 +38,31 @@ C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\te
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Exit.g.cs
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Exit.baml
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Tutorial.g.cs
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\PROYECTO_1EVA_RJT.csproj.AssemblyReference.cache
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\componentesPC\torre.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\House Exterior.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\bigRock.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\fences.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\fencesVertical.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\grass.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\grass1.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\grass2.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\idk.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\letter.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\rock.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\rocks.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\sand.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\sandSpace.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\sandSpaceGrass.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\tree.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\treeRest.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\MV Icons Keyboard\Individual Icons\keyboard_116.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\Player\idle\player-idle-back\player-idle-back-7.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Tutorial.baml
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\Player\idle\player-idle-front\player-idle-front-1.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\Player\idle\player-idle-front\player-idle-front-3.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\Player\idle\player-idle-back\player-idle-back-3.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\Player\idle\player-idle-front\player-idle-front-2.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\Player\idle\player-idle-front\player-idle-front-4.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\Player\idle\player-idle-front\player-idle-front-5.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\Player\idle\player-idle-front\player-idle-front-6.png

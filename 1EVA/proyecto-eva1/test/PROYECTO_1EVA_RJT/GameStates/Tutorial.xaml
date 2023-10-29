@@ -13,6 +13,20 @@
         <Canvas x:Name="tutorial" Background="#FF80B372">
 
 
+            <Rectangle x:Name="jugador" Height="128" Canvas.Left="1003" Stroke="Black" Canvas.Top="497" Width="91" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/recursos/Player/idle/player-idle-front/player-idle-front-1.png" Stretch="UniformToFill">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="2" ScaleY="1.2"/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+
+
             <Image Height="197" Canvas.Left="386" Source="/recursos/LandscapeMaterials/rocks.png" Stretch="Fill" Canvas.Top="428" Width="186"/>
             <Image Height="198" Canvas.Left="1380" Source="/recursos/LandscapeMaterials/rocks.png" Stretch="Fill" Canvas.Top="678" Width="186" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
@@ -227,7 +241,7 @@
                         </RadialGradientBrush>
                     </Ellipse.Stroke>
                     <Ellipse.Fill>
-                        <ImageBrush ImageSource="/GameStates/torre.png" Stretch="Uniform" TileMode="None"/>
+                        <ImageBrush ImageSource="/recursos/componentesPC/torre.png" Stretch="Uniform" TileMode="None"/>
                     </Ellipse.Fill>
 
                 </Ellipse>
@@ -251,7 +265,7 @@
             <Rectangle Height="46" Canvas.Left="774" Stroke="red" Canvas.Top="288" Width="44" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <Rectangle Height="46" Canvas.Left="1416" Stroke="red" Canvas.Top="474" Width="44" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Rectangle Height="268" Stroke="red" Width="545" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-
+            
 
         </Canvas>
 

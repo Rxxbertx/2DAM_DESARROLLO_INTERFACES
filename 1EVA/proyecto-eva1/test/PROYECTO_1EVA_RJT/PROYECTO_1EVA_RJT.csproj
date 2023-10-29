@@ -8,9 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="GameStates\House Exterior.png" />
-    <None Remove="GameStates\torre.png" />
     <None Remove="recursos\componentesPC\pantalla.png" />
+    <None Remove="recursos\componentesPC\torre.png" />
     <None Remove="recursos\ExportedIcons\Icon_DotsVertical.png" />
     <None Remove="recursos\ExportedIcons\Icon_Down.png" />
     <None Remove="recursos\ExportedIcons\Icon_Question.png" />
@@ -21,11 +20,45 @@
     <None Remove="recursos\ExportedIcons\Item3.png" />
     <None Remove="recursos\ExportedIcons\Item4.png" />
     <None Remove="recursos\ExportedIcons\Item5.png" />
+    <None Remove="recursos\House Exterior.png" />
+    <None Remove="recursos\LandscapeMaterials\bigRock.png" />
+    <None Remove="recursos\LandscapeMaterials\fences.png" />
+    <None Remove="recursos\LandscapeMaterials\fencesVertical.png" />
+    <None Remove="recursos\LandscapeMaterials\grass.png" />
+    <None Remove="recursos\LandscapeMaterials\grass1.png" />
+    <None Remove="recursos\LandscapeMaterials\grass2.png" />
+    <None Remove="recursos\LandscapeMaterials\idk.png" />
+    <None Remove="recursos\LandscapeMaterials\letter.png" />
+    <None Remove="recursos\LandscapeMaterials\rock.png" />
+    <None Remove="recursos\LandscapeMaterials\rocks.png" />
+    <None Remove="recursos\LandscapeMaterials\sand.png" />
+    <None Remove="recursos\LandscapeMaterials\sandSpace.png" />
+    <None Remove="recursos\LandscapeMaterials\sandSpaceGrass.png" />
+    <None Remove="recursos\LandscapeMaterials\tree.png" />
+    <None Remove="recursos\LandscapeMaterials\treeRest.png" />
+    <None Remove="recursos\MV Icons Keyboard\Individual Icons\keyboard_116.png" />
+    <None Remove="recursos\Player\idle\player-idle-back\player-idle-back-3.png" />
+    <None Remove="recursos\Player\idle\player-idle-back\player-idle-back-7.png" />
+    <None Remove="recursos\Player\idle\player-idle-front\player-idle-front-1.png" />
+    <None Remove="recursos\Player\idle\player-idle-front\player-idle-front-2.png" />
+    <None Remove="recursos\Player\idle\player-idle-front\player-idle-front-3.png" />
+    <None Remove="recursos\Player\idle\player-idle-front\player-idle-front-4.png" />
+    <None Remove="recursos\Player\idle\player-idle-front\player-idle-front-5.png" />
+    <None Remove="recursos\Player\idle\player-idle-front\player-idle-front-6.png" />
     <None Remove="recursos\windows.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="recursos\Player\idle\player-idle-front\player-idle-front-3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="recursos\componentesPC\pantalla.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\componentesPC\torre.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\ExportedIcons\Icon_DotsVertical.png">
@@ -58,14 +91,85 @@
     <Content Include="recursos\ExportedIcons\Item5.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="recursos\House Exterior.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\bigRock.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\fences.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\fencesVertical.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\grass.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\grass1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\grass2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\idk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\letter.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\rock.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\rocks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\sand.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\sandSpace.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\sandSpaceGrass.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\tree.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\treeRest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\MV Icons Keyboard\Individual Icons\keyboard_116.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-back\player-idle-back-3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-back\player-idle-back-7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-front\player-idle-front-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-front\player-idle-front-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-front\player-idle-front-4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-front\player-idle-front-5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-front\player-idle-front-6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\windows.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="GameStates\House Exterior.png" />
-    <Resource Include="GameStates\torre.png" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
   </ItemGroup>
 
 </Project>
