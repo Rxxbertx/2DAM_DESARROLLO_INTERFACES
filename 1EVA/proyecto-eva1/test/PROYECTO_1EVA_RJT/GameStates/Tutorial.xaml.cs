@@ -9,12 +9,13 @@ namespace PROYECTO_1EVA_RJT.GameStates
     /// <summary>
     /// Lógica de interacción para Tutorial.xaml
     /// </summary>
-    public partial class Tutorial : Page, StateMethods
+    public partial class Tutorial : Page, StateMethods, MapMethods
     {
 
         Player player;
         Game game;
         private List<Rectangle> gameElementsColiders = new List<Rectangle>();
+        private List<Rectangle> gameElementsInteractive = new List<Rectangle>();
         private List<Rectangle>[] gameElementsNormalOpacity = new List<Rectangle>[2];
 
         public Tutorial(Game game)
@@ -38,8 +39,20 @@ namespace PROYECTO_1EVA_RJT.GameStates
             gameElementsNormalOpacity[0] = new List<Rectangle>();
             gameElementsNormalOpacity[1] = new List<Rectangle>();
 
+
             gameElementsNormalOpacity[1].Add(arbol1N);
             gameElementsNormalOpacity[0].Add(arbol1Opacidad);
+            gameElementsNormalOpacity[1].Add(arbol2N);
+            gameElementsNormalOpacity[0].Add(arbol2Opacidad);
+            gameElementsNormalOpacity[1].Add(arbol3N);
+            gameElementsNormalOpacity[0].Add(arbol3Opacidad);
+            gameElementsNormalOpacity[1].Add(arbol4N);
+            gameElementsNormalOpacity[0].Add(arbol4Opacidad);
+            gameElementsNormalOpacity[1].Add(arbol5N);
+            gameElementsNormalOpacity[0].Add(arbol5Opacidad);
+            gameElementsNormalOpacity[1].Add(casa1N);
+            gameElementsNormalOpacity[0].Add(casa1Opacidad);
+
 
 
 
@@ -48,7 +61,18 @@ namespace PROYECTO_1EVA_RJT.GameStates
             //coliders
 
             gameElementsColiders.Add(arbol1HitBox);
-            //gameElementsColiders.Add(vallas);
+            gameElementsColiders.Add(arbol2HitBox);
+            gameElementsColiders.Add(arbol3HitBox);
+            gameElementsColiders.Add(arbol4HitBox);
+            gameElementsColiders.Add(arbol5HitBox);
+            gameElementsColiders.Add(vallasHitbox);
+            gameElementsColiders.Add(casa1Hitbox);
+
+
+            //interactuables
+
+            gameElementsInteractive.Add(puertaCasa1);
+            
 
 
         }
@@ -58,7 +82,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
 
 
-            player = new Player(hitbox, gameElementsColiders, gameElementsNormalOpacity);
+            player = new Player(hitbox, gameElementsColiders, gameElementsNormalOpacity,canvaInteractuar, gameElementsInteractive);
 
 
         }
@@ -137,6 +161,11 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
             player.setAttacking(true);
 
+        }
+
+        void MapMethods.addGameElements()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

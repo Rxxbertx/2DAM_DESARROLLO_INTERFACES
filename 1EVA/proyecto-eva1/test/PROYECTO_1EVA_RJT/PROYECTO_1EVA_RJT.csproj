@@ -37,7 +37,12 @@
     <None Remove="recursos\LandscapeMaterials\tree.png" />
     <None Remove="recursos\LandscapeMaterials\treeRest.png" />
     <None Remove="recursos\MV Icons Keyboard\Individual Icons\keyboard_116.png" />
+    <None Remove="recursos\Player\idle\player-idle-back\player-idle-back-1.png" />
+    <None Remove="recursos\Player\idle\player-idle-back\player-idle-back-2.png" />
     <None Remove="recursos\Player\idle\player-idle-back\player-idle-back-3.png" />
+    <None Remove="recursos\Player\idle\player-idle-back\player-idle-back-4.png" />
+    <None Remove="recursos\Player\idle\player-idle-back\player-idle-back-5.png" />
+    <None Remove="recursos\Player\idle\player-idle-back\player-idle-back-6.png" />
     <None Remove="recursos\Player\idle\player-idle-back\player-idle-back-7.png" />
     <None Remove="recursos\Player\idle\player-idle-front\player-idle-front-1.png" />
     <None Remove="recursos\Player\idle\player-idle-front\player-idle-front-2.png" />
@@ -45,10 +50,37 @@
     <None Remove="recursos\Player\idle\player-idle-front\player-idle-front-4.png" />
     <None Remove="recursos\Player\idle\player-idle-front\player-idle-front-5.png" />
     <None Remove="recursos\Player\idle\player-idle-front\player-idle-front-6.png" />
+    <None Remove="recursos\Player\idle\player-idle-left\player-idle-left-1.png" />
+    <None Remove="recursos\Player\idle\player-idle-left\player-idle-left-2.png" />
+    <None Remove="recursos\Player\idle\player-idle-left\player-idle-left-3.png" />
+    <None Remove="recursos\Player\idle\player-idle-left\player-idle-left-4.png" />
+    <None Remove="recursos\Player\idle\player-idle-left\player-idle-left-5.png" />
+    <None Remove="recursos\Player\idle\player-idle-left\player-idle-left-6.png" />
+    <None Remove="recursos\Player\idle\player-idle-right\player-idle-right-1.png" />
+    <None Remove="recursos\Player\idle\player-idle-right\player-idle-right-2.png" />
+    <None Remove="recursos\Player\idle\player-idle-right\player-idle-right-3.png" />
+    <None Remove="recursos\Player\idle\player-idle-right\player-idle-right-4.png" />
+    <None Remove="recursos\Player\idle\player-idle-right\player-idle-right-5.png" />
+    <None Remove="recursos\Player\idle\player-idle-right\player-idle-right-6.png" />
     <None Remove="recursos\windows.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="recursos\Player\idle\player-idle-back\player-idle-back-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-back\player-idle-back-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-back\player-idle-back-4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-back\player-idle-back-5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-back\player-idle-back-6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\Player\idle\player-idle-front\player-idle-front-3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -161,6 +193,42 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\Player\idle\player-idle-front\player-idle-front-6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-left\player-idle-left-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-left\player-idle-left-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-left\player-idle-left-3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-left\player-idle-left-4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-left\player-idle-left-5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-left\player-idle-left-6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-right\player-idle-right-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-right\player-idle-right-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-right\player-idle-right-3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-right\player-idle-right-4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-right\player-idle-right-5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\idle\player-idle-right\player-idle-right-6.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\windows.jpg">

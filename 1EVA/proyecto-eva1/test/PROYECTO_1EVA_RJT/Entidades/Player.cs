@@ -1,11 +1,13 @@
 ﻿
 using PROYECTO_1EVA_RJT.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Xml.Linq;
 using Color = System.Windows.Media.Color;
 using Point = System.Windows.Point;
 using Rectangle = System.Windows.Shapes.Rectangle;
@@ -28,22 +30,30 @@ namespace PROYECTO_1EVA_RJT.Entidades
         private bool front, back, right, left, moving, attack;
 
         private Canvas jugador;
+        private Canvas canvaInteractuar;
 
 
         private List<Rectangle> gameElementsColiders = new List<Rectangle>();
         private List<Rectangle>[] gameElementsNormalOpacity;
+        private List<Rectangle> gameElementsInteractive;
 
 
         private BitmapImage[][][] animaciones;
 
 
-        public Player(Canvas jugador, List<Rectangle> gameElementsColiders, List<Rectangle>[] gameElementsNormalOpacity)
+        public Player(Canvas jugador,
+                      List<Rectangle> gameElementsColiders,
+                      List<Rectangle>[] gameElementsNormalOpacity,
+                      Canvas canvaInteractuar,
+                      List<Rectangle> gameElementsInteractive)
         {
 
             importImgs();
             this.jugador = jugador;
+            this.canvaInteractuar = canvaInteractuar;
             this.gameElementsColiders = gameElementsColiders;
             this.gameElementsNormalOpacity = gameElementsNormalOpacity;
+            this.gameElementsInteractive = gameElementsInteractive;
         }
 
 
@@ -64,10 +74,56 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
 
             updateNormalOpacity();
+            updateInteractiveElements();
             updatePosition();
+
             updateAnimation();
 
 
+        }
+
+        private void updateInteractiveElements()
+        {
+            canvaInteractuar.Visibility = Visibility.Hidden;
+
+
+            foreach (Rectangle element in gameElementsInteractive)
+            {
+                if (IsCollidingWith(element))
+                {
+                    showInteractuable(element);
+                    return;
+                }
+            }
+
+
+        }
+
+        private bool IsCollidingWith(Rectangle element)
+        {
+            
+            Rect newHitBox = new Rect(Canvas.GetLeft(jugador), Canvas.GetTop(jugador), jugador.Width, jugador.Height);
+            Rect elementRect = new Rect(Canvas.GetLeft(element), Canvas.GetTop(element), element.Width, element.Height);
+
+            if (newHitBox.IntersectsWith(elementRect))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void showInteractuable(Rectangle element)
+        {
+            
+            if (element.DataContext.Equals("interactivo"))
+            {
+                canvaInteractuar.Visibility = Visibility.Visible;
+                Canvas.SetLeft(canvaInteractuar, Canvas.GetLeft(element) + element.Width / 2 - canvaInteractuar.Width / 2);
+                Canvas.SetTop(canvaInteractuar, Canvas.GetTop(element) - canvaInteractuar.Height);
+            }
         }
 
         private void updateNormalOpacity()
@@ -75,15 +131,11 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
             List<Rectangle> listaOpacidad = gameElementsNormalOpacity[0]; //hitbox de opacidad
             List<Rectangle> listaNormal = gameElementsNormalOpacity[1]; //rectangulo imagen
-            Rect newHitBox = new Rect(Canvas.GetLeft(jugador), Canvas.GetTop(jugador), jugador.Width, jugador.Height);
-
+           
             for (int i = 0; i < listaOpacidad.Count; i++)
             {
 
-
-
-                Rect tempObj = new Rect(Canvas.GetLeft(listaOpacidad[i]), Canvas.GetTop(listaOpacidad[i]), listaOpacidad[i].Width, listaOpacidad[i].Height);
-                if (newHitBox.IntersectsWith(tempObj))
+               if (IsCollidingWith(listaOpacidad[i]))
                 {
 
                     // Crea un LinearGradientBrush
@@ -108,9 +160,6 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
         }
 
-
-
-
         private void updatePosition()
         {
             bool avanzar = true;
@@ -119,34 +168,37 @@ namespace PROYECTO_1EVA_RJT.Entidades
             double y = 0;
 
 
-            //hitbox
-            if (isFront())
+            // hitbox
+            if (isFront() && Canvas.GetTop(jugador) > 50)
             {
                 y -= speed * Game.deltaTime;
             }
-            if (isBack())
+            if (isBack() && Canvas.GetTop(jugador) + jugador.Height < 890)
             {
                 y += speed * Game.deltaTime;
             }
-            if (isRight())
+            if (isRight() && Canvas.GetLeft(jugador) + jugador.Width < 1600)
             {
                 x += speed * Game.deltaTime;
             }
-            if (isLeft())
+            if (isLeft() && Canvas.GetLeft(jugador) > 0)
             {
                 x -= speed * Game.deltaTime;
             }
 
             // Verifica colisiones antes de actualizar la posición
             Rect newHitBox = new Rect(Canvas.GetLeft(jugador) + x, Canvas.GetTop(jugador) + y, jugador.Width, jugador.Height);
-
+            
             foreach (Rectangle element in gameElementsColiders)
             {
                 Rect elementRect = new Rect(Canvas.GetLeft(element), Canvas.GetTop(element), element.Width, element.Height);
 
                 if (newHitBox.IntersectsWith(elementRect))
                 {
-                    // Colisión detectada, no actualices la posición
+                    
+                    
+                   
+
                     avanzar = false;
                     return;
                 }
@@ -215,13 +267,6 @@ namespace PROYECTO_1EVA_RJT.Entidades
              }
          }*/
 
-
-        public bool IsCollidingWith(Rectangle element)
-        {
-            Rect playerRect = new Rect(jugador.Margin.Left, jugador.Margin.Top, jugador.Width, jugador.Height);
-            Rect elementRect = new Rect(element.Margin.Left, element.Margin.Top, element.Width, element.Height);
-            return playerRect.IntersectsWith(elementRect);
-        }
 
 
 

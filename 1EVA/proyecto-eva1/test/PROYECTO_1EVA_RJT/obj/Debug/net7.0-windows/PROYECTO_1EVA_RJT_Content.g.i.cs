@@ -8,6 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-back/player-idle-back-1.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-back/player-idle-back-2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-back/player-idle-back-4.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-back/player-idle-back-5.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-back/player-idle-back-6.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-front/player-idle-front-3.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/componentespc/pantalla.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/componentespc/torre.png")]
@@ -45,6 +50,18 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-front/player-idle-front-4.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-front/player-idle-front-5.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-front/player-idle-front-6.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-left/player-idle-left-1.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-left/player-idle-left-2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-left/player-idle-left-3.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-left/player-idle-left-4.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-left/player-idle-left-5.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-left/player-idle-left-6.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-right/player-idle-right-1.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-right/player-idle-right-2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-right/player-idle-right-3.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-right/player-idle-right-4.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-right/player-idle-right-5.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-right/player-idle-right-6.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/windows.jpg")]
 
 

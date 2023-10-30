@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "GNuTiJZr76BT2XNMHSwytZuLvB2LkFY604CyIccnGq6UZt3u99azVUx2A4I9suWP1l2WSPeVOpuNb+NIfJfjQQ==",
+  "dgSpecHash": "sh9CwtZOA9OgqWUZgJERv922/eMfVVpbvaBTlfRxuWADKO4SCBuJyLzojSU6eaiUNt1v+tzK/zDYxiTuUF16CQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dam2t06\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\1EVA\\proyecto-eva1\\test\\PROYECTO_1EVA_RJT\\PROYECTO_1EVA_RJT.csproj",
+  "projectFilePath": "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\1EVA\\proyecto-eva1\\test\\PROYECTO_1EVA_RJT\\PROYECTO_1EVA_RJT.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\dam2t06\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
-    "C:\\Users\\dam2t06\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
+    "C:\\Users\\Roberto\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\Roberto\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }
