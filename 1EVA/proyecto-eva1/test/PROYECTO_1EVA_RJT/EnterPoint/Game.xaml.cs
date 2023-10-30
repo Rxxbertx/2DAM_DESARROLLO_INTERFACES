@@ -23,7 +23,7 @@ namespace PROYECTO_1EVA_RJT
     public partial class Game : Window
     {
         private DispatcherTimer gameLoopTimer;
-        public static double deltaTime { get; private set; }
+        public  static double deltaTime { get; private set; }
 
         GameStates.Menu menu;
        public GameStates.Tutorial tutorial { get; private set; }
@@ -50,14 +50,14 @@ namespace PROYECTO_1EVA_RJT
 
             gameLoopTimer = new DispatcherTimer();
             gameLoopTimer.Tick += GameLoop;
-            gameLoopTimer.Interval = TimeSpan.FromMilliseconds(1000 / 120); // 60 FPS por defecto
+            gameLoopTimer.Interval = TimeSpan.FromMilliseconds(1000 / 60); // 60 FPS por defecto
             gameLoopTimer.Start();
         }
 
         private void GameLoop(object sender, EventArgs e)
         {
-             deltaTime = gameLoopTimer.Interval.TotalMilliseconds / 1000.0; // Calcula el delta time
-
+             
+            deltaTime = gameLoopTimer.Interval.TotalMilliseconds / 1000.0; // Calcula el delta time
             Update();
             Render();
         }
@@ -100,7 +100,7 @@ namespace PROYECTO_1EVA_RJT
             switch (GameManager.state)
             {
                 case GameState.MENU:
-                    // menu.Update();
+                    menu.update();
                     break;
                     case GameState.TUTORIAL:
                        tutorial.update();

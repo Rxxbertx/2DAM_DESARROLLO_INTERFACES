@@ -54,8 +54,9 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         private void Jugar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            
+            game.tutorial.Focusable = true;
             game.MainFrame.Navigate(game.tutorial);
+            
             GameManager.state = GameState.TUTORIAL;
 
         }

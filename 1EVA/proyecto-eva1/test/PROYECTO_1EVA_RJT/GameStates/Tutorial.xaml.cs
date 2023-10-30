@@ -23,17 +23,51 @@ namespace PROYECTO_1EVA_RJT.GameStates
     {
 
         Player player;
-
+        Game game;
+        private List<Rectangle> gameElements = new List<Rectangle>();
 
         public Tutorial(Game game)
         {
             InitializeComponent();
+            this.game = game;
+            
             InicializarJugador();
+            Focusable = true;
+            Focus();
+
+            addGameElements();
+
         }
+
+
+        private void addGameElements()
+        {
+
+            
+            
+            gameElements.Add(Casa);
+            gameElements.Add(arbol1);
+            gameElements.Add(arbol2);
+            gameElements.Add(arbol3);
+            gameElements.Add(vallas);
+            
+
+        }
+
+
+        private void InicializarJugador()
+        {
+
+            
+            player = new Player(hitbox,gameElements);
+
+
+        }
+
 
         public void render()
         {
-            player.render(jugador);
+            player.render();
         }
 
         public void update()
@@ -41,11 +75,68 @@ namespace PROYECTO_1EVA_RJT.GameStates
             player.update();
         }
 
-        private void InicializarJugador()
+       
+
+        private void Page_KeyDown(object sender, KeyEventArgs e)
         {
-            
-            player = new Player(0, 0, 32, 32);
-            
+
+
+            switch (e.Key)
+            {
+                case Key.W:
+                    player.setFront(true);
+                    player.setMoving(true);
+                    break;
+                case Key.S:
+                    player.setBack(true);
+                    player.setMoving(true);
+                    break;
+                case Key.A:
+                    player.setLeft(true);
+                    player.setMoving(true);
+                    break;
+                case Key.D:
+                    player.setRight(true);
+                    player.setMoving(true);
+                    break;
+            }
+
+
+
+        }
+
+        private void Page_KeyUp(object sender, KeyEventArgs e)
+        {
+
+
+            switch (e.Key)
+            {
+                case Key.W:
+                    player.setFront(false);
+                    player.setMoving(false);
+                    break;
+                case Key.S:
+                    player.setBack(false);
+                    player.setMoving(false);
+                    break;
+                case Key.A:
+                    player.setLeft(false);
+                    player.setMoving(false);
+                    break;
+                case Key.D:
+                    player.setRight(false);
+                    player.setMoving(false);
+                    break;
+            }
+
+
+        }
+
+        private void Page_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+
+            player.setAttacking(true);
 
         }
     }
