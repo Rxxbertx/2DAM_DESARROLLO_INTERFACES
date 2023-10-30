@@ -1,17 +1,7 @@
 ﻿using PROYECTO_1EVA_RJT.Entidades;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PROYECTO_1EVA_RJT.GameStates
@@ -19,23 +9,24 @@ namespace PROYECTO_1EVA_RJT.GameStates
     /// <summary>
     /// Lógica de interacción para Tutorial.xaml
     /// </summary>
-    public partial class Tutorial : Page , StateMethods
+    public partial class Tutorial : Page, StateMethods
     {
 
         Player player;
         Game game;
-        private List<Rectangle> gameElements = new List<Rectangle>();
+        private List<Rectangle> gameElementsColiders = new List<Rectangle>();
+        private List<Rectangle>[] gameElementsNormalOpacity = new List<Rectangle>[2];
 
         public Tutorial(Game game)
         {
             InitializeComponent();
             this.game = game;
-            
+            addGameElements();
             InicializarJugador();
             Focusable = true;
             Focus();
 
-            addGameElements();
+
 
         }
 
@@ -43,14 +34,22 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void addGameElements()
         {
 
-            
-            
-            gameElements.Add(Casa);
-            gameElements.Add(arbol1);
-            gameElements.Add(arbol2);
-            gameElements.Add(arbol3);
-            gameElements.Add(vallas);
-            
+            //image and opacity
+            gameElementsNormalOpacity[0] = new List<Rectangle>();
+            gameElementsNormalOpacity[1] = new List<Rectangle>();
+
+            gameElementsNormalOpacity[1].Add(arbol1N);
+            gameElementsNormalOpacity[0].Add(arbol1Opacidad);
+
+
+
+
+
+            //coliders
+
+            gameElementsColiders.Add(arbol1HitBox);
+            //gameElementsColiders.Add(vallas);
+
 
         }
 
@@ -58,8 +57,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void InicializarJugador()
         {
 
-            
-            player = new Player(hitbox,gameElements);
+
+            player = new Player(hitbox, gameElementsColiders, gameElementsNormalOpacity);
 
 
         }
@@ -75,7 +74,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
             player.update();
         }
 
-       
+
 
         private void Page_KeyDown(object sender, KeyEventArgs e)
         {

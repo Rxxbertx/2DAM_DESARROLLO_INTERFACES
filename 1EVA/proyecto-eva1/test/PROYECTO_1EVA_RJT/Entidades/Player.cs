@@ -1,15 +1,13 @@
 ﻿
 using PROYECTO_1EVA_RJT.Utilidades;
-using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Documents.DocumentStructures;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Color = System.Windows.Media.Color;
+using Point = System.Windows.Point;
 using Rectangle = System.Windows.Shapes.Rectangle;
 
 namespace PROYECTO_1EVA_RJT.Entidades
@@ -32,17 +30,20 @@ namespace PROYECTO_1EVA_RJT.Entidades
         private Canvas jugador;
 
 
-        public List<Rectangle> gameElements;
+        private List<Rectangle> gameElementsColiders = new List<Rectangle>();
+        private List<Rectangle>[] gameElementsNormalOpacity;
+
 
         private BitmapImage[][][] animaciones;
 
 
-        public Player(Canvas jugador, List<Rectangle> gameElements)
+        public Player(Canvas jugador, List<Rectangle> gameElementsColiders, List<Rectangle>[] gameElementsNormalOpacity)
         {
 
             importImgs();
             this.jugador = jugador;
-            this.gameElements = gameElements;
+            this.gameElementsColiders = gameElementsColiders;
+            this.gameElementsNormalOpacity = gameElementsNormalOpacity;
         }
 
 
@@ -61,11 +62,54 @@ namespace PROYECTO_1EVA_RJT.Entidades
         public void update()
         {
 
+
+            updateNormalOpacity();
             updatePosition();
             updateAnimation();
-            
+
 
         }
+
+        private void updateNormalOpacity()
+        {
+
+            List<Rectangle> listaOpacidad = gameElementsNormalOpacity[0]; //hitbox de opacidad
+            List<Rectangle> listaNormal = gameElementsNormalOpacity[1]; //rectangulo imagen
+            Rect newHitBox = new Rect(Canvas.GetLeft(jugador), Canvas.GetTop(jugador), jugador.Width, jugador.Height);
+
+            for (int i = 0; i < listaOpacidad.Count; i++)
+            {
+
+
+
+                Rect tempObj = new Rect(Canvas.GetLeft(listaOpacidad[i]), Canvas.GetTop(listaOpacidad[i]), listaOpacidad[i].Width, listaOpacidad[i].Height);
+                if (newHitBox.IntersectsWith(tempObj))
+                {
+
+                    // Crea un LinearGradientBrush
+                    LinearGradientBrush linearGradientBrush = new LinearGradientBrush();
+                    linearGradientBrush.StartPoint = new Point(0.5, 0);
+                    linearGradientBrush.EndPoint = new Point(0.5, 1);
+
+
+
+                    // Agrega los GradientStops al LinearGradientBrush
+                    linearGradientBrush.GradientStops.Add(new GradientStop(Colors.Black, 0.827));
+                    linearGradientBrush.GradientStops.Add(new GradientStop(Color.FromArgb(0x3E, 0xFF, 0xFF, 0xFF), 0.679));
+
+                    // Asigna el LinearGradientBrush como OpacityMask del Rectangle
+                    listaNormal[i].OpacityMask = linearGradientBrush;
+
+
+                }
+                else
+                    listaNormal[i].OpacityMask = null;
+            }
+
+        }
+
+
+
 
         private void updatePosition()
         {
@@ -96,17 +140,17 @@ namespace PROYECTO_1EVA_RJT.Entidades
             // Verifica colisiones antes de actualizar la posición
             Rect newHitBox = new Rect(Canvas.GetLeft(jugador) + x, Canvas.GetTop(jugador) + y, jugador.Width, jugador.Height);
 
-            foreach (Rectangle element in gameElements)
+            foreach (Rectangle element in gameElementsColiders)
             {
                 Rect elementRect = new Rect(Canvas.GetLeft(element), Canvas.GetTop(element), element.Width, element.Height);
-                
+
                 if (newHitBox.IntersectsWith(elementRect))
                 {
                     // Colisión detectada, no actualices la posición
                     avanzar = false;
                     return;
                 }
-               
+
 
             }
 
@@ -114,62 +158,62 @@ namespace PROYECTO_1EVA_RJT.Entidades
             {
 
 
-                Canvas.SetLeft(jugador, Canvas.GetLeft(jugador)+x);
+                Canvas.SetLeft(jugador, Canvas.GetLeft(jugador) + x);
                 Canvas.SetTop(jugador, Canvas.GetTop(jugador) + y);
-                           
+
             }
-            
+
 
 
         }
 
 
 
-       /* private void updatePosition()
-        {
+        /* private void updatePosition()
+         {
 
-            //double speed = 100; // Velocidad en unidades por segundo (ajusta según tus necesidades)
+             //double speed = 100; // Velocidad en unidades por segundo (ajusta según tus necesidades)
 
 
-           
 
-            if (isFront())
-            {
-                jugador.Margin = new Thickness(
-                    jugador.Margin.Left,
-                    jugador.Margin.Top - speed * Game.deltaTime,
-                    jugador.Margin.Right,
-                    jugador.Margin.Bottom + speed * Game.deltaTime
-                );
-            }
-            if (isBack())
-            {
-                jugador.Margin = new Thickness(
-                    jugador.Margin.Left,
-                    jugador.Margin.Top + speed * Game.deltaTime,
-                    jugador.Margin.Right,
-                    jugador.Margin.Bottom - speed * Game.deltaTime
-                );
-            }
-            if (isRight())
-            {
-                jugador.Margin = new Thickness(
-                    jugador.Margin.Left + speed * Game.deltaTime,
-                    jugador.Margin.Top,
-                    jugador.Margin.Right - speed * Game.deltaTime,
-                    jugador.Margin.Bottom
-                );
-            }
-            if (isLeft())
-            {
-                jugador.Margin = new Thickness(
-                    jugador.Margin.Left - speed * Game.deltaTime,
-                    jugador.Margin.Top,
-                    jugador.Margin.Right + speed * Game.deltaTime,
-                    jugador.Margin.Bottom
-                );
-            }
-        }*/
+
+             if (isFront())
+             {
+                 jugador.Margin = new Thickness(
+                     jugador.Margin.Left,
+                     jugador.Margin.Top - speed * Game.deltaTime,
+                     jugador.Margin.Right,
+                     jugador.Margin.Bottom + speed * Game.deltaTime
+                 );
+             }
+             if (isBack())
+             {
+                 jugador.Margin = new Thickness(
+                     jugador.Margin.Left,
+                     jugador.Margin.Top + speed * Game.deltaTime,
+                     jugador.Margin.Right,
+                     jugador.Margin.Bottom - speed * Game.deltaTime
+                 );
+             }
+             if (isRight())
+             {
+                 jugador.Margin = new Thickness(
+                     jugador.Margin.Left + speed * Game.deltaTime,
+                     jugador.Margin.Top,
+                     jugador.Margin.Right - speed * Game.deltaTime,
+                     jugador.Margin.Bottom
+                 );
+             }
+             if (isLeft())
+             {
+                 jugador.Margin = new Thickness(
+                     jugador.Margin.Left - speed * Game.deltaTime,
+                     jugador.Margin.Top,
+                     jugador.Margin.Right + speed * Game.deltaTime,
+                     jugador.Margin.Bottom
+                 );
+             }
+         }*/
 
 
         public bool IsCollidingWith(Rectangle element)
@@ -187,9 +231,9 @@ namespace PROYECTO_1EVA_RJT.Entidades
         {
 
             aniTick++;
-            
 
-            if (aniTick >=  aniSpeed/60)
+
+            if (aniTick >= aniSpeed / 60)
             {
                 aniTick = 0;
                 aniIndex++;
@@ -287,11 +331,11 @@ namespace PROYECTO_1EVA_RJT.Entidades
         private ImageBrush imagen()
         {
 
-          
 
-           
 
-            return   new ImageBrush(animaciones[playerAction][action][aniIndex]);
+
+
+            return new ImageBrush(animaciones[playerAction][action][aniIndex]);
 
         }
 
@@ -386,5 +430,5 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
 
     }
-    
+
 }

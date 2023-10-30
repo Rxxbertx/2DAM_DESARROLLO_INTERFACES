@@ -115,20 +115,17 @@
             <Image Height="52" Canvas.Left="266" Source="/recursos/LandscapeMaterials/fences.png" Stretch="Fill" Canvas.Top="216" Width="111"/>
             <Image Height="52" Canvas.Left="177" Source="/recursos/LandscapeMaterials/fences.png" Stretch="Fill" Canvas.Top="216" Width="111" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
+            <!--ARBOL1-->
+            <Rectangle  x:Name="arbol1N" Height="285" Canvas.Left="679"  Stretch="Fill" Canvas.Top="73" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
 
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
+                </Rectangle.Fill>
 
+            </Rectangle>
+            <Rectangle x:Name="arbol1HitBox" Height="25" Canvas.Left="766" Stroke="red" Canvas.Top="306" Width="62" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle x:Name="arbol1Opacidad" Height="221" Canvas.Left="679" Stroke="red" Canvas.Top="80" Width="240" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-            <Rectangle  x:Name="arbol1N" Height="285" Canvas.Left="36"  Stretch="Fill" Canvas.Top="186" Width="242">
-                
-                
-                
-            </Rectangle>
-            <Rectangle  x:Name="arbol2N" Height="285" Canvas.Left="679"  Stretch="Fill" Canvas.Top="73" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
-                
-            </Rectangle>
-            <Rectangle x:Name="arbol3N" Height="285" Canvas.Left="182"  Stretch="Fill" Canvas.Top="536" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
-                
-            </Rectangle>
 
 
 
@@ -275,9 +272,6 @@
 
             </Rectangle>
 
-            <Rectangle x:Name="arbol1" Height="46" Canvas.Left="278" Stroke="red" Canvas.Top="753" Width="44"/>
-            <Rectangle x:Name="arbol2" Height="46" Canvas.Left="131" Stroke="red" Canvas.Top="400" Width="44" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="arbol3" Height="10" Canvas.Left="774" Stroke="red" Canvas.Top="324" Width="44" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Rectangle Height="46" Canvas.Left="1416" Stroke="red" Canvas.Top="474" Width="44" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Rectangle x:Name="vallas" Height="268" Stroke="red" Width="545" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
@@ -292,6 +286,15 @@
 
 
             </Canvas>
+            <Rectangle  x:Name="arbol1N_Copiar" Height="284" Canvas.Left="82"  Stretch="Fill" Canvas.Top="384" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <Rectangle x:Name="arbol1HitBox_Copiar" Height="26" Canvas.Left="168" Stroke="red" Canvas.Top="616" Width="62" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol1Opacidad_Copiar" Height="222" Canvas.Left="82" Stroke="red" Canvas.Top="390" Width="240" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
         </Canvas>

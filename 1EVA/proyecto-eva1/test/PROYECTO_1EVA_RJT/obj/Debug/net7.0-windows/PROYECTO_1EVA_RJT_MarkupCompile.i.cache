@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\
 PROYECTO_1EVA_RJT
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\App.xaml
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\App.xaml
 5-1075496594
 381498717048
 15560806380
-199-869414436
+199-822071559
 EnterPoint\Game.xaml;GameStates\Exit.xaml;GameStates\Menu.xaml;GameStates\Playing.xaml;GameStates\Tutorial.xaml;
 
-False
+True
 

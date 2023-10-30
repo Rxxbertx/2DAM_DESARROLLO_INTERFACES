@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PROYECTO_1EVA_RJT.Utilidades
+﻿namespace PROYECTO_1EVA_RJT.Utilidades
 {
     class Constantes
     {
@@ -24,7 +18,7 @@ namespace PROYECTO_1EVA_RJT.Utilidades
             public static readonly int BACK = 1;
             public static readonly int RIGHT = 2;
             public static readonly int LEFT = 3;
-           
+
 
             /**
              * Esto es un metodo muy guay, que dependiendo de la animacion escogida, retorna el numero de sprites asociados
@@ -33,13 +27,13 @@ namespace PROYECTO_1EVA_RJT.Utilidades
              * @param player_action la accion del jugador
              * @return cantidad de sprites por accion
              */
-            public static int getSpritesAmount(int action,int player_action)
+            public static int getSpritesAmount(int action, int player_action)
             {
-                
 
-                if (action == FRONT )
+
+                if (action == FRONT)
                 {
-                   
+
                     if (player_action == WALK)
                     {
                         return 6;
