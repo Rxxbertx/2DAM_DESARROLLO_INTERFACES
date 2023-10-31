@@ -1,4 +1,5 @@
-﻿using PROYECTO_1EVA_RJT.GameStates;
+﻿using PROYECTO_1EVA_RJT.Entidades;
+using PROYECTO_1EVA_RJT.GameStates;
 using System;
 using System.Windows;
 using System.Windows.Threading;
@@ -13,10 +14,15 @@ namespace PROYECTO_1EVA_RJT
         private DispatcherTimer gameLoopTimer;
         public static double deltaTime { get; private set; }
 
-        GameStates.Menu menu;
+
+        public static GameManager gameManager { get; private set; }
+
+        public GameStates.Menu menu;
         public GameStates.Tutorial tutorial { get; private set; }
 
-        GameStates.Playing playing;
+        public GameStates.Playing playing;
+
+        public Player player { get; set; }
 
 
         public Game()
@@ -29,10 +35,13 @@ namespace PROYECTO_1EVA_RJT
         private void InitializeGame()
         {
 
+            gameManager = new();
+            player = new Player(null,null,null,null,null);
             menu = new GameStates.Menu(this);
-            tutorial = new GameStates.Tutorial(this);
-            playing = new GameStates.Playing(this);
+            tutorial = new GameStates.Tutorial(player);
+            playing = new GameStates.Playing(this,player);
 
+            
 
             MainFrame.Navigate(menu);
 

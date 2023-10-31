@@ -37,6 +37,18 @@
     <None Remove="recursos\LandscapeMaterials\tree.png" />
     <None Remove="recursos\LandscapeMaterials\treeRest.png" />
     <None Remove="recursos\MV Icons Keyboard\Individual Icons\keyboard_116.png" />
+    <None Remove="recursos\Player\attack\player-attack-back\player-attack-back-1.png" />
+    <None Remove="recursos\Player\attack\player-attack-back\player-attack-back-2.png" />
+    <None Remove="recursos\Player\attack\player-attack-back\player-attack-back-3.png" />
+    <None Remove="recursos\Player\attack\player-attack-front\player-attack-front-1.png" />
+    <None Remove="recursos\Player\attack\player-attack-front\player-attack-front-2.png" />
+    <None Remove="recursos\Player\attack\player-attack-front\player-attack-front-3.png" />
+    <None Remove="recursos\Player\attack\player-attack-left\player-attack-left-1.png" />
+    <None Remove="recursos\Player\attack\player-attack-left\player-attack-left-2.png" />
+    <None Remove="recursos\Player\attack\player-attack-left\player-attack-left-3.png" />
+    <None Remove="recursos\Player\attack\player-attack-right\player-attack-right-1.png" />
+    <None Remove="recursos\Player\attack\player-attack-right\player-attack-right-2.png" />
+    <None Remove="recursos\Player\attack\player-attack-right\player-attack-right-3.png" />
     <None Remove="recursos\Player\idle\player-idle-back\player-idle-back-1.png" />
     <None Remove="recursos\Player\idle\player-idle-back\player-idle-back-2.png" />
     <None Remove="recursos\Player\idle\player-idle-back\player-idle-back-3.png" />
@@ -62,10 +74,70 @@
     <None Remove="recursos\Player\idle\player-idle-right\player-idle-right-4.png" />
     <None Remove="recursos\Player\idle\player-idle-right\player-idle-right-5.png" />
     <None Remove="recursos\Player\idle\player-idle-right\player-idle-right-6.png" />
+    <None Remove="recursos\Player\walk\player-walk-back\player-walk-back-1.png" />
+    <None Remove="recursos\Player\walk\player-walk-back\player-walk-back-2.png" />
+    <None Remove="recursos\Player\walk\player-walk-back\player-walk-back-3.png" />
+    <None Remove="recursos\Player\walk\player-walk-back\player-walk-back-4.png" />
+    <None Remove="recursos\Player\walk\player-walk-back\player-walk-back-5.png" />
+    <None Remove="recursos\Player\walk\player-walk-back\player-walk-back-6.png" />
+    <None Remove="recursos\Player\walk\player-walk-front\player-walk-front-1.png" />
+    <None Remove="recursos\Player\walk\player-walk-front\player-walk-front-2.png" />
+    <None Remove="recursos\Player\walk\player-walk-front\player-walk-front-3.png" />
+    <None Remove="recursos\Player\walk\player-walk-front\player-walk-front-4.png" />
+    <None Remove="recursos\Player\walk\player-walk-front\player-walk-front-5.png" />
+    <None Remove="recursos\Player\walk\player-walk-front\player-walk-front-6.png" />
+    <None Remove="recursos\Player\walk\player-walk-left\player-walk-left-1.png" />
+    <None Remove="recursos\Player\walk\player-walk-left\player-walk-left-2.png" />
+    <None Remove="recursos\Player\walk\player-walk-left\player-walk-left-3.png" />
+    <None Remove="recursos\Player\walk\player-walk-left\player-walk-left-4.png" />
+    <None Remove="recursos\Player\walk\player-walk-left\player-walk-left-5.png" />
+    <None Remove="recursos\Player\walk\player-walk-left\player-walk-left-6.png" />
+    <None Remove="recursos\Player\walk\player-walk-right\player-walk-right-1.png" />
+    <None Remove="recursos\Player\walk\player-walk-right\player-walk-right-2.png" />
+    <None Remove="recursos\Player\walk\player-walk-right\player-walk-right-3.png" />
+    <None Remove="recursos\Player\walk\player-walk-right\player-walk-right-4.png" />
+    <None Remove="recursos\Player\walk\player-walk-right\player-walk-right-5.png" />
+    <None Remove="recursos\Player\walk\player-walk-right\player-walk-right-6.png" />
     <None Remove="recursos\windows.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="recursos\Player\attack\player-attack-back\player-attack-back-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\attack\player-attack-back\player-attack-back-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\attack\player-attack-back\player-attack-back-3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\attack\player-attack-front\player-attack-front-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\attack\player-attack-front\player-attack-front-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\attack\player-attack-front\player-attack-front-3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\attack\player-attack-left\player-attack-left-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\attack\player-attack-left\player-attack-left-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\attack\player-attack-left\player-attack-left-3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\attack\player-attack-right\player-attack-right-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\attack\player-attack-right\player-attack-right-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\attack\player-attack-right\player-attack-right-3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\Player\idle\player-idle-back\player-idle-back-1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -229,6 +301,78 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\Player\idle\player-idle-right\player-idle-right-6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-back\player-walk-back-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-back\player-walk-back-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-back\player-walk-back-3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-back\player-walk-back-4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-back\player-walk-back-5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-back\player-walk-back-6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-front\player-walk-front-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-front\player-walk-front-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-front\player-walk-front-3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-front\player-walk-front-4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-front\player-walk-front-5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-front\player-walk-front-6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-left\player-walk-left-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-left\player-walk-left-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-left\player-walk-left-3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-left\player-walk-left-4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-left\player-walk-left-5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-left\player-walk-left-6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-right\player-walk-right-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-right\player-walk-right-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-right\player-walk-right-3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-right\player-walk-right-4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-right\player-walk-right-5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Player\walk\player-walk-right\player-walk-right-6.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\windows.jpg">

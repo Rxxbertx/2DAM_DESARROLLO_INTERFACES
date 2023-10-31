@@ -53,7 +53,7 @@
 
                 }
 
-                else if (action == BACK)
+                if (action == BACK)
                 {
                     if (player_action == WALK)
                     {
@@ -73,7 +73,7 @@
                     }
                 }
 
-                else if (action == RIGHT)
+                 if (action == RIGHT)
                 {
                     if (player_action == WALK)
                     {
@@ -85,7 +85,7 @@
                     }
                     else if (player_action == ATTACK)
                     {
-                        return 6;
+                        return 3;
                     }
                     else
                     {
@@ -93,7 +93,7 @@
                     }
                 }
 
-                else if (action == LEFT)
+                 if (action == LEFT)
                 {
                     if (player_action == WALK)
                     {

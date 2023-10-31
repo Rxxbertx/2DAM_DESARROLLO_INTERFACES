@@ -10,7 +10,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
     public partial class Playing : Page, StateMethods
     {
         Game game;
-        public Playing(Game game)
+        public Playing(Game game, Entidades.Player player)
         {
             InitializeComponent();
             this.game = game;
@@ -25,18 +25,28 @@ namespace PROYECTO_1EVA_RJT.GameStates
         }
         public void render()
         {
-            throw new NotImplementedException();
+           
         }
 
         public void update()
         {
-            throw new NotImplementedException();
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             game.MainFrame.NavigationService.Navigate(new GameStates.Menu(this.game));
             GameManager.state = GameState.MENU;
+        }
+
+        public void saveElements()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool loadElements()
+        {
+            throw new NotImplementedException();
         }
     }
 }

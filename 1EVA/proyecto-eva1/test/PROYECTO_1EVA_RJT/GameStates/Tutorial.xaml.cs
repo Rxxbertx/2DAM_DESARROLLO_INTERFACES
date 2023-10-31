@@ -9,19 +9,20 @@ namespace PROYECTO_1EVA_RJT.GameStates
     /// <summary>
     /// Lógica de interacción para Tutorial.xaml
     /// </summary>
-    public partial class Tutorial : Page, StateMethods, MapMethods
+    public partial class Tutorial : Page, StateMethods
     {
 
-        Player player;
-        Game game;
-        private List<Rectangle> gameElementsColiders = new List<Rectangle>();
-        private List<Rectangle> gameElementsInteractive = new List<Rectangle>();
-        private List<Rectangle>[] gameElementsNormalOpacity = new List<Rectangle>[2];
+        public Player player;
 
-        public Tutorial(Game game)
+        private List<Rectangle> CollidableElements = new List<Rectangle>();
+        private List<Rectangle> InteractiveElements = new List<Rectangle>();
+        private List<Rectangle>[] NormalOpacityElements = new List<Rectangle>[2];
+
+        public Tutorial(Player player)
         {
             InitializeComponent();
-            this.game = game;
+
+            this.player = player;
             addGameElements();
             InicializarJugador();
             Focusable = true;
@@ -34,24 +35,34 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         private void addGameElements()
         {
+            Game.gameManager.GameStateElements(GameState.TUTORIAL);
+            if (Game.gameManager.currentGameStateData != null)
+            {
+                if (loadElements())
+                {
+                    return;
+                }
+
+            }
+
 
             //image and opacity
-            gameElementsNormalOpacity[0] = new List<Rectangle>();
-            gameElementsNormalOpacity[1] = new List<Rectangle>();
+            NormalOpacityElements[0] = new List<Rectangle>();
+            NormalOpacityElements[1] = new List<Rectangle>();
 
 
-            gameElementsNormalOpacity[1].Add(arbol1N);
-            gameElementsNormalOpacity[0].Add(arbol1Opacidad);
-            gameElementsNormalOpacity[1].Add(arbol2N);
-            gameElementsNormalOpacity[0].Add(arbol2Opacidad);
-            gameElementsNormalOpacity[1].Add(arbol3N);
-            gameElementsNormalOpacity[0].Add(arbol3Opacidad);
-            gameElementsNormalOpacity[1].Add(arbol4N);
-            gameElementsNormalOpacity[0].Add(arbol4Opacidad);
-            gameElementsNormalOpacity[1].Add(arbol5N);
-            gameElementsNormalOpacity[0].Add(arbol5Opacidad);
-            gameElementsNormalOpacity[1].Add(casa1N);
-            gameElementsNormalOpacity[0].Add(casa1Opacidad);
+            NormalOpacityElements[1].Add(arbol1N);
+            NormalOpacityElements[0].Add(arbol1Opacidad);
+            NormalOpacityElements[1].Add(arbol2N);
+            NormalOpacityElements[0].Add(arbol2Opacidad);
+            NormalOpacityElements[1].Add(arbol3N);
+            NormalOpacityElements[0].Add(arbol3Opacidad);
+            NormalOpacityElements[1].Add(arbol4N);
+            NormalOpacityElements[0].Add(arbol4Opacidad);
+            NormalOpacityElements[1].Add(arbol5N);
+            NormalOpacityElements[0].Add(arbol5Opacidad);
+            NormalOpacityElements[1].Add(casa1N);
+            NormalOpacityElements[0].Add(casa1Opacidad);
 
 
 
@@ -60,29 +71,61 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
             //coliders
 
-            gameElementsColiders.Add(arbol1HitBox);
-            gameElementsColiders.Add(arbol2HitBox);
-            gameElementsColiders.Add(arbol3HitBox);
-            gameElementsColiders.Add(arbol4HitBox);
-            gameElementsColiders.Add(arbol5HitBox);
-            gameElementsColiders.Add(vallasHitbox);
-            gameElementsColiders.Add(casa1Hitbox);
+            CollidableElements.Add(arbol1HitBox);
+            CollidableElements.Add(arbol2HitBox);
+            CollidableElements.Add(arbol3HitBox);
+            CollidableElements.Add(arbol4HitBox);
+            CollidableElements.Add(arbol5HitBox);
+            CollidableElements.Add(vallasHitbox);
+            CollidableElements.Add(casa1Hitbox);
 
 
             //interactuables
 
-            gameElementsInteractive.Add(puertaCasa1);
-            
+            InteractiveElements.Add(puertaCasa1);
+
 
 
         }
+
+        public void saveElements()
+        {
+
+            Game.gameManager.GameStateElements(GameState.TUTORIAL);
+            Game.gameManager.currentGameStateData.playerHitbox = hitbox;
+            Game.gameManager.currentGameStateData.CollidableElements = CollidableElements;
+            Game.gameManager.currentGameStateData.InteractiveElements = InteractiveElements;
+            Game.gameManager.currentGameStateData.NormalOpacityElements = NormalOpacityElements;
+
+        }
+
+        public bool loadElements()
+        {
+
+            if (Game.gameManager.currentGameStateData.playerHitbox == null || Game.gameManager.currentGameStateData.CollidableElements == null || Game.gameManager.currentGameStateData.InteractiveElements == null || Game.gameManager.currentGameStateData.NormalOpacityElements == null)
+                return false;
+
+            hitbox = Game.gameManager.currentGameStateData.playerHitbox;
+            CollidableElements = Game.gameManager.currentGameStateData.CollidableElements;
+            InteractiveElements = Game.gameManager.currentGameStateData.InteractiveElements;
+            NormalOpacityElements = Game.gameManager.currentGameStateData.NormalOpacityElements;
+            return true;
+
+
+        }
+
 
 
         private void InicializarJugador()
         {
 
 
-            player = new Player(hitbox, gameElementsColiders, gameElementsNormalOpacity,canvaInteractuar, gameElementsInteractive);
+            // player = new Player(hitbox, gameElementsColiders, gameElementsNormalOpacity, canvaInteractuar, gameElementsInteractive);
+            player.jugador = hitbox;
+            player.gameElementsColiders = CollidableElements;
+            player.gameElementsNormalOpacity = NormalOpacityElements;
+            player.canvaInteractuar = canvaInteractuar;
+            player.gameElementsInteractive = InteractiveElements;
 
 
         }
@@ -104,24 +147,33 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
 
 
-            switch (e.Key)
+            if (e.Key == Key.W)
             {
-                case Key.W:
-                    player.setFront(true);
-                    player.setMoving(true);
-                    break;
-                case Key.S:
-                    player.setBack(true);
-                    player.setMoving(true);
-                    break;
-                case Key.A:
-                    player.setLeft(true);
-                    player.setMoving(true);
-                    break;
-                case Key.D:
-                    player.setRight(true);
-                    player.setMoving(true);
-                    break;
+
+                player.setBack(true);
+                // player.setMoving(true);
+
+            }
+            if (e.Key == Key.S)
+            {
+
+                player.setFront(true);
+                // player.setMoving(true);
+            }
+            if (e.Key == Key.A)
+            {
+                player.setLeft(true);
+                // player.setMoving(true);
+            }
+            if (e.Key == Key.D)
+            {
+                player.setRight(true);
+                // player.setMoving(true);
+            }
+
+            if (e.Key == Key.E)
+            {
+                player.setInteract(false);
             }
 
 
@@ -132,28 +184,40 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
 
 
-            switch (e.Key)
+
+            if (e.Key == Key.W)
             {
-                case Key.W:
-                    player.setFront(false);
-                    player.setMoving(false);
-                    break;
-                case Key.S:
-                    player.setBack(false);
-                    player.setMoving(false);
-                    break;
-                case Key.A:
-                    player.setLeft(false);
-                    player.setMoving(false);
-                    break;
-                case Key.D:
-                    player.setRight(false);
-                    player.setMoving(false);
-                    break;
+
+                player.setBack(false);
+                // player.setMoving(false);
+
+            }
+            if (e.Key == Key.S)
+            {
+
+                player.setFront(false);
+                // player.setMoving(false);
+            }
+            if (e.Key == Key.A)
+            {
+                player.setLeft(false);
+                // player.setMoving(false);
+            }
+            if (e.Key == Key.D)
+            {
+                player.setRight(false);
+                // player.setMoving(false);
             }
 
+            if (e.Key == Key.E)
+            {
+                player.setInteract(true);
+            }
 
         }
+
+
+
 
         private void Page_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -163,9 +227,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         }
 
-        void MapMethods.addGameElements()
-        {
-            throw new System.NotImplementedException();
-        }
+
+
     }
 }

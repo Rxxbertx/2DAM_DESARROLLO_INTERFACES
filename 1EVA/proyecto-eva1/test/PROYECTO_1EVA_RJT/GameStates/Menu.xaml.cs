@@ -80,5 +80,15 @@ namespace PROYECTO_1EVA_RJT.GameStates
             salirX.Effect = new System.Windows.Media.Effects.DropShadowEffect();
 
         }
+
+        public void saveElements()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool loadElements()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

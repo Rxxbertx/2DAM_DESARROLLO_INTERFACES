@@ -14,7 +14,7 @@ using Rectangle = System.Windows.Shapes.Rectangle;
 
 namespace PROYECTO_1EVA_RJT.Entidades
 {
-    class Player
+    public class Player
     {
 
         private double aniTick;
@@ -27,18 +27,18 @@ namespace PROYECTO_1EVA_RJT.Entidades
         private int playerAction = Constantes.PlayerConst.IDLE;
         private int action = Constantes.PlayerConst.FRONT;
 
-        private bool front, back, right, left, moving, attack;
+        private bool front, back, right, left, moving, attack, interact;
 
-        private Canvas jugador;
-        private Canvas canvaInteractuar;
-
-
-        private List<Rectangle> gameElementsColiders = new List<Rectangle>();
-        private List<Rectangle>[] gameElementsNormalOpacity;
-        private List<Rectangle> gameElementsInteractive;
+        public Canvas jugador {  get; set; }
+        public Canvas canvaInteractuar { get; set; }
 
 
-        private BitmapImage[][][] animaciones;
+        public List<Rectangle> gameElementsColiders  { get; set; }
+        public List<Rectangle>[] gameElementsNormalOpacity { get; set; }
+        public List<Rectangle> gameElementsInteractive { get; set; }
+
+
+        private ImageBrush[][][] animaciones;
 
 
         public Player(Canvas jugador,
@@ -76,7 +76,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
             updateNormalOpacity();
             updateInteractiveElements();
             updatePosition();
-
+            updatePlayerAction();
             updateAnimation();
 
 
@@ -92,7 +92,19 @@ namespace PROYECTO_1EVA_RJT.Entidades
                 if (IsCollidingWith(element))
                 {
                     showInteractuable(element);
-                    return;
+                    if (isInteract())
+                    {
+
+                        if (element.DataContext.Equals("puerta"))
+                        {
+                            
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("no interactuando");
+                        return;
+                    }
                 }
             }
 
@@ -163,27 +175,32 @@ namespace PROYECTO_1EVA_RJT.Entidades
         private void updatePosition()
         {
             bool avanzar = true;
+            setMoving(false);
 
             double x = 0;
             double y = 0;
 
 
             // hitbox
-            if (isFront() && Canvas.GetTop(jugador) > 50)
-            {
-                y -= speed * Game.deltaTime;
-            }
-            if (isBack() && Canvas.GetTop(jugador) + jugador.Height < 890)
+            if (isFront() && Canvas.GetTop(jugador) + jugador.Width < 880)
             {
                 y += speed * Game.deltaTime;
+                setMoving(true);
+            }
+            if (isBack() && Canvas.GetTop(jugador) > 50)
+            {
+                y -= speed * Game.deltaTime;
+                setMoving(true);
             }
             if (isRight() && Canvas.GetLeft(jugador) + jugador.Width < 1600)
             {
                 x += speed * Game.deltaTime;
+                setMoving(true);
             }
             if (isLeft() && Canvas.GetLeft(jugador) > 0)
             {
                 x -= speed * Game.deltaTime;
+                setMoving(true);
             }
 
             // Verifica colisiones antes de actualizar la posición
@@ -209,7 +226,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
             if (avanzar)
             {
 
-
+                
                 Canvas.SetLeft(jugador, Canvas.GetLeft(jugador) + x);
                 Canvas.SetTop(jugador, Canvas.GetTop(jugador) + y);
 
@@ -286,6 +303,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
                 if (aniIndex >= Constantes.PlayerConst.getSpritesAmount(action, playerAction))
                 {
                     aniIndex = 0;
+                    setAttacking(false);
                 }
             }
         }
@@ -380,7 +398,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
 
 
-            return new ImageBrush(animaciones[playerAction][action][aniIndex]);
+            return animaciones[playerAction][action][aniIndex];
 
         }
 
@@ -411,6 +429,14 @@ namespace PROYECTO_1EVA_RJT.Entidades
         //ACCIONES
 
 
+        public bool isInteract()
+        {
+            return interact;
+        }
+
+
+
+
         public bool isFront()
         {
             return front;
@@ -439,6 +465,14 @@ namespace PROYECTO_1EVA_RJT.Entidades
         public bool isAttacking()
         {
             return attack;
+        }
+
+
+        //SETTERS
+
+        public void setInteract(bool interact)
+        {
+            this.interact = interact;
         }
 
         public void setFront(bool front)
