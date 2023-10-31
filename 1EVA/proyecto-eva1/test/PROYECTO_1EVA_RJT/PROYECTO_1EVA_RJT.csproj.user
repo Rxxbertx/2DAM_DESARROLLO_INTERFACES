@@ -10,6 +10,9 @@
     <Compile Update="GameStates\Exit.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="GameStates\Houses\House1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="GameStates\Menu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -25,6 +28,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GameStates\Exit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GameStates\Houses\House1.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GameStates\Menu.xaml">

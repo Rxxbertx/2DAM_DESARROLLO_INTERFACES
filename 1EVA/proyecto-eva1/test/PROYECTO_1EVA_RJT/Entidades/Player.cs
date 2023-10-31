@@ -29,6 +29,8 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
         private bool front, back, right, left, moving, attack, interact;
 
+        public String interactiveObj { get; set; }
+
         public Canvas jugador {  get; set; }
         public Canvas canvaInteractuar { get; set; }
 
@@ -85,7 +87,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
         private void updateInteractiveElements()
         {
             canvaInteractuar.Visibility = Visibility.Hidden;
-
+            interactiveObj = null;
 
             foreach (Rectangle element in gameElementsInteractive)
             {
@@ -95,15 +97,9 @@ namespace PROYECTO_1EVA_RJT.Entidades
                     if (isInteract())
                     {
 
-                        if (element.DataContext.Equals("puerta"))
-                        {
-                            
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("no interactuando");
+                        interactiveObj = element.Name;
                         return;
+
                     }
                 }
             }

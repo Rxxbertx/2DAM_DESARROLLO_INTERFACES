@@ -1,5 +1,7 @@
 ﻿using PROYECTO_1EVA_RJT.Entidades;
+using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
@@ -13,7 +15,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
     {
 
         public Player player;
-
+        public House house;
+        public bool insideBuild;
         private List<Rectangle> CollidableElements = new List<Rectangle>();
         private List<Rectangle> InteractiveElements = new List<Rectangle>();
         private List<Rectangle>[] NormalOpacityElements = new List<Rectangle>[2];
@@ -63,10 +66,6 @@ namespace PROYECTO_1EVA_RJT.GameStates
             NormalOpacityElements[0].Add(arbol5Opacidad);
             NormalOpacityElements[1].Add(casa1N);
             NormalOpacityElements[0].Add(casa1Opacidad);
-
-
-
-
 
 
             //coliders
@@ -133,15 +132,43 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         public void render()
         {
-            player.render();
+            
+            if (insideBuild)
+            {
+                house.render();
+                return;
+            }player.render();
         }
 
         public void update()
         {
+            if (insideBuild)
+            {
+                house.update();
+                return;
+            }
             player.update();
+            
+            checkInteractiveElement();
         }
 
+        private void checkInteractiveElement()
+        {
+            
+            if (player.interactiveObj != null) {
 
+
+                if (Regex.IsMatch(player.interactiveObj,"puerta"))
+                {
+                    insideBuild = true;
+                    House.loadPage(player.interactiveObj);
+
+                }
+
+
+            }
+
+        }
 
         private void Page_KeyDown(object sender, KeyEventArgs e)
         {
