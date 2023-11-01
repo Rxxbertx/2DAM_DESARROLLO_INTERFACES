@@ -6,10 +6,12 @@
         void update();
 
         void render();
-        
+
         void saveElements();
 
         bool loadElements();
+
+        void addElements();
 
     }
 }

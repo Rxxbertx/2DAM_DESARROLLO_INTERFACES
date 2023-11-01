@@ -25,12 +25,12 @@ namespace PROYECTO_1EVA_RJT.GameStates
         }
         public void render()
         {
-           
+
         }
 
         public void update()
         {
-           
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

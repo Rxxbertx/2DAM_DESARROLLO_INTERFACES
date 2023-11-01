@@ -241,9 +241,14 @@
 
             <Canvas x:Name="hitbox" Width="56" Height="8" Canvas.Left="754" Canvas.Top="574" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red">
 
-                <Rectangle x:Name="jugador" Height="142" Width="146" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="-122" Canvas.Left="-45" StrokeThickness="0">
+                <Rectangle x:Name="jugador" Height="242" Width="284" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="-168" Canvas.Left="-114" StrokeThickness="0">
+
                     <Rectangle.Fill>
-                        <ImageBrush ImageSource="/recursos/Player/idle/player-idle-front/player-idle-front-1.png" Stretch="UniformToFill"/>
+                        <ImageBrush ImageSource="/recursos/Player/idle/player-idle-front/player-idle-front-1.png" Stretch="None">
+                            <ImageBrush.RelativeTransform>
+                                <ScaleTransform CenterY="0.5" CenterX="0.50" ScaleX="4" ScaleY="4"/>
+                            </ImageBrush.RelativeTransform>
+                        </ImageBrush>
                     </Rectangle.Fill>
                 </Rectangle>
 
@@ -398,7 +403,7 @@
             </Canvas>
 
 
-            <Canvas x:Name="canvaInteractuar"  Width="100" Height="100" Canvas.Left="-214" Canvas.Top="46" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Canvas x:Name="canvaInteractuar"  Width="100" Height="100" Canvas.Left="-430" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Top">
 
                 <Image Height="88" Canvas.Left="-27" Source="/recursos/ExportedIcons/Item1.png" Stretch="Fill" Canvas.Top="5" Width="180" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <Image.RenderTransform>

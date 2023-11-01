@@ -13,7 +13,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         public GameStateData()
         {
-            
+
         }
     }
 

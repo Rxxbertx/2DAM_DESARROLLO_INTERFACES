@@ -21,6 +21,13 @@
     <None Remove="recursos\ExportedIcons\Item4.png" />
     <None Remove="recursos\ExportedIcons\Item5.png" />
     <None Remove="recursos\House Exterior.png" />
+    <None Remove="recursos\InteriorMaterials\alfombra.png" />
+    <None Remove="recursos\InteriorMaterials\niIdea.png" />
+    <None Remove="recursos\InteriorMaterials\pared1.png" />
+    <None Remove="recursos\InteriorMaterials\pared2.png" />
+    <None Remove="recursos\InteriorMaterials\pared3.png" />
+    <None Remove="recursos\InteriorMaterials\puerta.png" />
+    <None Remove="recursos\InteriorMaterials\ventana.png" />
     <None Remove="recursos\LandscapeMaterials\bigRock.png" />
     <None Remove="recursos\LandscapeMaterials\fences.png" />
     <None Remove="recursos\LandscapeMaterials\fencesVertical.png" />
@@ -102,6 +109,27 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="recursos\InteriorMaterials\alfombra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\niIdea.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\pared1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\pared2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\pared3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\puerta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\ventana.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\Player\attack\player-attack-back\player-attack-back-1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

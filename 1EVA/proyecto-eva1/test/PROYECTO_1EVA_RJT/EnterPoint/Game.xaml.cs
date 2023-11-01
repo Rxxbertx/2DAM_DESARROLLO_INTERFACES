@@ -12,17 +12,17 @@ namespace PROYECTO_1EVA_RJT
     public partial class Game : Window
     {
         private DispatcherTimer gameLoopTimer;
-        public static double deltaTime { get; private set; }
+        public static double DeltaTime { get; private set; }
 
 
-        public static GameManager gameManager { get; private set; }
+        public static GameManager GameManager { get; private set; }
 
-        public GameStates.Menu menu;
-        public GameStates.Tutorial tutorial { get; private set; }
+        public Menu Menu;
+        public Tutorial Tutorial;
 
-        public GameStates.Playing playing;
+        public Playing Playing;
 
-        public Player player { get; set; }
+        public Player Player;
 
 
         public Game()
@@ -35,15 +35,15 @@ namespace PROYECTO_1EVA_RJT
         private void InitializeGame()
         {
 
-            gameManager = new();
-            player = new Player(null,null,null,null,null);
-            menu = new GameStates.Menu(this);
-            tutorial = new GameStates.Tutorial(player);
-            playing = new GameStates.Playing(this,player);
+            GameManager = new();
+            Player = new Player(null, null, null, null, null);
+            Menu = new Menu(this);
+            Tutorial = new Tutorial(Player, this);
+            Playing = new Playing(this, Player);
 
-            
 
-            MainFrame.Navigate(menu);
+
+            MainFrame.Navigate(Menu);
 
             gameLoopTimer = new DispatcherTimer();
             gameLoopTimer.Tick += GameLoop;
@@ -54,7 +54,7 @@ namespace PROYECTO_1EVA_RJT
         private void GameLoop(object sender, EventArgs e)
         {
 
-            deltaTime = gameLoopTimer.Interval.TotalMilliseconds / 1000.0; // Calcula el delta time
+            DeltaTime = gameLoopTimer.Interval.TotalMilliseconds / 1000.0; // Calcula el delta time
             Update();
             Render();
         }
@@ -67,12 +67,12 @@ namespace PROYECTO_1EVA_RJT
             {
                 case GameState.MENU:
 
-                    menu.render();
+                    Menu.render();
 
                     break;
                 case GameState.TUTORIAL:
 
-                    tutorial.render();
+                    Tutorial.render();
 
                     break;
                 case GameState.PAUSE:
@@ -82,7 +82,7 @@ namespace PROYECTO_1EVA_RJT
                     // Código para el estado de victoria
                     break;
                 case GameState.PLAYING:
-                    playing.render();
+                    Playing.render();
                     break;
                 case GameState.QUIT:
                     // Código para el estado de victoria
@@ -97,10 +97,10 @@ namespace PROYECTO_1EVA_RJT
             switch (GameManager.state)
             {
                 case GameState.MENU:
-                    menu.update();
+                    Menu.update();
                     break;
                 case GameState.TUTORIAL:
-                    tutorial.update();
+                    Tutorial.update();
                     break;
                 case GameState.PAUSE:
                     // Código para el estado de pausa
@@ -113,11 +113,7 @@ namespace PROYECTO_1EVA_RJT
                 case GameState.PLAYING:
                     // playing.Update();
                     break;
-                case GameState.QUIT:
 
-                    Close();
-
-                    break;
             }
         }
 

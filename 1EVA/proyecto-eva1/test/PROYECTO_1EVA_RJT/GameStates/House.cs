@@ -1,31 +1,53 @@
-﻿using PROYECTO_1EVA_RJT.GameStates.Houses;
+﻿using PROYECTO_1EVA_RJT.Entidades;
+using PROYECTO_1EVA_RJT.GameStates.Houses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Transactions;
-using System.Windows.Controls;
 
 namespace PROYECTO_1EVA_RJT.GameStates
 {
-    public class House: StateMethods
+    public class House : StateMethods
     {
 
-        private static StateMethods houseX;
+        private StateMethods houseX;
+        private Player player;
+        private Game game;
 
+        public House(Player player, Game game)
+        {
+            this.player = player;
+            this.game = game;
+        }
 
-        
-
-       
-        public static void loadPage(String element)
+        public void loadPage(String element)
         {
             switch (element)
             {
 
-                case "puerta1":
+                case "puertaCasa1":
 
-                    houseX = new House1();
+                    houseX = new House1(game, player);
+
+                    break;
+
+                case "puerta2":
+
+                    // houseX = new House2();
+                    break;
+
+                case "puerta3":
+
+                    //  houseX = new House3();
+
+                    break;
+
+                case "puerta4":
+
+                    // houseX = new House4();
+
+                    break;
+
+                case "puerta5":
+
+                    // houseX = new House5();
 
                     break;
 
@@ -42,18 +64,19 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         public void render()
         {
-           
+            if (houseX != null)
             houseX.render();
 
         }
 
         public void saveElements()
         {
-            
+
         }
 
         public void update()
         {
+            if (houseX != null)
             houseX.update();
         }
     }

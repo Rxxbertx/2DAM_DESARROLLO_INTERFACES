@@ -21,6 +21,7 @@ namespace PROYECTO_1EVA_RJT.Utilidades
                 for (int j = 0; j < 4; j++)
                 {
                     animaciones[i][j] = new ImageBrush[7];
+                    
                 }
             }
 
@@ -30,8 +31,10 @@ namespace PROYECTO_1EVA_RJT.Utilidades
             {
                 animaciones[Constantes.PlayerConst.IDLE][Constantes.PlayerConst.FRONT][i] = new ImageBrush
                 {
-                    ImageSource = new BitmapImage(new Uri(playerPath + "idle/player-idle-front/player-idle-front-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute))
-                };
+                    ImageSource = new BitmapImage(new Uri(playerPath + "idle/player-idle-front/player-idle-front-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute)),
+                    RelativeTransform = new ScaleTransform(4, 4,0.5, 0.5),
+                    Stretch = Stretch.None
+            };
             }
 
             // Player Idle back
@@ -39,7 +42,9 @@ namespace PROYECTO_1EVA_RJT.Utilidades
             {
                 animaciones[Constantes.PlayerConst.IDLE][Constantes.PlayerConst.BACK][i] = new ImageBrush
                 {
-                    ImageSource = new BitmapImage(new Uri(playerPath + "idle/player-idle-back/player-idle-back-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute))
+                    ImageSource = new BitmapImage(new Uri(playerPath + "idle/player-idle-back/player-idle-back-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute)),
+                    RelativeTransform = new ScaleTransform(4, 4, 0.5, 0.5),
+                    Stretch = Stretch.None
                 };
             }
 
@@ -48,7 +53,9 @@ namespace PROYECTO_1EVA_RJT.Utilidades
             {
                 animaciones[Constantes.PlayerConst.IDLE][Constantes.PlayerConst.RIGHT][i] = new ImageBrush
                 {
-                    ImageSource = new BitmapImage(new Uri(playerPath + "idle/player-idle-right/player-idle-right-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute))
+                    ImageSource = new BitmapImage(new Uri(playerPath + "idle/player-idle-right/player-idle-right-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute)),
+                    RelativeTransform = new ScaleTransform(4, 4, 0.5, 0.5),
+                    Stretch = Stretch.None
                 };
             }
 
@@ -57,7 +64,9 @@ namespace PROYECTO_1EVA_RJT.Utilidades
             {
                 animaciones[Constantes.PlayerConst.IDLE][Constantes.PlayerConst.LEFT][i] = new ImageBrush
                 {
-                    ImageSource = new BitmapImage(new Uri(playerPath + "idle/player-idle-left/player-idle-left-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute))
+                    ImageSource = new BitmapImage(new Uri(playerPath + "idle/player-idle-left/player-idle-left-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute)),
+                    RelativeTransform = new ScaleTransform(4, 4, 0.5, 0.5),
+                    Stretch = Stretch.None
                 };
             }
             #endregion
@@ -68,7 +77,9 @@ namespace PROYECTO_1EVA_RJT.Utilidades
             {
                 animaciones[Constantes.PlayerConst.WALK][Constantes.PlayerConst.FRONT][i] = new ImageBrush
                 {
-                    ImageSource = new BitmapImage(new Uri(playerPath + "walk/player-walk-front/player-walk-front-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute))
+                    ImageSource = new BitmapImage(new Uri(playerPath + "walk/player-walk-front/player-walk-front-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute)),
+                    RelativeTransform = new ScaleTransform(4, 4, 0.5, 0.5),
+                    Stretch = Stretch.None
                 };
             }
 
@@ -77,7 +88,9 @@ namespace PROYECTO_1EVA_RJT.Utilidades
             {
                 animaciones[Constantes.PlayerConst.WALK][Constantes.PlayerConst.BACK][i] = new ImageBrush
                 {
-                    ImageSource = new BitmapImage(new Uri(playerPath + "walk/player-walk-back/player-walk-back-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute))
+                    ImageSource = new BitmapImage(new Uri(playerPath + "walk/player-walk-back/player-walk-back-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute)),
+                    RelativeTransform = new ScaleTransform(4, 4, 0.5, 0.5),
+                    Stretch = Stretch.None
                 };
             }
 
@@ -86,7 +99,9 @@ namespace PROYECTO_1EVA_RJT.Utilidades
             {
                 animaciones[Constantes.PlayerConst.WALK][Constantes.PlayerConst.RIGHT][i] = new ImageBrush
                 {
-                    ImageSource = new BitmapImage(new Uri(playerPath + "walk/player-walk-right/player-walk-right-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute))
+                    ImageSource = new BitmapImage(new Uri(playerPath + "walk/player-walk-right/player-walk-right-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute)),
+                    RelativeTransform = new ScaleTransform(4, 4, 0.5, 0.5),
+                    Stretch = Stretch.None
                 };
             }
 
@@ -95,7 +110,9 @@ namespace PROYECTO_1EVA_RJT.Utilidades
             {
                 animaciones[Constantes.PlayerConst.WALK][Constantes.PlayerConst.LEFT][i] = new ImageBrush
                 {
-                    ImageSource = new BitmapImage(new Uri(playerPath + "walk/player-walk-left/player-walk-left-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute))
+                    ImageSource = new BitmapImage(new Uri(playerPath + "walk/player-walk-left/player-walk-left-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute)),
+                    RelativeTransform = new ScaleTransform(4, 4, 0.5, 0.5),
+                    Stretch = Stretch.None
                 };
             }
             #endregion
@@ -106,7 +123,9 @@ namespace PROYECTO_1EVA_RJT.Utilidades
             {
                 animaciones[Constantes.PlayerConst.ATTACK][Constantes.PlayerConst.FRONT][i] = new ImageBrush
                 {
-                    ImageSource = new BitmapImage(new Uri(playerPath + "attack/player-attack-front/player-attack-front-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute))
+                    ImageSource = new BitmapImage(new Uri(playerPath + "attack/player-attack-front/player-attack-front-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute)),
+                    RelativeTransform = new ScaleTransform(4, 4, 0.511, 0.51),
+                    Stretch = Stretch.None
                 };
             }
 
@@ -115,7 +134,9 @@ namespace PROYECTO_1EVA_RJT.Utilidades
             {
                 animaciones[Constantes.PlayerConst.ATTACK][Constantes.PlayerConst.BACK][i] = new ImageBrush
                 {
-                    ImageSource = new BitmapImage(new Uri(playerPath + "attack/player-attack-back/player-attack-back-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute))
+                    ImageSource = new BitmapImage(new Uri(playerPath + "attack/player-attack-back/player-attack-back-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute)),
+                    RelativeTransform = new ScaleTransform(4, 4, 0.4935, 0.513),
+                    Stretch = Stretch.None
                 };
             }
 
@@ -124,7 +145,9 @@ namespace PROYECTO_1EVA_RJT.Utilidades
             {
                 animaciones[Constantes.PlayerConst.ATTACK][Constantes.PlayerConst.RIGHT][i] = new ImageBrush
                 {
-                    ImageSource = new BitmapImage(new Uri(playerPath + "attack/player-attack-right/player-attack-right-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute))
+                    ImageSource = new BitmapImage(new Uri(playerPath + "attack/player-attack-right/player-attack-right-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute)),
+                    RelativeTransform = new ScaleTransform(4, 4, 0.5, 0.503),
+                    Stretch = Stretch.None
                 };
             }
 
@@ -133,7 +156,9 @@ namespace PROYECTO_1EVA_RJT.Utilidades
             {
                 animaciones[Constantes.PlayerConst.ATTACK][Constantes.PlayerConst.LEFT][i] = new ImageBrush
                 {
-                    ImageSource = new BitmapImage(new Uri(playerPath + "attack/player-attack-left/player-attack-left-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute))
+                    ImageSource = new BitmapImage(new Uri(playerPath + "attack/player-attack-left/player-attack-left-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute)),
+                    RelativeTransform = new ScaleTransform(4, 4, 0.5, 0.505),
+                    Stretch = Stretch.None
                 };
             }
             #endregion

@@ -8,6 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/interiormaterials/alfombra.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/interiormaterials/niidea.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/interiormaterials/pared1.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/interiormaterials/pared2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/interiormaterials/pared3.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/interiormaterials/puerta.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/interiormaterials/ventana.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/attack/player-attack-back/player-attack-back-1.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/attack/player-attack-back/player-attack-back-2.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/attack/player-attack-back/player-attack-back-3.png")]

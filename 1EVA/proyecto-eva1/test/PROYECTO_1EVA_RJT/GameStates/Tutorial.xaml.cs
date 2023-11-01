@@ -1,5 +1,4 @@
 ﻿using PROYECTO_1EVA_RJT.Entidades;
-using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows.Controls;
@@ -21,12 +20,12 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private List<Rectangle> InteractiveElements = new List<Rectangle>();
         private List<Rectangle>[] NormalOpacityElements = new List<Rectangle>[2];
 
-        public Tutorial(Player player)
+        public Tutorial(Player player, Game game)
         {
             InitializeComponent();
-
             this.player = player;
-            addGameElements();
+            this.house = new House(player, game);
+            addElements();
             InicializarJugador();
             Focusable = true;
             Focus();
@@ -36,10 +35,10 @@ namespace PROYECTO_1EVA_RJT.GameStates
         }
 
 
-        private void addGameElements()
+        public void addElements()
         {
-            Game.gameManager.GameStateElements(GameState.TUTORIAL);
-            if (Game.gameManager.currentGameStateData != null)
+            Game.GameManager.GameStateElements(GameState.TUTORIAL);
+            if (Game.GameManager.currentGameStateData != null)
             {
                 if (loadElements())
                 {
@@ -90,24 +89,24 @@ namespace PROYECTO_1EVA_RJT.GameStates
         public void saveElements()
         {
 
-            Game.gameManager.GameStateElements(GameState.TUTORIAL);
-            Game.gameManager.currentGameStateData.playerHitbox = hitbox;
-            Game.gameManager.currentGameStateData.CollidableElements = CollidableElements;
-            Game.gameManager.currentGameStateData.InteractiveElements = InteractiveElements;
-            Game.gameManager.currentGameStateData.NormalOpacityElements = NormalOpacityElements;
+            Game.GameManager.GameStateElements(GameState.TUTORIAL);
+            Game.GameManager.currentGameStateData.playerHitbox = hitbox;
+            Game.GameManager.currentGameStateData.CollidableElements = CollidableElements;
+            Game.GameManager.currentGameStateData.InteractiveElements = InteractiveElements;
+            Game.GameManager.currentGameStateData.NormalOpacityElements = NormalOpacityElements;
 
         }
 
         public bool loadElements()
         {
 
-            if (Game.gameManager.currentGameStateData.playerHitbox == null || Game.gameManager.currentGameStateData.CollidableElements == null || Game.gameManager.currentGameStateData.InteractiveElements == null || Game.gameManager.currentGameStateData.NormalOpacityElements == null)
+            if (Game.GameManager.currentGameStateData.playerHitbox == null || Game.GameManager.currentGameStateData.CollidableElements == null || Game.GameManager.currentGameStateData.InteractiveElements == null || Game.GameManager.currentGameStateData.NormalOpacityElements == null)
                 return false;
 
-            hitbox = Game.gameManager.currentGameStateData.playerHitbox;
-            CollidableElements = Game.gameManager.currentGameStateData.CollidableElements;
-            InteractiveElements = Game.gameManager.currentGameStateData.InteractiveElements;
-            NormalOpacityElements = Game.gameManager.currentGameStateData.NormalOpacityElements;
+            hitbox = Game.GameManager.currentGameStateData.playerHitbox;
+            CollidableElements = Game.GameManager.currentGameStateData.CollidableElements;
+            InteractiveElements = Game.GameManager.currentGameStateData.InteractiveElements;
+            NormalOpacityElements = Game.GameManager.currentGameStateData.NormalOpacityElements;
             return true;
 
 
@@ -132,12 +131,13 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         public void render()
         {
-            
+
             if (insideBuild)
             {
                 house.render();
                 return;
-            }player.render();
+            }
+            player.render();
         }
 
         public void update()
@@ -148,20 +148,21 @@ namespace PROYECTO_1EVA_RJT.GameStates
                 return;
             }
             player.update();
-            
+
             checkInteractiveElement();
         }
 
         private void checkInteractiveElement()
         {
-            
-            if (player.interactiveObj != null) {
+
+            if (player.interactiveObj != null)
+            {
 
 
-                if (Regex.IsMatch(player.interactiveObj,"puerta"))
+                if (Regex.IsMatch(player.interactiveObj, "puertaCasa"))
                 {
                     insideBuild = true;
-                    House.loadPage(player.interactiveObj);
+                    house.loadPage(player.interactiveObj);
 
                 }
 

@@ -2,12 +2,9 @@
 using PROYECTO_1EVA_RJT.Utilidades;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Xml.Linq;
 using Color = System.Windows.Media.Color;
 using Point = System.Windows.Point;
 using Rectangle = System.Windows.Shapes.Rectangle;
@@ -24,6 +21,9 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
         private double speed = 200;
 
+        ScaleTransform scaleTransform = new ScaleTransform(3, 3); // Escala 3x en X e Y
+
+
         private int playerAction = Constantes.PlayerConst.IDLE;
         private int action = Constantes.PlayerConst.FRONT;
 
@@ -31,11 +31,11 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
         public String interactiveObj { get; set; }
 
-        public Canvas jugador {  get; set; }
+        public Canvas jugador { get; set; }
         public Canvas canvaInteractuar { get; set; }
 
 
-        public List<Rectangle> gameElementsColiders  { get; set; }
+        public List<Rectangle> gameElementsColiders { get; set; }
         public List<Rectangle>[] gameElementsNormalOpacity { get; set; }
         public List<Rectangle> gameElementsInteractive { get; set; }
 
@@ -109,7 +109,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
         private bool IsCollidingWith(Rectangle element)
         {
-            
+
             Rect newHitBox = new Rect(Canvas.GetLeft(jugador), Canvas.GetTop(jugador), jugador.Width, jugador.Height);
             Rect elementRect = new Rect(Canvas.GetLeft(element), Canvas.GetTop(element), element.Width, element.Height);
 
@@ -125,7 +125,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
         private void showInteractuable(Rectangle element)
         {
-            
+
             if (element.DataContext.Equals("interactivo"))
             {
                 canvaInteractuar.Visibility = Visibility.Visible;
@@ -139,11 +139,11 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
             List<Rectangle> listaOpacidad = gameElementsNormalOpacity[0]; //hitbox de opacidad
             List<Rectangle> listaNormal = gameElementsNormalOpacity[1]; //rectangulo imagen
-           
+
             for (int i = 0; i < listaOpacidad.Count; i++)
             {
 
-               if (IsCollidingWith(listaOpacidad[i]))
+                if (IsCollidingWith(listaOpacidad[i]))
                 {
 
                     // Crea un LinearGradientBrush
@@ -180,37 +180,37 @@ namespace PROYECTO_1EVA_RJT.Entidades
             // hitbox
             if (isFront() && Canvas.GetTop(jugador) + jugador.Width < 880)
             {
-                y += speed * Game.deltaTime;
+                y += speed * Game.DeltaTime;
                 setMoving(true);
             }
             if (isBack() && Canvas.GetTop(jugador) > 50)
             {
-                y -= speed * Game.deltaTime;
+                y -= speed * Game.DeltaTime;
                 setMoving(true);
             }
             if (isRight() && Canvas.GetLeft(jugador) + jugador.Width < 1600)
             {
-                x += speed * Game.deltaTime;
+                x += speed * Game.DeltaTime;
                 setMoving(true);
             }
             if (isLeft() && Canvas.GetLeft(jugador) > 0)
             {
-                x -= speed * Game.deltaTime;
+                x -= speed * Game.DeltaTime;
                 setMoving(true);
             }
 
             // Verifica colisiones antes de actualizar la posición
             Rect newHitBox = new Rect(Canvas.GetLeft(jugador) + x, Canvas.GetTop(jugador) + y, jugador.Width, jugador.Height);
-            
+
             foreach (Rectangle element in gameElementsColiders)
             {
                 Rect elementRect = new Rect(Canvas.GetLeft(element), Canvas.GetTop(element), element.Width, element.Height);
 
                 if (newHitBox.IntersectsWith(elementRect))
                 {
-                    
-                    
-                   
+
+
+
 
                     avanzar = false;
                     return;
@@ -222,7 +222,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
             if (avanzar)
             {
 
-                
+
                 Canvas.SetLeft(jugador, Canvas.GetLeft(jugador) + x);
                 Canvas.SetTop(jugador, Canvas.GetTop(jugador) + y);
 

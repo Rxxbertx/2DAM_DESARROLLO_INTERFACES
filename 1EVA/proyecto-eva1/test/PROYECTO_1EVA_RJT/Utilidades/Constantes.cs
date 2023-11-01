@@ -73,7 +73,7 @@
                     }
                 }
 
-                 if (action == RIGHT)
+                if (action == RIGHT)
                 {
                     if (player_action == WALK)
                     {
@@ -93,7 +93,7 @@
                     }
                 }
 
-                 if (action == LEFT)
+                if (action == LEFT)
                 {
                     if (player_action == WALK)
                     {

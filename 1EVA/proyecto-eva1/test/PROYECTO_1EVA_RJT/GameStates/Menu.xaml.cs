@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace PROYECTO_1EVA_RJT.GameStates
@@ -41,8 +42,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         private void Jugar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            game.tutorial.Focusable = true;
-            game.MainFrame.Navigate(game.tutorial);
+            game.Tutorial.Focusable = true;
+            game.MainFrame.Navigate(game.Tutorial);
 
             GameManager.state = GameState.TUTORIAL;
 
@@ -50,25 +51,12 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         private void Salir_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            ventanaPrinicipal.Effect = new System.Windows.Media.Effects.BlurEffect();
-            salir();
+           
+            game.Close();
 
         }
 
-        private void salir()
-        {
-            Exit ventanaSalir = new GameStates.Exit(game);
-            ventanaSalir.ShowDialog();
-            if (ventanaSalir.status == 0)
-            {
-                GameManager.state = GameState.QUIT;
-            }
-            else
-            {
-                ventanaSalir.Close();
-                ventanaPrinicipal.Effect = null;
-            }
-        }
+       
 
         private void Ayuda_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

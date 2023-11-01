@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PROYECTO_1EVA_RJT.GameStates
 {
@@ -12,7 +9,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
     {
 
         PLAYING, MENU, PAUSE, WIN, TUTORIAL,
-        QUIT,HOUSE1,HOUSE2,HOUSE3,HOUSE4
+        QUIT, HOUSE1, HOUSE2, HOUSE3, HOUSE4
     }
 
     public class GameManager
@@ -26,7 +23,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         public GameManager()
         {
 
-            state= GameState.MENU;
+            state = GameState.MENU;
             // Inicializa los estados y sus datos
             gameStates[GameState.TUTORIAL] = new GameStateData();
             gameStates[GameState.HOUSE1] = new GameStateData();
@@ -45,7 +42,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
                 currentGameStateData = gameStates[gameStateName];
             }
         }
-       
+
 
     }
 }
