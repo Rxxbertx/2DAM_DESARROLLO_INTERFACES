@@ -33,6 +33,47 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         }
 
+        private void cerrarX_MouseLeave(object sender, MouseEventArgs e)
+        {
 
+
+
+            cerrarX.Effect = null;
+
+
+
+        }
+
+        private void cerrarX_MouseEnter(object sender, MouseEventArgs e)
+        {
+            cerrarX.Effect = new System.Windows.Media.Effects.DropShadowEffect();
+        }
+
+        private void No_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+            No.Effect = new System.Windows.Media.Effects.DropShadowEffect();
+
+        }
+
+        private void No_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+            No.Effect = null;
+        }
+
+        private void Si_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+            Si.Effect = new System.Windows.Media.Effects.DropShadowEffect();
+
+        }
+
+        private void Si_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+            Si.Effect = null;
+
+        }
     }
 }

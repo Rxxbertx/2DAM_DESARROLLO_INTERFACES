@@ -2,6 +2,8 @@
 {
     class Constantes
     {
+        public static int FPS { get; internal set; }
+        public static bool MUTED = false;
 
         /**
     * Esta clase lo que tiene son referencias para saber que animaciones escoger es decir si selecciona WALK, se ira
@@ -122,6 +124,17 @@
 
 
             }
+
+        }
+        public static class LvlConst
+        {
+
+            public static readonly string NIVEL1 = "NIVEL 1";
+            public static readonly string NIVEL2 = "NIVEL 2";
+            public static readonly string NIVEL3 = "NIVEL 3";
+            public static readonly string NIVEL4 = "NIVEL 4";
+            public static readonly string NIVEL5 = "NIVEL 5";
+            public static readonly string TUTORIAL = "TUTORIAL";
 
         }
     }

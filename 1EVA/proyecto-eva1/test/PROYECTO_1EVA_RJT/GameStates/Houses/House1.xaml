@@ -338,16 +338,15 @@
             <Rectangle x:Name="objetoPared8Hitbox" Width="71" Height="287" Canvas.Left="338" Canvas.Top="498" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
             <Rectangle x:Name="salirPuerta" DataContext="salir" Width="132" Height="28" Canvas.Left="1057" Canvas.Top="120" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="piezaPc" DataContext="pieza" Width="52" Height="42" Canvas.Left="448" Canvas.Top="738" HorizontalAlignment="Left" VerticalAlignment="Top" Opacity="0.7">
-                <Rectangle.Effect>
-                    <DropShadowEffect/>
-                </Rectangle.Effect>
+            <Rectangle x:Name="piezaPc" DataContext="pieza" Width="52" Height="42" Canvas.Left="772" Canvas.Top="503" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="/recursos/componentesPC/torre.png" Stretch="Uniform"/>
                 </Rectangle.Fill>
             </Rectangle>
 
 
+            
+            
 
         </Canvas>
 

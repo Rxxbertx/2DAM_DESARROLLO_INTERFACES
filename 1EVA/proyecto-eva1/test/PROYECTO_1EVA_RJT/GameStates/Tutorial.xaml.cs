@@ -1,4 +1,5 @@
 ﻿using PROYECTO_1EVA_RJT.Entidades;
+using PROYECTO_1EVA_RJT.Utilidades;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows.Controls;
@@ -22,6 +23,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         public Tutorial(Player player, Game game)
         {
+            GameManager.Nivel = Constantes.LvlConst.TUTORIAL;
+
             InitializeComponent();
             this.player = player;
             this.house = new House(player, game);
@@ -38,7 +41,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         public void addElements()
         {
             Game.GameManager.GameStateElements(GameState.TUTORIAL);
-            if (Game.GameManager.currentGameStateData != null)
+            if (Game.GameManager.CurrentGameStateData != null)
             {
                 if (loadElements())
                 {
@@ -90,23 +93,24 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
 
             Game.GameManager.GameStateElements(GameState.TUTORIAL);
-            Game.GameManager.currentGameStateData.playerHitbox = hitbox;
-            Game.GameManager.currentGameStateData.CollidableElements = CollidableElements;
-            Game.GameManager.currentGameStateData.InteractiveElements = InteractiveElements;
-            Game.GameManager.currentGameStateData.NormalOpacityElements = NormalOpacityElements;
+            Game.GameManager.CurrentGameStateData.playerHitbox = hitbox;
+            Game.GameManager.CurrentGameStateData.CollidableElements = CollidableElements;
+            Game.GameManager.CurrentGameStateData.InteractiveElements = InteractiveElements;
+            Game.GameManager.CurrentGameStateData.NormalOpacityElements = NormalOpacityElements;
+           
 
         }
 
         public bool loadElements()
         {
 
-            if (Game.GameManager.currentGameStateData.playerHitbox == null || Game.GameManager.currentGameStateData.CollidableElements == null || Game.GameManager.currentGameStateData.InteractiveElements == null || Game.GameManager.currentGameStateData.NormalOpacityElements == null)
+            if (Game.GameManager.CurrentGameStateData.playerHitbox == null || Game.GameManager.CurrentGameStateData.CollidableElements == null || Game.GameManager.CurrentGameStateData.InteractiveElements == null || Game.GameManager.CurrentGameStateData.NormalOpacityElements == null)
                 return false;
 
-            hitbox = Game.GameManager.currentGameStateData.playerHitbox;
-            CollidableElements = Game.GameManager.currentGameStateData.CollidableElements;
-            InteractiveElements = Game.GameManager.currentGameStateData.InteractiveElements;
-            NormalOpacityElements = Game.GameManager.currentGameStateData.NormalOpacityElements;
+            hitbox = Game.GameManager.CurrentGameStateData.playerHitbox;
+            CollidableElements = Game.GameManager.CurrentGameStateData.CollidableElements;
+            InteractiveElements = Game.GameManager.CurrentGameStateData.InteractiveElements;
+            NormalOpacityElements = Game.GameManager.CurrentGameStateData.NormalOpacityElements;
             return true;
 
 

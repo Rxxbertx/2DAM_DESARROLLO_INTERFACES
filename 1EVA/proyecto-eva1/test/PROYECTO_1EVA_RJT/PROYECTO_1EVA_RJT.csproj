@@ -8,12 +8,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="recursos\componentesPC\pantalla.png" />
-    <None Remove="recursos\componentesPC\torre.png" />
+    <None Remove="recursos\componentespc\cpu.png" />
+    <None Remove="recursos\componentespc\gpu.png" />
+    <None Remove="recursos\componentespc\pantalla.png" />
+    <None Remove="recursos\componentespc\ps.png" />
+    <None Remove="recursos\componentespc\ram.png" />
+    <None Remove="recursos\componentespc\ssd.png" />
+    <None Remove="recursos\componentespc\torre.png" />
+    <None Remove="recursos\ExportedIcons\Icon_BackPack.png" />
     <None Remove="recursos\ExportedIcons\Icon_DotsVertical.png" />
     <None Remove="recursos\ExportedIcons\Icon_Down.png" />
+    <None Remove="recursos\ExportedIcons\Icon_Exit.png" />
+    <None Remove="recursos\ExportedIcons\Icon_Heart.png" />
+    <None Remove="recursos\ExportedIcons\Icon_Look.png" />
     <None Remove="recursos\ExportedIcons\Icon_Question.png" />
     <None Remove="recursos\ExportedIcons\Icon_Settings.png" />
+    <None Remove="recursos\ExportedIcons\Icon_SoundOff.png" />
+    <None Remove="recursos\ExportedIcons\Icon_SoundOn.png" />
+    <None Remove="recursos\ExportedIcons\Icon_Star.png" />
     <None Remove="recursos\ExportedIcons\Icon_X.png" />
     <None Remove="recursos\ExportedIcons\Item1.png" />
     <None Remove="recursos\ExportedIcons\Item2.png" />
@@ -109,6 +121,39 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="recursos\componentespc\cpu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\componentespc\gpu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\componentespc\ps.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\componentespc\ram.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\componentespc\ssd.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Icon_Exit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Icon_Heart.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Icon_Look.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Icon_SoundOff.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Icon_SoundOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Icon_Star.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\InteriorMaterials\alfombra.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -187,12 +232,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="recursos\componentesPC\pantalla.png">
+    <Content Include="recursos\componentespc\pantalla.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="recursos\componentesPC\torre.png">
+    <Content Include="recursos\componentespc\torre.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="recursos\ExportedIcons\Icon_BackPack.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="recursos\ExportedIcons\Icon_DotsVertical.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -8,6 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/componentespc/cpu.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/componentespc/gpu.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/componentespc/ps.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/componentespc/ram.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/componentespc/ssd.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/icon_exit.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/icon_heart.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/icon_look.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/icon_soundoff.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/icon_soundon.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/icon_star.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/interiormaterials/alfombra.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/interiormaterials/niidea.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/interiormaterials/pared1.png")]

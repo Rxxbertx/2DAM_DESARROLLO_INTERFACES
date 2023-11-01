@@ -1,5 +1,6 @@
 ﻿using PROYECTO_1EVA_RJT.Entidades;
 using PROYECTO_1EVA_RJT.GameStates;
+using PROYECTO_1EVA_RJT.Utilidades;
 using System;
 using System.Windows;
 using System.Windows.Threading;
@@ -11,7 +12,7 @@ namespace PROYECTO_1EVA_RJT
     /// </summary>
     public partial class Game : Window
     {
-        private DispatcherTimer gameLoopTimer;
+        public  DispatcherTimer gameLoopTimer;
         public static double DeltaTime { get; private set; }
 
 
@@ -24,6 +25,8 @@ namespace PROYECTO_1EVA_RJT
 
         public Player Player;
 
+        
+
 
         public Game()
         {
@@ -35,26 +38,31 @@ namespace PROYECTO_1EVA_RJT
         private void InitializeGame()
         {
 
+
             GameManager = new();
+            
+
+            gameLoopTimer = new DispatcherTimer();
+            
+            gameLoopTimer.Interval = TimeSpan.FromMilliseconds(1000 / Constantes.FPS); // 60 FPS por defecto
+            gameLoopTimer.Tick += GameLoop;
+            gameLoopTimer.Start();
+
+
+            
             Player = new Player(null, null, null, null, null);
             Menu = new Menu(this);
             Tutorial = new Tutorial(Player, this);
             Playing = new Playing(this, Player);
 
-
-
             MainFrame.Navigate(Menu);
 
-            gameLoopTimer = new DispatcherTimer();
-            gameLoopTimer.Tick += GameLoop;
-            gameLoopTimer.Interval = TimeSpan.FromMilliseconds(1000 / 30); // 60 FPS por defecto
-            gameLoopTimer.Start();
         }
 
         private void GameLoop(object sender, EventArgs e)
         {
 
-            DeltaTime = gameLoopTimer.Interval.TotalMilliseconds / 1000.0; // Calcula el delta time
+            DeltaTime = gameLoopTimer.Interval.TotalMilliseconds / 1000; // Calcula el delta time
             Update();
             Render();
         }
@@ -63,7 +71,7 @@ namespace PROYECTO_1EVA_RJT
         {
 
 
-            switch (GameManager.state)
+            switch (GameManager.State)
             {
                 case GameState.MENU:
 
@@ -94,7 +102,7 @@ namespace PROYECTO_1EVA_RJT
 
         public void Update()
         {
-            switch (GameManager.state)
+            switch (GameManager.State)
             {
                 case GameState.MENU:
                     Menu.update();
@@ -104,8 +112,6 @@ namespace PROYECTO_1EVA_RJT
                     break;
                 case GameState.PAUSE:
                     // Código para el estado de pausa
-                    break;
-
                     break;
                 case GameState.WIN:
                     // Código para el estado de victoria

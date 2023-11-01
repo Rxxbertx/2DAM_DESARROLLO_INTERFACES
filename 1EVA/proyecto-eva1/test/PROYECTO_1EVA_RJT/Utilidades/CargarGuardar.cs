@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Policy;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -164,6 +165,26 @@ namespace PROYECTO_1EVA_RJT.Utilidades
             #endregion
 
             return animaciones;
+        }
+
+
+        public static ImageBrush getPiezaFoto(String imagen)
+        {
+            try
+            {
+                return new ImageBrush
+                {
+
+                    ImageSource = new BitmapImage(new Uri("recursos/componentespc/" + imagen + ".png", UriKind.RelativeOrAbsolute)),
+                };
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return new ImageBrush();
+            }
+
+            
         }
 
 

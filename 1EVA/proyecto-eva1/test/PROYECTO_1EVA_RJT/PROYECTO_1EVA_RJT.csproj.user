@@ -16,10 +16,16 @@
     <Compile Update="GameStates\Menu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="GameStates\PauseSettings.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="GameStates\Playing.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="GameStates\Tutorial.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GameStates\UI.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -36,10 +42,16 @@
     <Page Update="GameStates\Menu.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="GameStates\PauseSettings.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="GameStates\Playing.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GameStates\Tutorial.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GameStates\UI.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

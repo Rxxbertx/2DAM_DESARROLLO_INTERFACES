@@ -79,5 +79,10 @@ namespace PROYECTO_1EVA_RJT.GameStates
             if (houseX != null)
             houseX.update();
         }
+
+        public void addElements()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

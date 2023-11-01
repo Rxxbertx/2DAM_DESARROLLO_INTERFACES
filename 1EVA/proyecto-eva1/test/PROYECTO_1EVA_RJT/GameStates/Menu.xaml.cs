@@ -45,7 +45,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
             game.Tutorial.Focusable = true;
             game.MainFrame.Navigate(game.Tutorial);
 
-            GameManager.state = GameState.TUTORIAL;
+            GameManager.State = GameState.TUTORIAL;
 
         }
 
@@ -63,11 +63,51 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         }
 
-        private void Image_MouseEnter(object sender, MouseEventArgs e)
+
+        private void Jugar_MouseEnter(object sender, MouseEventArgs e)
+        {
+            jugar.Effect = new System.Windows.Media.Effects.DropShadowEffect();
+
+        }
+
+        private void Jugar_MouseLeave(object sender, MouseEventArgs e)
+        {
+            jugar.Effect = null;
+        }
+
+        private void Ayuda_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ayuda.Effect = new System.Windows.Media.Effects.DropShadowEffect();
+
+        }
+
+        private void Ayuda_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ayuda.Effect = null;
+        }
+
+        private void Salir_MouseEnter(object sender, MouseEventArgs e)
+        {
+            salir.Effect = new System.Windows.Media.Effects.DropShadowEffect();
+
+        }
+
+        private void Salir_MouseLeave(object sender, MouseEventArgs e)
+        {
+            salir.Effect = null;
+        }
+
+        private void SalirX_MouseEnter(object sender, MouseEventArgs e)
         {
             salirX.Effect = new System.Windows.Media.Effects.DropShadowEffect();
 
         }
+
+        private void SalirX_MouseLeave(object sender, MouseEventArgs e)
+        {
+            salirX.Effect = null;
+        }
+
 
         public void saveElements()
         {
@@ -77,6 +117,41 @@ namespace PROYECTO_1EVA_RJT.GameStates
         public bool loadElements()
         {
             throw new System.NotImplementedException();
+        }
+
+        public void addElements()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void Settings_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+            PauseSettings temp = new PauseSettings(game);
+            temp.Owner = game;
+            game.MainFrame.Effect = new System.Windows.Media.Effects.BlurEffect();
+            temp.ShowDialog();
+
+
+
+        }
+
+        private void Settings_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+
+            Settings.Effect = new System.Windows.Media.Effects.DropShadowEffect();
+
+
+
+        }
+
+        private void Settings_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+
+            Settings.Effect = null;
+
         }
     }
 }

@@ -36,7 +36,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             game.MainFrame.NavigationService.Navigate(new GameStates.Menu(this.game));
-            GameManager.state = GameState.MENU;
+            GameManager.State = GameState.MENU;
         }
 
         public void saveElements()
@@ -45,6 +45,11 @@ namespace PROYECTO_1EVA_RJT.GameStates
         }
 
         public bool loadElements()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void addElements()
         {
             throw new NotImplementedException();
         }

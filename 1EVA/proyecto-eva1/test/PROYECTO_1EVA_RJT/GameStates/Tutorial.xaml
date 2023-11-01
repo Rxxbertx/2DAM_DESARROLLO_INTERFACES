@@ -5,12 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PROYECTO_1EVA_RJT.GameStates"
       mc:Ignorable="d" 
-      Height="900" Width="1600"
       Title="Tutorial"  KeyDown="Page_KeyDown" KeyUp="Page_KeyUp" MouseLeftButtonDown="Page_MouseLeftButtonDown"    >
 
     <Grid>
 
-        <Canvas x:Name="tutorial" Background="#FF80B372">
+        <Canvas x:Name="tutorial" Background="#FF80B372" Height="900" Width="1600">
 
 
 
@@ -370,39 +369,7 @@
 
 
             <!--#region UI-->
-
-            <TextBlock  Text="Pulsa AQUI para continuar" FontSize="30" Foreground="White" Canvas.Left="626" Canvas.Top="790" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-
-            <Canvas x:Name="ui" Width="1600" Height="900"  HorizontalAlignment="Left" VerticalAlignment="Top">
-                <Image Height="31" Source="/recursos/ExportedIcons/Item2.png" Stretch="Fill" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Top">
-                    <Image.Effect>
-                        <DropShadowEffect/>
-                    </Image.Effect>
-                </Image>
-                <Image Height="106" Source="/recursos/ExportedIcons/Item2.png" Stretch="Fill" Width="386" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="1214">
-                    <Image.Effect>
-                        <DropShadowEffect/>
-                    </Image.Effect>
-                </Image>
-                <Label Content="Tutorial" Canvas.Left="1312" Canvas.Top="15" FontFamily="Comic Sans MS" FontSize="48"/>
-                <Ellipse Height="112" Canvas.Left="10" Canvas.Top="36" Width="117" HorizontalAlignment="Left" VerticalAlignment="Top" StrokeThickness="10">
-                    <Ellipse.Stroke>
-                        <RadialGradientBrush>
-                            <GradientStop Color="#FFBF7A6F" Offset="0.751"/>
-                            <GradientStop Color="#FF3D1E1D" Offset="1"/>
-                        </RadialGradientBrush>
-                    </Ellipse.Stroke>
-                    <Ellipse.Fill>
-                        <ImageBrush ImageSource="/recursos/componentesPC/torre.png" Stretch="Uniform" TileMode="None"/>
-                    </Ellipse.Fill>
-
-                </Ellipse>
-
-                <Label Content="Encuentra la pieza" Canvas.Left="142" Canvas.Top="73" FontFamily="Comic Sans MS" FontSize="20" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-
-            </Canvas>
-
-
+       
             <Canvas x:Name="canvaInteractuar"  Width="100" Height="100" Canvas.Left="-430" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Top">
 
                 <Image Height="88" Canvas.Left="-27" Source="/recursos/ExportedIcons/Item1.png" Stretch="Fill" Canvas.Top="5" Width="180" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -426,11 +393,13 @@
 
             <!--#endregion-->
 
-            <!--#region C-->
+            
 
+
+            <!--#region C-->
+            <local:UI HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="ui"/>
             <!--#endregion-->
 
         </Canvas>
-
     </Grid>
 </Page>
