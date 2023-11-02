@@ -28,6 +28,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
             InitializeComponent();
             this.player = player;
             this.house = new House(player, game);
+            ui.cargarGame(game);
             addElements();
             InicializarJugador();
             Focusable = true;
@@ -97,7 +98,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
             Game.GameManager.CurrentGameStateData.CollidableElements = CollidableElements;
             Game.GameManager.CurrentGameStateData.InteractiveElements = InteractiveElements;
             Game.GameManager.CurrentGameStateData.NormalOpacityElements = NormalOpacityElements;
-           
+
 
         }
 
@@ -254,8 +255,14 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void Page_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
+            if(player.turnOff)
+            {
+                
+                return;
+            }
 
             player.setAttacking(true);
+
 
         }
 

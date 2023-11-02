@@ -29,9 +29,10 @@ namespace PROYECTO_1EVA_RJT.GameStates
         public PauseSettings(Game game)
         {
             InitializeComponent();
-
-           this.game = game;
-
+            this.game = game;
+            this.Owner = game;
+            game.MainFrame.Effect = new System.Windows.Media.Effects.BlurEffect();
+            game.Player.TurnOff();
             comprobarFPS();
             comprobarSonido();
             comprobarGameState();
@@ -82,6 +83,9 @@ namespace PROYECTO_1EVA_RJT.GameStates
                 case 60:
                     _60fps.IsChecked = true;
                     break;
+                    case 120:
+                     _120fps.IsChecked = true;
+                    break;
                 default:
                     break;
             }
@@ -101,6 +105,11 @@ namespace PROYECTO_1EVA_RJT.GameStates
             game.gameLoopTimer.Interval = TimeSpan.FromMilliseconds(1000 / Constantes.FPS);
         }
 
+        private void _120fps_Checked(object sender, RoutedEventArgs e)
+        {
+            Constantes.FPS = 120;
+            game.gameLoopTimer.Interval = TimeSpan.FromMilliseconds(1000 / Constantes.FPS);
+        }
 
 
 
@@ -108,7 +117,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
 
             Close();
-            game.MainFrame.Effect = null;
+            
 
 
 
@@ -118,7 +127,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
             GameManager.State = GameState.MENU;
             game.MainFrame.NavigationService.Navigate(game.Menu);
-            game.MainFrame.Effect = null;
+            
             Close();
         }
 
@@ -140,5 +149,12 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         }
 
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+            game.MainFrame.Effect = null;
+            game.Player.TurnOn();
+            
+        }
     }
 }

@@ -21,22 +21,22 @@ namespace PROYECTO_1EVA_RJT.GameStates;
 /// </summary>
 public partial class UI : UserControl
 {
+
+    private Game game;
     public UI()
     {
         InitializeComponent();
-
-        GameManager.addInventarioElemento(CargarGuardar.getPiezaFoto("torre"));
-
         cargarInventario();
 
         Nivel.Content = GameManager.Nivel;
         objetivo.Fill = GameManager.piezaBuscar[GameManager.Nivel];
         objetivo.Fill.SetCurrentValue(ImageBrush.StretchProperty, Stretch.Uniform);
+        
     }
 
     private void cargarInventario()
     {
-        
+
 
         if (GameManager.inventario.Count > 0)
         {
@@ -45,7 +45,7 @@ public partial class UI : UserControl
         }
         if (GameManager.inventario.Count > 1)
         {
-            
+
             piezaFoto2.Fill = GameManager.inventario[1];
             piezaFoto2.Fill.SetCurrentValue(ImageBrush.StretchProperty, Stretch.Uniform);
         }
@@ -57,29 +57,42 @@ public partial class UI : UserControl
         }
         if (GameManager.inventario.Count > 3)
         {
-            
+
             piezaFoto4.Fill = GameManager.inventario[3];
             piezaFoto4.Fill.SetCurrentValue(ImageBrush.StretchProperty, Stretch.Uniform);
         }
         if (GameManager.inventario.Count > 4)
         {
-            
+
             piezaFoto5.Fill = GameManager.inventario[4];
             piezaFoto5.Fill.SetCurrentValue(ImageBrush.StretchProperty, Stretch.Uniform);
         }
         if (GameManager.inventario.Count > 5)
         {
-            
+
             piezaFoto6.Fill = GameManager.inventario[5];
             piezaFoto6.Fill.SetCurrentValue(ImageBrush.StretchProperty, Stretch.Uniform);
         }
-       
+
 
 
     }
 
-    private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    public void cargarGame(Game game)
+    {
+        this.game = game;
+
+    }
+
+
+    private void Pausa_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
 
+        e.Handled = true;
+        PauseSettings pauseSettings = new PauseSettings(game);
+        pauseSettings.Owner = game;
+        pauseSettings.ShowDialog();
+
+        
     }
 }

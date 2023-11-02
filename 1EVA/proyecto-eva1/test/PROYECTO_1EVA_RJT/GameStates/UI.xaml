@@ -33,9 +33,9 @@
             </Ellipse>
 
             <Label Content="Encuentra la pieza" Canvas.Left="142" Canvas.Top="73" FontFamily="Comic Sans MS" FontSize="20" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Source="/recursos/ExportedIcons/Icon_Exit.png" Stretch="Fill" Height="48" Canvas.Left="32" Canvas.Top="827" Width="36"/>
+            <Image x:Name="Pausa" MouseLeftButtonDown="Pausa_MouseLeftButtonDown" Source="/recursos/ExportedIcons/Icon_Exit.png" Stretch="Fill" Height="48" Canvas.Left="32" Canvas.Top="827" Width="36"/>
             <Image Height="42" Canvas.Left="327" Source="/recursos/ExportedIcons/Icon_Star.png" Stretch="Fill" Canvas.Top="73" Width="55"/>
-            <Image MouseLeftButtonDown="Image_MouseLeftButtonDown" Height="78" Source="/recursos/ExportedIcons/Item3.png" Stretch="Fill" Canvas.Top="439" Width="510" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Canvas.Left="-222" Opacity="0.497">
+            <Image  Height="78" Source="/recursos/ExportedIcons/Item3.png" Stretch="Fill" Canvas.Top="439" Width="510" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Canvas.Left="-222" Opacity="0.497">
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

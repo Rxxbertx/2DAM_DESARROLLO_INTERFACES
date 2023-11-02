@@ -42,7 +42,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         private void Jugar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            game.Tutorial.Focusable = true;
+            
             game.MainFrame.Navigate(game.Tutorial);
 
             GameManager.State = GameState.TUTORIAL;
@@ -129,7 +129,6 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
             PauseSettings temp = new PauseSettings(game);
             temp.Owner = game;
-            game.MainFrame.Effect = new System.Windows.Media.Effects.BlurEffect();
             temp.ShowDialog();
 
 

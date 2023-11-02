@@ -14,10 +14,14 @@ namespace PROYECTO_1EVA_RJT.Entidades
     public class Player
     {
 
+        public bool turnOff = false;
+
         private double aniTick;
         private int aniIndex;
 
-        private double aniSpeed = 300;
+        private double animationTime = 0.0;
+        private double animationDuration = 0.7; // Duración total de la animación en segundos
+
 
         private double speed = 200;
 
@@ -74,6 +78,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
         public void update()
         {
 
+            if (turnOff) { return; }
 
             updateNormalOpacity();
             updateInteractiveElements();
@@ -211,7 +216,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
 
 
-
+                    setMoving(false);
                     avanzar = false;
                     return;
                 }
@@ -288,12 +293,16 @@ namespace PROYECTO_1EVA_RJT.Entidades
         private void updateAnimation()
         {
 
+            
+
             aniTick++;
 
+            // Calcula el progreso de la animación en función del tiempo transcurrido
+            animationTime += Game.DeltaTime;
 
-            if (aniTick >= aniSpeed / 60)
+            if (animationTime >= animationDuration / Constantes.PlayerConst.getSpritesAmount(action, playerAction))
             {
-                aniTick = 0;
+                animationTime = 0;
                 aniIndex++;
 
                 if (aniIndex >= Constantes.PlayerConst.getSpritesAmount(action, playerAction))
@@ -501,9 +510,26 @@ namespace PROYECTO_1EVA_RJT.Entidades
             this.attack = attack;
         }
 
+        internal void TurnOff()
+        {
+            turnOff = true;
 
 
+            setAttacking(false);
+            setBack(false);
+            setFront(false);
+            setLeft(false);
+            setRight(false);
+            setMoving(false);
+            setInteract(false);
 
+
+        }
+
+        internal void TurnOn()
+        {
+            turnOff = false;
+        }
     }
 
 }

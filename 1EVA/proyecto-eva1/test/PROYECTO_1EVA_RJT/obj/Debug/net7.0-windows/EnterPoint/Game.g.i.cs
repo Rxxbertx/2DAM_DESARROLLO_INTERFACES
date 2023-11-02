@@ -61,7 +61,7 @@ namespace PROYECTO_1EVA_RJT {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PROYECTO_1EVA_RJT;V1.0.0.0;component/enterpoint/game.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PROYECTO_1EVA_RJT;component/enterpoint/game.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\EnterPoint\Game.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

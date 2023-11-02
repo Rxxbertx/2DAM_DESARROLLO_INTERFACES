@@ -10,17 +10,22 @@ namespace PROYECTO_1EVA_RJT.GameStates
     {
         public int status { get; private set; }
 
+        Game game;
 
         public Exit(Game game)
         {
             InitializeComponent();
+            this.game = game;
             this.Owner = game;
+            game.MainFrame.Effect = new System.Windows.Media.Effects.BlurEffect();
+            game.Player.TurnOff();
         }
 
         private void No_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
             status = 1;
+            
             Close();
 
 
@@ -29,6 +34,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void Salir_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             status = 0;
+            
             Close();
 
         }
@@ -73,6 +79,17 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
 
             Si.Effect = null;
+
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+            
+            
+            game.MainFrame.Effect = null;
+            game.Player.TurnOn();
+            
 
         }
     }

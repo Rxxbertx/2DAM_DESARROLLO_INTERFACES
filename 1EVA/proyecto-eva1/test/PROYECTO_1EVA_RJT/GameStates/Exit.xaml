@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROYECTO_1EVA_RJT.GameStates"
         mc:Ignorable="d" WindowStartupLocation="CenterOwner"
-        Title="Exit" Width="800" Height="450" WindowStyle="None" ResizeMode="NoResize" 
+        Title="Exit" Width="800" Height="450" WindowStyle="None" ResizeMode="NoResize" Closing="Window_Closing"
         
         AllowsTransparency="True"
     Background="Transparent"

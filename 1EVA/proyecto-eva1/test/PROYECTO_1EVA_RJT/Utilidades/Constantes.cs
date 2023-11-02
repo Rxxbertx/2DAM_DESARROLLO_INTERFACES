@@ -2,7 +2,7 @@
 {
     class Constantes
     {
-        public static int FPS { get; internal set; }
+        public static double FPS { get; internal set; }
         public static bool MUTED = false;
 
         /**

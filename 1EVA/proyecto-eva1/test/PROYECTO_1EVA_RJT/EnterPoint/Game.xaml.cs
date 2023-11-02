@@ -2,6 +2,7 @@
 using PROYECTO_1EVA_RJT.GameStates;
 using PROYECTO_1EVA_RJT.Utilidades;
 using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Threading;
 
@@ -13,6 +14,7 @@ namespace PROYECTO_1EVA_RJT
     public partial class Game : Window
     {
         public  DispatcherTimer gameLoopTimer;
+        private Stopwatch stopwatch = new Stopwatch();
         public static double DeltaTime { get; private set; }
 
 
@@ -62,7 +64,12 @@ namespace PROYECTO_1EVA_RJT
         private void GameLoop(object sender, EventArgs e)
         {
 
-            DeltaTime = gameLoopTimer.Interval.TotalMilliseconds / 1000; // Calcula el delta time
+            long elapsedTicks = stopwatch.ElapsedTicks;
+            double elapsedSeconds = (double)elapsedTicks / Stopwatch.Frequency;
+
+            DeltaTime = elapsedSeconds;
+            stopwatch.Restart(); // Reiniciar el temporizador
+
             Update();
             Render();
         }
@@ -126,7 +133,6 @@ namespace PROYECTO_1EVA_RJT
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
-            MainFrame.Effect = new System.Windows.Media.Effects.BlurEffect();
             Exit ventanaSalir = new GameStates.Exit(this);
             ventanaSalir.ShowDialog();
             if (ventanaSalir.status == 0)
@@ -136,7 +142,6 @@ namespace PROYECTO_1EVA_RJT
             else
             {
                 ventanaSalir.Close();
-                MainFrame.Effect = null;
                 e.Cancel = true;
             }
 
