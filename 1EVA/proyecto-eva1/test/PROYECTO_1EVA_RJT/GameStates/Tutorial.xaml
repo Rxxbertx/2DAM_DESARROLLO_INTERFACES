@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PROYECTO_1EVA_RJT.GameStates"
       mc:Ignorable="d" 
-      Title="Tutorial"  KeyDown="Page_KeyDown" KeyUp="Page_KeyUp" MouseLeftButtonDown="Page_MouseLeftButtonDown"    >
+      Title="Tutorial"  KeyDown="Page_KeyDown" KeyUp="Page_KeyUp" MouseLeftButtonDown="Page_MouseLeftButtonDown">
 
     <Grid>
 
@@ -369,34 +369,6 @@
 
 
             <!--#region UI-->
-       
-            <Canvas x:Name="canvaInteractuar"  Width="100" Height="100" Canvas.Left="-430" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Top">
-
-                <Image Height="88" Canvas.Left="-27" Source="/recursos/ExportedIcons/Item1.png" Stretch="Fill" Canvas.Top="5" Width="180" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform AngleX="12.135"/>
-                            <RotateTransform/>
-                            <TranslateTransform X="31.285"/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-                <Image Height="30"  Source="/recursos/MV Icons Keyboard/Individual Icons/keyboard_116.png" Stretch="Fill"  Width="30" Canvas.Left="23" Canvas.Top="22" HorizontalAlignment="Center" VerticalAlignment="Top" >
-                    <Image.Effect>
-                        <DropShadowEffect/>
-                    </Image.Effect>
-                </Image>
-                <Label Content="Interactua" Canvas.Left="58" Canvas.Top="20" FontFamily="Comic Sans MS" FontSize="20" Foreground="#FF4A4A97" HorizontalAlignment="Center" VerticalAlignment="Top" Height="35" Width="114"/>
-
-            </Canvas>
-
-            <!--#endregion-->
-
-            
-
-
-            <!--#region C-->
             <local:UI HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="ui"/>
             <!--#endregion-->
 

@@ -42,21 +42,40 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         private void Jugar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            
-            game.MainFrame.Navigate(game.Tutorial);
 
-            GameManager.State = GameState.TUTORIAL;
+
+            if (GameManager.PreviousState == GameState.TUTORIAL)
+            {
+                game.MainFrame.Navigate(game.Tutorial);
+                GameManager.ChangeState(GameState.TUTORIAL);
+                game.Tutorial.checkHouse();
+
+                return;
+            }
+            else if (GameManager.PreviousState == GameState.PLAYING)
+            {
+                game.MainFrame.Navigate(game.Playing);
+                GameManager.ChangeState(GameState.PLAYING);
+
+                return;
+            }
+
+            game.MainFrame.Navigate(game.Tutorial);
+            GameManager.ChangeState(GameState.TUTORIAL);
+            game.Tutorial.checkHouse();
+            return;
+
 
         }
 
         private void Salir_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-           
+
             game.Close();
 
         }
 
-       
+
 
         private void Ayuda_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

@@ -1,5 +1,6 @@
 ﻿using PROYECTO_1EVA_RJT.Entidades;
 using PROYECTO_1EVA_RJT.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows.Controls;
@@ -94,6 +95,12 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
 
             Game.GameManager.GameStateElements(GameState.TUTORIAL);
+
+            if (Game.GameManager.CurrentGameStateData == null)
+            {
+                Game.GameManager.CurrentGameStateData = new GameStateData();
+            }
+
             Game.GameManager.CurrentGameStateData.playerHitbox = hitbox;
             Game.GameManager.CurrentGameStateData.CollidableElements = CollidableElements;
             Game.GameManager.CurrentGameStateData.InteractiveElements = InteractiveElements;
@@ -112,6 +119,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
             CollidableElements = Game.GameManager.CurrentGameStateData.CollidableElements;
             InteractiveElements = Game.GameManager.CurrentGameStateData.InteractiveElements;
             NormalOpacityElements = Game.GameManager.CurrentGameStateData.NormalOpacityElements;
+
             return true;
 
 
@@ -127,12 +135,14 @@ namespace PROYECTO_1EVA_RJT.GameStates
             player.jugador = hitbox;
             player.gameElementsColiders = CollidableElements;
             player.gameElementsNormalOpacity = NormalOpacityElements;
-            player.canvaInteractuar = canvaInteractuar;
+            player.canvaInteractuar = ui.canvaInteractuar;
             player.gameElementsInteractive = InteractiveElements;
 
 
         }
 
+
+        
 
         public void render()
         {
@@ -157,7 +167,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
             checkInteractiveElement();
         }
 
-        private void checkInteractiveElement()
+        public void checkInteractiveElement()
         {
 
             if (player.interactiveObj != null)
@@ -166,9 +176,15 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
                 if (Regex.IsMatch(player.interactiveObj, "puertaCasa"))
                 {
-                    insideBuild = true;
-                    house.loadPage(player.interactiveObj);
-
+                    try
+                    {
+                        insideBuild=house.loadPage(player.interactiveObj);
+                                                
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
                 }
 
 
@@ -179,6 +195,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void Page_KeyDown(object sender, KeyEventArgs e)
         {
 
+            e.Handled = true;
 
             if (e.Key == Key.W)
             {
@@ -217,6 +234,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
 
 
+            e.Handled = true;
 
             if (e.Key == Key.W)
             {
@@ -255,18 +273,18 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void Page_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
-            if(player.turnOff)
-            {
-                
-                return;
-            }
-
             player.setAttacking(true);
 
 
         }
 
+        public void checkHouse()
+        {
 
-
+            if (insideBuild)
+            {
+                   house.checkHouse();
+            }
+        }
     }
 }

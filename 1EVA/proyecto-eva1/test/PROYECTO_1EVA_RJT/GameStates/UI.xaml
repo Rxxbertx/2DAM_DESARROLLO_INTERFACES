@@ -47,7 +47,7 @@
             </Image>
             <Image Height="62" Canvas.Left="4" Source="/recursos/ExportedIcons/Icon_BackPack.png" Stretch="Fill" Canvas.Top="237" Width="58" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.172,0.532"/>
             <Ellipse x:Name="piezaFoto1" Height="62" Canvas.Left="5" Canvas.Top="309" Width="56" StrokeThickness="5" HorizontalAlignment="Left" VerticalAlignment="Center">
-               
+
                 <Ellipse.Stroke>
                     <RadialGradientBrush>
                         <GradientStop Color="#FFBF7A6F" Offset="0.751"/>
@@ -111,29 +111,32 @@
             <Label x:Name="vida" Content="100" Canvas.Left="1498" Canvas.Top="178" FontFamily="Comic Sans MS" FontSize="36" HorizontalAlignment="Left" VerticalAlignment="Top" Height="55" Width="70"/>
 
 
+            <Canvas x:Name="canvaInteractuar"  Width="100" Height="100" Canvas.Left="406" Canvas.Top="-190" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                <Image Height="88" Canvas.Left="-27" Source="/recursos/ExportedIcons/Item1.png" Stretch="Fill" Canvas.Top="5" Width="180" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="12.135"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="31.285"/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Image Height="30"  Source="/recursos/MV Icons Keyboard/Individual Icons/keyboard_116.png" Stretch="Fill"  Width="30" Canvas.Left="23" Canvas.Top="22" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                    <Image.Effect>
+                        <DropShadowEffect/>
+                    </Image.Effect>
+                </Image>
+                <Label Content="Interactua" Canvas.Left="58" Canvas.Top="20" FontFamily="Comic Sans MS" FontSize="20" Foreground="#FF4A4A97" HorizontalAlignment="Center" VerticalAlignment="Top" Height="35" Width="114"/>
+
+            </Canvas>
+
+
+
         </Canvas>
 
 
-        <Canvas x:Name="canvaInteractuar"  Width="100" Height="100" Canvas.Left="-430" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-374,-60,0,0">
-
-            <Image Height="88" Canvas.Left="-27" Source="/recursos/ExportedIcons/Item1.png" Stretch="Fill" Canvas.Top="5" Width="180" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleX="12.135"/>
-                        <RotateTransform/>
-                        <TranslateTransform X="31.285"/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
-            <Image Height="30"  Source="/recursos/MV Icons Keyboard/Individual Icons/keyboard_116.png" Stretch="Fill"  Width="30" Canvas.Left="23" Canvas.Top="22" HorizontalAlignment="Center" VerticalAlignment="Top" >
-                <Image.Effect>
-                    <DropShadowEffect/>
-                </Image.Effect>
-            </Image>
-            <Label Content="Interactua" Canvas.Left="58" Canvas.Top="20" FontFamily="Comic Sans MS" FontSize="20" Foreground="#FF4A4A97" HorizontalAlignment="Center" VerticalAlignment="Top" Height="35" Width="114"/>
-
-        </Canvas>
 
         <!--#endregion-->
     </Grid>

@@ -17,16 +17,19 @@ namespace PROYECTO_1EVA_RJT.GameStates
             this.game = game;
         }
 
-        public void loadPage(String element)
+        public bool loadPage(String element)
         {
+            bool temp = false;
+
             switch (element)
             {
 
                 case "puertaCasa1":
 
                     houseX = new House1(game, player);
-
+                    temp= true;
                     break;
+                    
 
                 case "puerta2":
 
@@ -50,8 +53,13 @@ namespace PROYECTO_1EVA_RJT.GameStates
                     // houseX = new House5();
 
                     break;
+                default:
+
+                    return false;
+                    
 
             }
+            return temp;
 
 
         }
@@ -65,7 +73,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         public void render()
         {
             if (houseX != null)
-            houseX.render();
+                houseX.render();
 
         }
 
@@ -77,12 +85,20 @@ namespace PROYECTO_1EVA_RJT.GameStates
         public void update()
         {
             if (houseX != null)
-            houseX.update();
+                houseX.update();
         }
 
         public void addElements()
         {
             throw new NotImplementedException();
+        }
+
+        public void checkHouse()
+        {
+            
+            if (houseX != null)
+                game.MainFrame.Navigate(houseX);
+            
         }
     }
 }

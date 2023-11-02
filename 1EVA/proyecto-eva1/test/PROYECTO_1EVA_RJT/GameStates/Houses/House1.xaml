@@ -4,9 +4,12 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PROYECTO_1EVA_RJT.GameStates.Houses"
+      xmlns:local1="clr-namespace:PROYECTO_1EVA_RJT.GameStates"
       mc:Ignorable="d" 
-      d:DesignHeight="900" d:DesignWidth="1600"
-      Title="House1">
+      Height="900" Width="1600"
+      Title="House1"
+      
+      KeyDown="Page_KeyDown" KeyUp="Page_KeyUp" MouseLeftButtonDown="Page_MouseLeftButtonDown">
 
 
     <Canvas Background="#FF80B372">
@@ -290,7 +293,7 @@
 
             <!--#region player-->
 
-            <Canvas x:Name="hitbox" Width="56" Height="8" Canvas.Left="872" Canvas.Top="353" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red">
+            <Canvas x:Name="hitbox" Width="56" Height="8" Canvas.Left="1129" Canvas.Top="189" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red">
 
                 <Rectangle x:Name="jugador" Height="242" Width="284" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="-167" Canvas.Left="-114" StrokeThickness="0">
 
@@ -345,8 +348,8 @@
             </Rectangle>
 
 
-            
-            
+            <local1:UI HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="ui"/>
+
 
         </Canvas>
 

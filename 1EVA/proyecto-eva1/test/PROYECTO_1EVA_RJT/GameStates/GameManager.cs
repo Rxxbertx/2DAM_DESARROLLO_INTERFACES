@@ -18,6 +18,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
     {
 
         public static GameState State { get; set; }
+        public static GameState PreviousState { get; internal set; }
+
         public static String Nivel { get; set; }
 
         public static List<ImageBrush> inventario = new List<ImageBrush>();
@@ -31,9 +33,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         public static Dictionary<String, ImageBrush> piezaBuscar = new Dictionary<String, ImageBrush>();
 
         public GameStateData ?CurrentGameStateData { get; set; }
-
-
-
+        
 
         public GameManager()
         {
@@ -42,6 +42,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
             Nivel = Constantes.LvlConst.TUTORIAL;
             State = GameState.MENU;
+            PreviousState = GameState.MENU;
             // Inicializa los estados y sus datos
             gameStates[GameState.TUTORIAL] = new GameStateData();
             gameStates[GameState.HOUSE1] = new GameStateData();
@@ -86,10 +87,12 @@ namespace PROYECTO_1EVA_RJT.GameStates
             inventario.Add(imagen);
         }
 
-       
+        internal static void ChangeState(GameState state)
+        {
+            
+            GameManager.PreviousState = GameManager.State;
+            GameManager.State = state;
 
-
-
-
+        }
     }
 }

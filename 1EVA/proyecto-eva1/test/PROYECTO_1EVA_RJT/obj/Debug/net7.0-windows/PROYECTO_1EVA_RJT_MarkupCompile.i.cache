@@ -11,10 +11,10 @@ false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\App.xaml
 8982275071
-109-1756809678
+122258759391
 2178495964
 199-869414436
 EnterPoint\Game.xaml;GameStates\Exit.xaml;GameStates\Houses\House1.xaml;GameStates\Menu.xaml;GameStates\PauseSettings.xaml;GameStates\Playing.xaml;GameStates\Tutorial.xaml;GameStates\UI.xaml;
 
-True
+False
 

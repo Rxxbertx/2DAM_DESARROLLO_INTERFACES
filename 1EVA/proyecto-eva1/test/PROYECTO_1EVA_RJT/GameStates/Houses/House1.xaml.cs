@@ -23,8 +23,35 @@ public partial class House1 : Page, StateMethods
         this.game = game;
         this.player = player;
         game.MainFrame.NavigationService.Navigate(this);
+        ui.cargarGame(game);
+        addElements();
+        Focusable = true;
         Focus();
     }
+
+
+
+
+
+    private void InicializarJugador()
+    {
+
+
+
+        
+        // player = new Player(hitbox, gameElementsColiders, gameElementsNormalOpacity, canvaInteractuar, gameElementsInteractive);
+        player.jugador = hitbox;
+        player.gameElementsColiders = CollidableElements;
+        player.gameElementsNormalOpacity = NormalOpacityElements;
+        player.canvaInteractuar = ui.canvaInteractuar;
+        player.gameElementsInteractive = InteractiveElements;
+
+
+    }
+
+
+
+
 
     public void addElements()
     {
@@ -49,6 +76,13 @@ public partial class House1 : Page, StateMethods
 
 
         //collidable
+
+        CollidableElements.Add(objeto1Hitbox);
+        CollidableElements.Add(objeto2Hitbox);
+        CollidableElements.Add(objeto3Hitbox);
+        CollidableElements.Add(objeto4Hitbox);
+        CollidableElements.Add(objeto5Hitbox);
+        CollidableElements.Add(objeto6Hitbox);
         CollidableElements.Add(objeto7Hitbox);
         CollidableElements.Add(objeto8Hitbox);
         CollidableElements.Add(objeto9Hitbox);
@@ -61,11 +95,13 @@ public partial class House1 : Page, StateMethods
         CollidableElements.Add(objetoPared6Hitbox);
         CollidableElements.Add(objetoPared7Hitbox);
         CollidableElements.Add(objetoPared8Hitbox);
-        
+
 
         //interactive
         InteractiveElements.Add(salirPuerta);
         InteractiveElements.Add(piezaPc);
+
+        InicializarJugador();
 
 
     }
@@ -96,6 +132,7 @@ public partial class House1 : Page, StateMethods
     private void Page_KeyDown(object sender, KeyEventArgs e)
     {
 
+        e.Handled = true;
 
         if (e.Key == Key.W)
         {

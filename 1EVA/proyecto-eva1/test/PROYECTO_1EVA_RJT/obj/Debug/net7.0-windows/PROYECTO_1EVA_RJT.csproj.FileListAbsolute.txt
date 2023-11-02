@@ -267,3 +267,16 @@ C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\te
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\ExportedIcons\Icon_SoundOn.png
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\PauseSettings.g.cs
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\PauseSettings.baml
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\asiento2Back.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\biblioteca.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\lampara.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\mesa.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\mesaSalon.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\mueble.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\muebleCocina.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\muebleCocina1.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\nevera.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\perchero.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\silla.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\sofaBack.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\wc.png

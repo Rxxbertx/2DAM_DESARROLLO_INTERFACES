@@ -23,7 +23,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
     public partial class PauseSettings : Window
     {
 
-        
+
         Game game;
 
         public PauseSettings(Game game)
@@ -36,55 +36,55 @@ namespace PROYECTO_1EVA_RJT.GameStates
             comprobarFPS();
             comprobarSonido();
             comprobarGameState();
-            
+
         }
 
         private void comprobarSonido()
         {
-            
+
             if (!Constantes.MUTED)
             {
-                    SoundImageOn.Visibility = Visibility.Visible;
-                    SoundImageOff.Visibility = Visibility.Hidden;
-                }
-                else
+                SoundImageOn.Visibility = Visibility.Visible;
+                SoundImageOff.Visibility = Visibility.Hidden;
+            }
+            else
             {
-                    SoundImageOn.Visibility = Visibility.Hidden;
-                    SoundImageOff.Visibility = Visibility.Visible;
-                }
+                SoundImageOn.Visibility = Visibility.Hidden;
+                SoundImageOff.Visibility = Visibility.Visible;
+            }
 
         }
 
         private void comprobarGameState()
         {
-           
 
-            if(GameManager.State == GameState.MENU)
+
+            if (GameManager.State == GameState.MENU)
             {
                 slrMenu.Visibility = Visibility.Hidden;
                 slrMenu0.Visibility = Visibility.Hidden;
 
             }
-                
+
 
 
         }
 
         private void comprobarFPS()
         {
-            
+
 
             switch (Constantes.FPS)
             {
-                
+
                 case 30:
                     _30fps.IsChecked = true;
                     break;
                 case 60:
                     _60fps.IsChecked = true;
                     break;
-                    case 120:
-                     _120fps.IsChecked = true;
+                case 120:
+                    _120fps.IsChecked = true;
                     break;
                 default:
                     break;
@@ -95,7 +95,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void _60fps_Checked(object sender, RoutedEventArgs e)
         {
             Constantes.FPS = 60;
-           game.gameLoopTimer.Interval = TimeSpan.FromMilliseconds(1000 / Constantes.FPS);
+            game.gameLoopTimer.Interval = TimeSpan.FromMilliseconds(1000 / Constantes.FPS);
 
         }
 
@@ -117,17 +117,17 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
 
             Close();
-            
 
 
 
-        }   
+
+        }
 
         private void Menu_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            GameManager.State = GameState.MENU;
+            GameManager.ChangeState(GameState.MENU);
             game.MainFrame.NavigationService.Navigate(game.Menu);
-            
+
             Close();
         }
 
@@ -154,7 +154,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
             game.MainFrame.Effect = null;
             game.Player.TurnOn();
-            
+
         }
     }
 }
