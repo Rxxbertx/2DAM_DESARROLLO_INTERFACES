@@ -42,6 +42,15 @@
     <Page Update="GameStates\Exit.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="GameStates\Houses\House5.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GameStates\Houses\House4.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GameStates\Houses\House3.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="GameStates\Houses\House2.xaml">
       <SubType>Designer</SubType>
     </Page>

@@ -560,6 +560,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="GameStates\Houses\House5.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GameStates\Houses\House4.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GameStates\Houses\House3.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="GameStates\Houses\House2.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
