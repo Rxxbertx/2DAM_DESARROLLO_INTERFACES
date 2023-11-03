@@ -15,9 +15,14 @@ namespace PROYECTO_1EVA_RJT.GameStates
     public partial class Tutorial : Page, StateMethods
     {
 
+        private Game game;
         public Player player;
         public House house;
-        public bool insideBuild;
+        public bool insideHouse;
+        public bool canvaTutorialDisplayed = false;
+        public int contador = 0;
+        private bool completado = false;
+        private List<Canvas> canvaTutorialDisplayedOBJ = new List<Canvas>();
         private List<Rectangle> CollidableElements = new List<Rectangle>();
         private List<Rectangle> InteractiveElements = new List<Rectangle>();
         private List<Rectangle>[] NormalOpacityElements = new List<Rectangle>[2];
@@ -27,25 +32,62 @@ namespace PROYECTO_1EVA_RJT.GameStates
             GameManager.Nivel = Constantes.LvlConst.TUTORIAL;
 
             InitializeComponent();
+            this.game = game;
             this.player = player;
             this.house = new House(player, game);
             ui.cargarGame(game);
-            addElements();
-            InicializarJugador();
-            Focusable = true;
-            Focus();
+            AddElements();
+            cargarCanvas();
+            cargarCanvasTutorial(canvaTutorialDisplayedOBJ[contador]);
+
+
+
+
+
+
 
 
 
         }
 
-
-        public void addElements()
+        private void cargarCanvasTutorial(Canvas canvas)
         {
+            Canvas.SetTop(canvas, tutorial.Height / 2 - (canvas.Height / 2));
+            Canvas.SetLeft(canvas, tutorial.Width / 2 - (canvas.Width / 2));
+            canvas.Visibility = System.Windows.Visibility.Visible;
+            canvaTutorialDisplayed = true;
+            ui.Visibility = System.Windows.Visibility.Hidden;
+        }
+
+        private void cargarCanvas()
+        {
+
+            canvaTutorialDisplayedOBJ.Add(Bienvenida);
+
+            canvaTutorialDisplayedOBJ.Add(controles);
+
+            canvaTutorialDisplayedOBJ.Add(Casas);
+
+
+            canvaTutorialDisplayedOBJ.Add(piezaInfo);
+            canvaTutorialDisplayedOBJ.Add(TorreInfo);
+
+
+
+
+
+        }
+
+        public void AddElements()
+        {
+            insideHouse = false;
+            Focusable = true;
+            this.Focus();
+
             Game.GameManager.GameStateElements(GameState.TUTORIAL);
             if (Game.GameManager.CurrentGameStateData != null)
             {
-                if (loadElements())
+                if (LoadElements())
                 {
                     return;
                 }
@@ -87,11 +129,13 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
             InteractiveElements.Add(puertaCasa1);
 
+            InicializarJugador();
+
 
 
         }
 
-        public void saveElements()
+        public void SaveElements()
         {
 
             Game.GameManager.GameStateElements(GameState.TUTORIAL);
@@ -109,7 +153,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         }
 
-        public bool loadElements()
+        public bool LoadElements()
         {
 
             if (Game.GameManager.CurrentGameStateData.playerHitbox == null || Game.GameManager.CurrentGameStateData.CollidableElements == null || Game.GameManager.CurrentGameStateData.InteractiveElements == null || Game.GameManager.CurrentGameStateData.NormalOpacityElements == null)
@@ -119,6 +163,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
             CollidableElements = Game.GameManager.CurrentGameStateData.CollidableElements;
             InteractiveElements = Game.GameManager.CurrentGameStateData.InteractiveElements;
             NormalOpacityElements = Game.GameManager.CurrentGameStateData.NormalOpacityElements;
+
+            InicializarJugador();
 
             return true;
 
@@ -137,32 +183,53 @@ namespace PROYECTO_1EVA_RJT.GameStates
             player.gameElementsNormalOpacity = NormalOpacityElements;
             player.canvaInteractuar = ui.canvaInteractuar;
             player.gameElementsInteractive = InteractiveElements;
+            player.setInteract(false);
 
 
         }
 
 
-        
 
-        public void render()
+
+        public void Render()
         {
 
-            if (insideBuild)
+            if (completado)
             {
-                house.render();
+                return;
+            }
+            if (canvaTutorialDisplayed)
+            {
+                return;
+            }
+
+            if (insideHouse)
+            {
+                house.Render();
                 return;
             }
             player.render();
         }
 
-        public void update()
+        public void Update()
         {
-            if (insideBuild)
+
+            if(completado)
             {
-                house.update();
                 return;
             }
-            player.update();
+
+            if (canvaTutorialDisplayed)
+            {
+                return;
+            }
+
+            if (insideHouse)
+            {
+                house.Update();
+
+            }
+            else player.update();
 
             checkInteractiveElement();
         }
@@ -178,14 +245,43 @@ namespace PROYECTO_1EVA_RJT.GameStates
                 {
                     try
                     {
-                        insideBuild=house.loadPage(player.interactiveObj);
-                                                
+                        SaveElements();
+                        insideHouse = house.loadPage(player.interactiveObj);
+
                     }
                     catch (Exception e)
                     {
                         Console.WriteLine(e.Message);
                     }
                 }
+
+                if (player.interactiveObj.Equals("salirPuerta"))
+                {
+
+                    if (GameManager.State == GameState.TUTORIAL)
+                    {
+
+                        game.MainFrame.Navigate(game.Tutorial);
+                        GameManager.ChangeState(GameState.TUTORIAL);
+                        game.Tutorial.AddElements();
+
+
+                        return;
+                    }
+                    else if (GameManager.State == GameState.PLAYING)
+                    {
+                        game.MainFrame.Navigate(game.Playing);
+                        GameManager.ChangeState(GameState.PLAYING);
+
+                        return;
+                    }
+
+                }
+
+
+
+
+
 
 
             }
@@ -195,7 +291,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void Page_KeyDown(object sender, KeyEventArgs e)
         {
 
-            e.Handled = true;
+
 
             if (e.Key == Key.W)
             {
@@ -223,7 +319,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
             if (e.Key == Key.E)
             {
-                player.setInteract(false);
+                player.setInteract(true);
             }
 
 
@@ -234,7 +330,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
 
 
-            e.Handled = true;
+
 
             if (e.Key == Key.W)
             {
@@ -262,7 +358,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
             if (e.Key == Key.E)
             {
-                player.setInteract(true);
+                player.setInteract(false);
             }
 
         }
@@ -273,6 +369,24 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void Page_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
+            if (canvaTutorialDisplayed)
+            {
+                canvaTutorialDisplayed = false;
+                canvaTutorialDisplayedOBJ[contador].Visibility = System.Windows.Visibility.Hidden;
+                contador++;
+
+                if (contador == canvaTutorialDisplayedOBJ.Count)
+                {
+                    ui.Visibility = System.Windows.Visibility.Visible;
+                    return;
+                }
+
+                cargarCanvasTutorial(canvaTutorialDisplayedOBJ[contador]);
+
+
+                return;
+            }
+
             player.setAttacking(true);
 
 
@@ -281,10 +395,20 @@ namespace PROYECTO_1EVA_RJT.GameStates
         public void checkHouse()
         {
 
-            if (insideBuild)
+            if (insideHouse)
             {
-                   house.checkHouse();
+                house.checkHouse();
             }
         }
+
+        internal bool isFinalizado()
+        {
+           return completado;
+            
+        }
+        internal void Finalizado()
+        {
+            completado = true;
+        }   
     }
 }

@@ -22,8 +22,9 @@ namespace PROYECTO_1EVA_RJT
 
         public Menu Menu;
         public Tutorial Tutorial;
-
         public Playing Playing;
+
+        public Taller Taller;
 
         public Player Player;
 
@@ -55,8 +56,8 @@ namespace PROYECTO_1EVA_RJT
             Player = new Player(null, null, null, null, null);
             Menu = new Menu(this);
             Tutorial = new Tutorial(Player, this);
-            Playing = new Playing(this, Player);
-
+            Taller = new Taller(Player, this);
+            Playing = new Playing(Player, this);
             MainFrame.Navigate(Menu);
 
         }
@@ -82,26 +83,19 @@ namespace PROYECTO_1EVA_RJT
             {
                 case GameState.MENU:
 
-                    Menu.render();
+                    Menu.Render();
 
                     break;
                 case GameState.TUTORIAL:
-
-                    Tutorial.render();
-
-                    break;
-                case GameState.PAUSE:
-                    // Código para el estado de pausa
+                    Tutorial.Render();
                     break;
                 case GameState.WIN:
-                    // Código para el estado de victoria
+                    Taller.Render();
                     break;
                 case GameState.PLAYING:
-                    Playing.render();
+                    Playing.Render();
                     break;
-                case GameState.QUIT:
-                    // Código para el estado de victoria
-                    break;
+
             }
 
 
@@ -112,19 +106,16 @@ namespace PROYECTO_1EVA_RJT
             switch (GameManager.State)
             {
                 case GameState.MENU:
-                    Menu.update();
+                    Menu.Update();
                     break;
                 case GameState.TUTORIAL:
-                    Tutorial.update();
-                    break;
-                case GameState.PAUSE:
-                    // Código para el estado de pausa
+                    Tutorial.Update();
                     break;
                 case GameState.WIN:
-                    // Código para el estado de victoria
+                    Taller.Update();
                     break;
                 case GameState.PLAYING:
-                    // playing.Update();
+                    Playing.Update();
                     break;
 
             }

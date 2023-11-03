@@ -11,7 +11,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
     {
 
         PLAYING, MENU, PAUSE, WIN, TUTORIAL,
-        QUIT, HOUSE1, HOUSE2, HOUSE3, HOUSE4
+        QUIT, HOUSE1, HOUSE2, HOUSE3, HOUSE4,
+        TALLER
     }
 
     public class GameManager
@@ -23,11 +24,6 @@ namespace PROYECTO_1EVA_RJT.GameStates
         public static String Nivel { get; set; }
 
         public static List<ImageBrush> inventario = new List<ImageBrush>();
-
-
-
-
-
 
         private Dictionary<Enum, GameStateData> gameStates = new Dictionary<Enum, GameStateData>();
         public static Dictionary<String, ImageBrush> piezaBuscar = new Dictionary<String, ImageBrush>();

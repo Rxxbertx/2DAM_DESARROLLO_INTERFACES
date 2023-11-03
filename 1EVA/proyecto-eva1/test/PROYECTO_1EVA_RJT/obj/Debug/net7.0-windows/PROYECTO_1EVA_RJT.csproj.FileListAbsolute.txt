@@ -280,3 +280,10 @@ C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\te
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\silla.png
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\sofaBack.png
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\wc.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\ExportedIcons\Icon_LookingGlass.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\MV Icons Keyboard\Individual Icons\keyboard_115.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\MV Icons Keyboard\Individual Icons\keyboard_124.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\MV Icons Keyboard\Individual Icons\keyboard_125.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\MV Icons Keyboard\Individual Icons\keyboard_126.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\Animals\cat\idle\cat-idle\cat-idle-1.png
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\ExportedIcons\Item7.png

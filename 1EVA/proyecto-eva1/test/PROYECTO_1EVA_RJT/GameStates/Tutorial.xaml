@@ -140,9 +140,6 @@
 
             <!--GATO-->
 
-            <Image Height="116" Canvas.Left="1368" Source="/recursos/Animals/cat/idle/cat-idle/cat-idle-1.png" Stretch="Fill" Canvas.Top="410" Width="138"/>
-            <Rectangle x:Name="gatoHitbox" Height="46" Canvas.Left="1416" Stroke="red" Canvas.Top="474" Width="44" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-
 
             <!--#endregion-->
 
@@ -261,7 +258,7 @@
 
             <!--#region BIENVENIDA-->
 
-            <Canvas x:Name="Bienvenida" Width="728" Height="604" Canvas.Left="-842" Canvas.Top="-624">
+            <Canvas x:Name="Bienvenida" Width="728" Height="604" Canvas.Left="-2282" Canvas.Top="65" VerticalAlignment="Top" HorizontalAlignment="Left">
                 <Canvas.Background>
                     <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
                 </Canvas.Background>
@@ -272,6 +269,8 @@
                     </TextBlock.Background>
                 </TextBlock>
                 <TextBlock x:Name="Informacion" Text="Vamos a aprender diferentes componentes de hardware, que ilusión. POR AHORA TE VOY A AYUDAR A ENCONTRAR LA PRIMERA PIEZA" Canvas.Left="49" Canvas.Top="217" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="170" Width="630" TextAlignment="Center"/>
+                <Image Height="118" Canvas.Left="311" Source="/recursos/ExportedIcons/Icon_LookingGlass.png" Stretch="Fill" Canvas.Top="419" Width="106"/>
+                <TextBlock x:Name="Informacion_Copiar" Text="Click para continuar" Canvas.Left="49" Canvas.Top="608" FontSize="30" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="40" Width="630" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
             </Canvas>
 
@@ -279,7 +278,7 @@
             <!--#endregion-->
 
             <!--#region PIEZA-->
-            <Canvas x:Name="piezaInfo" Width="728" Height="604" Canvas.Left="1849" Canvas.Top="179" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Canvas x:Name="piezaInfo" Width="728" Height="604" Canvas.Left="2791" Canvas.Top="-192" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Canvas.Background>
                     <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
                 </Canvas.Background>
@@ -295,13 +294,14 @@
                         <DropShadowEffect/>
                     </Image.Effect>
                 </Image>
+                <TextBlock x:Name="Informacion_Copiar3" Text="Click para continuar" Canvas.Left="49" Canvas.Top="602" FontSize="30" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="40" Width="630" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
             </Canvas>
 
             <!--#endregion-->
 
             <!--#region TORRE-->
-            <Canvas x:Name="TorreInfo" Width="728" Height="604" Canvas.Left="-968" Canvas.Top="148" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Canvas x:Name="TorreInfo" Width="728" Height="604" Canvas.Left="-2282" Canvas.Top="-713" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Canvas.Background>
                     <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
                 </Canvas.Background>
@@ -317,6 +317,7 @@
                         <DropShadowEffect/>
                     </Image.Effect>
                 </Image>
+                <TextBlock x:Name="Informacion_Copiar4" Text="Click para continuar" Canvas.Left="39" Canvas.Top="603" FontSize="30" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="40" Width="630" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
             </Canvas>
 
@@ -325,7 +326,7 @@
 
             <!--#region CASASINFOR-->
 
-            <Canvas x:Name="Casas" Width="728" Height="604" Canvas.Left="398" Canvas.Top="-713" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Canvas x:Name="Casas" Width="728" Height="604" Canvas.Left="-1225" Canvas.Top="-757" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Canvas.Background>
                     <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
                 </Canvas.Background>
@@ -335,30 +336,42 @@
                         <ImageBrush ImageSource="/recursos/ExportedIcons/Item2.png"/>
                     </TextBlock.Background>
                 </TextBlock>
-                <TextBlock x:Name="casaInfo" Text="Busca en las casas para encontrar la pieza , pero ten cuidado, puedes encontrar algo peor" Canvas.Left="49" Canvas.Top="151" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="134" Width="610" TextAlignment="Center"/>
+                <TextBlock x:Name="casaInfo" Text="Busca en las casas, pueden tener las PIEZAS
+                           
+                           
+                           Pista: Veras un gato cerca de la Pieza" Canvas.Left="61" Canvas.Top="160" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="169" Width="610" TextAlignment="Center"/>
+                <Image Height="143" Canvas.Left="447" Source="/recursos/Animals/cat/idle/cat-idle/cat-idle-1.png" Canvas.Top="413" Width="138" Stretch="UniformToFill"/>
+                <TextBlock x:Name="Informacion_Copiar1" Text="Click para continuar" Canvas.Left="51" Canvas.Top="608" FontSize="30" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="40" Width="630" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Image Height="239" Canvas.Left="178" Source="/recursos/House Exterior.png" Stretch="Fill" Canvas.Top="329" Width="228" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
             </Canvas>
 
             <!--#endregion-->
 
             <!--#region CONTROL-->
-            <Canvas x:Name="E" Width="728" Height="604" Canvas.Left="1356" Canvas.Top="-713" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Canvas x:Name="controles" Width="728" Height="692" Canvas.Left="2847" Canvas.Top="-1103" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Canvas.Background>
                     <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
                 </Canvas.Background>
 
-                <TextBlock  Text="Interactuar" FontSize="50" Foreground="White" Canvas.Left="215" Canvas.Top="28" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBlock  Text="CONTROLES" FontSize="50" Foreground="White" Canvas.Left="215" Canvas.Top="28" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="/recursos/ExportedIcons/Item2.png"/>
                     </TextBlock.Background>
                 </TextBlock>
-                <TextBlock x:Name="interactuarInfo" Text="Puedes interactuar con ciertos objetos pulsando la tecla" Canvas.Left="49" Canvas.Top="151" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="134" Width="610" TextAlignment="Center"/>
-                <TextBlock x:Name="interactuarInfo2" Text="Veras esa letra encima de los objetos interactuables" Canvas.Left="49" Canvas.Top="367" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="134" Width="610" TextAlignment="Center"/>
-                <Image Height="100" Canvas.Left="302" Source="/recursos/MV Icons Keyboard/Individual Icons/keyboard_116.png" Stretch="Fill" Canvas.Top="252" Width="104">
+                <TextBlock x:Name="interactuarInfo" Text="Puedes interactuar con ciertos objetos pulsando la tecla" Canvas.Left="49" Canvas.Top="113" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="134" Width="610" TextAlignment="Center"/>
+                <TextBlock x:Name="interactuarInfo2" Text="Veras esa letra encima de los objetos interactuables" Canvas.Left="59" Canvas.Top="274" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="79" Width="610" TextAlignment="Center"/>
+                <Image Height="68" Canvas.Left="333" Source="/recursos/MV Icons Keyboard/Individual Icons/keyboard_116.png" Stretch="Fill" Canvas.Top="201" Width="62" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <Image.Effect>
                         <DropShadowEffect/>
                     </Image.Effect>
                 </Image>
+                <Image Height="62" Canvas.Left="501" Source="/recursos/MV Icons Keyboard/Individual Icons/keyboard_115.png" Stretch="Fill" Canvas.Top="507" Width="62" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Image Height="62" Canvas.Left="434" Source="/recursos/MV Icons Keyboard/Individual Icons/keyboard_124.png" Stretch="Fill" Canvas.Top="569" Width="62" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Image Height="62" Canvas.Left="501" Source="/recursos/MV Icons Keyboard/Individual Icons/keyboard_125.png" Stretch="Fill" Canvas.Top="569" Width="62" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Image Height="62" Canvas.Left="568" Source="/recursos/MV Icons Keyboard/Individual Icons/keyboard_126.png" Stretch="Fill" Canvas.Top="569" Width="62"/>
+                <TextBlock x:Name="interactuarInfo2_Copiar" Text="Para moverse usa las teclas WASD (W avanza, S retrocede, A izquierda, D derecha" Canvas.Left="59" Canvas.Top="399" FontSize="30" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="131" Width="610" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock x:Name="Informacion_Copiar2" Text="Click para continuar" Canvas.Left="49" Canvas.Top="692" FontSize="30" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="40" Width="630" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
 
             </Canvas>

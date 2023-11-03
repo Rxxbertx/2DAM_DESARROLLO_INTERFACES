@@ -8,6 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="recursos\cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlNV8zZF9yZW5kZXJfY2hhcmFjdGVyX29mX2FfeW91bmdfYXNpYW5fdGVhY2hlcl9zdF84OTk0MWU2NC1lNDM3LTQ0MTEtOWEyNi01MjcxZDlhMzUwMzNfMS5wbmc.webp\**" />
+    <EmbeddedResource Remove="recursos\cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlNV8zZF9yZW5kZXJfY2hhcmFjdGVyX29mX2FfeW91bmdfYXNpYW5fdGVhY2hlcl9zdF84OTk0MWU2NC1lNDM3LTQ0MTEtOWEyNi01MjcxZDlhMzUwMzNfMS5wbmc.webp\**" />
+    <None Remove="recursos\cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlNV8zZF9yZW5kZXJfY2hhcmFjdGVyX29mX2FfeW91bmdfYXNpYW5fdGVhY2hlcl9zdF84OTk0MWU2NC1lNDM3LTQ0MTEtOWEyNi01MjcxZDlhMzUwMzNfMS5wbmc.webp\**" />
+    <Page Remove="recursos\cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlNV8zZF9yZW5kZXJfY2hhcmFjdGVyX29mX2FfeW91bmdfYXNpYW5fdGVhY2hlcl9zdF84OTk0MWU2NC1lNDM3LTQ0MTEtOWEyNi01MjcxZDlhMzUwMzNfMS5wbmc.webp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="recursos\Animals\cat\idle\cat-idle\cat-idle-1.png" />
     <None Remove="recursos\componentespc\cpu.png" />
     <None Remove="recursos\componentespc\gpu.png" />
     <None Remove="recursos\componentespc\pantalla.png" />
@@ -21,6 +29,7 @@
     <None Remove="recursos\ExportedIcons\Icon_Exit.png" />
     <None Remove="recursos\ExportedIcons\Icon_Heart.png" />
     <None Remove="recursos\ExportedIcons\Icon_Look.png" />
+    <None Remove="recursos\ExportedIcons\Icon_LookingGlass.png" />
     <None Remove="recursos\ExportedIcons\Icon_Question.png" />
     <None Remove="recursos\ExportedIcons\Icon_Settings.png" />
     <None Remove="recursos\ExportedIcons\Icon_SoundOff.png" />
@@ -32,6 +41,7 @@
     <None Remove="recursos\ExportedIcons\Item3.png" />
     <None Remove="recursos\ExportedIcons\Item4.png" />
     <None Remove="recursos\ExportedIcons\Item5.png" />
+    <None Remove="recursos\ExportedIcons\Item7.png" />
     <None Remove="recursos\House Exterior.png" />
     <None Remove="recursos\InteriorMaterials\alfombra.png" />
     <None Remove="recursos\InteriorMaterials\asiento2Back.png" />
@@ -53,6 +63,8 @@
     <None Remove="recursos\InteriorMaterials\sofaBack.png" />
     <None Remove="recursos\InteriorMaterials\ventana.png" />
     <None Remove="recursos\InteriorMaterials\wc.png" />
+    <None Remove="recursos\LandscapeMaterials\base.png" />
+    <None Remove="recursos\LandscapeMaterials\bg.jpg" />
     <None Remove="recursos\LandscapeMaterials\bigRock.png" />
     <None Remove="recursos\LandscapeMaterials\fences.png" />
     <None Remove="recursos\LandscapeMaterials\fencesVertical.png" />
@@ -61,6 +73,7 @@
     <None Remove="recursos\LandscapeMaterials\grass2.png" />
     <None Remove="recursos\LandscapeMaterials\idk.png" />
     <None Remove="recursos\LandscapeMaterials\letter.png" />
+    <None Remove="recursos\LandscapeMaterials\profe.png" />
     <None Remove="recursos\LandscapeMaterials\rock.png" />
     <None Remove="recursos\LandscapeMaterials\rocks.png" />
     <None Remove="recursos\LandscapeMaterials\sand.png" />
@@ -68,7 +81,11 @@
     <None Remove="recursos\LandscapeMaterials\sandSpaceGrass.png" />
     <None Remove="recursos\LandscapeMaterials\tree.png" />
     <None Remove="recursos\LandscapeMaterials\treeRest.png" />
+    <None Remove="recursos\MV Icons Keyboard\Individual Icons\keyboard_115.png" />
     <None Remove="recursos\MV Icons Keyboard\Individual Icons\keyboard_116.png" />
+    <None Remove="recursos\MV Icons Keyboard\Individual Icons\keyboard_124.png" />
+    <None Remove="recursos\MV Icons Keyboard\Individual Icons\keyboard_125.png" />
+    <None Remove="recursos\MV Icons Keyboard\Individual Icons\keyboard_126.png" />
     <None Remove="recursos\Player\attack\player-attack-back\player-attack-back-1.png" />
     <None Remove="recursos\Player\attack\player-attack-back\player-attack-back-2.png" />
     <None Remove="recursos\Player\attack\player-attack-back\player-attack-back-3.png" />
@@ -134,6 +151,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="recursos\Animals\cat\idle\cat-idle\cat-idle-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\componentespc\cpu.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -158,6 +178,9 @@
     <Content Include="recursos\ExportedIcons\Icon_Look.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="recursos\ExportedIcons\Icon_LookingGlass.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\ExportedIcons\Icon_SoundOff.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -165,6 +188,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\ExportedIcons\Icon_Star.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\ExportedIcons\Item7.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\InteriorMaterials\alfombra.png">
@@ -225,6 +251,27 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\InteriorMaterials\wc.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\base.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\bg.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\profe.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\MV Icons Keyboard\Individual Icons\keyboard_115.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\MV Icons Keyboard\Individual Icons\keyboard_124.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\MV Icons Keyboard\Individual Icons\keyboard_125.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\MV Icons Keyboard\Individual Icons\keyboard_126.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\Player\attack\player-attack-back\player-attack-back-1.png">

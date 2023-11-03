@@ -132,6 +132,19 @@
 
             </Canvas>
 
+            <Canvas x:Name="canvaCompletado"  Width="296" Height="155" Canvas.Left="761" Canvas.Top="-245" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Canvas.Background>
+                    <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
+                </Canvas.Background>
+                <Label MouseLeftButtonDown="Taller_MouseLeftButtonDown"  Content="IR AL TALLER" Canvas.Left="61" Canvas.Top="87" FontFamily="Comic Sans MS" FontSize="20" Foreground="#FF37272A" HorizontalAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="36" Width="174">
+                    <Label.Background>
+                        <ImageBrush ImageSource="/recursos/ExportedIcons/Item2.png"/>
+                    </Label.Background>
+                </Label>
+                <Label Content="PIEZA ENCONTRADA" Canvas.Left="10" Canvas.Top="30" FontFamily="Comic Sans MS" FontSize="20" Foreground="Black" Height="35" Width="276" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Image Height="126" Canvas.Left="74" Source="/recursos/ExportedIcons/Item7.png" Stretch="Fill" Canvas.Top="-135" Width="136"/>
+
+            </Canvas>
 
 
         </Canvas>

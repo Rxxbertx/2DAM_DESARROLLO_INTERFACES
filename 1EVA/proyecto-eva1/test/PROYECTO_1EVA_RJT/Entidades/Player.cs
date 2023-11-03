@@ -131,12 +131,11 @@ namespace PROYECTO_1EVA_RJT.Entidades
         private void showInteractuable(Rectangle element)
         {
 
-            if (element.DataContext.Equals("interactivo"))
-            {
+            
                 canvaInteractuar.Visibility = Visibility.Visible;
                 Canvas.SetLeft(canvaInteractuar, Canvas.GetLeft(element) + element.Width / 2 - canvaInteractuar.Width / 2);
                 Canvas.SetTop(canvaInteractuar, Canvas.GetTop(element) - canvaInteractuar.Height);
-            }
+            
         }
 
         private void updateNormalOpacity()
@@ -154,7 +153,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
                     // Crea un LinearGradientBrush
                     LinearGradientBrush linearGradientBrush = new LinearGradientBrush();
                     linearGradientBrush.StartPoint = new Point(0.5, 0);
-                    linearGradientBrush.EndPoint = new Point(0.5, 1);
+                    linearGradientBrush.EndPoint = new Point(0.5,0.8);
 
 
 

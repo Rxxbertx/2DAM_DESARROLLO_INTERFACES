@@ -10,6 +10,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private StateMethods houseX;
         private Player player;
         private Game game;
+        private bool insideHouse;
 
         public House(Player player, Game game)
         {
@@ -65,30 +66,32 @@ namespace PROYECTO_1EVA_RJT.GameStates
         }
 
 
-        public bool loadElements()
+        public bool LoadElements()
         {
             return false;
         }
 
-        public void render()
+        public void Render()
         {
             if (houseX != null)
-                houseX.render();
+                houseX.Render();
 
         }
 
-        public void saveElements()
+        public void SaveElements()
         {
 
         }
 
-        public void update()
+        public void Update()
         {
             if (houseX != null)
-                houseX.update();
+                houseX.Update();
         }
 
-        public void addElements()
+
+
+        public void AddElements()
         {
             throw new NotImplementedException();
         }

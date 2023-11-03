@@ -95,4 +95,16 @@ public partial class UI : UserControl
 
         
     }
+
+    private void Taller_MouseLeftButtonDown(object sender ,MouseButtonEventArgs e)
+    {
+        e.Handled = true;
+        
+        GameManager.ChangeState(GameState.TALLER);
+        game.MainFrame.NavigationService.Navigate(game.Taller);
+        game.Taller.Focus();
+        game.Taller.ComprobarPiezas();
+
+
+    }
 }

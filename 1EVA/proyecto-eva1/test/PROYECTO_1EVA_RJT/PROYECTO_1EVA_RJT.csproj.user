@@ -13,13 +13,19 @@
     <Compile Update="GameStates\Houses\House1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="GameStates\JuegoCompletado.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GameStates\Levels\Level1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="GameStates\Menu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="GameStates\PauseSettings.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="GameStates\Playing.xaml.cs">
+    <Compile Update="GameStates\Taller.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="GameStates\Tutorial.xaml.cs">
@@ -39,13 +45,19 @@
     <Page Update="GameStates\Houses\House1.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="GameStates\JuegoCompletado.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GameStates\Levels\Level1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="GameStates\Menu.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GameStates\PauseSettings.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="GameStates\Playing.xaml">
+    <Page Update="GameStates\Taller.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GameStates\Tutorial.xaml">

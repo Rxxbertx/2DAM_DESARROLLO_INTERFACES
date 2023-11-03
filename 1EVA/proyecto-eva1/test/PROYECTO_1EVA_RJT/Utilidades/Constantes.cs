@@ -1,4 +1,6 @@
-﻿namespace PROYECTO_1EVA_RJT.Utilidades
+﻿using System;
+
+namespace PROYECTO_1EVA_RJT.Utilidades
 {
     class Constantes
     {
@@ -129,12 +131,12 @@
         public static class LvlConst
         {
 
-            public static readonly string NIVEL1 = "NIVEL 1";
-            public static readonly string NIVEL2 = "NIVEL 2";
-            public static readonly string NIVEL3 = "NIVEL 3";
-            public static readonly string NIVEL4 = "NIVEL 4";
-            public static readonly string NIVEL5 = "NIVEL 5";
-            public static readonly string TUTORIAL = "TUTORIAL";
+            public static readonly String NIVEL1 = "NIVEL 1";
+            public static readonly String NIVEL2 = "NIVEL 2";
+            public static readonly String NIVEL3 = "NIVEL 3";
+            public static readonly String NIVEL4 = "NIVEL 4";
+            public static readonly String NIVEL5 = "NIVEL 5";
+            public static readonly String TUTORIAL = "TUTORIAL";
 
         }
     }

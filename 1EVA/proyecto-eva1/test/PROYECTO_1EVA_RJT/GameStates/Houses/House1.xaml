@@ -206,7 +206,7 @@
                 </Rectangle.Fill>
             </Rectangle>
 
-            <Rectangle x:Name="objeto2Hitbox" Width="188" Height="42" Canvas.Left="496" Canvas.Top="708" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle x:Name="objeto2Hitbox" Width="188" Height="33" Canvas.Left="496" Canvas.Top="717" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Rectangle x:Name="objeto2Opacidad" Width="188" Height="42" Canvas.Left="496" Canvas.Top="675" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
 
@@ -216,7 +216,7 @@
                 </Rectangle.Fill>
             </Rectangle>
 
-            <Rectangle x:Name="objeto3Hitbox" Width="96" Height="42" Canvas.Left="1102" Canvas.Top="353" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto3Hitbox" Width="96" Height="33" Canvas.Left="1102" Canvas.Top="362" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Rectangle x:Name="objeto3Opacidad" Width="96" Height="42" Canvas.Left="1102" Canvas.Top="320" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
 
@@ -226,8 +226,8 @@
                 </Rectangle.Fill>
             </Rectangle>
 
-            <Rectangle x:Name="objeto4Hitbox" Width="180" Height="79" Canvas.Left="637" Canvas.Top="556" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto4Opacidad" Width="180" Height="28" Canvas.Left="637" Canvas.Top="528" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto4Hitbox" Width="180" Height="70" Canvas.Left="637" Canvas.Top="565" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto4Opacidad" Width="180" Height="35" Canvas.Left="637" Canvas.Top="528" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
 
 
@@ -238,8 +238,8 @@
                 </Rectangle.Fill>
             </Rectangle>
 
-            <Rectangle x:Name="objeto5Hitbox" Width="71" Height="91" Canvas.Left="410" Canvas.Top="573" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto5Opacidad" Width="77" Height="100" Canvas.Left="410" Canvas.Top="473" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto5Hitbox" Width="71" Height="68" Canvas.Left="410" Canvas.Top="596" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto5Opacidad" Width="77" Height="123" Canvas.Left="410" Canvas.Top="473" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
 
             <Rectangle x:Name="objeto6N" Width="42" Height="112" Canvas.Left="1220" Canvas.Top="289">
@@ -293,7 +293,7 @@
 
             <!--#region player-->
 
-            <Canvas x:Name="hitbox" Width="56" Height="8" Canvas.Left="1129" Canvas.Top="189" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red">
+            <Canvas x:Name="hitbox" Width="56" Height="8" Canvas.Left="1122" Canvas.Top="189" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red">
 
                 <Rectangle x:Name="jugador" Height="242" Width="284" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="-167" Canvas.Left="-114" StrokeThickness="0">
 
@@ -311,26 +311,6 @@
 
             <!--#endregion-->
 
-            <Canvas x:Name="canvaInteractuar" Visibility="Collapsed" Width="100" Height="100" Canvas.Left="-754" Canvas.Top="48" HorizontalAlignment="Left" VerticalAlignment="Top">
-
-                <Image Height="88" Canvas.Left="-27" Source="/recursos/ExportedIcons/Item1.png" Stretch="Fill" Canvas.Top="5" Width="180" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform AngleX="12.135"/>
-                            <RotateTransform/>
-                            <TranslateTransform X="31.285"/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-                <Image Height="30"  Source="/recursos/MV Icons Keyboard/Individual Icons/keyboard_116.png" Stretch="Fill"  Width="30" Canvas.Left="23" Canvas.Top="22" HorizontalAlignment="Center" VerticalAlignment="Top" >
-                    <Image.Effect>
-                        <DropShadowEffect/>
-                    </Image.Effect>
-                </Image>
-                <Label Content="Interactua" Canvas.Left="58" Canvas.Top="20" FontFamily="Comic Sans MS" FontSize="20" Foreground="#FF4A4A97" HorizontalAlignment="Center" VerticalAlignment="Top" Height="35" Width="114"/>
-
-            </Canvas>
             <Rectangle x:Name="objetoPared1Hitbox" Width="582" Height="69" Canvas.Left="706" Canvas.Top="63" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Rectangle x:Name="objetoPared2Hitbox" Width="513" Height="284" Canvas.Left="188" Canvas.Top="137" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <Rectangle x:Name="objetoPared3Hitbox" Width="18" Height="311" Canvas.Left="168" Canvas.Top="399" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Center"/>
@@ -341,7 +321,7 @@
             <Rectangle x:Name="objetoPared8Hitbox" Width="71" Height="287" Canvas.Left="338" Canvas.Top="498" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
             <Rectangle x:Name="salirPuerta" DataContext="salir" Width="132" Height="28" Canvas.Left="1057" Canvas.Top="120" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="piezaPc" DataContext="pieza" Width="52" Height="42" Canvas.Left="772" Canvas.Top="503" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Rectangle x:Name="torre" DataContext="pieza" Width="52" Height="42" Canvas.Left="772" Canvas.Top="503" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="/recursos/componentesPC/torre.png" Stretch="Uniform"/>
                 </Rectangle.Fill>

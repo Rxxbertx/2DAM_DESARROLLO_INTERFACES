@@ -18,12 +18,12 @@ namespace PROYECTO_1EVA_RJT.GameStates
         }
 
 
-        public void update()
+        public void Update()
         {
             // throw new NotImplementedException();
         }
 
-        public void render()
+        public void Render()
         {
             //throw new NotImplementedException();
         }
@@ -58,7 +58,16 @@ namespace PROYECTO_1EVA_RJT.GameStates
                 GameManager.ChangeState(GameState.PLAYING);
 
                 return;
+            }else if (GameManager.PreviousState == GameState.TALLER)
+            {
+
+                game.MainFrame.Navigate(game.Taller);
+                GameManager.ChangeState(GameState.TALLER);
+                return;
+
             }
+
+
 
             game.MainFrame.Navigate(game.Tutorial);
             GameManager.ChangeState(GameState.TUTORIAL);
@@ -128,17 +137,17 @@ namespace PROYECTO_1EVA_RJT.GameStates
         }
 
 
-        public void saveElements()
+        public void SaveElements()
         {
             throw new System.NotImplementedException();
         }
 
-        public bool loadElements()
+        public bool LoadElements()
         {
             throw new System.NotImplementedException();
         }
 
-        public void addElements()
+        public void AddElements()
         {
             throw new System.NotImplementedException();
         }

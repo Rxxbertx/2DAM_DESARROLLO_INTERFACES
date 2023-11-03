@@ -3,15 +3,15 @@
     public interface StateMethods
     {
 
-        void update();
+        void Update();
 
-        void render();
+        void Render();
 
-        void saveElements();
+        void SaveElements();
 
-        bool loadElements();
+        bool LoadElements();
 
-        void addElements();
+        void AddElements();
 
     }
 }

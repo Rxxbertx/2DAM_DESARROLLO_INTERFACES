@@ -1,4 +1,6 @@
 ﻿using PROYECTO_1EVA_RJT.Entidades;
+using PROYECTO_1EVA_RJT.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -11,6 +13,7 @@ public partial class House1 : Page, StateMethods
 
     private Game game;
     private Player player;
+    private bool completado = false;
     private List<Rectangle> CollidableElements = new List<Rectangle>();
     private List<Rectangle> InteractiveElements = new List<Rectangle>();
     private List<Rectangle>[] NormalOpacityElements = new List<Rectangle>[2];
@@ -24,27 +27,33 @@ public partial class House1 : Page, StateMethods
         this.player = player;
         game.MainFrame.NavigationService.Navigate(this);
         ui.cargarGame(game);
-        addElements();
+        AddElements();
+
         Focusable = true;
         Focus();
     }
 
-
-
-
+    private void cargarCanva(Canvas canvaCompletado)
+    {
+        canvaCompletado.Visibility = System.Windows.Visibility.Visible;
+        Canvas.SetLeft(canvaCompletado, Width/ 2 - canvaCompletado.Width / 2);
+        Canvas.SetTop(canvaCompletado, Height / 2 - canvaCompletado.Height / 2);
+        completado = true;
+    }
 
     private void InicializarJugador()
     {
 
 
 
-        
+
         // player = new Player(hitbox, gameElementsColiders, gameElementsNormalOpacity, canvaInteractuar, gameElementsInteractive);
         player.jugador = hitbox;
         player.gameElementsColiders = CollidableElements;
         player.gameElementsNormalOpacity = NormalOpacityElements;
         player.canvaInteractuar = ui.canvaInteractuar;
         player.gameElementsInteractive = InteractiveElements;
+        player.setInteract(false);
 
 
     }
@@ -53,8 +62,16 @@ public partial class House1 : Page, StateMethods
 
 
 
-    public void addElements()
+    public void AddElements()
     {
+
+        if (GameManager.Nivel==Constantes.LvlConst.TUTORIAL) { 
+        
+            torre.Visibility = System.Windows.Visibility.Visible;
+            InteractiveElements.Add(torre);
+
+
+        }
 
         //image and opacity
         NormalOpacityElements[0] = new List<Rectangle>();
@@ -99,35 +116,49 @@ public partial class House1 : Page, StateMethods
 
         //interactive
         InteractiveElements.Add(salirPuerta);
-        InteractiveElements.Add(piezaPc);
+        
 
         InicializarJugador();
 
 
     }
 
-    public bool loadElements()
+    public bool LoadElements()
     {
         return true;
     }
 
-    public void render()
+    public void Render()
     {
         player.render();
     }
 
-    public void saveElements()
+    public void SaveElements()
     {
 
     }
 
-    public void update()
+    public void Update()
     {
+        if (completado) return;
         player.update();
+        checkInteractiveElements();
     }
 
+    private void checkInteractiveElements()
+    {
+
+        if (player.interactiveObj != null)
+        {
+            if (player.interactiveObj.Equals("torre"))
+            {
+                GameManager.addInventarioElemento(CargarGuardar.getPiezaFoto(player.interactiveObj));
+                cargarCanva(ui.canvaCompletado);
+            }
+        }
 
 
+    }
 
     private void Page_KeyDown(object sender, KeyEventArgs e)
     {
@@ -160,7 +191,7 @@ public partial class House1 : Page, StateMethods
 
         if (e.Key == Key.E)
         {
-            player.setInteract(false);
+            player.setInteract(true);
         }
 
 
@@ -169,6 +200,8 @@ public partial class House1 : Page, StateMethods
 
     private void Page_KeyUp(object sender, KeyEventArgs e)
     {
+
+
 
 
 
@@ -198,7 +231,7 @@ public partial class House1 : Page, StateMethods
 
         if (e.Key == Key.E)
         {
-            player.setInteract(true);
+            player.setInteract(false);
         }
 
     }
@@ -209,6 +242,7 @@ public partial class House1 : Page, StateMethods
     private void Page_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
 
+        e.Handled = true;
 
         player.setAttacking(true);
 

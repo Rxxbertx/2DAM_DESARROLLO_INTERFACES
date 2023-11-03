@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/animals/cat/idle/cat-idle/cat-idle-1.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/componentespc/cpu.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/componentespc/gpu.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/componentespc/ps.png")]
@@ -16,9 +17,11 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/icon_exit.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/icon_heart.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/icon_look.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/icon_lookingglass.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/icon_soundoff.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/icon_soundon.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/icon_star.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/item7.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/interiormaterials/alfombra.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/interiormaterials/asiento2back.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/interiormaterials/biblioteca.png")]
@@ -39,6 +42,13 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/interiormaterials/sofaback.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/interiormaterials/ventana.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/interiormaterials/wc.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/landscapematerials/base.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/landscapematerials/bg.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/landscapematerials/profe.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/mv%20icons%20keyboard/individual%20icons/keyboard_115.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/mv%20icons%20keyboard/individual%20icons/keyboard_124.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/mv%20icons%20keyboard/individual%20icons/keyboard_125.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/mv%20icons%20keyboard/individual%20icons/keyboard_126.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/attack/player-attack-back/player-attack-back-1.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/attack/player-attack-back/player-attack-back-2.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/attack/player-attack-back/player-attack-back-3.png")]
