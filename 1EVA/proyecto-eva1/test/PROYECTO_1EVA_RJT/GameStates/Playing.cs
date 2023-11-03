@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PROYECTO_1EVA_RJT.GameStates
 {
-    internal class Playing : StateMethods
+    public class Playing : StateMethods
     {
         public Playing(Player player, Game game)
         {

@@ -132,7 +132,7 @@
 
             </Canvas>
 
-            <Canvas x:Name="canvaCompletado"  Width="296" Height="155" Canvas.Left="761" Canvas.Top="-245" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Canvas x:Name="canvaCompletado" Visibility="Collapsed"  Width="296" Height="155" Canvas.Left="761" Canvas.Top="-245" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Canvas.Background>
                     <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
                 </Canvas.Background>

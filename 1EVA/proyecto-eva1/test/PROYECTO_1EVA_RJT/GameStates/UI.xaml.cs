@@ -37,6 +37,7 @@ public partial class UI : UserControl
     private void cargarInventario()
     {
 
+        
 
         if (GameManager.inventario.Count > 0)
         {

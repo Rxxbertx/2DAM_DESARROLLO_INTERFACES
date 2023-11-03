@@ -177,6 +177,11 @@
 
             <!--#region Objetos-->
 
+
+            <Image Height="56" x:Name="gato" Canvas.Left="1040" Source="/recursos/Animals/cat/idle/cat-idle/cat-idle-1.png" Stretch="Fill" Canvas.Top="117" Width="58"/>
+
+
+
             <Image Height="76" Canvas.Left="1100" Source="/recursos/InteriorMaterials/alfombra.png" Stretch="Fill" Canvas.Top="151" Width="114" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
 
             </Image>
@@ -332,7 +337,6 @@
 
 
         </Canvas>
-
 
 
 

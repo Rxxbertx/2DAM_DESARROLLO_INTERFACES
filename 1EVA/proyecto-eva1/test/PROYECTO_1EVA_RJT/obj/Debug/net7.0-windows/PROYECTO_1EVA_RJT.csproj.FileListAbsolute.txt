@@ -45,7 +45,6 @@ C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\te
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\EnterPoint\Game.g.cs
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Exit.g.cs
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Menu.g.cs
-C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Playing.g.cs
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Tutorial.g.cs
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\App.g.cs
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\PROYECTO_1EVA_RJT_Content.g.cs
@@ -54,7 +53,6 @@ C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\te
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\EnterPoint\Game.baml
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Exit.baml
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Menu.baml
-C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Playing.baml
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Tutorial.baml
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\PROYECTO_1EVA_RJT.g.resources
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\PROYECTO_1EVA_RJT.GeneratedMSBuildEditorConfig.editorconfig
@@ -287,3 +285,57 @@ C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\te
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\MV Icons Keyboard\Individual Icons\keyboard_126.png
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\Animals\cat\idle\cat-idle\cat-idle-1.png
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\ExportedIcons\Item7.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\JuegoCompletado.g.cs
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Levels\Level1.g.cs
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\PauseSettings.g.cs
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Taller.g.cs
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\UI.g.cs
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\Animals\cat\idle\cat-idle\cat-idle-1.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\componentespc\cpu.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\componentespc\gpu.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\componentespc\ps.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\componentespc\ram.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\componentespc\ssd.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\ExportedIcons\Icon_Exit.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\ExportedIcons\Icon_Heart.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\ExportedIcons\Icon_Look.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\ExportedIcons\Icon_LookingGlass.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\ExportedIcons\Icon_SoundOff.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\ExportedIcons\Icon_SoundOn.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\ExportedIcons\Icon_Star.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\ExportedIcons\Item7.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\alfombra.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\asiento2Back.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\biblioteca.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\lampara.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\mesa.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\mesaSalon.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\mueble.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\muebleCocina.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\muebleCocina1.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\nevera.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\niIdea.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\pared1.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\pared2.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\pared3.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\perchero.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\puerta.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\silla.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\sofaBack.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\ventana.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\InteriorMaterials\wc.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\MV Icons Keyboard\Individual Icons\keyboard_115.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\MV Icons Keyboard\Individual Icons\keyboard_124.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\MV Icons Keyboard\Individual Icons\keyboard_125.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\MV Icons Keyboard\Individual Icons\keyboard_126.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\base.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\bg.jpg
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\profe.png
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\JuegoCompletado.baml
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Levels\Level1.baml
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\PauseSettings.baml
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Taller.baml
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\UI.baml
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Houses\House2.g.cs
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\proyecto-eva1\test\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Houses\House2.baml

@@ -42,34 +42,11 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
             InitializeComponent();
             this.game = game;
-            InicializarAnimaciones();
+            Focusable = true;
 
 
         }
 
-        private void InicializarAnimaciones()
-        {
-            // Inicializa la animación y el transformador de rotación
-            rotateAnimation = new DoubleAnimation
-            {
-                To = 360,             // Rotar 360 grados
-                Duration = TimeSpan.FromSeconds(5),  // Duración de la animación en segundos
-                RepeatBehavior = RepeatBehavior.Forever  // Repetir la animación continuamente
-            };
-
-            rotateTransform = new RotateTransform();
-
-            // Inicializa la lista de imágenes para animar
-            imagenesParaAnimar = new List<Ellipse>
-    {
-        piezaFoto1,
-        piezaFoto2,
-        piezaFoto3,
-        piezaFoto4,
-        piezaFoto5,
-        piezaFoto6
-    };
-        }
 
         public void AddElements()
         {
@@ -147,25 +124,15 @@ namespace PROYECTO_1EVA_RJT.GameStates
                 new JuegoCompletado();
                 return;
             }
-            AnimarPiezas();
-        }
-
-        private void AnimarPiezas()
-        {
-
-            foreach (Image image in imagenesParaAnimar)
-            {
-                // Actualiza la animación en lugar de crear una nueva
-                image.BeginAnimation(RotateTransform.AngleProperty, rotateAnimation);
-            }
-
 
         }
+
+
 
         public void ComprobarPiezas()
         {
 
-            ImageBrush pieza = new ImageBrush();
+            ImageBrush pieza = null;
 
             if (GameManager.Nivel == Constantes.LvlConst.TUTORIAL)
             {
@@ -198,9 +165,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
             }
 
-            bool existeEnInventario = GameManager.inventario.Contains(pieza);
 
-            if (existeEnInventario)
+            if (pieza != null)
             {
 
                 CargarCanvas(pieza);
@@ -225,10 +191,11 @@ namespace PROYECTO_1EVA_RJT.GameStates
             piezaFotoDialog.Fill = pieza;
             piezaFotoDialog.Fill.SetCurrentValue(ImageBrush.StretchProperty, Stretch.Uniform);
 
+            Canvas.SetLeft(piezaRecogida, padre.Width / 2 - piezaRecogida.Width / 2);
+            Canvas.SetTop(piezaRecogida, padre.Height / 2 - piezaRecogida.Height / 2);
 
             piezaRecogida.Visibility = Visibility.Visible;
-            Canvas.SetLeft(piezaRecogida, Width / 2 - piezaRecogida.Width / 2);
-            Canvas.SetTop(piezaRecogida, Height / 2 - piezaRecogida.Height / 2);
+
 
         }
         private void CargarTextos(string nivel)
@@ -254,12 +221,13 @@ namespace PROYECTO_1EVA_RJT.GameStates
                 texto[3] = "Veo que se te da muy bien buscar piezas, asi que ahora necesito una pieza más :) VAMOS A QUE ESPERAS VE AL SIGUIENTE NIVEL";
 
             }
-            else if (nivel == Constantes.LvlConst.NIVEL2)
+            else if (nivel == Constantes.LvlConst.NIVEL5)
             {
                 texto[0] = "¡Enhorabuena! Has encontrado la PLACA BASE.";
                 texto[1] = "Te explicare para que sirve la PLACA BASE: ";
                 texto[2] = "La placa base, o motherboard, es el componente principal de un ordenador, en el que se encuentran o al que están conectados todos los demás componentes y dispositivos. ";
-                texto[3] = "Veo que se te da muy bien buscar piezas, asi que ahora necesito una pieza más :) VAMOS A QUE ESPERAS VE AL SIGUIENTE NIVEL";
+                texto[3] = "Sabía que esto es lo tuyo, se te da muy bien, es importante que comprendas la utilidad de cada pieza, si tienes alguna duda solo haz clic sobre las imagenes y aparecera una breve explicacion";
+
 
             }
 
@@ -279,12 +247,12 @@ namespace PROYECTO_1EVA_RJT.GameStates
                 texto[3] = "Veo que se te da muy bien buscar piezas, asi que ahora necesito una pieza más :) VAMOS A QUE ESPERAS VE AL SIGUIENTE NIVEL";
 
             }
-            else if (nivel == Constantes.LvlConst.NIVEL5)
+            else if (nivel == Constantes.LvlConst.NIVEL2)
             {
                 texto[0] = "¡Enhorabuena! Has encontrado la PS.";
                 texto[1] = "Te explicare para que sirve la PS: ";
                 texto[2] = "La fuente de alimentación, o PS (Power Supply), es el dispositivo que suministra energía eléctrica a un ordenador. ";
-                texto[3] = "Sabía que esto es lo tuyo, se te da muy bien, es importante que comprendas la utilidad de cada pieza, si tienes alguna duda solo haz clic sobre las imagenes y aparecera una breve explicacion";
+                texto[3] = "Veo que se te da muy bien buscar piezas, asi que ahora necesito una pieza más :) VAMOS A QUE ESPERAS VE AL SIGUIENTE NIVEL";
 
             }
 
@@ -347,9 +315,13 @@ namespace PROYECTO_1EVA_RJT.GameStates
             switch (GameManager.PreviousState)
             {
                 case GameState.TUTORIAL:
+                    GameManager.ChangeState(GameState.TUTORIAL);
                     game.MainFrame.Navigate(game.Tutorial);
-                    game.Tutorial.checkHouse();
                     game.Tutorial.Finalizado();
+                    game.Tutorial.checkHouse();
+
+
+
                     break;
                 case GameState.PLAYING:
                     game.MainFrame.Navigate(game.Playing);
@@ -365,11 +337,23 @@ namespace PROYECTO_1EVA_RJT.GameStates
                     {
                         game.MainFrame.Navigate(game.Tutorial);
                         GameManager.ChangeState(GameState.TUTORIAL);
+                        game.Tutorial.Finalizado();
                         game.Tutorial.checkHouse();
                     }
                     break;
             }
 
+
+
+        }
+
+        private void Pausa_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+            e.Handled = true;
+            PauseSettings pauseSettings = new PauseSettings(game);
+            pauseSettings.Owner = game;
+            pauseSettings.ShowDialog();
 
 
         }

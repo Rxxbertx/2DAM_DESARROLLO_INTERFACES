@@ -56,7 +56,7 @@ namespace PROYECTO_1EVA_RJT
             Player = new Player(null, null, null, null, null);
             Menu = new Menu(this);
             Tutorial = new Tutorial(Player, this);
-            Taller = new Taller(Player, this);
+            Taller = new Taller(this);
             Playing = new Playing(Player, this);
             MainFrame.Navigate(Menu);
 
@@ -89,7 +89,7 @@ namespace PROYECTO_1EVA_RJT
                 case GameState.TUTORIAL:
                     Tutorial.Render();
                     break;
-                case GameState.WIN:
+                case GameState.TALLER:
                     Taller.Render();
                     break;
                 case GameState.PLAYING:
@@ -111,7 +111,7 @@ namespace PROYECTO_1EVA_RJT
                 case GameState.TUTORIAL:
                     Tutorial.Update();
                     break;
-                case GameState.WIN:
+                case GameState.TALLER:
                     Taller.Update();
                     break;
                 case GameState.PLAYING:

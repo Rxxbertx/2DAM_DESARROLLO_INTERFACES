@@ -68,9 +68,11 @@ public partial class House1 : Page, StateMethods
         if (GameManager.Nivel==Constantes.LvlConst.TUTORIAL) { 
         
             torre.Visibility = System.Windows.Visibility.Visible;
+            gato.Visibility = System.Windows.Visibility.Visible;
+            
             InteractiveElements.Add(torre);
-
-
+        
+        
         }
 
         //image and opacity
@@ -152,7 +154,7 @@ public partial class House1 : Page, StateMethods
         {
             if (player.interactiveObj.Equals("torre"))
             {
-                GameManager.addInventarioElemento(CargarGuardar.getPiezaFoto(player.interactiveObj));
+                GameManager.addInventarioElemento(CargarGuardar.getPiezaFoto("torre"));
                 cargarCanva(ui.canvaCompletado);
             }
         }

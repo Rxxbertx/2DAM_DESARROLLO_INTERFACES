@@ -278,7 +278,7 @@
             <!--#endregion-->
 
             <!--#region PIEZA-->
-            <Canvas x:Name="piezaInfo" Width="728" Height="604" Canvas.Left="2791" Canvas.Top="-192" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Canvas x:Name="piezaInfo" Width="728" Height="604" Canvas.Left="2483" Canvas.Top="-193" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Canvas.Background>
                     <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
                 </Canvas.Background>
@@ -299,6 +299,8 @@
             </Canvas>
 
             <!--#endregion-->
+
+
 
             <!--#region TORRE-->
             <Canvas x:Name="TorreInfo" Width="728" Height="604" Canvas.Left="-2282" Canvas.Top="-713" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -385,6 +387,34 @@
             <local:UI HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="ui"/>
             <!--#endregion-->
 
+
+            <!--#region  FIN-->
+            <Canvas x:Name="tutorialCompletado" Width="728" Height="604" Canvas.Left="766" Canvas.Top="-1129" HorizontalAlignment="Left" VerticalAlignment="Top" MouseLeftButtonDown="tutorialCompletado_MouseLeftButtonDown">
+                <Canvas.Background>
+                    <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
+                </Canvas.Background>
+
+                <TextBlock x:Name="TituloPieza1" Text="ENHORABUENA" FontSize="50" Foreground="White" Canvas.Left="165" Canvas.Top="54" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="/recursos/ExportedIcons/Item2.png"/>
+                    </TextBlock.Background>
+                </TextBlock>
+                <TextBlock x:Name="nombrePieza1" Text="TUTORIAL COMPLETADO" Canvas.Left="49" Canvas.Top="151" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="88" Width="630" TextAlignment="Center"/>
+                <Image Height="302" Canvas.Left="193" Source="/recursos/ExportedIcons/Icon_Star.png" Stretch="Fill" Canvas.Top="239" Width="338" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Image.Effect>
+                        <DropShadowEffect/>
+                    </Image.Effect>
+                </Image>
+                <TextBlock x:Name="Informacion_Copiar5" Text="Click para continuar" Canvas.Left="49" Canvas.Top="602" FontSize="30" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="40" Width="630" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+            </Canvas>
+
+
+
+
         </Canvas>
+
+        <!--#endregion-->
+
     </Grid>
 </Page>

@@ -40,14 +40,6 @@ namespace PROYECTO_1EVA_RJT.GameStates
             cargarCanvas();
             cargarCanvasTutorial(canvaTutorialDisplayedOBJ[contador]);
 
-
-
-
-
-
-
-
-
         }
 
         private void cargarCanvasTutorial(Canvas canvas)
@@ -63,18 +55,10 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
 
             canvaTutorialDisplayedOBJ.Add(Bienvenida);
-
             canvaTutorialDisplayedOBJ.Add(controles);
-
             canvaTutorialDisplayedOBJ.Add(Casas);
-
-
             canvaTutorialDisplayedOBJ.Add(piezaInfo);
             canvaTutorialDisplayedOBJ.Add(TorreInfo);
-
-
-
-
 
         }
 
@@ -214,7 +198,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         public void Update()
         {
 
-            if(completado)
+            if (completado)
             {
                 return;
             }
@@ -277,12 +261,6 @@ namespace PROYECTO_1EVA_RJT.GameStates
                     }
 
                 }
-
-
-
-
-
-
 
             }
 
@@ -395,6 +373,17 @@ namespace PROYECTO_1EVA_RJT.GameStates
         public void checkHouse()
         {
 
+
+            if (completado)
+            {
+                tutorialCompletado.Visibility = System.Windows.Visibility.Visible;
+                Canvas.SetLeft(tutorialCompletado, tutorial.Width / 2 - tutorialCompletado.Width / 2);
+                Canvas.SetTop(tutorialCompletado, tutorial.Height / 2 - tutorialCompletado.Height / 2);
+
+                return;
+
+            }
+
             if (insideHouse)
             {
                 house.checkHouse();
@@ -403,12 +392,22 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         internal bool isFinalizado()
         {
-           return completado;
-            
+            return completado;
+
         }
         internal void Finalizado()
         {
             completado = true;
-        }   
+        }
+
+        private void tutorialCompletado_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+           tutorialCompletado.Visibility=System.Windows.Visibility.Hidden;
+
+            GameManager.ChangeState(GameState.PLAYING);
+            game.MainFrame.Navigate(game.Playing);
+
+        }
     }
 }
