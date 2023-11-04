@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "EanKWEa2hYGIoaWbDdSHtlDysWs9ealCI1QD/gomhaLVcGyFuDYAmzDKkCh0sBwmYpKcIyiiEYGO9y7dNhqTlA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\1EVA\\PROYECTO_1EVA_RJT\\PROYECTO_1EVA_RJT.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Roberto\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\Roberto\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
