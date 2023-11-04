@@ -51,8 +51,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
             //agregar imagenes a su respectivo nivel
 
             piezaBuscar[Constantes.LvlConst.TUTORIAL] = CargarGuardar.getPiezaFoto("torre");
-            piezaBuscar[Constantes.LvlConst.NIVEL1] = CargarGuardar.getPiezaFoto("ram");
-            piezaBuscar[Constantes.LvlConst.NIVEL2] = CargarGuardar.getPiezaFoto("ps");
+            piezaBuscar[Constantes.LvlConst.NIVEL1] = CargarGuardar.getPiezaFoto("ps");
+            piezaBuscar[Constantes.LvlConst.NIVEL2] = CargarGuardar.getPiezaFoto("ram");            
             piezaBuscar[Constantes.LvlConst.NIVEL3] = CargarGuardar.getPiezaFoto("gpu");
             piezaBuscar[Constantes.LvlConst.NIVEL4] = CargarGuardar.getPiezaFoto("cpu");
             piezaBuscar[Constantes.LvlConst.NIVEL5] = CargarGuardar.getPiezaFoto("placaBase");

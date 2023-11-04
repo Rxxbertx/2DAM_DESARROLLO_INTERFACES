@@ -361,9 +361,9 @@
     <Content Include="recursos\ExportedIcons\Item2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="recursos\ExportedIcons\Item3.png">
+    <Resource Include="recursos\ExportedIcons\Item3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
     <Content Include="recursos\ExportedIcons\Item4.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -76,7 +76,6 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/icon_x.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/item1.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/item2.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/item3.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/item4.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/item5.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/house%20exterior.png")]

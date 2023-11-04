@@ -45,8 +45,6 @@ public partial class House3: Page, StateMethods
     {
 
 
-
-
         // player = new Player(hitbox, gameElementsColiders, gameElementsNormalOpacity, canvaInteractuar, gameElementsInteractive);
         player.jugador = hitbox;
         player.gameElementsColiders = CollidableElements;
@@ -60,8 +58,6 @@ public partial class House3: Page, StateMethods
 
 
 
-
-
     public void AddElements()
     {
 
@@ -70,7 +66,7 @@ public partial class House3: Page, StateMethods
             ram.Visibility = System.Windows.Visibility.Visible;
             gato.Visibility = System.Windows.Visibility.Visible;
             
-            InteractiveElements.Add(ps);
+            InteractiveElements.Add(ram);
         
         
         }
@@ -83,6 +79,7 @@ public partial class House3: Page, StateMethods
         NormalOpacityElements[1].Add(objeto1N);
         NormalOpacityElements[0].Add(objeto1Opacidad);
 
+
         NormalOpacityElements[1].Add(objeto3N);
         NormalOpacityElements[0].Add(objeto3Opacidad);
         NormalOpacityElements[1].Add(objeto4N);
@@ -91,6 +88,25 @@ public partial class House3: Page, StateMethods
         NormalOpacityElements[0].Add(objeto5Opacidad);
         NormalOpacityElements[1].Add(objeto6N);
         NormalOpacityElements[0].Add(objeto6Opacidad);
+        NormalOpacityElements[1].Add(objeto11N);
+        NormalOpacityElements[0].Add(objeto11Opacidad);
+        NormalOpacityElements[1].Add(objeto12N);
+        NormalOpacityElements[0].Add(objeto12Opacidad);
+        NormalOpacityElements[1].Add(objeto13N);
+        NormalOpacityElements[0].Add(objeto13Opacidad);
+        NormalOpacityElements[1].Add(objeto14N);
+        NormalOpacityElements[0].Add(objeto14Opacidad);
+
+        NormalOpacityElements[1].Add(objeto16N);
+       
+        NormalOpacityElements[0].Add(objeto16Opacidad);
+
+        NormalOpacityElements[1].Add(objeto18N);
+        NormalOpacityElements[0].Add(objeto18Opacidad);
+
+        NormalOpacityElements[1].Add(objeto19N);
+        NormalOpacityElements[0].Add(objeto19Opacidad);
+
 
 
         //collidable
@@ -105,6 +121,17 @@ public partial class House3: Page, StateMethods
         CollidableElements.Add(objeto8Hitbox);
         CollidableElements.Add(objeto9Hitbox);
         CollidableElements.Add(objeto10Hitbox);
+        CollidableElements.Add(objeto11Hitbox);
+        CollidableElements.Add(objeto12Hitbox);
+        CollidableElements.Add(objeto13Hitbox);
+        CollidableElements.Add(objeto14Hitbox);
+        CollidableElements.Add(objeto15Hitbox);
+        CollidableElements.Add(objeto16Hitbox);
+        CollidableElements.Add(objeto17Hitbox);
+        CollidableElements.Add(objeto18Hitbox);
+        CollidableElements.Add(objeto19Hitbox);
+        CollidableElements.Add(objeto20Hitbox);
+
         CollidableElements.Add(objetoPared1Hitbox);
         CollidableElements.Add(objetoPared2Hitbox);
         CollidableElements.Add(objetoPared3Hitbox);
@@ -113,6 +140,9 @@ public partial class House3: Page, StateMethods
         CollidableElements.Add(objetoPared6Hitbox);
         CollidableElements.Add(objetoPared7Hitbox);
         CollidableElements.Add(objetoPared8Hitbox);
+        CollidableElements.Add(objetoPared9Hitbox);
+        CollidableElements.Add(objetoPared10Hitbox);
+        
 
 
         //interactive
@@ -151,9 +181,9 @@ public partial class House3: Page, StateMethods
 
         if (player.interactiveObj != null)
         {
-            if (player.interactiveObj.Equals("torre"))
+            if (player.interactiveObj.Equals("ram"))
             {
-                GameManager.addInventarioElemento(CargarGuardar.getPiezaFoto("torre"));
+                GameManager.addInventarioElemento(CargarGuardar.getPiezaFoto("ram"));
                 cargarCanva(ui.canvaCompletado);
             }
         }

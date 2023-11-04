@@ -67,10 +67,10 @@ public partial class House4: Page, StateMethods
 
         if (GameManager.Nivel==Constantes.LvlConst.NIVEL1) { 
         
-            ram.Visibility = System.Windows.Visibility.Visible;
+            gpu.Visibility = System.Windows.Visibility.Visible;
             gato.Visibility = System.Windows.Visibility.Visible;
             
-            InteractiveElements.Add(ps);
+            InteractiveElements.Add(gpu);
         
         
         }
@@ -90,8 +90,16 @@ public partial class House4: Page, StateMethods
         NormalOpacityElements[0].Add(objeto4Opacidad);
         NormalOpacityElements[1].Add(objeto5N);
         NormalOpacityElements[0].Add(objeto5Opacidad);
-        NormalOpacityElements[1].Add(objeto6N);
-        NormalOpacityElements[0].Add(objeto6Opacidad);
+        NormalOpacityElements[1].Add(objeto11N);
+        NormalOpacityElements[0].Add(objeto11Opacidad);
+        NormalOpacityElements[1].Add(objeto12N);
+        NormalOpacityElements[0].Add(objeto12Opacidad);
+        NormalOpacityElements[1].Add(objeto13N);
+        NormalOpacityElements[0].Add(objeto13Opacidad);
+        NormalOpacityElements[1].Add(objeto14N);
+        NormalOpacityElements[0].Add(objeto14Opacidad);
+        NormalOpacityElements[1].Add(objeto16N);
+        NormalOpacityElements[0].Add(objeto16Opacidad);
 
 
         //collidable
@@ -106,6 +114,15 @@ public partial class House4: Page, StateMethods
         CollidableElements.Add(objeto8Hitbox);
         CollidableElements.Add(objeto9Hitbox);
         CollidableElements.Add(objeto10Hitbox);
+        CollidableElements.Add(objeto11Hitbox);
+        CollidableElements.Add(objeto12Hitbox);
+        CollidableElements.Add(objeto13Hitbox);
+        CollidableElements.Add(objeto14Hitbox);
+        CollidableElements.Add(objeto15Hitbox);
+        CollidableElements.Add(objeto16Hitbox);
+        CollidableElements.Add(objeto17Hitbox);
+        CollidableElements.Add(objeto18Hitbox);
+
         CollidableElements.Add(objetoPared1Hitbox);
         CollidableElements.Add(objetoPared2Hitbox);
         CollidableElements.Add(objetoPared3Hitbox);
@@ -114,6 +131,10 @@ public partial class House4: Page, StateMethods
         CollidableElements.Add(objetoPared6Hitbox);
         CollidableElements.Add(objetoPared7Hitbox);
         CollidableElements.Add(objetoPared8Hitbox);
+        CollidableElements.Add(objetoPared9Hitbox);
+        CollidableElements.Add(objetoPared10Hitbox);
+        CollidableElements.Add(objetoPared11Hitbox);
+
 
 
         //interactive
@@ -152,9 +173,9 @@ public partial class House4: Page, StateMethods
 
         if (player.interactiveObj != null)
         {
-            if (player.interactiveObj.Equals("torre"))
+            if (player.interactiveObj.Equals("gpu"))
             {
-                GameManager.addInventarioElemento(CargarGuardar.getPiezaFoto("torre"));
+                GameManager.addInventarioElemento(CargarGuardar.getPiezaFoto("gpu"));
                 cargarCanva(ui.canvaCompletado);
             }
         }

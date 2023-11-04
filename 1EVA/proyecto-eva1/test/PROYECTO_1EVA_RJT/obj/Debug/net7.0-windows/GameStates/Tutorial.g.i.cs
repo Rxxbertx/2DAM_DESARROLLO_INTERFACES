@@ -429,7 +429,7 @@ namespace PROYECTO_1EVA_RJT.GameStates {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PROYECTO_1EVA_RJT;component/gamestates/tutorial.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PROYECTO_1EVA_RJT;V1.0.0.0;component/gamestates/tutorial.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\GameStates\Tutorial.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
