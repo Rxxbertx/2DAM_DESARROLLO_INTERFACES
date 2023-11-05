@@ -65,14 +65,19 @@ public partial class House5: Page, StateMethods
     public void AddElements()
     {
 
-        if (GameManager.Nivel==Constantes.LvlConst.NIVEL1) { 
+        if (GameManager.Nivel==Constantes.LvlConst.NIVEL5) { 
         
             placaBase.Visibility = System.Windows.Visibility.Visible;
             gato.Visibility = System.Windows.Visibility.Visible;
             
             InteractiveElements.Add(placaBase);
-        
-        
+        }
+        else{
+
+            placaBase.Visibility = System.Windows.Visibility.Hidden;
+            gato.Visibility = System.Windows.Visibility.Hidden;
+
+
         }
 
         //image and opacity

@@ -48,15 +48,6 @@ namespace PROYECTO_1EVA_RJT.GameStates
         }
 
 
-        public void AddElements()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool LoadElements()
-        {
-            throw new NotImplementedException();
-        }
 
         public void Render()
         {
@@ -105,10 +96,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         }
 
-        public void SaveElements()
-        {
-            throw new NotImplementedException();
-        }
+
 
         public void Update()
         {
@@ -117,11 +105,6 @@ namespace PROYECTO_1EVA_RJT.GameStates
             {
                 btnSiguiente.Visibility = Visibility.Collapsed;
 
-                return;
-            }
-            if (completado)
-            {
-                new JuegoCompletado();
                 return;
             }
 
@@ -318,14 +301,16 @@ namespace PROYECTO_1EVA_RJT.GameStates
                     GameManager.ChangeState(GameState.TUTORIAL);
                     game.MainFrame.Navigate(game.Tutorial);
                     game.Tutorial.Finalizado();
-                    game.Tutorial.checkHouse();
+                    game.Tutorial.CheckHouse();
 
 
 
                     break;
                 case GameState.PLAYING:
+
                     game.MainFrame.Navigate(game.Playing);
                     GameManager.ChangeState(GameState.PLAYING);
+
                     break;
                 case GameState.MENU:
                     if (game.Tutorial.isFinalizado())
@@ -338,7 +323,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
                         game.MainFrame.Navigate(game.Tutorial);
                         GameManager.ChangeState(GameState.TUTORIAL);
                         game.Tutorial.Finalizado();
-                        game.Tutorial.checkHouse();
+                        game.Tutorial.CheckHouse();
                     }
                     break;
             }

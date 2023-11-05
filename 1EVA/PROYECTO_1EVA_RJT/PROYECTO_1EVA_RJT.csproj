@@ -19,6 +19,7 @@
     <None Remove="recursos\componentespc\cpu.png" />
     <None Remove="recursos\componentespc\gpu.png" />
     <None Remove="recursos\componentespc\pantalla.png" />
+    <None Remove="recursos\componentespc\placaBase.png" />
     <None Remove="recursos\componentespc\ps.png" />
     <None Remove="recursos\componentespc\ram.png" />
     <None Remove="recursos\componentespc\ssd.png" />
@@ -44,25 +45,64 @@
     <None Remove="recursos\ExportedIcons\Item7.png" />
     <None Remove="recursos\House Exterior.png" />
     <None Remove="recursos\InteriorMaterials\alfombra.png" />
+    <None Remove="recursos\InteriorMaterials\alfombraRoja.png" />
+    <None Remove="recursos\InteriorMaterials\alfombraRoja2.png" />
+    <None Remove="recursos\InteriorMaterials\alfombraVerde.png" />
+    <None Remove="recursos\InteriorMaterials\alfombraVerde2.png" />
     <None Remove="recursos\InteriorMaterials\asiento2Back.png" />
+    <None Remove="recursos\InteriorMaterials\asiento2Front.png" />
+    <None Remove="recursos\InteriorMaterials\banera.png" />
     <None Remove="recursos\InteriorMaterials\biblioteca.png" />
+    <None Remove="recursos\InteriorMaterials\espejoFront.png" />
+    <None Remove="recursos\InteriorMaterials\estanteriaGrandeFront.png" />
+    <None Remove="recursos\InteriorMaterials\estanteriaGrandeRight.png" />
+    <None Remove="recursos\InteriorMaterials\estanteriaMedianaFront.png" />
+    <None Remove="recursos\InteriorMaterials\estanteriaMedianaFront2.png" />
+    <None Remove="recursos\InteriorMaterials\estanteriaPequenaFront.png" />
+    <None Remove="recursos\InteriorMaterials\flor.png" />
+    <None Remove="recursos\InteriorMaterials\flor2.png" />
+    <None Remove="recursos\InteriorMaterials\hoguera.png" />
+    <None Remove="recursos\InteriorMaterials\horno.png" />
     <None Remove="recursos\InteriorMaterials\lampara.png" />
+    <None Remove="recursos\InteriorMaterials\lavabo.png" />
+    <None Remove="recursos\InteriorMaterials\lavaboVacio.png" />
     <None Remove="recursos\InteriorMaterials\mesa.png" />
     <None Remove="recursos\InteriorMaterials\mesaSalon.png" />
+    <None Remove="recursos\InteriorMaterials\mesaSalon2.png" />
+    <None Remove="recursos\InteriorMaterials\mesaVerdeBack.png" />
+    <None Remove="recursos\InteriorMaterials\mesaVerdeFront.png" />
     <None Remove="recursos\InteriorMaterials\mueble.png" />
     <None Remove="recursos\InteriorMaterials\muebleCocina.png" />
     <None Remove="recursos\InteriorMaterials\muebleCocina1.png" />
+    <None Remove="recursos\InteriorMaterials\mueblePFront.png" />
+    <None Remove="recursos\InteriorMaterials\mueblePRight.png" />
     <None Remove="recursos\InteriorMaterials\nevera.png" />
     <None Remove="recursos\InteriorMaterials\niIdea.png" />
+    <None Remove="recursos\InteriorMaterials\paraGato.png" />
+    <None Remove="recursos\InteriorMaterials\pared.png" />
     <None Remove="recursos\InteriorMaterials\pared1.png" />
     <None Remove="recursos\InteriorMaterials\pared2.png" />
     <None Remove="recursos\InteriorMaterials\pared3.png" />
     <None Remove="recursos\InteriorMaterials\perchero.png" />
+    <None Remove="recursos\InteriorMaterials\perchero2.png" />
     <None Remove="recursos\InteriorMaterials\puerta.png" />
+    <None Remove="recursos\InteriorMaterials\relojFront.png" />
     <None Remove="recursos\InteriorMaterials\silla.png" />
+    <None Remove="recursos\InteriorMaterials\sillaBack.png" />
+    <None Remove="recursos\InteriorMaterials\sillaFront.png" />
     <None Remove="recursos\InteriorMaterials\sofaBack.png" />
+    <None Remove="recursos\InteriorMaterials\sofaVerdeFront.png" />
+    <None Remove="recursos\InteriorMaterials\sofaVerdeRight.png" />
+    <None Remove="recursos\InteriorMaterials\suelo1.png" />
+    <None Remove="recursos\InteriorMaterials\suelo2.png" />
+    <None Remove="recursos\InteriorMaterials\suelo3.png" />
+    <None Remove="recursos\InteriorMaterials\tocaDiscos.png" />
+    <None Remove="recursos\InteriorMaterials\utensilios.png" />
     <None Remove="recursos\InteriorMaterials\ventana.png" />
+    <None Remove="recursos\InteriorMaterials\ventana1.png" />
+    <None Remove="recursos\InteriorMaterials\ventanaPeque.png" />
     <None Remove="recursos\InteriorMaterials\wc.png" />
+    <None Remove="recursos\InteriorMaterials\wcRight.png" />
     <None Remove="recursos\LandscapeMaterials\base.png" />
     <None Remove="recursos\LandscapeMaterials\bg.jpg" />
     <None Remove="recursos\LandscapeMaterials\bigRock.png" />
@@ -151,6 +191,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="recursos\componentespc\placaBase.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\mueblePRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="recursos\Animals\cat\idle\cat-idle\cat-idle-1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -196,19 +245,82 @@
     <Content Include="recursos\InteriorMaterials\alfombra.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="recursos\InteriorMaterials\alfombraRoja.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\alfombraRoja2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\alfombraVerde.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\alfombraVerde2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\InteriorMaterials\asiento2Back.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\asiento2Front.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\banera.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\InteriorMaterials\biblioteca.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="recursos\InteriorMaterials\espejoFront.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\estanteriaGrandeFront.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\estanteriaGrandeRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\estanteriaMedianaFront.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\estanteriaMedianaFront2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\estanteriaPequenaFront.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\flor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\flor2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\hoguera.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\horno.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\InteriorMaterials\lampara.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\lavabo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\lavaboVacio.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\InteriorMaterials\mesa.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\InteriorMaterials\mesaSalon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\mesaSalon2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\mesaVerdeBack.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\mesaVerdeFront.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\InteriorMaterials\mueble.png">
@@ -220,10 +332,19 @@
     <Content Include="recursos\InteriorMaterials\muebleCocina1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="recursos\InteriorMaterials\mueblePFront.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\InteriorMaterials\nevera.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\InteriorMaterials\niIdea.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\paraGato.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\pared.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\InteriorMaterials\pared1.png">
@@ -232,25 +353,67 @@
     <Content Include="recursos\InteriorMaterials\pared2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="recursos\InteriorMaterials\suelo1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\suelo3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\suelo2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\InteriorMaterials\pared3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\InteriorMaterials\perchero.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="recursos\InteriorMaterials\perchero2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\InteriorMaterials\puerta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\relojFront.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\InteriorMaterials\silla.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="recursos\InteriorMaterials\sillaBack.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\sillaFront.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\InteriorMaterials\sofaBack.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\sofaVerdeFront.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\sofaVerdeRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\tocaDiscos.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\utensilios.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\InteriorMaterials\ventana.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="recursos\InteriorMaterials\ventana1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\ventanaPeque.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\InteriorMaterials\wc.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\InteriorMaterials\wcRight.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\LandscapeMaterials\base.png">
@@ -361,9 +524,9 @@
     <Content Include="recursos\ExportedIcons\Item2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="recursos\ExportedIcons\Item3.png">
+    <Content Include="recursos\ExportedIcons\Item3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Content Include="recursos\ExportedIcons\Item4.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -572,6 +735,22 @@
     <Compile Update="GameStates\Houses\House2.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="GameStates\Levels\Level5.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GameStates\Levels\Level4.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GameStates\Levels\Level3.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GameStates\Levels\Level2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="recursos\LandscapeMaterials\otono\" />
   </ItemGroup>
 
 </Project>

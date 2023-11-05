@@ -10,8 +10,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
     public enum GameState
     {
 
-        PLAYING, MENU, PAUSE, WIN, TUTORIAL,
-        QUIT, HOUSE1, HOUSE2, HOUSE3, HOUSE4,
+        PLAYING, MENU, TUTORIAL,
+        LVL1, LVL2, LVL3, LVL4, LVL5,
         TALLER
     }
 
@@ -41,10 +41,11 @@ namespace PROYECTO_1EVA_RJT.GameStates
             PreviousState = GameState.MENU;
             // Inicializa los estados y sus datos
             gameStates[GameState.TUTORIAL] = new GameStateData();
-            gameStates[GameState.HOUSE1] = new GameStateData();
-            gameStates[GameState.HOUSE2] = new GameStateData();
-            gameStates[GameState.HOUSE3] = new GameStateData();
-            gameStates[GameState.HOUSE4] = new GameStateData();
+            gameStates[GameState.LVL1] = new GameStateData();
+            gameStates[GameState.LVL2] = new GameStateData();
+            gameStates[GameState.LVL3] = new GameStateData();
+            gameStates[GameState.LVL4] = new GameStateData();
+            gameStates[GameState.LVL5] = new GameStateData();
             // Agrega elementos y colisiones a cada estado según sea necesario
 
             

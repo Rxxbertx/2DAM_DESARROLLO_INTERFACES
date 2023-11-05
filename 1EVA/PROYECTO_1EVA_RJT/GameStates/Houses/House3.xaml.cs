@@ -61,14 +61,20 @@ public partial class House3: Page, StateMethods
     public void AddElements()
     {
 
-        if (GameManager.Nivel==Constantes.LvlConst.NIVEL1) { 
+        if (GameManager.Nivel==Constantes.LvlConst.NIVEL2) { 
         
             ram.Visibility = System.Windows.Visibility.Visible;
             gato.Visibility = System.Windows.Visibility.Visible;
             
             InteractiveElements.Add(ram);
-        
-        
+
+        }
+        else
+        {
+            ram.Visibility = System.Windows.Visibility.Hidden;
+            gato.Visibility = System.Windows.Visibility.Hidden;
+            
+            
         }
 
         //image and opacity

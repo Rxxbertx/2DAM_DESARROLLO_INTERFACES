@@ -48,7 +48,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
             {
                 game.MainFrame.Navigate(game.Tutorial);
                 GameManager.ChangeState(GameState.TUTORIAL);
-                game.Tutorial.checkHouse();
+                game.Tutorial.CheckHouse();
 
                 return;
             }
@@ -71,7 +71,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
             game.MainFrame.Navigate(game.Tutorial);
             GameManager.ChangeState(GameState.TUTORIAL);
-            game.Tutorial.checkHouse();
+            game.Tutorial.CheckHouse();
             return;
 
 
@@ -136,21 +136,6 @@ namespace PROYECTO_1EVA_RJT.GameStates
             salirX.Effect = null;
         }
 
-
-        public void SaveElements()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public bool LoadElements()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void AddElements()
-        {
-            throw new System.NotImplementedException();
-        }
 
         private void Settings_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

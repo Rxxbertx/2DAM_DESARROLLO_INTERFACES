@@ -12,58 +12,45 @@
       KeyDown="Page_KeyDown" KeyUp="Page_KeyUp" MouseLeftButtonDown="Page_MouseLeftButtonDown">
 
 
-    <Canvas Background="#FF80B372">
+    <Canvas Background="#FF6F4324">
 
 
-        <Canvas Background="#FF80B372">
-            <Canvas.Effect>
-                <BlurEffect/>
-            </Canvas.Effect>
-
-            <Image Height="242" Canvas.Left="1220" Source="/recursos/LandscapeMaterials/tree.png" Stretch="Fill" Canvas.Top="521" Width="212" Opacity="0.292">
-                <Image.Effect>
-                    <BlurEffect/>
-                </Image.Effect>
-            </Image>
-            <Image Height="242" Canvas.Left="299" Source="/recursos/LandscapeMaterials/tree.png" Stretch="Fill" Canvas.Top="-50" Width="212" HorizontalAlignment="Left" VerticalAlignment="Top" Opacity="0.3"/>
-            <Image Height="94" Canvas.Left="1420" Source="/recursos/LandscapeMaterials/grass1.png" Stretch="Fill" Canvas.Top="404" Width="94"/>
-        </Canvas>
-
+      
 
 
         <Canvas>
 
-            <!--#region Paredes-->
-            <Image Height="71" Canvas.Left="188" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="336" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="188" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="336" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="706" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="71" Width="74" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="780" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="71" Width="74" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="706" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Width="74" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="780" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Width="74" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="978" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="71" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="1052" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="71" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="978" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="1052" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="1215" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="71" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="1215" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="854" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="88" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="914" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="88" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="854" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="-50"/>
-            <Image Height="71" Canvas.Left="919" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Width="74" Canvas.Top="-50" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="262" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="262" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <!--#region pared2es-->
+            <Image Height="71" Canvas.Left="188" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="336" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="188" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="336" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="706" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="71" Width="74" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="780" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="71" Width="74" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="706" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Width="74" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="780" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Width="74" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="978" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="71" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="1052" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="71" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="978" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="1052" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="1215" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="71" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="1215" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="854" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="88" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="914" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="88" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="854" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="-50"/>
+            <Image Height="71" Canvas.Left="919" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Width="74" Canvas.Top="-50" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="262" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="262" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
 
-            <Image Height="71" Canvas.Left="410" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="484" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="410" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="484" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="558" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="632" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="558" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="632" Source="/recursos/InteriorMaterials/pared1.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="410" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="484" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="410" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="484" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="558" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="632" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="558" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="632" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
 
             <!--#endregion-->
@@ -80,98 +67,98 @@
 
             <!--#region Suelo-->
 
-            <Image Height="71" Canvas.Left="1215" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="142" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="1141" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="142" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="1067" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="142" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="993" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="142" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="1215" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="213" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="1141" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="213" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="1067" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="213" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="993" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="213" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="1215" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="1141" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="1067" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="993" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="1215" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="1141" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="1067" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="993" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="993" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="928" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="142" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="854" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="142" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="780" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="142" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="706" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="142" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="928" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="213" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="854" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="213" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="780" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="213" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="706" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="213" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="928" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="854" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="780" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="706" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="928" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="854" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="780" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="706" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="72" Canvas.Left="928" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="72" Canvas.Left="854" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="72" Canvas.Left="780" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="72" Canvas.Left="706" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="928" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="498" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="854" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="498" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="780" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="498" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="706" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="498" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="72" Canvas.Left="928" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="72" Canvas.Left="854" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="72" Canvas.Left="780" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="72" Canvas.Left="706" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="928" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="854" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="780" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="706" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="72" Canvas.Left="632" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="72" Canvas.Left="558" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="72" Canvas.Left="484" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="72" Canvas.Left="410" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="70" Canvas.Left="632" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="498" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="70" Canvas.Left="558" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="498" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="70" Canvas.Left="484" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="498" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="70" Canvas.Left="410" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="498" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="72" Canvas.Left="632" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="72" Canvas.Left="558" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="72" Canvas.Left="484" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="72" Canvas.Left="410" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="70" Canvas.Left="632" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="70" Canvas.Left="558" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="70" Canvas.Left="484" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="70" Canvas.Left="410" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="70" Canvas.Left="558" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Image Height="70" Canvas.Left="928" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="715" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="854" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="715" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="780" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="715" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="706" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="715" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="632" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="715" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="484" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="715" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="410" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="715" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="558" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="715" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="928" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="710" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="854" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="710" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="780" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="710" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="706" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="710" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="632" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="710" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="484" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="710" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="410" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="710" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="70" Canvas.Left="558" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="710" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image Height="71" Canvas.Left="336" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="262" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="188" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="497" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="262" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="497" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="188" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="262" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="188" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="639" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Image Height="71" Canvas.Left="262" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="639" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="1215" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="142" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="1141" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="142" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="1067" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="142" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="993" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="142" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="1215" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="213" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="1141" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="213" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="1067" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="213" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="993" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="213" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="1215" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="1141" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="1067" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="993" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="1215" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="1141" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="1067" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="993" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="993" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="928" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="142" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="854" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="142" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="780" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="142" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="706" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="142" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="928" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="213" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="854" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="213" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="780" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="213" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="706" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="213" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="928" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="854" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="780" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="706" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="284" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="928" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="854" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="780" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="706" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="355" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="72" Canvas.Left="928" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="72" Canvas.Left="854" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="72" Canvas.Left="780" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="72" Canvas.Left="706" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="928" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="498" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="854" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="498" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="780" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="498" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="706" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="498" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="72" Canvas.Left="928" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="72" Canvas.Left="854" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="72" Canvas.Left="780" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="72" Canvas.Left="706" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="928" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="854" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="780" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="706" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="72" Canvas.Left="632" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="72" Canvas.Left="558" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="72" Canvas.Left="484" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="72" Canvas.Left="410" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="70" Canvas.Left="632" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="498" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="70" Canvas.Left="558" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="498" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="70" Canvas.Left="484" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="498" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="70" Canvas.Left="410" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="498" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="72" Canvas.Left="632" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="72" Canvas.Left="558" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="72" Canvas.Left="484" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="72" Canvas.Left="410" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="70" Canvas.Left="632" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="70" Canvas.Left="558" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="70" Canvas.Left="484" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="70" Canvas.Left="410" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="70" Canvas.Left="558" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="640" Width="74" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image Height="70" Canvas.Left="928" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="715" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="854" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="715" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="780" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="715" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="706" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="715" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="632" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="715" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="484" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="715" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="410" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="715" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="558" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="715" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="928" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="710" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="854" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="710" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="780" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="710" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="706" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="710" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="632" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="710" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="484" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="710" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="410" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="710" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="70" Canvas.Left="558" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="710" Width="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Height="71" Canvas.Left="336" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="262" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="188" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="497" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="262" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="497" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="188" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="262" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="568" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="188" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="639" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="262" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="639" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
-            <Image Height="71" Canvas.Left="188" Source="/recursos/InteriorMaterials/pared2.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Height="71" Canvas.Left="188" Source="/recursos/InteriorMaterials/suelo1.png" Stretch="Fill" Canvas.Top="426" Width="74" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
             <!--#endregion-->
 
@@ -282,7 +269,7 @@
 
             <Rectangle Width="16" Height="159" Canvas.Left="993" Canvas.Top="528" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="/recursos/InteriorMaterials/pared3.png" Stretch="Fill" />
+                    <ImageBrush ImageSource="/recursos/InteriorMaterials/pared23.png" Stretch="Fill" />
                 </Rectangle.Fill>
             </Rectangle>
 

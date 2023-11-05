@@ -32,30 +32,32 @@ namespace PROYECTO_1EVA_RJT.GameStates
                     break;
                     
 
-                case "puerta2":
+                case "puertaCasa2":
 
-                    // houseX = new House2();
+                    houseX = new House2(game, player);
+                    temp = true;
                     break;
 
-                case "puerta3":
+                case "puertaCasa3":
 
-                    //  houseX = new House3();
-
-                    break;
-
-                case "puerta4":
-
-                    // houseX = new House4();
+                    houseX = new House3(game, player);
+                    temp = true;
 
                     break;
 
-                case "puerta5":
+                case "puertaCasa4":
 
-                    // houseX = new House5();
-
+                    houseX = new House4(game, player);
+                    temp = true;
                     break;
+
+                case "puertaCasa5":
+
+                    houseX = new House5(game, player);
+                    temp = true;
+                    break;
+               
                 default:
-
                     return false;
                     
 

@@ -12,7 +12,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
     /// <summary>
     /// Lógica de interacción para Tutorial.xaml
     /// </summary>
-    public partial class Tutorial : Page, StateMethods
+    public partial class Tutorial : Page, StateMethods, LevelMethods
     {
 
         private Game game;
@@ -111,7 +111,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
             //interactuables
 
-            InteractiveElements.Add(puertaCasa1);
+            InteractiveElements.Add(puertaCasa5);
 
             InicializarJugador();
 
@@ -215,10 +215,10 @@ namespace PROYECTO_1EVA_RJT.GameStates
             }
             else player.update();
 
-            checkInteractiveElement();
+            CheckInteractions();
         }
 
-        public void checkInteractiveElement()
+        public void CheckInteractions()
         {
 
             if (player.interactiveObj != null)
@@ -370,7 +370,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         }
 
-        public void checkHouse()
+        public void CheckHouse()
         {
 
 

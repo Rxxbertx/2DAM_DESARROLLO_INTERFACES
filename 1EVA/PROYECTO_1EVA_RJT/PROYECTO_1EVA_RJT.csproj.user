@@ -60,6 +60,18 @@
     <Page Update="GameStates\JuegoCompletado.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="GameStates\Levels\Level5.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GameStates\Levels\Level4.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GameStates\Levels\Level3.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GameStates\Levels\Level2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="GameStates\Levels\Level1.xaml">
       <SubType>Designer</SubType>
     </Page>

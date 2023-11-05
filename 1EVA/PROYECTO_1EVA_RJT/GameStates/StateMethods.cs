@@ -7,11 +7,7 @@
 
         void Render();
 
-        void SaveElements();
-
-        bool LoadElements();
-
-        void AddElements();
+        
 
     }
 }

@@ -71,8 +71,13 @@ public partial class House2 : Page, StateMethods
             gato.Visibility = System.Windows.Visibility.Visible;
             
             InteractiveElements.Add(ps);
-        
-        
+
+
+        }
+        else
+        {
+            ps.Visibility = System.Windows.Visibility.Hidden;
+            gato.Visibility = System.Windows.Visibility.Hidden;
         }
 
         //image and opacity
@@ -100,10 +105,8 @@ public partial class House2 : Page, StateMethods
         NormalOpacityElements[0].Add(objeto13Opacidad);
         NormalOpacityElements[1].Add(objeto14N);
         NormalOpacityElements[0].Add(objeto14Opacidad);
-
         NormalOpacityElements[1].Add(objeto16N);
         NormalOpacityElements[0].Add(objeto16Opacidad);
-
         NormalOpacityElements[1].Add(objeto18N);
         NormalOpacityElements[0].Add(objeto18Opacidad);
 
