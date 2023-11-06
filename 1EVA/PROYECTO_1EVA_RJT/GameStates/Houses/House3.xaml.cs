@@ -1,6 +1,5 @@
 ﻿using PROYECTO_1EVA_RJT.Entidades;
 using PROYECTO_1EVA_RJT.Utilidades;
-using System;
 using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -8,7 +7,7 @@ using System.Windows.Shapes;
 
 namespace PROYECTO_1EVA_RJT.GameStates.Houses;
 
-public partial class House3: Page, StateMethods
+public partial class House3 : Page, StateMethods
 {
 
     private Game game;
@@ -36,9 +35,9 @@ public partial class House3: Page, StateMethods
     private void cargarCanva(Canvas canvaCompletado)
     {
         canvaCompletado.Visibility = System.Windows.Visibility.Visible;
-        Canvas.SetLeft(canvaCompletado, Width/ 2 - canvaCompletado.Width / 2);
+        Canvas.SetLeft(canvaCompletado, Width / 2 - canvaCompletado.Width / 2);
         Canvas.SetTop(canvaCompletado, Height / 2 - canvaCompletado.Height / 2);
-        completado = true;
+        completado = true; Sounds.piezaRecogida.Play();
     }
 
     private void InicializarJugador()
@@ -46,11 +45,11 @@ public partial class House3: Page, StateMethods
 
 
         // player = new Player(hitbox, gameElementsColiders, gameElementsNormalOpacity, canvaInteractuar, gameElementsInteractive);
-        player.jugador = hitbox;
-        player.gameElementsColiders = CollidableElements;
-        player.gameElementsNormalOpacity = NormalOpacityElements;
-        player.canvaInteractuar = ui.canvaInteractuar;
-        player.gameElementsInteractive = InteractiveElements;
+        player.Jugador = hitbox;
+        player.GameElementsColiders = CollidableElements;
+        player.GameElementsNormalOpacity = NormalOpacityElements;
+        player.CanvaInteractuar = ui.canvaInteractuar;
+        player.GameElementsInteractive = InteractiveElements;
         player.setInteract(false);
 
 
@@ -61,11 +60,12 @@ public partial class House3: Page, StateMethods
     public void AddElements()
     {
 
-        if (GameManager.Nivel==Constantes.LvlConst.NIVEL2) { 
-        
+        if (GameManager.Nivel == Constantes.LvlConst.NIVEL2)
+        {
+
             ram.Visibility = System.Windows.Visibility.Visible;
             gato.Visibility = System.Windows.Visibility.Visible;
-            
+
             InteractiveElements.Add(ram);
 
         }
@@ -73,8 +73,8 @@ public partial class House3: Page, StateMethods
         {
             ram.Visibility = System.Windows.Visibility.Hidden;
             gato.Visibility = System.Windows.Visibility.Hidden;
-            
-            
+
+
         }
 
         //image and opacity
@@ -104,7 +104,7 @@ public partial class House3: Page, StateMethods
         NormalOpacityElements[0].Add(objeto14Opacidad);
 
         NormalOpacityElements[1].Add(objeto16N);
-       
+
         NormalOpacityElements[0].Add(objeto16Opacidad);
 
         NormalOpacityElements[1].Add(objeto18N);
@@ -148,46 +148,39 @@ public partial class House3: Page, StateMethods
         CollidableElements.Add(objetoPared8Hitbox);
         CollidableElements.Add(objetoPared9Hitbox);
         CollidableElements.Add(objetoPared10Hitbox);
-        
+
 
 
         //interactive
         InteractiveElements.Add(salirPuerta);
-        
+
 
         InicializarJugador();
 
 
     }
 
-    public bool LoadElements()
-    {
-        return true;
-    }
+
 
     public void Render()
     {
-        player.render();
+        player.Render();
     }
 
-    public void SaveElements()
-    {
-
-    }
 
     public void Update()
     {
         if (completado) return;
-        player.update();
+        player.Update();
         checkInteractiveElements();
     }
 
     private void checkInteractiveElements()
     {
 
-        if (player.interactiveObj != null)
+        if (player.InteractiveObj != null)
         {
-            if (player.interactiveObj.Equals("ram"))
+            if (player.InteractiveObj.Equals("ram"))
             {
                 GameManager.addInventarioElemento(CargarGuardar.getPiezaFoto("ram"));
                 cargarCanva(ui.canvaCompletado);
@@ -285,4 +278,8 @@ public partial class House3: Page, StateMethods
 
     }
 
+    public void CheckHouse()
+    {
+        throw new System.NotImplementedException();
+    }
 }

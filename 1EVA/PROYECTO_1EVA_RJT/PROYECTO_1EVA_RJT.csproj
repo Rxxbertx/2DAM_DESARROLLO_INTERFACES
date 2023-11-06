@@ -19,11 +19,13 @@
     <None Remove="recursos\componentespc\cpu.png" />
     <None Remove="recursos\componentespc\gpu.png" />
     <None Remove="recursos\componentespc\pantalla.png" />
+    <None Remove="recursos\componentespc\pc.png" />
     <None Remove="recursos\componentespc\placaBase.png" />
     <None Remove="recursos\componentespc\ps.png" />
     <None Remove="recursos\componentespc\ram.png" />
     <None Remove="recursos\componentespc\ssd.png" />
     <None Remove="recursos\componentespc\torre.png" />
+    <None Remove="recursos\cursor.cur" />
     <None Remove="recursos\ExportedIcons\Icon_BackPack.png" />
     <None Remove="recursos\ExportedIcons\Icon_DotsVertical.png" />
     <None Remove="recursos\ExportedIcons\Icon_Down.png" />
@@ -31,6 +33,7 @@
     <None Remove="recursos\ExportedIcons\Icon_Heart.png" />
     <None Remove="recursos\ExportedIcons\Icon_Look.png" />
     <None Remove="recursos\ExportedIcons\Icon_LookingGlass.png" />
+    <None Remove="recursos\ExportedIcons\Icon_PaperPlane.png" />
     <None Remove="recursos\ExportedIcons\Icon_Question.png" />
     <None Remove="recursos\ExportedIcons\Icon_Settings.png" />
     <None Remove="recursos\ExportedIcons\Icon_SoundOff.png" />
@@ -43,7 +46,9 @@
     <None Remove="recursos\ExportedIcons\Item4.png" />
     <None Remove="recursos\ExportedIcons\Item5.png" />
     <None Remove="recursos\ExportedIcons\Item7.png" />
+    <None Remove="recursos\Fence Ruletile.png" />
     <None Remove="recursos\House Exterior.png" />
+    <None Remove="recursos\House Exterior1.png" />
     <None Remove="recursos\InteriorMaterials\alfombra.png" />
     <None Remove="recursos\InteriorMaterials\alfombraRoja.png" />
     <None Remove="recursos\InteriorMaterials\alfombraRoja2.png" />
@@ -103,24 +108,125 @@
     <None Remove="recursos\InteriorMaterials\ventanaPeque.png" />
     <None Remove="recursos\InteriorMaterials\wc.png" />
     <None Remove="recursos\InteriorMaterials\wcRight.png" />
+    <None Remove="recursos\LandscapeMaterials\aguaTierra.png" />
+    <None Remove="recursos\LandscapeMaterials\aguaTierraEnana.png" />
+    <None Remove="recursos\LandscapeMaterials\arbustillo.png" />
+    <None Remove="recursos\LandscapeMaterials\arbustillos.png" />
+    <None Remove="recursos\LandscapeMaterials\arbusto.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\agua.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\aguaSimple.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\aguaTierra.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\arbol.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\arena.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\arena2.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\arena3.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\arenaAgua.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\arenaAgua2.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\arenaAgua3.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\arenaAgua4.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\hierbaAgua.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\parteElevacion.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\parteElevacion2.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\parteElevacion3.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\piedra.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\piedra2.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\transicionArenaOtono.png" />
+    <None Remove="recursos\LandscapeMaterials\arena\transicionArenaOtono2.png" />
     <None Remove="recursos\LandscapeMaterials\base.png" />
     <None Remove="recursos\LandscapeMaterials\bg.jpg" />
     <None Remove="recursos\LandscapeMaterials\bigRock.png" />
+    <None Remove="recursos\LandscapeMaterials\boquete.png" />
     <None Remove="recursos\LandscapeMaterials\fences.png" />
     <None Remove="recursos\LandscapeMaterials\fencesVertical.png" />
+    <None Remove="recursos\LandscapeMaterials\flor.png" />
+    <None Remove="recursos\LandscapeMaterials\flor2.png" />
+    <None Remove="recursos\LandscapeMaterials\flor3.png" />
+    <None Remove="recursos\LandscapeMaterials\flores.png" />
+    <None Remove="recursos\LandscapeMaterials\flores2.png" />
     <None Remove="recursos\LandscapeMaterials\grass.png" />
     <None Remove="recursos\LandscapeMaterials\grass1.png" />
     <None Remove="recursos\LandscapeMaterials\grass2.png" />
+    <None Remove="recursos\LandscapeMaterials\grass3.png" />
     <None Remove="recursos\LandscapeMaterials\idk.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\90gradosRoca.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\90gradosRoca1.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\arbol.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\arbol1.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\arbol2.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\arenilla.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\desnivel.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\desnivelFinal.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\desnivelInicio.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\hierba.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\hierba1.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\hierba2.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\hierbaMala.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\House Exterior.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\House Exterior2.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\ladoRio.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\malaHierbas.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\malaHierbas1.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\piedra.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\piedra2.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\piedrecita.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\rio.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\seta.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\seta1.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\sombra.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\tronco.png" />
+    <None Remove="recursos\LandscapeMaterials\invierno\troncoResto.png" />
     <None Remove="recursos\LandscapeMaterials\letter.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\aguaaTierra.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\aguaLado.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\aguaLado2.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\aguaTierra.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\arbol.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\arbol1.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\arbol2.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\arbol3.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\boquete.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\hierba.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\hierba2.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\hierba3.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\hierba4.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\hierbajo.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\House Exterior.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\malaHierba.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\malaHierba2.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\otono.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\puente01.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\puente02.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\puente1.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\seta.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\seta1.png" />
+    <None Remove="recursos\LandscapeMaterials\otono\sombra.png" />
+    <None Remove="recursos\LandscapeMaterials\piedra.png" />
+    <None Remove="recursos\LandscapeMaterials\piedraPeque.png" />
+    <None Remove="recursos\LandscapeMaterials\piedras.png" />
+    <None Remove="recursos\LandscapeMaterials\piedras2.png" />
     <None Remove="recursos\LandscapeMaterials\profe.png" />
     <None Remove="recursos\LandscapeMaterials\rock.png" />
+    <None Remove="recursos\LandscapeMaterials\rock2.png" />
     <None Remove="recursos\LandscapeMaterials\rocks.png" />
     <None Remove="recursos\LandscapeMaterials\sand.png" />
     <None Remove="recursos\LandscapeMaterials\sandSpace.png" />
     <None Remove="recursos\LandscapeMaterials\sandSpaceGrass.png" />
+    <None Remove="recursos\LandscapeMaterials\sombra.png" />
+    <None Remove="recursos\LandscapeMaterials\sombra1.png" />
+    <None Remove="recursos\LandscapeMaterials\sombra2.png" />
+    <None Remove="recursos\LandscapeMaterials\space.png" />
+    <None Remove="recursos\LandscapeMaterials\tierraElevada.png" />
+    <None Remove="recursos\LandscapeMaterials\tierraElevada2.png" />
+    <None Remove="recursos\LandscapeMaterials\transacionHierbaArena.png" />
+    <None Remove="recursos\LandscapeMaterials\transacionHierbaArena2.png" />
     <None Remove="recursos\LandscapeMaterials\tree.png" />
+    <None Remove="recursos\LandscapeMaterials\tree1.png" />
+    <None Remove="recursos\LandscapeMaterials\tree2.png" />
     <None Remove="recursos\LandscapeMaterials\treeRest.png" />
+    <None Remove="recursos\LandscapeMaterials\treeRest1.png" />
+    <None Remove="recursos\LandscapeMaterials\treeRest2.png" />
+    <None Remove="recursos\LandscapeMaterials\unionPiedras.png" />
+    <None Remove="recursos\loading.png" />
     <None Remove="recursos\MV Icons Keyboard\Individual Icons\keyboard_115.png" />
     <None Remove="recursos\MV Icons Keyboard\Individual Icons\keyboard_116.png" />
     <None Remove="recursos\MV Icons Keyboard\Individual Icons\keyboard_124.png" />
@@ -187,11 +293,49 @@
     <None Remove="recursos\Player\walk\player-walk-right\player-walk-right-4.png" />
     <None Remove="recursos\Player\walk\player-walk-right\player-walk-right-5.png" />
     <None Remove="recursos\Player\walk\player-walk-right\player-walk-right-6.png" />
+    <None Remove="recursos\sounds\boton.wav" />
+    <None Remove="recursos\sounds\click.wav" />
+    <None Remove="recursos\sounds\door.wav" />
+    <None Remove="recursos\sounds\found.wav" />
+    <None Remove="recursos\sounds\hit.wav" />
+    <None Remove="recursos\sounds\keyboard.wav" />
+    <None Remove="recursos\sounds\lvlCompleted.wav" />
+    <None Remove="recursos\sounds\move.wav" />
+    <None Remove="recursos\sounds\Music.wav" />
+    <None Remove="recursos\sounds\piezaRecogida.wav" />
+    <None Remove="recursos\sounds\pop.wav" />
+    <None Remove="recursos\sounds\siguienteLvl.wav" />
+    <None Remove="recursos\sounds\tutoCompleted.wav" />
+    <None Remove="recursos\sounds\Win.wav" />
     <None Remove="recursos\windows.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="recursos\LandscapeMaterials\invierno\hierba2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\hierbaMala.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="recursos\LandscapeMaterials\invierno\arbol1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="recursos\componentespc\pc.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\componentespc\placaBase.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\Fence Ruletile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\House Exterior1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\InteriorMaterials\mueblePRight.png">
@@ -416,13 +560,307 @@
     <Content Include="recursos\InteriorMaterials\wcRight.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="recursos\LandscapeMaterials\aguaTierra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\aguaTierraEnana.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arbustillo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arbustillos.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arbusto.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\agua.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\aguaSimple.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\aguaTierra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\arbol.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\arena.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\arena2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\arena3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\arenaAgua.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\arenaAgua2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\arenaAgua3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\arenaAgua4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\hierbaAgua.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\parteElevacion.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\parteElevacion2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\parteElevacion3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\piedra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\piedra2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\transicionArenaOtono.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\arena\transicionArenaOtono2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\LandscapeMaterials\base.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\LandscapeMaterials\bg.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="recursos\LandscapeMaterials\boquete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\flor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\flor2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\flor3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\flores.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\flores2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\grass3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\90gradosRoca.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\90gradosRoca1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\arbol.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\arbol2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\arenilla.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\desnivel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\desnivelFinal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\desnivelInicio.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\hierba.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\hierba1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\House Exterior.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\House Exterior2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\ladoRio.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\malaHierbas.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\malaHierbas1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\piedra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\piedra2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\piedrecita.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\rio.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\seta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\seta1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\sombra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\tronco.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\invierno\troncoResto.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\aguaaTierra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\aguaLado.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\aguaLado2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\aguaTierra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\arbol.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\arbol1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\arbol2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\arbol3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\boquete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\hierba.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\hierba2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\hierba3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\hierba4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\hierbajo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\House Exterior.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\malaHierba.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\malaHierba2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\otono.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\puente01.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\puente02.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\puente1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\seta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\seta1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\otono\sombra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\piedra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\piedraPeque.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\piedras.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\piedras2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\LandscapeMaterials\profe.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\rock2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\sombra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\sombra1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\sombra2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\space.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\tierraElevada.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\tierraElevada2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\transacionHierbaArena.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\transacionHierbaArena2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\tree1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\tree2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\treeRest1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\treeRest2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\LandscapeMaterials\unionPiedras.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\loading.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\MV Icons Keyboard\Individual Icons\keyboard_115.png">
@@ -500,6 +938,42 @@
     <Content Include="recursos\componentespc\torre.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="recursos\sounds\move.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="recursos\sounds\piezaRecogida.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="recursos\sounds\siguienteLvl.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="recursos\sounds\boton.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="recursos\sounds\Win.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="recursos\sounds\found.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="recursos\sounds\door.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="recursos\sounds\hit.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="recursos\sounds\keyboard.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="recursos\sounds\lvlCompleted.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="recursos\sounds\Music.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="recursos\sounds\pop.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="recursos\ExportedIcons\Icon_BackPack.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -524,9 +998,18 @@
     <Content Include="recursos\ExportedIcons\Item2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="recursos\ExportedIcons\Item3.png">
+    <Resource Include="recursos\ExportedIcons\Icon_PaperPlane.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
+    <Resource Include="recursos\ExportedIcons\Item3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="recursos\cursor.cur">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="recursos\sounds\tutoCompleted.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="recursos\ExportedIcons\Item4.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -720,6 +1203,7 @@
 
   <ItemGroup>
     <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -747,10 +1231,6 @@
     <Compile Update="GameStates\Levels\Level2.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="recursos\LandscapeMaterials\otono\" />
   </ItemGroup>
 
 </Project>

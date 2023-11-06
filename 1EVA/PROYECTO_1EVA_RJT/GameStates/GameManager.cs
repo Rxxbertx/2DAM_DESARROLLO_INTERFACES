@@ -28,13 +28,14 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private Dictionary<Enum, GameStateData> gameStates = new Dictionary<Enum, GameStateData>();
         public static Dictionary<String, ImageBrush> piezaBuscar = new Dictionary<String, ImageBrush>();
 
-        public GameStateData ?CurrentGameStateData { get; set; }
-        
+        public GameStateData? CurrentGameStateData { get; set; }
+
 
         public GameManager()
         {
 
             Constantes.FPS = 60;
+            Constantes.SoundLvl = 0.3;
 
             Nivel = Constantes.LvlConst.TUTORIAL;
             State = GameState.MENU;
@@ -48,16 +49,16 @@ namespace PROYECTO_1EVA_RJT.GameStates
             gameStates[GameState.LVL5] = new GameStateData();
             // Agrega elementos y colisiones a cada estado según sea necesario
 
-            
+
             //agregar imagenes a su respectivo nivel
 
             piezaBuscar[Constantes.LvlConst.TUTORIAL] = CargarGuardar.getPiezaFoto("torre");
             piezaBuscar[Constantes.LvlConst.NIVEL1] = CargarGuardar.getPiezaFoto("ps");
-            piezaBuscar[Constantes.LvlConst.NIVEL2] = CargarGuardar.getPiezaFoto("ram");            
+            piezaBuscar[Constantes.LvlConst.NIVEL2] = CargarGuardar.getPiezaFoto("ram");
             piezaBuscar[Constantes.LvlConst.NIVEL3] = CargarGuardar.getPiezaFoto("gpu");
             piezaBuscar[Constantes.LvlConst.NIVEL4] = CargarGuardar.getPiezaFoto("cpu");
             piezaBuscar[Constantes.LvlConst.NIVEL5] = CargarGuardar.getPiezaFoto("placaBase");
-            
+
         }
 
 
@@ -75,8 +76,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         public static void addInventarioElemento(ImageBrush imagen)
         {
-            
-            if(inventario.Contains(imagen))
+
+            if (inventario.Contains(imagen))
             {
                 return;
             }
@@ -86,7 +87,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         internal static void ChangeState(GameState state)
         {
-            
+
             GameManager.PreviousState = GameManager.State;
             GameManager.State = state;
 

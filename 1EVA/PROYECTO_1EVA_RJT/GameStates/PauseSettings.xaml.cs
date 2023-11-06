@@ -1,19 +1,8 @@
 ﻿using PROYECTO_1EVA_RJT.Utilidades;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PROYECTO_1EVA_RJT.GameStates
 {
@@ -29,6 +18,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         public PauseSettings(Game game)
         {
             InitializeComponent();
+            volumeSlider.Value = Constantes.SoundLvl;
             this.game = game;
             this.Owner = game;
             game.MainFrame.Effect = new System.Windows.Media.Effects.BlurEffect();
@@ -41,6 +31,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         private void comprobarSonido()
         {
+            volumeSlider.Value = Constantes.SoundLvl;
 
             if (!Constantes.MUTED)
             {
@@ -51,7 +42,11 @@ namespace PROYECTO_1EVA_RJT.GameStates
             {
                 SoundImageOn.Visibility = Visibility.Hidden;
                 SoundImageOff.Visibility = Visibility.Visible;
+                
             }
+
+            Sounds.UpdateMusic();
+
 
         }
 
@@ -96,6 +91,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
             Constantes.FPS = 60;
             game.gameLoopTimer.Interval = TimeSpan.FromMilliseconds(1000 / Constantes.FPS);
+            Sounds.boton.Play();
 
         }
 
@@ -103,19 +99,21 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
             Constantes.FPS = 30;
             game.gameLoopTimer.Interval = TimeSpan.FromMilliseconds(1000 / Constantes.FPS);
+            Sounds.boton.Play();
         }
 
         private void _120fps_Checked(object sender, RoutedEventArgs e)
         {
             Constantes.FPS = 120;
             game.gameLoopTimer.Interval = TimeSpan.FromMilliseconds(1000 / Constantes.FPS);
+            Sounds.boton.Play();
         }
 
 
 
         private void Cerrar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            Sounds.boton.Play();
             Close();
 
 
@@ -127,7 +125,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
             GameManager.ChangeState(GameState.MENU);
             game.MainFrame.NavigationService.Navigate(game.Menu);
-
+            game.Menu.playMusic();
+            Sounds.boton.Play();
             Close();
         }
 
@@ -137,6 +136,9 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
             SoundImageOn.Visibility = Visibility.Hidden;
             SoundImageOff.Visibility = Visibility.Visible;
+            Constantes.MUTED = true;
+            Sounds.boton.Play();
+            comprobarSonido();
 
         }
 
@@ -146,8 +148,96 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
             SoundImageOn.Visibility = Visibility.Visible;
             SoundImageOff.Visibility = Visibility.Hidden;
+            Constantes.MUTED = false;
+            Sounds.boton.Play();
+            comprobarSonido();
 
         }
+
+
+
+        private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            // Ajusta el volumen en función del valor del Slider
+            
+
+            Constantes.SoundLvl = volumeSlider.Value;
+
+            Sounds.UpdateMusic();
+
+        }
+
+
+
+
+
+        private void cerrarX_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+
+
+            cerrarX.Effect = null;
+
+
+
+        }
+
+        private void cerrarX_MouseEnter(object sender, MouseEventArgs e)
+        {
+            cerrarX.Effect = new System.Windows.Media.Effects.DropShadowEffect();
+        }
+
+
+
+        private void cerrar_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+
+
+            btnCerrar.Effect = null;
+
+
+
+        }
+
+        private void cerrar_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnCerrar.Effect = new System.Windows.Media.Effects.DropShadowEffect();
+        }
+
+
+
+
+        private void menu_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+
+
+            slrMenu0.Effect = null;
+
+
+
+        }
+
+        private void menu_MouseEnter(object sender, MouseEventArgs e)
+        {
+            slrMenu0.Effect = new System.Windows.Media.Effects.DropShadowEffect();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

@@ -14,12 +14,14 @@ public class TextAnimation
         this.textBlock = textBlock;
         this.fullText = fullText;
 
-        timer = new DispatcherTimer();
-        timer.Interval = TimeSpan.FromMilliseconds(100); // Ajusta el intervalo según tus preferencias
+        timer = new DispatcherTimer
+        {
+            Interval = TimeSpan.FromMilliseconds(30) // Ajusta el intervalo según  preferencias
+        };
         timer.Tick += Timer_Tick;
     }
 
-    public void StartAnimation()
+    public void Start()
     {
         currentIndex = 0;
         textBlock.Text = "";

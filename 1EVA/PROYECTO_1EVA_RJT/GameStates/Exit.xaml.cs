@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using PROYECTO_1EVA_RJT.Utilidades;
+using System.Windows;
 using System.Windows.Input;
 
 namespace PROYECTO_1EVA_RJT.GameStates
@@ -23,9 +24,9 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         private void No_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            Sounds.boton.Play();
             status = 1;
-            
+
             Close();
 
 
@@ -33,8 +34,10 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         private void Salir_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+
+            Sounds.boton.Play();
             status = 0;
-            
+
             Close();
 
         }
@@ -85,11 +88,11 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
-            
-            
+
+
             game.MainFrame.Effect = null;
             game.Player.TurnOn();
-            
+
 
         }
     }

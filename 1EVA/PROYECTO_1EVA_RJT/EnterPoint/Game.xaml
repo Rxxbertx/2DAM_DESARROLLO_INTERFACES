@@ -5,6 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROYECTO_1EVA_RJT"
         mc:Ignorable="d"
-        Title="Game" SizeToContent="WidthAndHeight" WindowStyle="SingleBorderWindow"  Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+        Title="Game" SizeToContent="WidthAndHeight" WindowStyle="SingleBorderWindow"  Closing="Window_Closing" WindowStartupLocation="CenterScreen"
+        
+        >
+    
+        
+        
+
+    
     <Frame x:Name="MainFrame" Content="Frame" NavigationUIVisibility="Hidden"/>
 </Window>

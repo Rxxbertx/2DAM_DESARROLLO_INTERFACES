@@ -7,30 +7,29 @@ namespace PROYECTO_1EVA_RJT.GameStates
     public class House : StateMethods
     {
 
-        private StateMethods houseX;
+        private StateMethods? houseX;
         private Player player;
-        private Game game;
-        private bool insideHouse;
+        private readonly Game game;
 
         public House(Player player, Game game)
         {
             this.player = player;
             this.game = game;
+
         }
 
-        public bool loadPage(String element)
+        public bool LoadPage(String element)
         {
-            bool temp = false;
-
+            bool temp;
             switch (element)
             {
 
                 case "puertaCasa1":
 
                     houseX = new House1(game, player);
-                    temp= true;
+                    temp = true;
                     break;
-                    
+
 
                 case "puertaCasa2":
 
@@ -56,10 +55,10 @@ namespace PROYECTO_1EVA_RJT.GameStates
                     houseX = new House5(game, player);
                     temp = true;
                     break;
-               
+
                 default:
                     return false;
-                    
+
 
             }
             return temp;
@@ -68,42 +67,28 @@ namespace PROYECTO_1EVA_RJT.GameStates
         }
 
 
-        public bool LoadElements()
-        {
-            return false;
-        }
+
 
         public void Render()
         {
-            if (houseX != null)
-                houseX.Render();
+            houseX?.Render();
 
         }
 
-        public void SaveElements()
-        {
 
-        }
 
         public void Update()
         {
-            if (houseX != null)
-                houseX.Update();
+            houseX?.Update();
         }
 
 
-
-        public void AddElements()
+        public void CheckHouse()
         {
-            throw new NotImplementedException();
-        }
 
-        public void checkHouse()
-        {
-            
             if (houseX != null)
                 game.MainFrame.Navigate(houseX);
-            
+
         }
     }
 }

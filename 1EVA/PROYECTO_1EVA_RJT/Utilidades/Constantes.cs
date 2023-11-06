@@ -5,6 +5,10 @@ namespace PROYECTO_1EVA_RJT.Utilidades
     class Constantes
     {
         public static double FPS { get; internal set; }
+        public static double SoundLvl { get; internal set; }
+
+        public static string NombreUsuario;
+
         public static bool MUTED = false;
 
         /**
@@ -14,14 +18,14 @@ namespace PROYECTO_1EVA_RJT.Utilidades
         public static class PlayerConst
         {
 
-            public static readonly int WALK = 0;
-            public static readonly int IDLE = 1;
-            public static readonly int ATTACK = 2;
+            public const int WALK = 0;
+            public const int IDLE = 1;
+            public const int ATTACK = 2;
 
-            public static readonly int FRONT = 0;
-            public static readonly int BACK = 1;
-            public static readonly int RIGHT = 2;
-            public static readonly int LEFT = 3;
+            public const int FRONT = 0;
+            public const int BACK = 1;
+            public const int RIGHT = 2;
+            public const int LEFT = 3;
 
 
             /**
@@ -131,12 +135,12 @@ namespace PROYECTO_1EVA_RJT.Utilidades
         public static class LvlConst
         {
 
-            public static readonly String NIVEL1 = "NIVEL 1";
-            public static readonly String NIVEL2 = "NIVEL 2";
-            public static readonly String NIVEL3 = "NIVEL 3";
-            public static readonly String NIVEL4 = "NIVEL 4";
-            public static readonly String NIVEL5 = "NIVEL 5";
-            public static readonly String TUTORIAL = "TUTORIAL";
+            public const String NIVEL1 = "NIVEL 1";
+            public const String NIVEL2 = "NIVEL 2";
+            public const String NIVEL3 = "NIVEL 3";
+            public const String NIVEL4 = "NIVEL 4";
+            public const String NIVEL5 = "NIVEL 5";
+            public const String TUTORIAL = "TUTORIAL";
 
         }
     }

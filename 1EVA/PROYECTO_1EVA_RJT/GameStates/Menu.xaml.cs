@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using PROYECTO_1EVA_RJT.Utilidades;
+using System.Text.RegularExpressions;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -42,7 +43,18 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         private void Jugar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            Sounds.boton.Play();
 
+            if (Regex.IsMatch( nombreUsuario.Text, "[0-9]") || Regex.IsMatch(nombreUsuario.Text, "(Introduce | nombre | Nombre | correcto)"))
+            {
+                nombreUsuario.Text = "Introduce un nombre correcto";
+                nombreUsuario.Foreground = System.Windows.Media.Brushes.Red;
+                return;
+            }
+
+            nombreUsuario.Visibility = System.Windows.Visibility.Hidden;
+
+            Constantes.NombreUsuario = nombreUsuario.Text;
 
             if (GameManager.PreviousState == GameState.TUTORIAL)
             {
@@ -50,19 +62,28 @@ namespace PROYECTO_1EVA_RJT.GameStates
                 GameManager.ChangeState(GameState.TUTORIAL);
                 game.Tutorial.CheckHouse();
 
+                Sounds.MenuMusic.Stop();
+                Sounds.GameMusic.Play();
+
                 return;
             }
             else if (GameManager.PreviousState == GameState.PLAYING)
             {
                 game.MainFrame.Navigate(game.Playing);
                 GameManager.ChangeState(GameState.PLAYING);
+                game.Playing.CheckLevel();
+                Sounds.MenuMusic.Stop();
+                Sounds.GameMusic.Play();
 
                 return;
-            }else if (GameManager.PreviousState == GameState.TALLER)
+            }
+            else if (GameManager.PreviousState == GameState.TALLER)
             {
 
                 game.MainFrame.Navigate(game.Taller);
                 GameManager.ChangeState(GameState.TALLER);
+                Sounds.MenuMusic.Stop();
+                Sounds.GameMusic.Play();
                 return;
 
             }
@@ -72,6 +93,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
             game.MainFrame.Navigate(game.Tutorial);
             GameManager.ChangeState(GameState.TUTORIAL);
             game.Tutorial.CheckHouse();
+            Sounds.MenuMusic.Stop();
+            Sounds.GameMusic.Play();
             return;
 
 
@@ -79,7 +102,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         private void Salir_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            Sounds.boton.Play();
             game.Close();
 
         }
@@ -88,7 +111,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         private void Ayuda_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            Sounds.boton.Play();
         }
 
 
@@ -140,6 +163,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void Settings_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
+            Sounds.boton.Play();
             PauseSettings temp = new PauseSettings(game);
             temp.Owner = game;
             temp.ShowDialog();
@@ -164,6 +188,27 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
             Settings.Effect = null;
 
+        }
+
+        public void CheckHouse()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+            nombreUsuario.Text= "";
+            nombreUsuario.Foreground = System.Windows.Media.Brushes.White;
+
+
+        }
+
+        public void playMusic()
+        {
+            Sounds.MenuMusic.Play();
+            Sounds.GameMusic.Stop();
+            Sounds.winMusic.Stop();
         }
     }
 }

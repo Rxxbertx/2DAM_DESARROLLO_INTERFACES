@@ -13,7 +13,7 @@ namespace PROYECTO_1EVA_RJT
     /// </summary>
     public partial class Game : Window
     {
-        public  DispatcherTimer gameLoopTimer;
+        public DispatcherTimer gameLoopTimer;
         private Stopwatch stopwatch = new Stopwatch();
         public static double DeltaTime { get; private set; }
 
@@ -28,7 +28,7 @@ namespace PROYECTO_1EVA_RJT
 
         public Player Player;
 
-        
+
 
 
         public Game()
@@ -41,18 +41,20 @@ namespace PROYECTO_1EVA_RJT
         private void InitializeGame()
         {
 
+            
 
             GameManager = new();
-            
+Sounds.InitMusic();
 
-            gameLoopTimer = new DispatcherTimer();
-            
-            gameLoopTimer.Interval = TimeSpan.FromMilliseconds(1000 / Constantes.FPS); // 60 FPS por defecto
+            gameLoopTimer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromMilliseconds(1000 / Constantes.FPS) // 60 FPS por defecto
+            };
             gameLoopTimer.Tick += GameLoop;
             gameLoopTimer.Start();
 
 
-            
+
             Player = new Player(null, null, null, null, null);
             Menu = new Menu(this);
             Tutorial = new Tutorial(Player, this);

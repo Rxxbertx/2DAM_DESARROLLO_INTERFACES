@@ -16,14 +16,13 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
         public bool turnOff = false;
 
-        private double aniTick;
         private int aniIndex;
 
         private double animationTime = 0.0;
         private double animationDuration = 0.7; // Duración total de la animación en segundos
 
 
-        private double speed = 200;
+        private double speed = 150;
 
         ScaleTransform scaleTransform = new ScaleTransform(3, 3); // Escala 3x en X e Y
 
@@ -33,15 +32,15 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
         private bool front, back, right, left, moving, attack, interact;
 
-        public String interactiveObj { get; set; }
+        public String InteractiveObj { get; set; }
 
-        public Canvas jugador { get; set; }
-        public Canvas canvaInteractuar { get; set; }
+        public Canvas Jugador { get; set; }
+        public Canvas CanvaInteractuar { get; set; }
 
 
-        public List<Rectangle> gameElementsColiders { get; set; }
-        public List<Rectangle>[] gameElementsNormalOpacity { get; set; }
-        public List<Rectangle> gameElementsInteractive { get; set; }
+        public List<Rectangle> GameElementsColiders { get; set; }
+        public List<Rectangle>[] GameElementsNormalOpacity { get; set; }
+        public List<Rectangle> GameElementsInteractive { get; set; }
 
 
         private ImageBrush[][][] animaciones;
@@ -55,54 +54,56 @@ namespace PROYECTO_1EVA_RJT.Entidades
         {
 
             importImgs();
-            this.jugador = jugador;
-            this.canvaInteractuar = canvaInteractuar;
-            this.gameElementsColiders = gameElementsColiders;
-            this.gameElementsNormalOpacity = gameElementsNormalOpacity;
-            this.gameElementsInteractive = gameElementsInteractive;
+            this.Jugador = jugador;
+            this.CanvaInteractuar = canvaInteractuar;
+            this.GameElementsColiders = gameElementsColiders;
+            this.GameElementsNormalOpacity = gameElementsNormalOpacity;
+            this.GameElementsInteractive = gameElementsInteractive;
         }
 
 
 
 
-        public void render()
+        public void Render()
         {
             // Cargar una imagen en un ImageBrush
 
 
-            ((Rectangle)jugador.Children[0]).Fill = imagen();
+            ((Rectangle)Jugador.Children[0]).Fill = imagen();
 
 
         }
 
-        public void update()
+        public void Update()
         {
 
             if (turnOff) { return; }
 
-            updateNormalOpacity();
-            updateInteractiveElements();
-            updatePosition();
+            UpdateNormalOpacity();
+            UpdateInteractiveElements();
+            UpdatePosition();
             updatePlayerAction();
             updateAnimation();
 
 
         }
 
-        private void updateInteractiveElements()
+        private void UpdateInteractiveElements()
         {
-            canvaInteractuar.Visibility = Visibility.Hidden;
-            interactiveObj = null;
+            CanvaInteractuar.Visibility = Visibility.Hidden;
+            InteractiveObj = null;
 
-            foreach (Rectangle element in gameElementsInteractive)
+            foreach (Rectangle element in GameElementsInteractive)
             {
                 if (IsCollidingWith(element))
                 {
-                    showInteractuable(element);
+                    ShowInteractuable(element);
+                   
+
                     if (isInteract())
                     {
 
-                        interactiveObj = element.Name;
+                        InteractiveObj = element.Name;
                         return;
 
                     }
@@ -115,7 +116,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
         private bool IsCollidingWith(Rectangle element)
         {
 
-            Rect newHitBox = new Rect(Canvas.GetLeft(jugador), Canvas.GetTop(jugador), jugador.Width, jugador.Height);
+            Rect newHitBox = new Rect(Canvas.GetLeft(Jugador), Canvas.GetTop(Jugador), Jugador.Width, Jugador.Height);
             Rect elementRect = new Rect(Canvas.GetLeft(element), Canvas.GetTop(element), element.Width, element.Height);
 
             if (newHitBox.IntersectsWith(elementRect))
@@ -128,21 +129,20 @@ namespace PROYECTO_1EVA_RJT.Entidades
             }
         }
 
-        private void showInteractuable(Rectangle element)
+        private void ShowInteractuable(Rectangle element)
         {
+            
+            CanvaInteractuar.Visibility = Visibility.Visible;
+            Canvas.SetLeft(CanvaInteractuar, Canvas.GetLeft(element) + element.Width / 2 - CanvaInteractuar.Width / 2);
+            Canvas.SetTop(CanvaInteractuar, Canvas.GetTop(element) - CanvaInteractuar.Height);
 
-            
-                canvaInteractuar.Visibility = Visibility.Visible;
-                Canvas.SetLeft(canvaInteractuar, Canvas.GetLeft(element) + element.Width / 2 - canvaInteractuar.Width / 2);
-                Canvas.SetTop(canvaInteractuar, Canvas.GetTop(element) - canvaInteractuar.Height);
-            
         }
 
-        private void updateNormalOpacity()
+        private void UpdateNormalOpacity()
         {
 
-            List<Rectangle> listaOpacidad = gameElementsNormalOpacity[0]; //hitbox de opacidad
-            List<Rectangle> listaNormal = gameElementsNormalOpacity[1]; //rectangulo imagen
+            List<Rectangle> listaOpacidad = GameElementsNormalOpacity[0]; //hitbox de opacidad
+            List<Rectangle> listaNormal = GameElementsNormalOpacity[1]; //rectangulo imagen
 
             for (int i = 0; i < listaOpacidad.Count; i++)
             {
@@ -151,9 +151,11 @@ namespace PROYECTO_1EVA_RJT.Entidades
                 {
 
                     // Crea un LinearGradientBrush
-                    LinearGradientBrush linearGradientBrush = new LinearGradientBrush();
-                    linearGradientBrush.StartPoint = new Point(0.5, 0);
-                    linearGradientBrush.EndPoint = new Point(0.5,0.8);
+                    LinearGradientBrush linearGradientBrush = new LinearGradientBrush
+                    {
+                        StartPoint = new Point(0.5, 0),
+                        EndPoint = new Point(0.5, 0.8)
+                    };
 
 
 
@@ -172,7 +174,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
         }
 
-        private void updatePosition()
+        private void UpdatePosition()
         {
             bool avanzar = true;
             setMoving(false);
@@ -182,31 +184,31 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
 
             // hitbox
-            if (isFront() && Canvas.GetTop(jugador) + jugador.Width < 880)
+            if (isFront() && Canvas.GetTop(Jugador) + Jugador.Height < 890)
             {
                 y += speed * Game.DeltaTime;
                 setMoving(true);
             }
-            if (isBack() && Canvas.GetTop(jugador) > 50)
+            if (isBack() && Canvas.GetTop(Jugador) - Jugador.Height > 30)
             {
                 y -= speed * Game.DeltaTime;
                 setMoving(true);
             }
-            if (isRight() && Canvas.GetLeft(jugador) + jugador.Width < 1600)
+            if (isRight() && Canvas.GetLeft(Jugador) + Jugador.Width < 1600)
             {
                 x += speed * Game.DeltaTime;
                 setMoving(true);
             }
-            if (isLeft() && Canvas.GetLeft(jugador) > 0)
+            if (isLeft() && Canvas.GetLeft(Jugador) > 0)
             {
                 x -= speed * Game.DeltaTime;
                 setMoving(true);
             }
 
             // Verifica colisiones antes de actualizar la posición
-            Rect newHitBox = new Rect(Canvas.GetLeft(jugador) + x, Canvas.GetTop(jugador) + y, jugador.Width, jugador.Height);
+            Rect newHitBox = new Rect(Canvas.GetLeft(Jugador) + x, Canvas.GetTop(Jugador) + y, Jugador.Width, Jugador.Height);
 
-            foreach (Rectangle element in gameElementsColiders)
+            foreach (Rectangle element in GameElementsColiders)
             {
                 Rect elementRect = new Rect(Canvas.GetLeft(element), Canvas.GetTop(element), element.Width, element.Height);
 
@@ -226,9 +228,9 @@ namespace PROYECTO_1EVA_RJT.Entidades
             if (avanzar)
             {
 
-
-                Canvas.SetLeft(jugador, Canvas.GetLeft(jugador) + x);
-                Canvas.SetTop(jugador, Canvas.GetTop(jugador) + y);
+               
+                Canvas.SetLeft(Jugador, Canvas.GetLeft(Jugador) + x);
+                Canvas.SetTop(Jugador, Canvas.GetTop(Jugador) + y);
 
             }
 
@@ -292,9 +294,9 @@ namespace PROYECTO_1EVA_RJT.Entidades
         private void updateAnimation()
         {
 
-            
 
-            aniTick++;
+
+
 
             // Calcula el progreso de la animación en función del tiempo transcurrido
             animationTime += Game.DeltaTime;
@@ -304,10 +306,13 @@ namespace PROYECTO_1EVA_RJT.Entidades
                 animationTime = 0;
                 aniIndex++;
 
+                
+
                 if (aniIndex >= Constantes.PlayerConst.getSpritesAmount(action, playerAction))
                 {
                     aniIndex = 0;
                     setAttacking(false);
+                    
                 }
             }
         }
@@ -376,7 +381,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
         {
 
             aniIndex = 0;
-            aniTick = 0;
+
 
         }
 

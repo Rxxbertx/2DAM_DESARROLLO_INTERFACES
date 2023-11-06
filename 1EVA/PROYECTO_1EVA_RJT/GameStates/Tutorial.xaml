@@ -105,44 +105,138 @@
 
             <Image Height="230" Canvas.Left="1323" Source="/recursos/LandscapeMaterials/sandSpaceGrass.png" Stretch="Fill" Canvas.Top="382" Width="229"/>
 
+            <Image Height="74" Canvas.Left="1181" Source="/recursos/LandscapeMaterials/flores.png" Stretch="Fill" Canvas.Top="749" Width="111"/>
+            <Image Height="74" Canvas.Left="1100" Source="/recursos/LandscapeMaterials/flores.png" Stretch="Fill" Canvas.Top="764" Width="111" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="74" Canvas.Left="82" Source="/recursos/LandscapeMaterials/flores.png" Stretch="Fill" Canvas.Top="714" Width="111" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="74" Canvas.Left="142" Source="/recursos/LandscapeMaterials/flores.png" Stretch="Fill" Canvas.Top="751" Width="111" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+
             <!--#endregion-->
 
 
             <!--VALLAS-->
-            <Rectangle x:Name="vallasHitbox" Height="262" Stroke="red" Width="529" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="6" Canvas.Top="6"/>
-
-            <Image Height="52" Canvas.Left="89" Source="/recursos/LandscapeMaterials/fences.png" Stretch="Fill" Canvas.Top="216" Width="111" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Image Height="52" Source="/recursos/LandscapeMaterials/fences.png" Stretch="Fill" Canvas.Top="216" Width="111" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Image Height="164" Canvas.Left="523" Source="/recursos/LandscapeMaterials/fencesVertical.png" Stretch="Fill" Canvas.Top="28" Width="22" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Image Height="52" Canvas.Left="266" Source="/recursos/LandscapeMaterials/fences.png" Stretch="Fill" Canvas.Top="216" Width="111"/>
-            <Image Height="52" Canvas.Left="177" Source="/recursos/LandscapeMaterials/fences.png" Stretch="Fill" Canvas.Top="216" Width="111" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Image Height="46" Canvas.Left="445" Source="/recursos/LandscapeMaterials/fences.png" Stretch="Fill" Canvas.Top="221" Width="96" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleY="-31.409"/>
-                        <RotateTransform/>
-                        <TranslateTransform Y="-33.889"/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
-            <Image Height="52" Canvas.Left="356" Source="/recursos/LandscapeMaterials/fences.png" Stretch="Fill" Canvas.Top="216" Width="111" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleY="-6.312"/>
-                        <RotateTransform/>
-                        <TranslateTransform Y="-6.139"/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
-
+            <Rectangle x:Name="vallasHitbox" Height="262"  Width="529" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="6" Canvas.Top="6"/>
 
             <!--GATO-->
 
 
             <!--#endregion-->
+            <!--#region ARBOLES-->
 
+            <!--ARBOL1-->
+            <Rectangle  x:Name="arbol1N" Height="285" Canvas.Left="679"  Stretch="Fill" Canvas.Top="73" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <Rectangle x:Name="arbol1HitBox" Height="44" Canvas.Left="734"  Canvas.Top="272" Width="130" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol1Opacidad" Height="189" Canvas.Left="679"  Canvas.Top="80" Width="240" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+
+
+            <!--ARBOL2-->
+
+            <Rectangle  x:Name="arbol2N" Height="284" Canvas.Left="82"  Stretch="Fill" Canvas.Top="384" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <Rectangle x:Name="arbol2HitBox" Height="31" Canvas.Left="142"  Canvas.Top="587" Width="120" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol2Opacidad" Height="197" Canvas.Left="82"  Canvas.Top="390" Width="240" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+
+            <!--ARBOL3-->
+            <Rectangle  x:Name="arbol3N" Height="284" Canvas.Left="980"  Stretch="Fill" Canvas.Top="422" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <Rectangle x:Name="arbol3HitBox" Height="41" Canvas.Left="1037"  Canvas.Top="623" Width="128" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle x:Name="arbol3Opacidad" Height="190" Canvas.Left="980"  Canvas.Top="428" Width="240" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+            <!--ARBOL4-->
+
+            <Rectangle  x:Name="arbol4N" Height="284" Canvas.Left="414"  Stretch="Fill" Canvas.Top="572" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <Rectangle x:Name="arbol4HitBox" Height="44" Canvas.Left="472"  Canvas.Top="764" Width="126" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol4Opacidad" Height="186" Canvas.Left="414"  Canvas.Top="578" Width="240" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+            <!--ARBOL5-->
+
+            <Rectangle  x:Name="arbol5N" Height="284" Canvas.Left="1168"  Stretch="Fill" Canvas.Top="40" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <Rectangle x:Name="arbol5HitBox" Height="38" Canvas.Left="1230"  Canvas.Top="243" Width="124" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle x:Name="arbol5Opacidad" Height="192" Canvas.Left="1168"  Canvas.Top="46" Width="240" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+            <Rectangle  x:Name="arbol1N_Copiar" Height="285" Canvas.Left="-23"  Stretch="Fill" Canvas.Top="-92" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <Rectangle  x:Name="arbol1N_Copiar1" Height="285" Canvas.Left="142"  Stretch="Fill" Canvas.Top="-103" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <Rectangle  x:Name="arbol1N_Copiar2" Height="285" Canvas.Left="341"  Stretch="Fill" Canvas.Top="-157" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <Rectangle  x:Name="arbol1N_Copiar3" Height="285" Canvas.Left="341"  Stretch="Fill" Canvas.Top="-92" Width="242" HorizontalAlignment="Center" VerticalAlignment="Top">
+
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <Rectangle  x:Name="arbol1N_Copiar4" Height="285" Canvas.Left="308"  Stretch="Fill" Canvas.Top="-4" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <Rectangle  x:Name="arbol1N_Copiar5" Height="285" Canvas.Left="150"  Stretch="Fill" Canvas.Top="19" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <Rectangle  x:Name="arbol1N_Copiar6" Height="285" Canvas.Left="-39"  Stretch="Fill" Canvas.Top="19" Width="242" HorizontalAlignment="Left" VerticalAlignment="Center">
+
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
+                </Rectangle.Fill>
+
+            </Rectangle>
+
+
+
+            <!--#endregion-->
 
             <!--#region CASAS-->
             <Rectangle x:Name="casa1N" Height="280" Canvas.Left="308"  Stretch="Fill" Canvas.Top="148" Width="280" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -161,81 +255,18 @@
                     </ImageBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="puertaCasa5" DataContext="interactivo" Height="24" Canvas.Left="397" Stroke="red" Canvas.Top="408" Width="102" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="puertaCasa1" DataContext="interactivo" Height="24" Canvas.Left="397"  Canvas.Top="408" Width="102" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
-            <Rectangle x:Name="casa1Hitbox" Height="124" Canvas.Left="316" Stroke="red" Canvas.Top="299" Width="260" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="casa1Opacidad" Height="150" Canvas.Left="308" Stroke="red" Canvas.Top="148" Width="275" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-
-            <!--#endregion-->
-
-            <!--#region ARBOLES-->
-
-            <!--ARBOL1-->
-            <Rectangle  x:Name="arbol1N" Height="285" Canvas.Left="679"  Stretch="Fill" Canvas.Top="73" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
-
-                <Rectangle.Fill>
-                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
-                </Rectangle.Fill>
-
-            </Rectangle>
-            <Rectangle x:Name="arbol1HitBox" Height="44" Canvas.Left="734" Stroke="red" Canvas.Top="272" Width="130" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="arbol1Opacidad" Height="189" Canvas.Left="679" Stroke="red" Canvas.Top="80" Width="240" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-
-
-
-            <!--ARBOL2-->
-
-            <Rectangle  x:Name="arbol2N" Height="284" Canvas.Left="82"  Stretch="Fill" Canvas.Top="384" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
-
-                <Rectangle.Fill>
-                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
-                </Rectangle.Fill>
-
-            </Rectangle>
-            <Rectangle x:Name="arbol2HitBox" Height="31" Canvas.Left="142" Stroke="red" Canvas.Top="587" Width="120" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Rectangle x:Name="arbol2Opacidad" Height="197" Canvas.Left="82" Stroke="red" Canvas.Top="390" Width="240" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-
-
-            <!--ARBOL3-->
-            <Rectangle  x:Name="arbol3N" Height="284" Canvas.Left="980"  Stretch="Fill" Canvas.Top="422" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
-
-                <Rectangle.Fill>
-                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
-                </Rectangle.Fill>
-
-            </Rectangle>
-            <Rectangle x:Name="arbol3HitBox" Height="41" Canvas.Left="1037" Stroke="red" Canvas.Top="623" Width="128" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Rectangle x:Name="arbol3Opacidad" Height="190" Canvas.Left="980" Stroke="red" Canvas.Top="428" Width="240" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-
-            <!--ARBOL4-->
-
-            <Rectangle  x:Name="arbol4N" Height="284" Canvas.Left="414"  Stretch="Fill" Canvas.Top="572" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
-
-                <Rectangle.Fill>
-                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
-                </Rectangle.Fill>
-
-            </Rectangle>
-            <Rectangle x:Name="arbol4HitBox" Height="44" Canvas.Left="472" Stroke="red" Canvas.Top="764" Width="126" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Rectangle x:Name="arbol4Opacidad" Height="186" Canvas.Left="414" Stroke="red" Canvas.Top="578" Width="240" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-
-            <!--ARBOL5-->
-
-            <Rectangle  x:Name="arbol5N" Height="284" Canvas.Left="1168"  Stretch="Fill" Canvas.Top="40" Width="242" HorizontalAlignment="Left" VerticalAlignment="Top">
-
-                <Rectangle.Fill>
-                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
-                </Rectangle.Fill>
-
-            </Rectangle>
-            <Rectangle x:Name="arbol5HitBox" Height="38" Canvas.Left="1230" Stroke="red" Canvas.Top="243" Width="124" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Rectangle x:Name="arbol5Opacidad" Height="192" Canvas.Left="1168" Stroke="red" Canvas.Top="46" Width="240" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="casa1Hitbox" Height="124" Canvas.Left="316"  Canvas.Top="299" Width="260" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="casa1Opacidad" Height="150" Canvas.Left="308"  Canvas.Top="148" Width="275" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
             <!--#endregion-->
+
+
 
             <!--#region PLAYER-->
 
-            <Canvas x:Name="hitbox" Width="34" Height="8" Canvas.Left="766" Canvas.Top="574" HorizontalAlignment="Left" VerticalAlignment="Center" Background="Red">
+            <Canvas x:Name="hitbox" Width="34" Height="8" Canvas.Left="766" Canvas.Top="574" HorizontalAlignment="Left" VerticalAlignment="Center">
 
                 <Rectangle x:Name="jugador" Height="242" Width="284" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="-153" Canvas.Left="-125" StrokeThickness="0">
 
@@ -289,7 +320,7 @@
                     </TextBlock.Background>
                 </TextBlock>
                 <TextBlock x:Name="nombrePieza" Text="Torre" Canvas.Left="49" Canvas.Top="151" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="88" Width="630" TextAlignment="Center"/>
-                <Image Height="272" Canvas.Left="284" Source="/recursos/componentesPC/torre.png" Stretch="Fill" Canvas.Top="216" Width="161" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Image Height="272" Canvas.Left="231" Source="/recursos/componentesPC/torre.png" Stretch="Fill" Canvas.Top="224" Width="267" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <Image.Effect>
                         <DropShadowEffect/>
                     </Image.Effect>
@@ -314,7 +345,7 @@
                     </TextBlock.Background>
                 </TextBlock>
                 <TextBlock x:Name="InformacionPieza" Text="Esta pieza es la principal para poder tener los demas componentes a salvo y bien guardados" Canvas.Left="49" Canvas.Top="151" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="134" Width="610" TextAlignment="Center"/>
-                <Image Height="272" Canvas.Left="274" Source="/recursos/componentesPC/torre.png" Stretch="Fill" Canvas.Top="285" Width="160" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Image Height="272" Canvas.Left="215" Source="/recursos/componentesPC/torre.png" Stretch="Fill" Canvas.Top="285" Width="278" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <Image.Effect>
                         <DropShadowEffect/>
                     </Image.Effect>
@@ -389,7 +420,7 @@
 
 
             <!--#region  FIN-->
-            <Canvas x:Name="tutorialCompletado" Width="728" Height="604" Canvas.Left="766" Canvas.Top="-1129" HorizontalAlignment="Left" VerticalAlignment="Top" MouseLeftButtonDown="tutorialCompletado_MouseLeftButtonDown">
+            <Canvas x:Name="tutorialCompletado" Width="728" Height="604" Canvas.Left="766" Canvas.Top="-1129" HorizontalAlignment="Left" VerticalAlignment="Top" MouseLeftButtonDown="TutorialCompletado_MouseLeftButtonDown">
                 <Canvas.Background>
                     <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
                 </Canvas.Background>
@@ -408,10 +439,6 @@
                 <TextBlock x:Name="Informacion_Copiar5" Text="Click para continuar" Canvas.Left="49" Canvas.Top="602" FontSize="30" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="40" Width="630" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
             </Canvas>
-            <Image Height="74" Canvas.Left="1181" Source="/recursos/LandscapeMaterials/flores.png" Stretch="Fill" Canvas.Top="749" Width="111"/>
-            <Image Height="74" Canvas.Left="1100" Source="/recursos/LandscapeMaterials/flores.png" Stretch="Fill" Canvas.Top="764" Width="111" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Image Height="74" Canvas.Left="82" Source="/recursos/LandscapeMaterials/flores.png" Stretch="Fill" Canvas.Top="714" Width="111" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Image Height="74" Canvas.Left="142" Source="/recursos/LandscapeMaterials/flores.png" Stretch="Fill" Canvas.Top="751" Width="111" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
 

@@ -15,7 +15,7 @@
     <Canvas Background="#FF6F4324">
 
 
-        
+
 
         <Canvas>
 
@@ -209,8 +209,8 @@
                 </Rectangle.Fill>
             </Rectangle>
 
-            <Rectangle x:Name="objeto1Hitbox" Width="44" Height="36" Canvas.Left="478" Canvas.Top="511" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto1Opacidad" Width="44" Height="31" Canvas.Left="478" Canvas.Top="479" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto1Hitbox" Width="44" Height="36" Canvas.Left="478" Canvas.Top="511"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto1Opacidad" Width="44" Height="31" Canvas.Left="478" Canvas.Top="479"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
             <Rectangle x:Name="objeto2Hitbox" Width="73" Height="76" Canvas.Left="673" Canvas.Top="19" HorizontalAlignment="Left" VerticalAlignment="Center">
@@ -227,8 +227,8 @@
                 </Rectangle.Fill>
             </Rectangle>
 
-            <Rectangle x:Name="objeto3Hitbox" Width="96" Height="33" Canvas.Left="397" Canvas.Top="234" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto3Opacidad" Width="96" Height="42" Canvas.Left="397" Canvas.Top="192" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto3Hitbox" Width="96" Height="33" Canvas.Left="397" Canvas.Top="234"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto3Opacidad" Width="96" Height="42" Canvas.Left="397" Canvas.Top="192"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
             <Rectangle x:Name="objeto4N" Width="180" Height="106" Canvas.Left="410" Canvas.Top="512">
@@ -237,8 +237,8 @@
                 </Rectangle.Fill>
             </Rectangle>
 
-            <Rectangle x:Name="objeto4Hitbox" Width="180" Height="70" Canvas.Left="410" Canvas.Top="548" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto4Opacidad" Width="180" Height="34" Canvas.Left="410" Canvas.Top="512" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto4Hitbox" Width="180" Height="70" Canvas.Left="410" Canvas.Top="548"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto4Opacidad" Width="180" Height="34" Canvas.Left="410" Canvas.Top="512"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
 
@@ -249,8 +249,8 @@
                 </Rectangle.Fill>
             </Rectangle>
 
-            <Rectangle x:Name="objeto5Hitbox" Width="71" Height="68" Canvas.Left="191" Canvas.Top="573" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto5Opacidad" Width="77" Height="123" Canvas.Left="191" Canvas.Top="450" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto5Hitbox" Width="71" Height="68" Canvas.Left="191" Canvas.Top="573"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto5Opacidad" Width="77" Height="123" Canvas.Left="191" Canvas.Top="450"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
             <Rectangle x:Name="objeto6N" Width="42" Height="112" Canvas.Left="204" Canvas.Top="578">
@@ -259,8 +259,8 @@
                 </Rectangle.Fill>
             </Rectangle>
 
-            <Rectangle x:Name="objeto6Hitbox" Width="26" Height="4" Canvas.Left="212" Canvas.Top="680" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto6Opacidad" Width="26" Height="86" Canvas.Left="212" Canvas.Top="592" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto6Hitbox" Width="26" Height="4" Canvas.Left="212" Canvas.Top="680"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto6Opacidad" Width="26" Height="86" Canvas.Left="212" Canvas.Top="592"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
 
@@ -312,8 +312,8 @@
                     <ImageBrush ImageSource="/recursos/InteriorMaterials/lampara.png" Stretch="Fill" />
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="objeto12Hitbox" Width="26" Height="4" Canvas.Left="430" Canvas.Top="762" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto12Opacidad" Width="25" Height="86" Canvas.Left="431" Canvas.Top="674" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto12Hitbox" Width="26" Height="4" Canvas.Left="430" Canvas.Top="762"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto12Opacidad" Width="25" Height="86" Canvas.Left="431" Canvas.Top="674"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
 
@@ -322,8 +322,8 @@
                     <ImageBrush ImageSource="/recursos/InteriorMaterials/lampara.png" Stretch="Fill" />
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="objeto13Hitbox" Width="26" Height="4" Canvas.Left="1090" Canvas.Top="258" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto13Opacidad" Width="24" Height="86" Canvas.Left="1092" Canvas.Top="170" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto13Hitbox" Width="26" Height="4" Canvas.Left="1090" Canvas.Top="258"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto13Opacidad" Width="24" Height="86" Canvas.Left="1092" Canvas.Top="170"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
 
@@ -341,7 +341,7 @@
                 </Rectangle.Fill>
             </Rectangle>
 
-            <Rectangle x:Name="objeto14Hitbox" Width="71" Height="68" Canvas.Left="1443" Canvas.Top="666" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Rectangle x:Name="objeto14Hitbox" Width="71" Height="68" Canvas.Left="1443" Canvas.Top="666"  HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="-1"/>
@@ -351,7 +351,7 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Rectangle x:Name="objeto14Opacidad" Width="77" Height="123" Canvas.Left="1443" Canvas.Top="543" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Rectangle x:Name="objeto14Opacidad" Width="77" Height="123" Canvas.Left="1443" Canvas.Top="543"  HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="-1"/>
@@ -375,8 +375,8 @@
                     <ImageBrush ImageSource="/recursos/InteriorMaterials/mesaSalon.png" Stretch="Fill" />
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="objeto16Hitbox" Width="83" Height="39" Canvas.Left="530" Canvas.Top="152" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto16Opacidad" Width="84" Height="15" Canvas.Left="530" Canvas.Top="134" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto16Hitbox" Width="83" Height="39" Canvas.Left="530" Canvas.Top="152"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto16Opacidad" Width="84" Height="15" Canvas.Left="530" Canvas.Top="134"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
             <Rectangle x:Name="objeto17Hitbox"  Width="75" Height="98" Canvas.Left="356" Canvas.Top="351" HorizontalAlignment="Left" VerticalAlignment="Center">
                 <Rectangle.Fill>
@@ -401,8 +401,8 @@
                     <ImageBrush ImageSource="/recursos/InteriorMaterials/sofaVerdeRight.png" Stretch="Fill" />
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="objeto18Hitbox" Width="70" Height="135" Canvas.Left="292" Canvas.Top="85" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Rectangle x:Name="objeto18Opacidad" Width="72" Height="132" Canvas.Left="280" Canvas.Top="71" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto18Hitbox" Width="70" Height="135" Canvas.Left="292" Canvas.Top="85"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle x:Name="objeto18Opacidad" Width="72" Height="132" Canvas.Left="280" Canvas.Top="71"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
             <Image Height="44" Canvas.Left="1076" Source="/recursos/InteriorMaterials/espejoFront.png" Stretch="Fill" Canvas.Top="532" Width="69" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <Image Height="74" Canvas.Left="1360" Source="/recursos/InteriorMaterials/lavabo.png" Stretch="Fill" Canvas.Top="565" Width="59" HorizontalAlignment="Left" VerticalAlignment="Top"/>
@@ -412,16 +412,16 @@
                     <ImageBrush ImageSource="/recursos/InteriorMaterials/banera.png"/>
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="objeto19Hitbox" Width="139" Height="36" Canvas.Left="1203" Canvas.Top="730" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto19Opacidad" Width="150" Height="28" Canvas.Left="1196" Canvas.Top="702" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto19Hitbox" Width="139" Height="36" Canvas.Left="1203" Canvas.Top="730"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto19Opacidad" Width="150" Height="28" Canvas.Left="1196" Canvas.Top="702"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
             <Rectangle x:Name="objeto11N" Width="42" Height="112" Canvas.Left="278" Canvas.Top="164" HorizontalAlignment="Left" VerticalAlignment="Center">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="/recursos/InteriorMaterials/lampara.png" Stretch="Fill" />
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="objeto11Hitbox" Width="26" Height="4" Canvas.Left="286" Canvas.Top="266" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Rectangle x:Name="objeto11Opacidad" Width="26" Height="86" Canvas.Left="286" Canvas.Top="178" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle x:Name="objeto11Hitbox" Width="26" Height="4" Canvas.Left="286" Canvas.Top="266"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle x:Name="objeto11Opacidad" Width="26" Height="86" Canvas.Left="286" Canvas.Top="178"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
             <Rectangle x:Name="objeto20Hitbox" Width="111" Height="58" Canvas.Left="1023" Canvas.Top="84" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Rectangle.Fill>
@@ -438,14 +438,14 @@
 
             <!--#region player-->
 
-            <Canvas x:Name="hitbox" Width="56" Height="8" Canvas.Left="891" Canvas.Top="142" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red">
+            <Canvas x:Name="hitbox" Width="34" Height="8" Canvas.Left="902" Canvas.Top="142" HorizontalAlignment="Left" VerticalAlignment="Center" Background="Red">
 
-                <Rectangle x:Name="jugador" Height="242" Width="284" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="-167" Canvas.Left="-114" StrokeThickness="0">
+                <Rectangle x:Name="jugador" Height="242" Width="284" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="-148" Canvas.Left="-125" StrokeThickness="0">
 
                     <Rectangle.Fill>
                         <ImageBrush ImageSource="/recursos/Player/idle/player-idle-front/player-idle-front-1.png" Stretch="None">
                             <ImageBrush.RelativeTransform>
-                                <ScaleTransform CenterY="0.5" CenterX="0.50" ScaleX="4" ScaleY="4"/>
+                                <ScaleTransform CenterY="0.5" CenterX="0.50" ScaleX="2.5" ScaleY="2.5"/>
                             </ImageBrush.RelativeTransform>
                         </ImageBrush>
                     </Rectangle.Fill>
@@ -457,24 +457,24 @@
             <!--#endregion-->
 
 
-            <Rectangle x:Name="objetoPared1Hitbox" Width="512" Height="353" Canvas.Left="1005" Canvas.Top="287" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objetoPared3Hitbox" Width="18" Height="354" Canvas.Left="168" Canvas.Top="356" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objetoPared1Hitbox" Width="512" Height="353" Canvas.Left="1005" Canvas.Top="287"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objetoPared3Hitbox" Width="18" Height="354" Canvas.Left="168" Canvas.Top="356"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
-            <Rectangle x:Name="objetoPared5Hitbox" Width="15" Height="289" Canvas.Left="1146" Canvas.Top="-5" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objetoPared6Hitbox" Width="1110" Height="13" Canvas.Left="410" Canvas.Top="784" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Rectangle x:Name="objetoPared7Hitbox" Width="242" Height="73" Canvas.Left="168" Canvas.Top="711" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objetoPared8Hitbox" Width="64" Height="346" Canvas.Left="785" Canvas.Top="289" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objetoPared9Hitbox" Width="592" Height="140" Canvas.Left="193" Canvas.Top="281" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objetoPared10Hitbox" Width="38" Height="164" Canvas.Left="1525" Canvas.Top="626" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objetoPared5Hitbox" Width="15" Height="289" Canvas.Left="1146" Canvas.Top="-5"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objetoPared6Hitbox" Width="1110" Height="13" Canvas.Left="410" Canvas.Top="784"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle x:Name="objetoPared7Hitbox" Width="242" Height="73" Canvas.Left="168" Canvas.Top="711"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objetoPared8Hitbox" Width="64" Height="346" Canvas.Left="785" Canvas.Top="289"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objetoPared9Hitbox" Width="592" Height="140" Canvas.Left="193" Canvas.Top="281"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objetoPared10Hitbox" Width="38" Height="164" Canvas.Left="1525" Canvas.Top="626"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
 
-            <Rectangle x:Name="salirPuerta" DataContext="salir" Width="132" Height="28" Canvas.Left="891" Canvas.Top="71" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="salirPuerta" DataContext="salir" Width="132" Height="28" Canvas.Left="891" Canvas.Top="71"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
 
             <local1:UI HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="ui"/>
-            <Rectangle x:Name="objetoPared2Hitbox" Width="42" Height="205" Canvas.Left="224" Canvas.Top="71" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objetoPared4Hitbox" Width="867" Height="68" Canvas.Left="274" Canvas.Top="2" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objetoPared2Hitbox" Width="42" Height="205" Canvas.Left="224" Canvas.Top="71"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objetoPared4Hitbox" Width="867" Height="68" Canvas.Left="274" Canvas.Top="2"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
 

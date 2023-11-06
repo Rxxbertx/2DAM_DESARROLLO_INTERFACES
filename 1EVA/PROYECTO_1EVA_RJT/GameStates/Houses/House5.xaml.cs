@@ -1,6 +1,5 @@
 ﻿using PROYECTO_1EVA_RJT.Entidades;
 using PROYECTO_1EVA_RJT.Utilidades;
-using System;
 using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -8,7 +7,7 @@ using System.Windows.Shapes;
 
 namespace PROYECTO_1EVA_RJT.GameStates.Houses;
 
-public partial class House5: Page, StateMethods
+public partial class House5 : Page, StateMethods
 {
 
     private Game game;
@@ -36,9 +35,9 @@ public partial class House5: Page, StateMethods
     private void cargarCanva(Canvas canvaCompletado)
     {
         canvaCompletado.Visibility = System.Windows.Visibility.Visible;
-        Canvas.SetLeft(canvaCompletado, Width/ 2 - canvaCompletado.Width / 2);
+        Canvas.SetLeft(canvaCompletado, Width / 2 - canvaCompletado.Width / 2);
         Canvas.SetTop(canvaCompletado, Height / 2 - canvaCompletado.Height / 2);
-        completado = true;
+        completado = true; Sounds.piezaRecogida.Play();
     }
 
     private void InicializarJugador()
@@ -48,11 +47,11 @@ public partial class House5: Page, StateMethods
 
 
         // player = new Player(hitbox, gameElementsColiders, gameElementsNormalOpacity, canvaInteractuar, gameElementsInteractive);
-        player.jugador = hitbox;
-        player.gameElementsColiders = CollidableElements;
-        player.gameElementsNormalOpacity = NormalOpacityElements;
-        player.canvaInteractuar = ui.canvaInteractuar;
-        player.gameElementsInteractive = InteractiveElements;
+        player.Jugador = hitbox;
+        player.GameElementsColiders = CollidableElements;
+        player.GameElementsNormalOpacity = NormalOpacityElements;
+        player.CanvaInteractuar = ui.canvaInteractuar;
+        player.GameElementsInteractive = InteractiveElements;
         player.setInteract(false);
 
 
@@ -65,14 +64,16 @@ public partial class House5: Page, StateMethods
     public void AddElements()
     {
 
-        if (GameManager.Nivel==Constantes.LvlConst.NIVEL5) { 
-        
+        if (GameManager.Nivel == Constantes.LvlConst.NIVEL5)
+        {
+
             placaBase.Visibility = System.Windows.Visibility.Visible;
             gato.Visibility = System.Windows.Visibility.Visible;
-            
+
             InteractiveElements.Add(placaBase);
         }
-        else{
+        else
+        {
 
             placaBase.Visibility = System.Windows.Visibility.Hidden;
             gato.Visibility = System.Windows.Visibility.Hidden;
@@ -109,7 +110,7 @@ public partial class House5: Page, StateMethods
         NormalOpacityElements[0].Add(objeto11Opacidad);
         NormalOpacityElements[1].Add(objeto12N);
         NormalOpacityElements[0].Add(objeto12Opacidad);
-        
+
 
 
         //collidable
@@ -151,41 +152,33 @@ public partial class House5: Page, StateMethods
 
         //interactive
         InteractiveElements.Add(salirPuerta);
-        
+
 
         InicializarJugador();
 
 
     }
 
-    public bool LoadElements()
-    {
-        return true;
-    }
 
     public void Render()
     {
-        player.render();
+        player.Render();
     }
 
-    public void SaveElements()
-    {
-
-    }
 
     public void Update()
     {
         if (completado) return;
-        player.update();
+        player.Update();
         checkInteractiveElements();
     }
 
     private void checkInteractiveElements()
     {
 
-        if (player.interactiveObj != null)
+        if (player.InteractiveObj != null)
         {
-            if (player.interactiveObj.Equals("placaBase"))
+            if (player.InteractiveObj.Equals("placaBase"))
             {
                 GameManager.addInventarioElemento(CargarGuardar.getPiezaFoto("placaBase"));
                 cargarCanva(ui.canvaCompletado);
@@ -283,4 +276,8 @@ public partial class House5: Page, StateMethods
 
     }
 
+    public void CheckHouse()
+    {
+        throw new System.NotImplementedException();
+    }
 }

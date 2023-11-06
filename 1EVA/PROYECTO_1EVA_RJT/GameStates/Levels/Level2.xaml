@@ -6,11 +6,11 @@
       xmlns:local="clr-namespace:PROYECTO_1EVA_RJT.GameStates.Levels"
       xmlns:local1="clr-namespace:PROYECTO_1EVA_RJT.GameStates"
       mc:Ignorable="d" 
-      Title="Level2">
+      Title="Level2" KeyDown="Page_KeyDown" KeyUp="Page_KeyUp" MouseLeftButtonDown="Page_MouseLeftButtonDown">
 
     <Grid>
 
-        <Canvas x:Name="level2" Background="#FF25B627" Height="900" Width="1600">
+        <Canvas x:Name="lvl2" Background="#FF25B627" Height="900" Width="1600">
 
 
 
@@ -288,6 +288,19 @@
             <Image Height="42" Canvas.Left="263" Source="/recursos/LandscapeMaterials/arena/arena3.png" Stretch="Fill" Canvas.Top="137" Width="50" RenderTransformOrigin="0.55,0.571" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
+            <Image Height="30" Source="/recursos/LandscapeMaterials/sombra.png" Stretch="Fill" Canvas.Top="477" Width="43" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="473" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-5.982"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="31" Canvas.Left="-71" Source="/recursos/LandscapeMaterials/sombra1.png" Stretch="Fill" Canvas.Top="476" Width="369" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="30" Canvas.Left="200" Source="/recursos/LandscapeMaterials/sombra1.png" Stretch="Fill" Canvas.Top="474" Width="298" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
 
 
             <!--#endregion-->
@@ -424,21 +437,20 @@
             <Image Height="157" Source="/recursos/LandscapeMaterials/aguaTierra.png" Stretch="Fill" Width="311" Canvas.Left="1285" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="358"/>
 
 
-            <Rectangle x:Name="objeto2Hitbox" Height="18" Stroke="Black" Canvas.Top="463" Width="449" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto3Hitbox" Height="18" Stroke="Black" Canvas.Top="524" Width="420" HorizontalAlignment="Left" Canvas.Left="1184" VerticalAlignment="Center"/>
-            <Rectangle x:Name="objeto4Hitbox" Height="332" Stroke="Black" Canvas.Top="568" Width="47" Canvas.Left="930" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto5Hitbox" Height="97" Stroke="Black" Canvas.Top="743" Width="38" Canvas.Left="892" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto6Hitbox" Height="82" Stroke="Black" Canvas.Top="484" Width="144" Canvas.Left="1038" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto7Hitbox" Height="19" Stroke="Black" Canvas.Top="566" Width="56" Canvas.Left="982" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto8Hitbox" Height="124" Stroke="Black" Canvas.Top="378" Width="238" Canvas.Left="1328" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto2Hitbox" Height="18"  Canvas.Top="464" Width="446" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="3"/>
+            <Rectangle x:Name="objeto3Hitbox" Height="18"  Canvas.Top="524" Width="420" HorizontalAlignment="Left" Canvas.Left="1184" VerticalAlignment="Center"/>
+            <Rectangle x:Name="objeto4Hitbox" Height="332"  Canvas.Top="568" Width="47" Canvas.Left="930" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto5Hitbox" Height="97"  Canvas.Top="743" Width="38" Canvas.Left="892" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto7Hitbox" Height="19"  Canvas.Top="561" Width="223" Canvas.Left="982" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle x:Name="objeto8Hitbox" Height="124"  Canvas.Top="378" Width="238" Canvas.Left="1328" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
 
-            <Rectangle x:Name="objeto9Hitbox" Height="56" Stroke="Black" Canvas.Top="297" Width="115" Canvas.Left="1377" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto10Hitbox" Height="18" Stroke="Black" Canvas.Top="298" Width="115" Canvas.Left="1484" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto11Hitbox" Height="82" Stroke="Black" Canvas.Top="225" Width="67" Canvas.Left="1310" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto12Hitbox" Height="50" Stroke="Black" Canvas.Top="211" Width="179" Canvas.Left="1128" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto13itbox" Height="50" Stroke="Black" Canvas.Top="184" Width="180" Canvas.Left="984" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="objeto14Hitbox" Height="184" Stroke="Black" Width="56" Canvas.Left="954" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto9Hitbox" Height="56"  Canvas.Top="297" Width="115" Canvas.Left="1377" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto10Hitbox" Height="18"  Canvas.Top="298" Width="115" Canvas.Left="1484" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto11Hitbox" Height="82"  Canvas.Top="225" Width="67" Canvas.Left="1310" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto12Hitbox" Height="50"  Canvas.Top="211" Width="179" Canvas.Left="1128" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto13Hitbox" Height="50"  Canvas.Top="184" Width="180" Canvas.Left="984" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="objeto14Hitbox" Height="184"  Width="56" Canvas.Left="954" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
 
 
@@ -466,21 +478,14 @@
                 </Rectangle.Fill>
 
             </Rectangle>
-            <Rectangle   Height="228" Canvas.Left="1152"  Stretch="Fill" Canvas.Top="524" Width="184" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Rectangle   Height="228" Canvas.Left="1152"  Stretch="Fill" Canvas.Top="528" Width="184" HorizontalAlignment="Center" VerticalAlignment="Top">
 
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
                 </Rectangle.Fill>
 
             </Rectangle>
-            <Rectangle   Height="228" Canvas.Left="1022"  Stretch="Fill" Canvas.Top="474" Width="184" HorizontalAlignment="Left" VerticalAlignment="Top">
-
-                <Rectangle.Fill>
-                    <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
-                </Rectangle.Fill>
-
-            </Rectangle>
-            <Rectangle  Height="228" Canvas.Left="930"  Stretch="Fill" Canvas.Top="560" Width="184" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Rectangle  Height="228" Canvas.Left="930"  Stretch="Fill" Canvas.Top="558" Width="184" HorizontalAlignment="Left" VerticalAlignment="Top">
 
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="/recursos/LandscapeMaterials/tree.png"/>
@@ -656,8 +661,8 @@
                 </Rectangle.Fill>
 
             </Rectangle>
-            <Rectangle x:Name="arbol1Hitbox" Height="26" Canvas.Left="824" Stroke="red" Canvas.Top="378" Width="62" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="arbol1Opacidad" Height="172" Canvas.Left="765" Stroke="red" Canvas.Top="202" Width="174" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol1Hitbox" Height="26" Canvas.Left="824"  Canvas.Top="378" Width="62" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol1Opacidad" Height="172" Canvas.Left="765"  Canvas.Top="202" Width="174" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Rectangle  x:Name="arbol2N" Height="228" Canvas.Left="607"  Stretch="Fill" Canvas.Top="-71" Width="183" HorizontalAlignment="Left" VerticalAlignment="Top">
 
                 <Rectangle.Fill>
@@ -665,24 +670,8 @@
                 </Rectangle.Fill>
 
             </Rectangle>
-            <Rectangle x:Name="arbol2Hitbox" Height="26" Canvas.Left="666" Stroke="red" Canvas.Top="115" Width="62" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="arbol2Opacidad" Height="172" Canvas.Left="607" Stroke="red" Canvas.Top="-61" Width="174" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <Rectangle x:Name="arbol2Hitbox" Height="26" Canvas.Left="666"  Canvas.Top="115" Width="62" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol2Opacidad" Height="172" Canvas.Left="607"  Canvas.Top="-61" Width="174" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
 
@@ -694,8 +683,8 @@
                 </Rectangle.Fill>
 
             </Rectangle>
-            <Rectangle x:Name="arbol3Hitbox" Height="16" Canvas.Left="88" Stroke="red" Canvas.Top="612" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Rectangle x:Name="arbol3Opacidad" Height="52" Canvas.Left="74" Stroke="red" Canvas.Top="551" Width="76" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol3Hitbox" Height="16" Canvas.Left="88"  Canvas.Top="612" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol3Opacidad" Height="52" Canvas.Left="74"  Canvas.Top="551" Width="76" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
             <Rectangle  x:Name="arbol4N" Height="98" Canvas.Left="120"  Stretch="Fill" Canvas.Top="592" Width="90" HorizontalAlignment="Left" VerticalAlignment="Top">
 
@@ -704,8 +693,8 @@
                 </Rectangle.Fill>
 
             </Rectangle>
-            <Rectangle x:Name="arbol4Hitbox" Height="16" Canvas.Left="140" Stroke="red" Canvas.Top="668" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="arbol4Opacidad" Height="52" Canvas.Left="126" Stroke="red" Canvas.Top="607" Width="76" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol4Hitbox" Height="16" Canvas.Left="140"  Canvas.Top="668" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol4Opacidad" Height="52" Canvas.Left="126"  Canvas.Top="607" Width="76" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
             <Rectangle  x:Name="arbol5N" Height="98" Canvas.Left="192"  Stretch="Fill" Canvas.Top="468" Width="90" HorizontalAlignment="Left" VerticalAlignment="Top">
 
@@ -714,8 +703,8 @@
                 </Rectangle.Fill>
 
             </Rectangle>
-            <Rectangle x:Name="arbol5Hitbox" Height="16" Canvas.Left="212" Stroke="red" Canvas.Top="544" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="arbol5Opacidad" Height="52" Canvas.Left="198" Stroke="red" Canvas.Top="484" Width="76" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol5Hitbox" Height="16" Canvas.Left="212"  Canvas.Top="544" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol5Opacidad" Height="52" Canvas.Left="198"  Canvas.Top="484" Width="76" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
             <Rectangle  x:Name="arbol6N" Height="98" Canvas.Left="486"  Stretch="Fill" Canvas.Top="421" Width="90" HorizontalAlignment="Left" VerticalAlignment="Top">
 
@@ -724,8 +713,8 @@
                 </Rectangle.Fill>
 
             </Rectangle>
-            <Rectangle x:Name="arbol6Hitbox" Height="16" Canvas.Left="506" Stroke="red" Canvas.Top="497" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="arbol6Opacidad" Height="52" Canvas.Left="492" Stroke="red" Canvas.Top="437" Width="76" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol6Hitbox" Height="16" Canvas.Left="506"  Canvas.Top="497" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol6Opacidad" Height="52" Canvas.Left="492"  Canvas.Top="437" Width="76" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
             <Rectangle  x:Name="arbol7N" Height="98" Canvas.Left="708"  Stretch="Fill" Canvas.Top="148" Width="90" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -735,8 +724,8 @@
                 </Rectangle.Fill>
 
             </Rectangle>
-            <Rectangle x:Name="arbol7Hitbox" Height="16" Canvas.Left="728" Stroke="red" Canvas.Top="224" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="arbol7Opacidad" Height="52" Canvas.Left="714" Stroke="red" Canvas.Top="164" Width="76" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol7Hitbox" Height="16" Canvas.Left="728"  Canvas.Top="224" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol7Opacidad" Height="52" Canvas.Left="714"  Canvas.Top="164" Width="76" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
             <Rectangle  x:Name="arbol8N" Height="98" Canvas.Left="390"  Stretch="Fill" Canvas.Top="135" Width="90" HorizontalAlignment="Left" VerticalAlignment="Top">
 
@@ -745,8 +734,8 @@
                 </Rectangle.Fill>
 
             </Rectangle>
-            <Rectangle x:Name="arbol8Hitbox" Height="16" Canvas.Left="410" Stroke="red" Canvas.Top="211" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="arbol8Opacidad" Height="52" Canvas.Left="396" Stroke="red" Canvas.Top="151" Width="76" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol8Hitbox" Height="16" Canvas.Left="410"  Canvas.Top="211" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="arbol8Opacidad" Height="52" Canvas.Left="396"  Canvas.Top="151" Width="76" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
 
@@ -760,7 +749,7 @@
 
 
 
-            <Rectangle x:Name="casa1N" Height="199" Canvas.Left="979"  Stretch="Fill" Canvas.Top="238" Width="198" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Rectangle x:Name="casa1N" Height="246" Canvas.Left="979"  Stretch="Fill" Canvas.Top="238" Width="246" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
 
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="/recursos/House Exterior.png" Stretch="Fill">
@@ -776,12 +765,12 @@
                     </ImageBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="puertaCasa3" DataContext="interactivo" Height="18" Canvas.Left="1045" Stroke="red" Canvas.Top="428" Width="68" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="casa1Hitbox" Height="39" Canvas.Left="979" Stroke="red" Canvas.Top="389" Width="198" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="casa1Opacidad" Height="136" Canvas.Left="984" Stroke="red" Canvas.Top="248" Width="188" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="puertaCasa3" DataContext="interactivo" Height="18" Canvas.Left="1072"  Canvas.Top="478" Width="68" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="casa1Hitbox" Height="126" Canvas.Left="979"  Canvas.Top="361" Width="245" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="casa1Opacidad" Height="113" Canvas.Left="984"  Canvas.Top="248" Width="234" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 
-            <Rectangle x:Name="casa2N" Height="199" Canvas.Left="305"  Stretch="Fill" Canvas.Top="528" Width="198" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Rectangle x:Name="casa2N" Height="246" Canvas.Left="305"  Stretch="Fill" Canvas.Top="528" Width="246" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
 
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="/recursos/House Exterior.png" Stretch="Fill">
@@ -797,9 +786,9 @@
                     </ImageBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="puertaCasa1" DataContext="interactivo" Height="18" Canvas.Left="371" Stroke="red" Canvas.Top="718" Width="68" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="casa2Hitbox" Height="39" Canvas.Left="305" Stroke="red" Canvas.Top="679" Width="198" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Rectangle x:Name="casa2Opacidad" Height="136" Canvas.Left="310" Stroke="red" Canvas.Top="538" Width="188" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="puertaCasa1" DataContext="interactivo" Height="18" Canvas.Left="396"  Canvas.Top="768" Width="68" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="casa2Hitbox" Height="130" Canvas.Left="305"  Canvas.Top="651" Width="246" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="casa2Opacidad" Height="108" Canvas.Left="310"  Canvas.Top="538" Width="241" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
             <Rectangle x:Name="casa3N" Height="199" Canvas.Left="-85"  Stretch="Fill" Canvas.Top="11" Width="198" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Rectangle.RenderTransform>
@@ -825,8 +814,8 @@
                     </ImageBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="casa3Hitbox" Height="39" Canvas.Left="3" Stroke="red" Canvas.Top="162" Width="110" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Rectangle x:Name="casa3Opacidad" Height="136" Canvas.Left="3" Stroke="red" Canvas.Top="21" Width="105" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle x:Name="casa3Hitbox" Height="39" Canvas.Left="3"  Canvas.Top="162" Width="110" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle x:Name="casa3Opacidad" Height="136" Canvas.Left="3"  Canvas.Top="21" Width="105" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
 
 
@@ -836,7 +825,7 @@
 
             <!--#region PLAYER-->
 
-            <Canvas x:Name="hitbox" Width="35" Height="8" Canvas.Left="765" Canvas.Top="572" HorizontalAlignment="Left" VerticalAlignment="Center" Background="Red">
+            <Canvas x:Name="hitbox" Width="35" Height="8" Canvas.Left="765" Canvas.Top="572" HorizontalAlignment="Left" VerticalAlignment="Center">
 
                 <Rectangle x:Name="jugador" Height="242" Width="284" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="-154" Canvas.Left="-124" StrokeThickness="0" RenderTransformOrigin="0.5,0.5">
 
@@ -862,13 +851,13 @@
                     <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
                 </Canvas.Background>
 
-                <TextBlock x:Name="TituloPieza" Text="TERCERA PIEZA" FontSize="50" Foreground="White" Canvas.Left="165" Canvas.Top="54" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBlock x:Name="TituloPieza" Text="TERCERA PIEZA" FontSize="50" Foreground="White" Canvas.Left="166" Canvas.Top="54" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="/recursos/ExportedIcons/Item2.png"/>
                     </TextBlock.Background>
                 </TextBlock>
                 <TextBlock x:Name="nombrePieza" Text="RAM" Canvas.Left="49" Canvas.Top="151" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="88" Width="630" TextAlignment="Center"/>
-                <Image Height="272" Canvas.Left="232" Source="/recursos/componentesPC/ram.png" Stretch="Fill" Canvas.Top="216" Width="264" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Image Height="272" Canvas.Left="137" Source="/recursos/componentesPC/ram.png" Stretch="Fill" Canvas.Top="239" Width="452" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <Image.Effect>
                         <DropShadowEffect/>
                     </Image.Effect>
@@ -883,13 +872,13 @@
                     <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
                 </Canvas.Background>
 
-                <TextBlock  Text="RAM" FontSize="50" Foreground="White" Canvas.Left="280" Canvas.Top="34" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBlock  Text="RAM" FontSize="50" Foreground="White" Canvas.Left="308" Canvas.Top="34" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <TextBlock.Background>
                         <ImageBrush ImageSource="/recursos/ExportedIcons/Item2.png"/>
                     </TextBlock.Background>
                 </TextBlock>
-                <TextBlock x:Name="InformacionPieza" Text="Esta pieza almacena informacion temporal (volatil) a la cual se accede rapidamente" Canvas.Left="49" Canvas.Top="151" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="134" Width="610" TextAlignment="Center"/>
-                <Image Height="272" Canvas.Left="205" Source="/recursos/componentesPC/ram.png" Stretch="Fill" Canvas.Top="285" Width="262" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBlock x:Name="InformacionPieza" Text="Esta pieza almacena informacion temporal (volatil) a la cual se accede rapidamente" Canvas.Left="59" Canvas.Top="151" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Height="134" Width="610" TextAlignment="Center"/>
+                <Image Height="272" Canvas.Left="167" Source="/recursos/componentesPC/ram.png" Stretch="Fill" Canvas.Top="251" Width="394" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <Image.Effect>
                         <DropShadowEffect/>
                     </Image.Effect>

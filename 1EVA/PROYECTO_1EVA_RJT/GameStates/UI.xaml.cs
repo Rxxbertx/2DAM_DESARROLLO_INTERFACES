@@ -1,18 +1,7 @@
-﻿using PROYECTO_1EVA_RJT.Utilidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PROYECTO_1EVA_RJT.GameStates;
 
@@ -22,7 +11,7 @@ namespace PROYECTO_1EVA_RJT.GameStates;
 public partial class UI : UserControl
 {
 
-    private Game game;
+    private Game? game;
     public UI()
     {
         InitializeComponent();
@@ -31,13 +20,13 @@ public partial class UI : UserControl
         Nivel.Content = GameManager.Nivel;
         objetivo.Fill = GameManager.piezaBuscar[GameManager.Nivel];
         objetivo.Fill.SetCurrentValue(ImageBrush.StretchProperty, Stretch.Uniform);
-        
+
     }
 
     private void cargarInventario()
     {
 
-        
+
 
         if (GameManager.inventario.Count > 0)
         {
@@ -94,13 +83,13 @@ public partial class UI : UserControl
         pauseSettings.Owner = game;
         pauseSettings.ShowDialog();
 
-        
+
     }
 
-    private void Taller_MouseLeftButtonDown(object sender ,MouseButtonEventArgs e)
+    private void Taller_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
         e.Handled = true;
-        
+
         GameManager.ChangeState(GameState.TALLER);
         game.MainFrame.NavigationService.Navigate(game.Taller);
         game.Taller.Focus();

@@ -20,7 +20,7 @@
 
     <Grid>
 
-        <Canvas x:Name="ventanaExit" Cursor="Cross">
+        <Canvas x:Name="ventanaExit">
 
 
             <Image Height="450" Source="/recursos/ExportedIcons/Item3.png" Stretch="Fill" Width="800" HorizontalAlignment="Left" VerticalAlignment="Center"/>

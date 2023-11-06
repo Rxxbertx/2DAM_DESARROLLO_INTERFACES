@@ -21,18 +21,18 @@
 
             <Image Height="630" Source="/recursos/ExportedIcons/Item3.png" Stretch="Fill" Width="784" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="-3"/>
 
-            <Image Height="108" Canvas.Left="276" Source="/recursos/ExportedIcons/Item5.png" Stretch="Fill" Canvas.Top="479" Width="248" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="Cross"/>
+            <Image Height="108" x:Name="btnCerrar" Canvas.Left="276" Source="/recursos/ExportedIcons/Item5.png" Stretch="Fill" Canvas.Top="479" Width="248" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="Cross"/>
             <Image Height="73" Source="/recursos/ExportedIcons/Item2.png" Stretch="Fill" Width="488" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="35" Canvas.Left="156"/>
-            <Image x:Name="cerrarX" MouseLeftButtonDown="Cerrar_MouseLeftButtonDown" Height="49" Canvas.Left="701" Source="/recursos/ExportedIcons/Icon_X.png" Stretch="Fill" Width="52" Canvas.Top="20" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.471,-0.082"/>
+            <Image x:Name="cerrarX" MouseEnter="cerrarX_MouseEnter" MouseLeave="cerrarX_MouseLeave"  MouseLeftButtonDown="Cerrar_MouseLeftButtonDown" Height="49" Canvas.Left="701" Source="/recursos/ExportedIcons/Icon_X.png" Stretch="Fill" Width="52" Canvas.Top="20" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.471,-0.082"/>
             <Image x:Name="slrMenu0" Height="53" Canvas.Left="282" Source="/recursos/ExportedIcons/Item2.png" Stretch="Fill" Canvas.Top="407" Width="228" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Label MouseLeftButtonDown="Cerrar_MouseLeftButtonDown" Content="CERRAR" Canvas.Left="285" Canvas.Top="490" FontFamily="Comic Sans MS" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Top" Height="86" Width="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label x:Name="slrMenu" MouseLeftButtonDown="Menu_MouseLeftButtonDown" Content="Salir al Menu" Canvas.Left="285" Canvas.Top="409" FontFamily="Comic Sans MS" FontSize="24" Width="224" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="48"/>
+            <Label  MouseEnter="cerrar_MouseEnter" MouseLeave="cerrar_MouseLeave" MouseLeftButtonDown="Cerrar_MouseLeftButtonDown" Content="CERRAR" Canvas.Left="285" Canvas.Top="490" FontFamily="Comic Sans MS" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Center" Height="86" Width="230" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="slrMenu" MouseLeftButtonDown="Menu_MouseLeftButtonDown" MouseEnter="menu_MouseEnter" MouseLeave="menu_MouseLeave" Content="Salir al Menu" Canvas.Left="285" Canvas.Top="409" FontFamily="Comic Sans MS" FontSize="24" Width="224" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="48"/>
             <Label  Content="AJUSTES" Canvas.Left="279" Canvas.Top="31" FontFamily="Comic Sans MS" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Label  Content="Sonido" Canvas.Left="356" Canvas.Top="128" FontFamily="Comic Sans MS" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Image x:Name="SoundImageOff" Source="/recursos/ExportedIcons/Icon_SoundOff.png" Stretch="Fill" Height="58" Canvas.Left="172" Canvas.Top="189" Width="53" MouseLeftButtonDown="SoundImageOff_MouseLeftButtonDown" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Image x:Name="SoundImageOn" Source="/recursos/ExportedIcons/Icon_SoundOn.png" Stretch="Fill" Height="58" Canvas.Left="172" Canvas.Top="189" Width="53" MouseLeftButtonDown="SoundImageOn_MouseLeftButtonDown" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.453,0.414"/>
 
-            <Slider x:Name="Sonido" Width="324" HorizontalAlignment="Center" Canvas.Left="269" Canvas.Top="211" VerticalAlignment="Top" Value="4" TickPlacement="BottomRight" RenderTransformOrigin="0.5,0.5" Foreground="#FF412220"  >
+            <Slider Width="324" HorizontalAlignment="Center" Canvas.Left="269" Canvas.Top="211" VerticalAlignment="Top" TickPlacement="BottomRight" RenderTransformOrigin="0.5,0.5" Foreground="#FF412220" Maximum="1" TickFrequency="0.1"   x:Name="volumeSlider" ValueChanged="VolumeSlider_ValueChanged" LargeChange="0.1">
                 <Slider.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="1" ScaleY="2"/>

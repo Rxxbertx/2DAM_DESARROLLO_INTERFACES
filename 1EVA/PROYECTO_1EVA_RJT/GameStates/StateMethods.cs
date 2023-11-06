@@ -7,7 +7,9 @@
 
         void Render();
 
-        
+        void CheckHouse();
+
+
 
     }
 }

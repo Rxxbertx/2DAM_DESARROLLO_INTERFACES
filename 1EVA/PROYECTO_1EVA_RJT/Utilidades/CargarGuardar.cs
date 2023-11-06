@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Policy;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -22,7 +21,7 @@ namespace PROYECTO_1EVA_RJT.Utilidades
                 for (int j = 0; j < 4; j++)
                 {
                     animaciones[i][j] = new ImageBrush[7];
-                    
+
                 }
             }
 
@@ -33,9 +32,9 @@ namespace PROYECTO_1EVA_RJT.Utilidades
                 animaciones[Constantes.PlayerConst.IDLE][Constantes.PlayerConst.FRONT][i] = new ImageBrush
                 {
                     ImageSource = new BitmapImage(new Uri(playerPath + "idle/player-idle-front/player-idle-front-" + (i + 1) + ".png", UriKind.RelativeOrAbsolute)),
-                    RelativeTransform = new ScaleTransform(3, 3,0.5, 0.5),
+                    RelativeTransform = new ScaleTransform(3, 3, 0.5, 0.5),
                     Stretch = Stretch.None
-            };
+                };
             }
 
             // Player Idle back
@@ -184,7 +183,7 @@ namespace PROYECTO_1EVA_RJT.Utilidades
                 return new ImageBrush();
             }
 
-            
+
         }
 
 

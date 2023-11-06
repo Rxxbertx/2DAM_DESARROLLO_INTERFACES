@@ -8,7 +8,7 @@
      Height="900" Width="1600" Title="Menu">
 
     <Grid>
-        <Canvas x:Name="ventanaPrinicipal" Cursor="Cross">
+        <Canvas x:Name="ventanaPrinicipal">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFC97D70"/>
@@ -21,7 +21,7 @@
             <Image Height="662" Canvas.Left="212" Source="/recursos/ExportedIcons/Item3.png" Stretch="Fill" Canvas.Top="80" Width="1176" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
             <Image Height="168" Canvas.Left="296" Source="/recursos/ExportedIcons/Item4.png" Stretch="Fill" Canvas.Top="177" Width="1008" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image x:Name="jugar" MouseLeftButtonDown="Jugar_MouseLeftButtonDown" MouseEnter="Jugar_MouseEnter" MouseLeave="Jugar_MouseLeave" Height="130" Canvas.Left="488" Source="/recursos/ExportedIcons/Item5.png" Stretch="Fill" Canvas.Top="377" Width="624" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="Cross"/>
+            <Image x:Name="jugar" MouseLeftButtonDown="Jugar_MouseLeftButtonDown" MouseEnter="Jugar_MouseEnter" MouseLeave="Jugar_MouseLeave" Height="130" Canvas.Left="485" Source="/recursos/ExportedIcons/Item5.png" Stretch="Fill" Canvas.Top="446" Width="624" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Image Height="73" Canvas.Left="212" Source="/recursos/ExportedIcons/Item2.png" Stretch="Fill" Canvas.Top="80" Width="1176" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Image x:Name="salirX" MouseLeftButtonDown="Salir_MouseLeftButtonDown" MouseEnter="SalirX_MouseEnter" MouseLeave="SalirX_MouseLeave" Height="49" Canvas.Left="1300" Source="/recursos/ExportedIcons/Icon_X.png" Stretch="Fill" Canvas.Top="92" Width="52"/>
             <Image x:Name="ayuda" MouseLeftButtonDown="Ayuda_MouseLeftButtonDown" MouseEnter="Ayuda_MouseEnter" MouseLeave="Ayuda_MouseLeave" Height="100" Canvas.Left="264" Source="/recursos/ExportedIcons/Icon_Question.png" Stretch="Fill" Canvas.Top="604" Width="76"/>
@@ -36,10 +36,10 @@
                 </Image.RenderTransform>
             </Image>
             <Image Height="49" Canvas.Left="1235" Source="/recursos/ExportedIcons/Icon_Down.png" Stretch="Fill" Canvas.Top="91" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Image x:Name="salir" MouseLeftButtonDown="Salir_MouseLeftButtonDown" MouseEnter="Salir_MouseEnter" MouseLeave="Salir_MouseLeave" Height="87" Canvas.Left="611" Source="/recursos/ExportedIcons/Item2.png" Stretch="Fill" Canvas.Top="567" Width="378" Cursor="Hand"/>
+            <Image x:Name="salir" MouseLeftButtonDown="Salir_MouseLeftButtonDown" MouseEnter="Salir_MouseEnter" MouseLeave="Salir_MouseLeave" Height="82" Canvas.Left="646" Source="/recursos/ExportedIcons/Item2.png" Stretch="Fill" Canvas.Top="604" Width="308"/>
             <Image x:Name="Settings" MouseLeftButtonDown="Settings_MouseLeftButtonDown" MouseEnter="Settings_MouseEnter" MouseLeave="Settings_MouseLeave"  Height="100" Canvas.Left="1218" Source="/recursos/ExportedIcons/Icon_Settings.png" Stretch="Fill" Canvas.Top="604" Width="108" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Label  MouseEnter="Jugar_MouseEnter" MouseLeave="Jugar_MouseLeave" MouseLeftButtonDown="Jugar_MouseLeftButtonDown" Content="JUGAR" Canvas.Left="671" Canvas.Top="387" FontFamily="Comic Sans MS" FontSize="72" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Label MouseLeftButtonDown="Salir_MouseLeftButtonDown" MouseEnter="Salir_MouseEnter" MouseLeave="Salir_MouseLeave" Content="Salir" Canvas.Left="741" Canvas.Top="572" FontFamily="Comic Sans MS" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label  MouseEnter="Jugar_MouseEnter" MouseLeave="Jugar_MouseLeave" MouseLeftButtonDown="Jugar_MouseLeftButtonDown" Content="JUGAR" Canvas.Left="668" Canvas.Top="456" FontFamily="Comic Sans MS" FontSize="72" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label MouseLeftButtonDown="Salir_MouseLeftButtonDown" MouseEnter="Salir_MouseEnter" MouseLeave="Salir_MouseLeave" Content="Salir" Canvas.Left="738" Canvas.Top="607" FontFamily="Comic Sans MS" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Label Content="BUSCA PC" Canvas.Left="679" Canvas.Top="184" FontFamily="Comic Sans MS" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#00000000" Foreground="White">
                 <Label.Effect>
                     <DropShadowEffect/>
@@ -48,6 +48,7 @@
             <Label Content="Proyecto-EVA1-RJT.exe" Canvas.Left="265" Canvas.Top="85" FontFamily="Comic Sans MS" FontSize="36" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Top">
 
             </Label>
+            <TextBox x:Name="nombreUsuario" MouseDown="TextBlock_MouseLeftButtonDown" Canvas.Left="533" TextWrapping="Wrap" Text="Introduce tu nombre" Canvas.Top="350" Height="72" Width="531" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Comic Sans MS" TextAlignment="Center" FontSize="36" Foreground="White" Background="Transparent" CaretBrush="#FFC97D70" MaxLines="1" BorderThickness="0,0,0,0"/>
 
         </Canvas>
 

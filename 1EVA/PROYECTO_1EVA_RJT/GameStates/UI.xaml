@@ -35,7 +35,8 @@
             <Label Content="Encuentra la pieza" Canvas.Left="142" Canvas.Top="73" FontFamily="Comic Sans MS" FontSize="20" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Image x:Name="Pausa" MouseLeftButtonDown="Pausa_MouseLeftButtonDown" Source="/recursos/ExportedIcons/Icon_Exit.png" Stretch="Fill" Height="48" Canvas.Left="32" Canvas.Top="827" Width="36"/>
             <Image Height="42" Canvas.Left="327" Source="/recursos/ExportedIcons/Icon_Star.png" Stretch="Fill" Canvas.Top="73" Width="55"/>
-            <Image  Height="78" Source="/recursos/ExportedIcons/Item3.png" Stretch="Fill" Canvas.Top="439" Width="510" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Canvas.Left="-222" Opacity="0.497">
+
+            <Image  Height="72" Source="/recursos/ExportedIcons/Item3.png" Stretch="Fill" Width="510" RenderTransformOrigin="0.5,0.5" Opacity="0.497" HorizontalAlignment="Left" Canvas.Left="-220" Canvas.Top="439" VerticalAlignment="Top">
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -45,7 +46,14 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
+
+
+
+
             <Image Height="62" Canvas.Left="4" Source="/recursos/ExportedIcons/Icon_BackPack.png" Stretch="Fill" Canvas.Top="237" Width="58" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.172,0.532"/>
+            
+            
+            
             <Ellipse x:Name="piezaFoto1" Height="62" Canvas.Left="5" Canvas.Top="309" Width="56" StrokeThickness="5" HorizontalAlignment="Left" VerticalAlignment="Center">
 
                 <Ellipse.Stroke>
@@ -107,8 +115,6 @@
 
 
             </Ellipse>
-            <Image Height="54" Canvas.Left="1508" Source="/recursos/ExportedIcons/Icon_Heart.png" Stretch="Fill" Canvas.Top="119" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Label x:Name="vida" Content="100" Canvas.Left="1498" Canvas.Top="178" FontFamily="Comic Sans MS" FontSize="36" HorizontalAlignment="Left" VerticalAlignment="Top" Height="55" Width="70"/>
 
 
             <Canvas x:Name="canvaInteractuar"  Width="100" Height="100" Canvas.Left="406" Canvas.Top="-190" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -136,7 +142,7 @@
                 <Canvas.Background>
                     <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
                 </Canvas.Background>
-                <Label MouseLeftButtonDown="Taller_MouseLeftButtonDown"  Content="IR AL TALLER" Canvas.Left="61" Canvas.Top="87" FontFamily="Comic Sans MS" FontSize="20" Foreground="#FF37272A" HorizontalAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="36" Width="174">
+                <Label MouseLeftButtonDown="Taller_MouseLeftButtonDown"  Content="IR AL TALLER" Canvas.Left="61" Canvas.Top="87" FontFamily="Comic Sans MS" FontSize="20" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="36" Width="174">
                     <Label.Background>
                         <ImageBrush ImageSource="/recursos/ExportedIcons/Item2.png"/>
                     </Label.Background>
@@ -145,8 +151,7 @@
                 <Image Height="126" Canvas.Left="74" Source="/recursos/ExportedIcons/Item7.png" Stretch="Fill" Canvas.Top="-135" Width="136"/>
 
             </Canvas>
-
-
+            
         </Canvas>
 
 
