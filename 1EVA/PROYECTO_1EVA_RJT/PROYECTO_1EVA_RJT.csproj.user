@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="GameStates\Ayuda.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="GameStates\Exit.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="EnterPoint\Game.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GameStates\Ayuda.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GameStates\Exit.xaml">

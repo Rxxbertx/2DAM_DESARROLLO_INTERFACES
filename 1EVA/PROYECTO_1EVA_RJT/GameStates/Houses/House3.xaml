@@ -438,7 +438,7 @@
 
             <!--#region player-->
 
-            <Canvas x:Name="hitbox" Width="34" Height="8" Canvas.Left="902" Canvas.Top="142" HorizontalAlignment="Left" VerticalAlignment="Center" Background="Red">
+            <Canvas x:Name="hitbox" Width="34" Height="8" Canvas.Left="902" Canvas.Top="142" HorizontalAlignment="Left" VerticalAlignment="Center">
 
                 <Rectangle x:Name="jugador" Height="242" Width="284" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="-148" Canvas.Left="-125" StrokeThickness="0">
 

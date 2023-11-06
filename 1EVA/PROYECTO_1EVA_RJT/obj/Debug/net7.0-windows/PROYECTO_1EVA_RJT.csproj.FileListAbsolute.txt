@@ -673,5 +673,7 @@ C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\PROYECTO_1EVA_RJ
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\sombra1.png
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\LandscapeMaterials\sombra2.png
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\loading.png
-C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\sounds\Win.wav
 C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\sounds\move.wav
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Ayuda.g.cs
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\PROYECTO_1EVA_RJT\obj\Debug\net7.0-windows\GameStates\Ayuda.baml
+C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\PROYECTO_1EVA_RJT\bin\Debug\net7.0-windows\recursos\Software.png

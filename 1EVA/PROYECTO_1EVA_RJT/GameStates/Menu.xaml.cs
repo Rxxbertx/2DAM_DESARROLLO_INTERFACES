@@ -112,6 +112,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void Ayuda_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Sounds.boton.Play();
+            new Ayuda(game)
+            { Owner = game }.ShowDialog();
         }
 
 

@@ -228,10 +228,20 @@ namespace PROYECTO_1EVA_RJT.Entidades
             if (avanzar)
             {
 
-               
+                double length = Math.Sqrt(x * x + y * y);
+                if (length > 0)
+                {
+                    x /= length;
+                    y /= length;
+                }
+
+                x *= speed * Game.DeltaTime;
+                y *= speed * Game.DeltaTime;
+
                 Canvas.SetLeft(Jugador, Canvas.GetLeft(Jugador) + x);
                 Canvas.SetTop(Jugador, Canvas.GetTop(Jugador) + y);
 
+              
             }
 
 

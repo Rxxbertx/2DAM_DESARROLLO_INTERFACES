@@ -213,6 +213,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/player/idle/player-idle-front/player-idle-front-3.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/componentespc/pantalla.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/componentespc/torre.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/software.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/sounds/move.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/icon_dotsvertical.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("recursos/exportedicons/icon_down.png")]
