@@ -1,11 +1,11 @@
 ﻿using PROYECTO_1EVA_RJT.Entidades;
+using PROYECTO_1EVA_RJT.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
-using PROYECTO_1EVA_RJT.Utilidades;
 
 namespace PROYECTO_1EVA_RJT.GameStates.Levels
 {

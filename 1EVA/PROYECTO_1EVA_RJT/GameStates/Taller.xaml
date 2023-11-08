@@ -4,7 +4,6 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PROYECTO_1EVA_RJT.GameStates"
-      xmlns:gif="http://wpfanimatedgif.codeplex.com"
       mc:Ignorable="d" 
       
       Title="Taller">
@@ -95,7 +94,7 @@
 
             </Canvas>
 
-            <Canvas x:Name="final" Height="610" Width="640" Canvas.Left="-789" Canvas.Top="103" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" MouseLeftButtonDown="Final_MouseLeftButtonDown">
+            <Canvas x:Name="final" Height="610" Width="640" Canvas.Left="-789" Canvas.Top="103" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" MouseLeftButtonDown="Final_MouseLeftButtonDown" >
                 <Canvas.Background>
                     <ImageBrush ImageSource="/recursos/ExportedIcons/Item3.png"/>
                 </Canvas.Background>

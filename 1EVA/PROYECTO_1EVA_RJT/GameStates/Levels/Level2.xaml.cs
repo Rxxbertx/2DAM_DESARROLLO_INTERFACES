@@ -1,11 +1,11 @@
 ﻿using PROYECTO_1EVA_RJT.Entidades;
+using PROYECTO_1EVA_RJT.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
-using PROYECTO_1EVA_RJT.Utilidades;
 
 namespace PROYECTO_1EVA_RJT.GameStates.Levels
 {
@@ -172,7 +172,7 @@ namespace PROYECTO_1EVA_RJT.GameStates.Levels
                 arbol6Opacidad,
                 arbol7Opacidad,
                 arbol8Opacidad
-               
+
 
             };
             NormalOpacityElements[1] = new List<Rectangle>()
@@ -188,8 +188,8 @@ namespace PROYECTO_1EVA_RJT.GameStates.Levels
                 arbol6N,
                 arbol7N,
                 arbol8N
-                    
-                   
+
+
 
             };
 
@@ -217,7 +217,7 @@ namespace PROYECTO_1EVA_RJT.GameStates.Levels
             CollidableElements.Add(objeto3Hitbox);
             CollidableElements.Add(objeto4Hitbox);
             CollidableElements.Add(objeto5Hitbox);
-            
+
             CollidableElements.Add(objeto7Hitbox);
             CollidableElements.Add(objeto8Hitbox);
             CollidableElements.Add(objeto9Hitbox);

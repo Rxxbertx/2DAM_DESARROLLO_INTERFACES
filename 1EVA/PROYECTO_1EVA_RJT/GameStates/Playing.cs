@@ -1,6 +1,4 @@
 ﻿using PROYECTO_1EVA_RJT.Entidades;
-using PROYECTO_1EVA_RJT.Utilidades;
-using System;
 using static PROYECTO_1EVA_RJT.Utilidades.Constantes;
 
 namespace PROYECTO_1EVA_RJT.GameStates
@@ -25,7 +23,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         public void LoadNextLevel()
         {
-            
+
             switch (GameManager.Nivel)
             {
 
@@ -33,28 +31,28 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
                     GameManager.Nivel = LvlConst.NIVEL2;
                     LVLx = new Levels.Level2(Player, Game);
-                    
+
                     break;
 
                 case LvlConst.NIVEL2:
 
                     GameManager.Nivel = LvlConst.NIVEL3;
                     LVLx = new Levels.Level3(Player, Game);
-                    
+
                     break;
 
                 case LvlConst.NIVEL3:
 
                     GameManager.Nivel = LvlConst.NIVEL4;
                     LVLx = new Levels.Level4(Player, Game);
-                    
+
                     break;
 
                 case LvlConst.NIVEL4:
 
                     GameManager.Nivel = LvlConst.NIVEL5;
                     LVLx = new Levels.Level5(Player, Game);
-                    
+
                     break;
 
                 case LvlConst.NIVEL5:
@@ -66,7 +64,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
                     GameManager.Nivel = LvlConst.NIVEL1;
                     LVLx = new Levels.Level1(Player, Game);
-                    
+
                     break;
 
             }

@@ -14,7 +14,7 @@ namespace PROYECTO_1EVA_RJT.GameStates.Levels
     {
 
         public List<Rectangle> CollidableElements { get; set; }
-        public List<Rectangle>[] NormalOpacityElements { get;set; }
+        public List<Rectangle>[] NormalOpacityElements { get; set; }
         public List<Rectangle> InteractiveElements { get; set; }
 
         private List<Canvas> CanvaInfo = new();
@@ -65,8 +65,8 @@ namespace PROYECTO_1EVA_RJT.GameStates.Levels
         public void LoadCanvas()
         {
 
-            
-            
+
+
             CanvaInfo.Add(piezaInfo);
             CanvaInfo.Add(psInfo);
 
@@ -186,7 +186,7 @@ namespace PROYECTO_1EVA_RJT.GameStates.Levels
                 arbol6N,
                 arbol7N,
 
-                    
+
 
             };
 
@@ -194,7 +194,7 @@ namespace PROYECTO_1EVA_RJT.GameStates.Levels
 
 
             //collidable
-        
+
             CollidableElements.Add(casa1Hitbox);
             CollidableElements.Add(casa2Hitbox);
             CollidableElements.Add(arbol1Hitbox);

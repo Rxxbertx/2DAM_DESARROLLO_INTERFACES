@@ -1,11 +1,11 @@
 ﻿using PROYECTO_1EVA_RJT.Entidades;
+using PROYECTO_1EVA_RJT.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
-using PROYECTO_1EVA_RJT.Utilidades;
 
 namespace PROYECTO_1EVA_RJT.GameStates.Levels
 {
@@ -213,7 +213,7 @@ namespace PROYECTO_1EVA_RJT.GameStates.Levels
 
 
             CollidableElements.Add(piedra1Hitbox);
-                CollidableElements.Add(piedra2Hitbox);
+            CollidableElements.Add(piedra2Hitbox);
             CollidableElements.Add(piedra3Hitbox);
             CollidableElements.Add(piedra4Hitbox);
             CollidableElements.Add(piedra5Hitbox);
@@ -226,7 +226,7 @@ namespace PROYECTO_1EVA_RJT.GameStates.Levels
             CollidableElements.Add(piedra11Hitbox);
 
             CollidableElements.Add(arbol1Hitbox);
-            
+
 
             CollidableElements.Add(casa1Hitbox);
             CollidableElements.Add(casa2Hitbox);

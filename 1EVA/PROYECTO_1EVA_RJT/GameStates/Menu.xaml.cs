@@ -45,7 +45,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         {
             Sounds.boton.Play();
 
-            if (Regex.IsMatch( nombreUsuario.Text, "[0-9]") || Regex.IsMatch(nombreUsuario.Text, "(Introduce | nombre | Nombre | correcto)"))
+            if (Regex.IsMatch(nombreUsuario.Text, "[0-9]") || Regex.IsMatch(nombreUsuario.Text, "(Introduce | nombre | Nombre | correcto)"))
             {
                 nombreUsuario.Text = "Introduce un nombre correcto";
                 nombreUsuario.Foreground = System.Windows.Media.Brushes.Red;
@@ -200,7 +200,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
-            nombreUsuario.Text= "";
+            nombreUsuario.Text = "";
             nombreUsuario.Foreground = System.Windows.Media.Brushes.White;
 
 

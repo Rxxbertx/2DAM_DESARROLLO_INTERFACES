@@ -98,7 +98,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
                 if (IsCollidingWith(element))
                 {
                     ShowInteractuable(element);
-                   
+
 
                     if (isInteract())
                     {
@@ -131,7 +131,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
         private void ShowInteractuable(Rectangle element)
         {
-            
+
             CanvaInteractuar.Visibility = Visibility.Visible;
             Canvas.SetLeft(CanvaInteractuar, Canvas.GetLeft(element) + element.Width / 2 - CanvaInteractuar.Width / 2);
             Canvas.SetTop(CanvaInteractuar, Canvas.GetTop(element) - CanvaInteractuar.Height);
@@ -241,7 +241,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
                 Canvas.SetLeft(Jugador, Canvas.GetLeft(Jugador) + x);
                 Canvas.SetTop(Jugador, Canvas.GetTop(Jugador) + y);
 
-              
+
             }
 
 
@@ -316,13 +316,13 @@ namespace PROYECTO_1EVA_RJT.Entidades
                 animationTime = 0;
                 aniIndex++;
 
-                
+
 
                 if (aniIndex >= Constantes.PlayerConst.getSpritesAmount(action, playerAction))
                 {
                     aniIndex = 0;
                     setAttacking(false);
-                    
+
                 }
             }
         }
@@ -337,6 +337,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
 
             int startAni = playerAction;
             int startAction = action;
+            
 
             if (isFront())
             {
@@ -359,10 +360,12 @@ namespace PROYECTO_1EVA_RJT.Entidades
             if (isMoving())
             {
                 this.playerAction = Constantes.PlayerConst.WALK;
+                
             }
             else
             {
                 this.playerAction = Constantes.PlayerConst.IDLE;
+                
             }
 
             if (isAttacking())
@@ -373,11 +376,13 @@ namespace PROYECTO_1EVA_RJT.Entidades
             if (startAni != playerAction)
             {
                 resetAni();
+                
             }
 
             if (startAction != action)
             {
                 resetAni();
+                setAttacking(false);
             }
 
 
@@ -391,6 +396,7 @@ namespace PROYECTO_1EVA_RJT.Entidades
         {
 
             aniIndex = 0;
+            
 
 
         }

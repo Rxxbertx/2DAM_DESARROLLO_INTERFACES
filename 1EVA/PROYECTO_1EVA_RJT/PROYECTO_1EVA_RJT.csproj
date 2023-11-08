@@ -5,6 +5,9 @@
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <StartupObject>PROYECTO_1EVA_RJT.App</StartupObject>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,7 +28,6 @@
     <None Remove="recursos\componentespc\ram.png" />
     <None Remove="recursos\componentespc\ssd.png" />
     <None Remove="recursos\componentespc\torre.png" />
-    <None Remove="recursos\cursor.cur" />
     <None Remove="recursos\ExportedIcons\Icon_BackPack.png" />
     <None Remove="recursos\ExportedIcons\Icon_DotsVertical.png" />
     <None Remove="recursos\ExportedIcons\Icon_Down.png" />
@@ -46,7 +48,6 @@
     <None Remove="recursos\ExportedIcons\Item4.png" />
     <None Remove="recursos\ExportedIcons\Item5.png" />
     <None Remove="recursos\ExportedIcons\Item7.png" />
-    <None Remove="recursos\Fence Ruletile.png" />
     <None Remove="recursos\House Exterior.png" />
     <None Remove="recursos\House Exterior1.png" />
     <None Remove="recursos\InteriorMaterials\alfombra.png" />
@@ -301,7 +302,7 @@
     <None Remove="recursos\sounds\hit.wav" />
     <None Remove="recursos\sounds\keyboard.wav" />
     <None Remove="recursos\sounds\lvlCompleted.wav" />
-    <None Remove="recursos\sounds\move.wav" />
+    <None Remove="recursos\sounds\menu.mp3" />
     <None Remove="recursos\sounds\Music.wav" />
     <None Remove="recursos\sounds\piezaRecogida.wav" />
     <None Remove="recursos\sounds\pop.wav" />
@@ -312,6 +313,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="logo.ico" />
     <Content Include="recursos\LandscapeMaterials\invierno\hierba2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -331,9 +333,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\componentespc\placaBase.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="recursos\Fence Ruletile.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="recursos\House Exterior1.png">
@@ -942,42 +941,42 @@
     <Content Include="recursos\Software.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="recursos\sounds\move.wav">
+    <Content Include="recursos\sounds\menu.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="recursos\sounds\piezaRecogida.wav">
+    <Content Include="recursos\sounds\piezaRecogida.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="recursos\sounds\siguienteLvl.wav">
+    </Content>
+    <Content Include="recursos\sounds\siguienteLvl.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="recursos\sounds\boton.wav">
+    </Content>
+    <Content Include="recursos\sounds\boton.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="recursos\sounds\Win.wav">
+    </Content>
+    <Content Include="recursos\sounds\Win.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="recursos\sounds\found.wav">
+    </Content>
+    <Content Include="recursos\sounds\found.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="recursos\sounds\door.wav">
+    </Content>
+    <Content Include="recursos\sounds\door.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="recursos\sounds\hit.wav">
+    </Content>
+    <Content Include="recursos\sounds\hit.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="recursos\sounds\keyboard.wav">
+    </Content>
+    <Content Include="recursos\sounds\keyboard.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="recursos\sounds\lvlCompleted.wav">
+    </Content>
+    <Content Include="recursos\sounds\lvlCompleted.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="recursos\sounds\Music.wav">
+    </Content>
+    <Content Include="recursos\sounds\Music.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="recursos\sounds\pop.wav">
+    </Content>
+    <Content Include="recursos\sounds\pop.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Resource Include="recursos\ExportedIcons\Icon_BackPack.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -1008,12 +1007,9 @@
     <Resource Include="recursos\ExportedIcons\Item3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="recursos\cursor.cur">
+    <Content Include="recursos\sounds\tutoCompleted.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="recursos\sounds\tutoCompleted.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Content Include="recursos\ExportedIcons\Item4.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1207,7 +1203,6 @@
 
   <ItemGroup>
     <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
-    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>

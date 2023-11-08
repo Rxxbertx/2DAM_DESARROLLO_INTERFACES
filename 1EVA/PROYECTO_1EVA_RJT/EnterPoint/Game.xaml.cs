@@ -41,10 +41,10 @@ namespace PROYECTO_1EVA_RJT
         private void InitializeGame()
         {
 
-            
+
 
             GameManager = new();
-Sounds.InitMusic();
+            Sounds.InitMusic();
 
             gameLoopTimer = new DispatcherTimer
             {

@@ -2,7 +2,6 @@
 using System;
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
 
 namespace PROYECTO_1EVA_RJT.GameStates
 {
@@ -42,7 +41,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
             {
                 SoundImageOn.Visibility = Visibility.Hidden;
                 SoundImageOff.Visibility = Visibility.Visible;
-                
+
             }
 
             Sounds.UpdateMusic();
@@ -159,7 +158,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             // Ajusta el volumen en función del valor del Slider
-            
+
 
             Constantes.SoundLvl = volumeSlider.Value;
 

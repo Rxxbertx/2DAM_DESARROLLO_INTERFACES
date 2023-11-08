@@ -153,8 +153,11 @@ namespace PROYECTO_1EVA_RJT.GameStates
         public bool LoadElements()
         {
 
-            if (Game.GameManager.CurrentGameStateData == null || Game.GameManager.CurrentGameStateData.playerHitbox == null || Game.GameManager.CurrentGameStateData.CollidableElements == null || Game.GameManager.CurrentGameStateData.InteractiveElements == null || Game.GameManager.CurrentGameStateData.NormalOpacityElements == null)
-                return false;
+            if (Game.GameManager.CurrentGameStateData == null ||
+                Game.GameManager.CurrentGameStateData.playerHitbox == null ||
+                Game.GameManager.CurrentGameStateData.CollidableElements == null ||
+                Game.GameManager.CurrentGameStateData.InteractiveElements == null ||
+                Game.GameManager.CurrentGameStateData.NormalOpacityElements == null) return false;
 
             hitbox = Game.GameManager.CurrentGameStateData.playerHitbox;
             CollidableElements = Game.GameManager.CurrentGameStateData.CollidableElements;
