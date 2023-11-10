@@ -34,6 +34,7 @@ namespace PROYECTO_1EVA_RJT.Utilidades
 
         public static void InitMusic()
         {
+            // Carga los sonidos
 
             door.Load();
             pop.Load();
@@ -47,17 +48,20 @@ namespace PROYECTO_1EVA_RJT.Utilidades
             piezaRecogida.Load();
 
 
-
+            // Carga la música 
 
             GameMusic.Open(new Uri(Path.Combine(directorioBase, "recursos", "sounds", "music.wav")));
             MenuMusic.Open(new Uri(Path.Combine(directorioBase, "recursos", "sounds", "menu.mp3")));
 
             winMusic.Open(new Uri(Path.Combine(directorioBase, "recursos", "sounds", "win.wav")));
 
+            //añade los eventos de finalizacion de la musica
+
             GameMusic.MediaEnded += MediaEndedHandler;
             winMusic.MediaEnded += MediaEndedHandler2;
             MenuMusic.MediaEnded += MediaEndedHandler3;
 
+            // Inicializa el volumen
             GameMusic.Volume = Constantes.SoundLvl;
             winMusic.Volume = Constantes.SoundLvl;
             MenuMusic.Volume = Constantes.SoundLvl;
@@ -70,6 +74,7 @@ namespace PROYECTO_1EVA_RJT.Utilidades
 
         internal static void UpdateMusic()
         {
+            // Actualiza el volumen de la música
 
             if (Constantes.MUTED)
             {

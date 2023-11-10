@@ -8,18 +8,18 @@ namespace PROYECTO_1EVA_RJT.GameStates;
 /// <summary>
 /// Lógica de interacción para UI.xaml
 /// </summary>
-public partial class UI : UserControl
+public partial class UI : UserControl // control de la interfaz de usuario
 {
 
     private Game? game;
     public UI()
     {
         InitializeComponent();
-        cargarInventario();
+        cargarInventario(); // carga el inventario
 
-        Nivel.Content = GameManager.Nivel;
-        objetivo.Fill = GameManager.piezaBuscar[GameManager.Nivel];
-        objetivo.Fill.SetCurrentValue(ImageBrush.StretchProperty, Stretch.Uniform);
+        Nivel.Content = GameManager.Nivel; // carga el nivel
+        objetivo.Fill = GameManager.piezaBuscar[GameManager.Nivel]; // carga la pieza a buscar
+        objetivo.Fill.SetCurrentValue(ImageBrush.StretchProperty, Stretch.Uniform); // ajusta la imagen a la pantalla
 
     }
 
@@ -27,7 +27,7 @@ public partial class UI : UserControl
     {
 
 
-
+        // carga las piezas del inventario
         if (GameManager.inventario.Count > 0)
         {
             piezaFoto1.Fill = GameManager.inventario[0];
@@ -74,12 +74,13 @@ public partial class UI : UserControl
 
     }
 
+    
 
     private void Pausa_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
 
         e.Handled = true;
-        PauseSettings pauseSettings = new PauseSettings(game);
+        PauseSettings pauseSettings = new PauseSettings(game); // abre el menú de pausa
         pauseSettings.Owner = game;
         pauseSettings.ShowDialog();
 
@@ -90,8 +91,8 @@ public partial class UI : UserControl
     {
         e.Handled = true;
 
-        GameManager.ChangeState(GameState.TALLER);
-        game.MainFrame.NavigationService.Navigate(game.Taller);
+        GameManager.ChangeState(GameState.TALLER); // abre el taller
+        game.MainFrame.NavigationService.Navigate(game.Taller); // navega al taller
         game.Taller.Focus();
         game.Taller.ComprobarPiezas();
 

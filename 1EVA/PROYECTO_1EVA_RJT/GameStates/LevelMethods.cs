@@ -4,14 +4,14 @@ using System.Windows.Shapes;
 
 namespace PROYECTO_1EVA_RJT.GameStates
 {
-    public interface ILevelMethods
+    public interface ILevelMethods //interfaz para los metodos de los niveles
     {
 
-        public List<Rectangle> CollidableElements { get; set; }
-        public List<Rectangle>[] NormalOpacityElements { get; set; }
-        public List<Rectangle> InteractiveElements { get; set; }
+        public List<Rectangle> CollidableElements { get; set; } //collidable elements
+        public List<Rectangle>[] NormalOpacityElements { get; set; } //normal opacity elements
+        public List<Rectangle> InteractiveElements { get; set; } //interactive elements
 
-        public bool Completed { get; set; }
+        public bool Completed { get; set; } 
 
 
         void SaveElements();

@@ -7,7 +7,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 {
 
 
-    public enum GameState
+    public enum GameState // Estados del juego
     {
 
         PLAYING, MENU, TUTORIAL,
@@ -18,26 +18,26 @@ namespace PROYECTO_1EVA_RJT.GameStates
     public class GameManager
     {
 
-        public static GameState State { get; set; }
-        public static GameState PreviousState { get; internal set; }
+        public static GameState State { get; set; } // Estado actual
+        public static GameState PreviousState { get; internal set; } // Estado anterior
 
-        public static String Nivel { get; set; }
+        public static String Nivel { get; set; } // Nivel actual
 
-        public static List<ImageBrush> inventario = new List<ImageBrush>();
+        public static List<ImageBrush> inventario = new List<ImageBrush>(); // Inventario actual
 
-        private Dictionary<Enum, GameStateData> gameStates = new Dictionary<Enum, GameStateData>();
-        public static Dictionary<String, ImageBrush> piezaBuscar = new Dictionary<String, ImageBrush>();
+        private Dictionary<Enum, GameStateData> gameStates = new Dictionary<Enum, GameStateData>(); // Diccionario de estados
+        public static Dictionary<String, ImageBrush> piezaBuscar = new Dictionary<String, ImageBrush>(); // Diccionario de piezas a buscar
 
-        public GameStateData? CurrentGameStateData { get; set; }
+        public GameStateData? CurrentGameStateData { get; set; } // Datos del estado actual
 
 
         public GameManager()
         {
 
-            Constantes.FPS = 60;
-            Constantes.SoundLvl = 0.3;
+            Constantes.FPS = 60; // FPS del juego
+            Constantes.SoundLvl = 0.3; // Volumen del juego
 
-            Nivel = Constantes.LvlConst.TUTORIAL;
+            Nivel = Constantes.LvlConst.TUTORIAL; 
             State = GameState.MENU;
             PreviousState = GameState.MENU;
             // Inicializa los estados y sus datos
@@ -65,19 +65,19 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
 
 
-        public void GameStateElements(Enum gameStateName)
+        public void GameStateElements(Enum gameStateName) // Carga los elementos del estado actual
         {
 
-            if (gameStates.ContainsKey(gameStateName))
+            if (gameStates.ContainsKey(gameStateName)) // Si el estado existe
             {
-                CurrentGameStateData = gameStates[gameStateName];
+                CurrentGameStateData = gameStates[gameStateName]; // Carga los datos del estado
             }
         }
 
-        public static void addInventarioElemento(ImageBrush imagen)
+        public static void addInventarioElemento(ImageBrush imagen) // Añade un elemento al inventario
         {
 
-            if (inventario.Contains(imagen))
+            if (inventario.Contains(imagen)) // Si el elemento ya está en el inventario
             {
                 return;
             }
@@ -85,11 +85,11 @@ namespace PROYECTO_1EVA_RJT.GameStates
             inventario.Add(imagen);
         }
 
-        internal static void ChangeState(GameState state)
+        internal static void ChangeState(GameState state) // Cambia el estado actual
         {
 
-            GameManager.PreviousState = GameManager.State;
-            GameManager.State = state;
+            GameManager.PreviousState = GameManager.State; // Guarda el estado anterior
+            GameManager.State = state; // Cambia el estado actual
 
         }
     }

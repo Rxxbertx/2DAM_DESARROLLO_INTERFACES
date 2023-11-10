@@ -7,7 +7,7 @@ namespace PROYECTO_1EVA_RJT.Utilidades
     class CargarGuardar
     {
 
-
+        // Carga las imágenes de los enemigos
         public static ImageBrush[][][] getPlayerSprites()
         {
             string playerPath = "recursos/Player/"; // Ajusta la ruta base de tus imágenes
