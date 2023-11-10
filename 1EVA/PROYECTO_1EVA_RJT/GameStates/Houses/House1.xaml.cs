@@ -11,29 +11,30 @@ public partial class House1 : Page, StateMethods
 {
 
     private Game game;
-    private Player player;
-    private bool completado = false;
-    private List<Rectangle> CollidableElements = new List<Rectangle>();
-    private List<Rectangle> InteractiveElements = new List<Rectangle>();
-    private List<Rectangle>[] NormalOpacityElements = new List<Rectangle>[2];
+    private Player player; //player
+    private bool completado = false; //si se ha completado el nivel
+    private List<Rectangle> CollidableElements = new List<Rectangle>(); //elementos con los que colisiona
+    private List<Rectangle> InteractiveElements = new List<Rectangle>(); //elementos con los que interactua
+    private List<Rectangle>[] NormalOpacityElements = new List<Rectangle>[2]; //elementos con los que colisiona y se les cambia la opacidad
 
 
 
     public House1(Game game, Player player)
     {
-        InitializeComponent();
-        this.game = game;
-        this.player = player;
-        game.MainFrame.NavigationService.Navigate(this);
-        ui.cargarGame(game);
-        AddElements();
+        InitializeComponent(); //inicializar componentes
+        this.game = game; //guardar game
+        this.player = player; //guardar player
+        game.MainFrame.NavigationService.Navigate(this); //navegar a esta pagina
+        ui.cargarGame(game); //cargar game en ui
+        AddElements(); //añadir elementos
 
-        Focusable = true;
-        Focus();
+        Focusable = true; //foco
+        Focus(); 
     }
 
     private void cargarCanva(Canvas canvaCompletado)
     {
+        //cargar canva completado
         canvaCompletado.Visibility = System.Windows.Visibility.Visible;
         Canvas.SetLeft(canvaCompletado, Width / 2 - canvaCompletado.Width / 2);
         Canvas.SetTop(canvaCompletado, Height / 2 - canvaCompletado.Height / 2);
