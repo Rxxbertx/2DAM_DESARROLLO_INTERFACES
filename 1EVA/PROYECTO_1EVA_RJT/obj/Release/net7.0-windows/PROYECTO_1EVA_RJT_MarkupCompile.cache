@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\PROYECTO_1EVA_RJT\obj\Release\net7.0-windows\
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\PROYECTO_1EVA_RJT\obj\Release\net7.0-windows\
 PROYECTO_1EVA_RJT
 none
 false
 TRACE;RELEASE;NET;NET7_0;NETCOREAPP
-C:\Users\Roberto\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\PROYECTO_1EVA_RJT\App.xaml
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\1EVA\PROYECTO_1EVA_RJT\App.xaml
 181871237116
 289830665872
 311170206575
-199-869414436
+199-822071559
 EnterPoint\Game.xaml;GameStates\Ayuda.xaml;GameStates\Exit.xaml;GameStates\Houses\House1.xaml;GameStates\Houses\House2.xaml;GameStates\Houses\House3.xaml;GameStates\Houses\House4.xaml;GameStates\Houses\House5.xaml;GameStates\Levels\Level1.xaml;GameStates\Levels\Level2.xaml;GameStates\Levels\Level3.xaml;GameStates\Levels\Level4.xaml;GameStates\Levels\Level5.xaml;GameStates\Menu.xaml;GameStates\PauseSettings.xaml;GameStates\Taller.xaml;GameStates\Tutorial.xaml;GameStates\UI.xaml;
 
 False

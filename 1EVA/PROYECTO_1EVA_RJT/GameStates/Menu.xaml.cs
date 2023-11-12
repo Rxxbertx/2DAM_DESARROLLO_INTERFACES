@@ -8,7 +8,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
     /// <summary>
     /// Lógica de interacción para Menu.xaml
     /// </summary>
-    public partial class Menu : Page, StateMethods
+    public partial class Menu : Page, StateMethods //menu principal
     {
 
         Game game;
@@ -39,23 +39,32 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
 
 
-        //inputs
-
+       
+        /*
+         * metodo que se ejecuta al pulsar el boton de jugar 
+         * 
+         * 
+         */
         private void Jugar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            //reproducimos el sonido del boton
             Sounds.boton.Play();
 
+            //si el nombre de usuario esta vacio o contiene numeros o contiene la palabra nombre muestra error y no hace nada
             if (Regex.IsMatch(nombreUsuario.Text, "[0-9]") || Regex.IsMatch(nombreUsuario.Text, "(Introduce | nombre | Nombre | correcto)"))
-            {
+            { 
                 nombreUsuario.Text = "Introduce un nombre correcto";
                 nombreUsuario.Foreground = System.Windows.Media.Brushes.Red;
                 return;
             }
 
+
             nombreUsuario.Visibility = System.Windows.Visibility.Hidden;
 
+            //cambiamos el estado del juego a tutorial
             Constantes.NombreUsuario = nombreUsuario.Text;
 
+            //comprobamos el estado anterior del juego para saber a que pagina navegar
             if (GameManager.PreviousState == GameState.TUTORIAL)
             {
                 game.MainFrame.Navigate(game.Tutorial);

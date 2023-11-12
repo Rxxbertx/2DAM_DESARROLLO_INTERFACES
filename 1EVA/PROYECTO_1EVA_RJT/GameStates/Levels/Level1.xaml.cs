@@ -13,9 +13,9 @@ namespace PROYECTO_1EVA_RJT.GameStates.Levels
     public partial class Level1 : Page, ILevelMethods, StateMethods
     {
 
-        public List<Rectangle> CollidableElements { get; set; }
-        public List<Rectangle>[] NormalOpacityElements { get; set; }
-        public List<Rectangle> InteractiveElements { get; set; }
+        public List<Rectangle> CollidableElements { get; set; } //elementos con los que colisiona
+        public List<Rectangle>[] NormalOpacityElements { get; set; } //elementos con los que colisiona y se les cambia la opacidad
+        public List<Rectangle> InteractiveElements { get; set; } //elementos con los que interactua
 
         private List<Canvas> CanvaInfo = new();
 
@@ -103,17 +103,17 @@ namespace PROYECTO_1EVA_RJT.GameStates.Levels
 
         public void CheckInteractions()
         {
-            if (player.InteractiveObj != null)
+            if (player.InteractiveObj != null)//si el objeto con el que interactua no es nulo
             {
 
 
-                if (Regex.IsMatch(player.InteractiveObj, "puertaCasa"))
+                if (Regex.IsMatch(player.InteractiveObj, "puertaCasa"))//si el objeto con el que interactua es una puerta de casa 
                 {
                     try
                     {
-                        SaveElements();
-                        insideHouse = house.LoadPage(player.InteractiveObj);
-                        Sounds.door.Play();
+                        SaveElements(); //guardar elementos del nivel actual en el game manager
+                        insideHouse = house.LoadPage(player.InteractiveObj); //cargar pagina de la casa y guardar si esta dentro de la casa
+                        Sounds.door.Play(); //sonido de puerta
                     }
                     catch (Exception e)
                     {
@@ -121,19 +121,15 @@ namespace PROYECTO_1EVA_RJT.GameStates.Levels
                     }
                 }
 
-                if (player.InteractiveObj.Equals("salirPuerta"))
+                if (player.InteractiveObj.Equals("salirPuerta")) //si el objeto con el que interactua es la puerta de salida de la casa
                 {
-
-                    Sounds.door.Play();
-                    game.MainFrame.Navigate(this);
-                    AddElements();
-
-
+                    insideHouse = false; //no esta dentro de la casa
+                    game.MainFrame.Navigate(this); //navegar a esta pagina
+                    AddElements(); //añadir elementos
+                    Sounds.door.Play(); //sonido de puerta
                     return;
-
-
-
                 }
+              
 
             }
         }
@@ -141,19 +137,19 @@ namespace PROYECTO_1EVA_RJT.GameStates.Levels
 
         #region saveLoadAdd
 
-        public void AddElements()
+        public void AddElements() //añadir elementos a las listas de elementos
         {
 
             insideHouse = false;
             Focusable = true;
             this.Focus();
 
-            Game.GameManager.GameStateElements(GameState.LVL1);
-            if (Game.GameManager.CurrentGameStateData != null)
+            Game.GameManager.GameStateElements(GameState.LVL1); //cargar elementos del nivel actual en el game manager
+            if (Game.GameManager.CurrentGameStateData != null) //si los elementos del nivel actual no son nulos
             {
-                if (LoadElements())
+                if (LoadElements()) //si se han cargado los elementos del nivel actual
                 {
-                    return;
+                    return; //salir
                 }
 
             }
@@ -229,7 +225,7 @@ namespace PROYECTO_1EVA_RJT.GameStates.Levels
         public bool LoadElements()
         {
             if (Game.GameManager.CurrentGameStateData == null || Game.GameManager.CurrentGameStateData.playerHitbox == null || Game.GameManager.CurrentGameStateData.CollidableElements == null || Game.GameManager.CurrentGameStateData.InteractiveElements == null || Game.GameManager.CurrentGameStateData.NormalOpacityElements == null)
-                return false;
+                return false; //si los elementos del nivel actual son nulos, salir
 
             hitbox = Game.GameManager.CurrentGameStateData.playerHitbox;
             CollidableElements = Game.GameManager.CurrentGameStateData.CollidableElements;

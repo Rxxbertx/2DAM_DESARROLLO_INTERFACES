@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net7.0-windows7.0": {
+    "net7.0-windows8.0": {
       "Microsoft.Win32.SystemEvents/7.0.0": {
         "type": "package",
         "compile": {
@@ -122,36 +122,36 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net7.0-windows7.0": [
+    "net7.0-windows8.0": [
       "System.Drawing.Common >= 7.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Roberto\\.nuget\\packages\\": {}
+    "C:\\Users\\dam2t06\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\1EVA\\PROYECTO_1EVA_RJT\\PROYECTO_1EVA_RJT.csproj",
+      "projectUniqueName": "C:\\Users\\dam2t06\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\1EVA\\PROYECTO_1EVA_RJT\\PROYECTO_1EVA_RJT.csproj",
       "projectName": "PROYECTO_1EVA_RJT",
-      "projectPath": "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\1EVA\\PROYECTO_1EVA_RJT\\PROYECTO_1EVA_RJT.csproj",
-      "packagesPath": "C:\\Users\\Roberto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\1EVA\\PROYECTO_1EVA_RJT\\obj\\",
+      "projectPath": "C:\\Users\\dam2t06\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\1EVA\\PROYECTO_1EVA_RJT\\PROYECTO_1EVA_RJT.csproj",
+      "packagesPath": "C:\\Users\\dam2t06\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dam2t06\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\1EVA\\PROYECTO_1EVA_RJT\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Roberto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dam2t06\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net7.0-windows"
+        "net7.0-windows8.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net7.0-windows7.0": {
-          "targetAlias": "net7.0-windows",
+        "net7.0-windows8.0": {
+          "targetAlias": "net7.0-windows8.0",
           "projectReferences": {}
         }
       },
@@ -162,8 +162,8 @@
       }
     },
     "frameworks": {
-      "net7.0-windows7.0": {
-        "targetAlias": "net7.0-windows",
+      "net7.0-windows8.0": {
+        "targetAlias": "net7.0-windows8.0",
         "dependencies": {
           "System.Drawing.Common": {
             "target": "Package",

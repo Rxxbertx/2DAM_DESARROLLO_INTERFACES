@@ -9,7 +9,7 @@ public class TextAnimation
     private TextBlock textBlock;
     private DispatcherTimer timer;
 
-    public TextAnimation(TextBlock textBlock, string fullText)
+    public TextAnimation(TextBlock textBlock, string fullText)//clase para realizar animaciones de texto
     {
         this.textBlock = textBlock;
         this.fullText = fullText;

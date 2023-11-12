@@ -19,7 +19,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
             this.game = game;
             this.Owner = game;
             game.MainFrame.Effect = new System.Windows.Media.Effects.BlurEffect();
-            game.Player.TurnOff();
+            game.Player.TurnOff(); //metodo para desactivar el movimiento del player
         }
 
         private void No_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

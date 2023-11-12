@@ -87,7 +87,7 @@
                 <Rectangle x:Name="piezaFotoDialog" Height="268" Canvas.Left="533" Canvas.Top="-433" Width="292"/>
             </Canvas>
 
-            <Canvas x:Name="CanvaGif" Height="900" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+            <Canvas x:Name="CanvaFinal" Height="900" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
 
                 <Rectangle Fill="#B2000000" Height="900" Width="1600"/>
                 <Image Height="188" Width="260" Canvas.Left="670" Canvas.Top="356" Source="/recursos/loading.png"></Image>

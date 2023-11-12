@@ -19,14 +19,14 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         private readonly Game game;
         private bool nuevaPieza = false;
-        private DispatcherTimer? timer;
+        private DispatcherTimer? timer; // Temporizador
 
 
 
         public int contador = 0;
         private bool completado = false;
 
-        private String[] texto = new String[4];
+        private String[] texto = new String[4]; // Array de textos para el dialogo
 
 
         public Taller(Game game)
@@ -43,15 +43,19 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         public void Render()
         {
-            MostrarPiezas();
+            MostrarPiezas(); // Muestra las piezas que se han recogido
 
         }
 
         private void MostrarPiezas()
         {
 
+            // Comprueba si el inventario tiene piezas
+
             if (GameManager.inventario.Count > 0)
             {
+                // Muestra la pieza en el canvas
+
                 piezaFoto1.Fill = GameManager.inventario[0];
                 piezaFoto1.Fill.SetCurrentValue(ImageBrush.StretchProperty, Stretch.Uniform);
                 piezaFoto1.ToolTip = "Torre de computadora. Este termino se utiliza dentro de la Informática para describir la caja donde se montan y conectan todos los dispositivos que componen la unidad central de la computadora personal. ";
@@ -113,11 +117,12 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         public void ComprobarPiezas()
         {
-
+            
             ImageBrush? pieza = null;
 
             if (GameManager.Nivel == Constantes.LvlConst.TUTORIAL)
             {
+                // Comprueba si el inventario tiene la pieza que se busca
                 pieza = GameManager.piezaBuscar.GetValueOrDefault(Constantes.LvlConst.TUTORIAL);
 
             }
@@ -151,11 +156,11 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
             if (pieza != null)
             {
-
-                CargarCanvas(pieza);
-                CargarTextos(GameManager.Nivel);
-                piezas.Effect = new BlurEffect();
-                nuevaPieza = true;
+                
+                CargarCanvas(pieza);// Carga la pieza en el canvas
+                CargarTextos(GameManager.Nivel); // Carga los textos del dialogo
+                piezas.Effect = new BlurEffect(); // Aplica un efecto blur al canvas
+                nuevaPieza = true; // Indica que se ha encontrado una pieza
 
 
 
@@ -168,7 +173,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         private void CargarCanvas(ImageBrush pieza)
         {
-
+            // Carga la pieza en el canvas
             piezaFotoCanva.Fill = pieza;
             piezaFotoCanva.Fill.SetCurrentValue(ImageBrush.StretchProperty, Stretch.Uniform);
             piezaFotoDialog.Fill = pieza;
@@ -184,10 +189,11 @@ namespace PROYECTO_1EVA_RJT.GameStates
         private void CargarTextos(string nivel)
         {
 
+            // Carga los textos del dialogo
 
             if (nivel == Constantes.LvlConst.TUTORIAL)
             {
-
+                // Carga los textos del dialogo
                 texto[0] = "¡Enhorabuena! " + Constantes.NombreUsuario + " Has encontrado la TORRE.";
                 texto[1] = "Te explicare para que sirve una TORRE: ";
                 texto[2] = "Torre de computadora. Este termino se utiliza dentro de la Informática para describir la caja donde se montan y conectan todos los dispositivos que componen la unidad central de la computadora personal. ";
@@ -249,15 +255,17 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         private void PiezaRecogida_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            // Muestra el dialogo
             piezaRecogida.Visibility = Visibility.Collapsed;
             dialogo.Visibility = Visibility.Visible;
             IniciarTexto();
             Sounds.dialog.Play();
+            
 
         }
         private void Dialogo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            // Muestra el siguiente texto del dialogo y reproduce el sonido
 
             contador++;
             if (contador == 1)
@@ -277,6 +285,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
             }
             else if (contador == 4)
             {
+                // Si se ha mostrado todo el dialogo, se oculta y se muestra el boton de siguiente
+
                 dialogo.Visibility = Visibility.Collapsed;
                 contador = 0;
                 nuevaPieza = false;
@@ -286,6 +296,8 @@ namespace PROYECTO_1EVA_RJT.GameStates
             }
             if (GameManager.Nivel == Constantes.LvlConst.NIVEL5)
             {
+
+                // Si se encuentra la ultima pieza, se cambia el texto del boton de siguiente
 
                 btnSiguiente.Content = "MONTAR PC";
 
@@ -302,20 +314,25 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         private void IniciarTexto()
         {
-            //textoDialogo.Text = texto[0];
+            
+            // Inicia el texto del dialogo
             new TextAnimation(textoDialogo, texto[0]).Start();
         }
 
         private void BtnSiguiente_Click(object sender, RoutedEventArgs e)
         {
 
+            
+
             Sounds.siguienteLvl.Play();
 
             if (sender is Button)
             {
+                // Comprueba si el boton de siguiente es el de montar el pc
                 Button button = sender as Button;
                 if (button != null && button.Content.Equals("MONTAR PC"))
                 {
+                    //se reproduce la musica de victoria y se para la musica de fondo
                     Sounds.winMusic.Play();
                     Sounds.GameMusic.Stop();
                     ExeFinal();
@@ -325,6 +342,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
 
 
+            // Cambia de estado y carga el siguiente nivel
 
             switch (GameManager.PreviousState)
             {
@@ -379,15 +397,16 @@ namespace PROYECTO_1EVA_RJT.GameStates
             // Inicia el temporizador
             timer.Start();
 
+            // Oculta el boton de siguiente y muestra el canvas
             piezas.Effect = new BlurEffect();
-            CanvaGif.Visibility = Visibility.Visible;
+            CanvaFinal.Visibility = Visibility.Visible;
             btnSiguiente.Visibility = Visibility.Collapsed;
 
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-
+            // Muestra el  final pc montado y para el temporizador
             final.Visibility = Visibility.Visible;
             Sounds.lvlCompelted.Play();
             Canvas.SetLeft(final, padre.Width / 2 - final.Width / 2);

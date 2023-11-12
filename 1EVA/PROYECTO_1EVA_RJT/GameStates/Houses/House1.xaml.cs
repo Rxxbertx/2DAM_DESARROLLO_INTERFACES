@@ -11,29 +11,30 @@ public partial class House1 : Page, StateMethods
 {
 
     private Game game;
-    private Player player;
-    private bool completado = false;
-    private List<Rectangle> CollidableElements = new List<Rectangle>();
-    private List<Rectangle> InteractiveElements = new List<Rectangle>();
-    private List<Rectangle>[] NormalOpacityElements = new List<Rectangle>[2];
+    private Player player; //player
+    private bool completado = false; //si se ha completado el nivel
+    private List<Rectangle> CollidableElements = new List<Rectangle>(); //elementos con los que colisiona
+    private List<Rectangle> InteractiveElements = new List<Rectangle>(); //elementos con los que interactua
+    private List<Rectangle>[] NormalOpacityElements = new List<Rectangle>[2]; //elementos con los que colisiona y se les cambia la opacidad
 
 
 
     public House1(Game game, Player player)
     {
-        InitializeComponent();
-        this.game = game;
-        this.player = player;
-        game.MainFrame.NavigationService.Navigate(this);
-        ui.cargarGame(game);
-        AddElements();
+        InitializeComponent(); //inicializar componentes
+        this.game = game; //guardar game
+        this.player = player; //guardar player
+        game.MainFrame.NavigationService.Navigate(this); //navegar a esta pagina
+        ui.cargarGame(game); //cargar game en ui
+        AddElements(); //añadir elementos
 
-        Focusable = true;
-        Focus();
+        Focusable = true; //foco
+        Focus(); 
     }
 
     private void cargarCanva(Canvas canvaCompletado)
     {
+        //cargar canva completado
         canvaCompletado.Visibility = System.Windows.Visibility.Visible;
         Canvas.SetLeft(canvaCompletado, Width / 2 - canvaCompletado.Width / 2);
         Canvas.SetTop(canvaCompletado, Height / 2 - canvaCompletado.Height / 2);
@@ -62,16 +63,16 @@ public partial class House1 : Page, StateMethods
 
 
 
-    public void AddElements()
+    public void AddElements() //añadir elementos a las listas de elementos
     {
 
-        if (GameManager.Nivel == Constantes.LvlConst.TUTORIAL)
+        if (GameManager.Nivel == Constantes.LvlConst.TUTORIAL)//si es el tutorial 
         {
-
+            //añadir elementos del tutorial
             torre.Visibility = System.Windows.Visibility.Visible;
             gato.Visibility = System.Windows.Visibility.Visible;
 
-            InteractiveElements.Add(torre);
+            InteractiveElements.Add(torre); //añadir torre a elementos interactivos
 
 
         }
@@ -86,7 +87,7 @@ public partial class House1 : Page, StateMethods
         NormalOpacityElements[0] = new List<Rectangle>();
         NormalOpacityElements[1] = new List<Rectangle>();
 
-
+        //elementos con los que colisiona y se les cambia la opacidad
         NormalOpacityElements[1].Add(objeto1N);
         NormalOpacityElements[0].Add(objeto1Opacidad);
         NormalOpacityElements[1].Add(objeto2N);
@@ -103,6 +104,7 @@ public partial class House1 : Page, StateMethods
 
         //collidable
 
+        //añadir elementos collidables 
         CollidableElements.Add(objeto1Hitbox);
         CollidableElements.Add(objeto2Hitbox);
         CollidableElements.Add(objeto3Hitbox);
@@ -141,29 +143,29 @@ public partial class House1 : Page, StateMethods
 
     public void Update()
     {
-        if (completado) return;
-        player.Update();
-        CheckInteractiveElements();
+        if (completado) return; //si esta completado no hacer nada
+        player.Update(); //actualizar player
+        CheckInteractiveElements(); //comprobar elementos interactivos
     }
 
-    private void CheckInteractiveElements()
+    private void CheckInteractiveElements() //comprobar elementos interactivos 
     {
 
-        if (player.InteractiveObj != null)
+        if (player.InteractiveObj != null) //si el player esta interactuando con algun elemento
         {
-            if (player.InteractiveObj.Equals("torre"))
+            if (player.InteractiveObj.Equals("torre")) //si es la torre
             {
-                GameManager.addInventarioElemento(CargarGuardar.getPiezaFoto("torre"));
-                cargarCanva(ui.canvaCompletado);
+                GameManager.addInventarioElemento(CargarGuardar.getPiezaFoto("torre")); //añadir pieza a inventario
+                cargarCanva(ui.canvaCompletado); //cargar canva completado
             }
         }
 
 
     }
 
-    private void Page_KeyDown(object sender, KeyEventArgs e)
+    private void Page_KeyDown(object sender, KeyEventArgs e) //cuando se pulsa una tecla
     {
-
+        //diferentes teclas para moverse
         e.Handled = true;
 
         if (e.Key == Key.W)

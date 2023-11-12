@@ -14,25 +14,25 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
         Game game;
 
-        public PauseSettings(Game game)
+        public PauseSettings(Game game) // Constructor
         {
             InitializeComponent();
-            volumeSlider.Value = Constantes.SoundLvl;
+            volumeSlider.Value = Constantes.SoundLvl; //construye el slider con el valor del volumen
             this.game = game;
             this.Owner = game;
-            game.MainFrame.Effect = new System.Windows.Media.Effects.BlurEffect();
-            game.Player.TurnOff();
-            comprobarFPS();
-            comprobarSonido();
-            comprobarGameState();
+            game.MainFrame.Effect = new System.Windows.Media.Effects.BlurEffect(); //efecto blur en el frame principal
+            game.Player.TurnOff(); //apaga el player
+            comprobarFPS(); //comprueba el fps
+            comprobarSonido(); //comprueba el sonido
+            comprobarGameState(); //comprueba el estado del juego
 
         }
 
         private void comprobarSonido()
         {
-            volumeSlider.Value = Constantes.SoundLvl;
+            volumeSlider.Value = Constantes.SoundLvl; //construye el slider con el valor del volumen
 
-            if (!Constantes.MUTED)
+            if (!Constantes.MUTED) //si no está muteado
             {
                 SoundImageOn.Visibility = Visibility.Visible;
                 SoundImageOff.Visibility = Visibility.Hidden;
@@ -44,7 +44,7 @@ namespace PROYECTO_1EVA_RJT.GameStates
 
             }
 
-            Sounds.UpdateMusic();
+            Sounds.UpdateMusic(); //actualiza la música
 
 
         }

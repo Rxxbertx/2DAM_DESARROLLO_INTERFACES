@@ -11,9 +11,9 @@ namespace PROYECTO_1EVA_RJT.GameStates
         Game game;
         public Ayuda(Game game)
         {
-            this.game = game;
-            InitializeComponent();
-            game.MainFrame.Effect = new System.Windows.Media.Effects.BlurEffect();
+            this.game = game; 
+            InitializeComponent(); // Inicializa los componentes de la ventana
+            game.MainFrame.Effect = new System.Windows.Media.Effects.BlurEffect(); // Aplica un efecto de desenfoque a la ventana principal
         }
 
 

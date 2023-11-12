@@ -11,31 +11,31 @@ namespace PROYECTO_1EVA_RJT
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Game : Window
+    public partial class Game : Window // Clase principal del juego
     {
-        public DispatcherTimer gameLoopTimer;
-        private Stopwatch stopwatch = new Stopwatch();
-        public static double DeltaTime { get; private set; }
+        public DispatcherTimer gameLoopTimer; // Temporizador del juego
+        private Stopwatch stopwatch = new Stopwatch(); // Temporizador de precisión alta
+        public static double DeltaTime { get; private set; } 
 
 
-        public static GameManager GameManager { get; private set; }
+        public static GameManager GameManager { get; private set; } // Gestor de estados del juego
 
-        public Menu Menu;
-        public Tutorial Tutorial;
-        public Playing Playing;
+        public Menu Menu; // Menú principal
+        public Tutorial Tutorial; // Tutorial
+        public Playing Playing; // Juego
 
-        public Taller Taller;
+        public Taller Taller; // Taller
 
-        public Player Player;
-
-
+        public Player Player; // Jugador
 
 
-        public Game()
+
+
+        public Game() 
         {
-            InitializeComponent();
+            InitializeComponent(); // Inicializar componentes de la ventana
 
-            InitializeGame();
+            InitializeGame(); // Inicializar el juego
         }
 
         private void InitializeGame()
@@ -43,15 +43,15 @@ namespace PROYECTO_1EVA_RJT
 
 
 
-            GameManager = new();
-            Sounds.InitMusic();
+            GameManager = new(); // Inicializar el gestor de estados
+            Sounds.InitMusic(); // Inicializar la música
 
-            gameLoopTimer = new DispatcherTimer
+            gameLoopTimer = new DispatcherTimer // Inicializar game loop timer (temporizador del juego)
             {
                 Interval = TimeSpan.FromMilliseconds(1000 / Constantes.FPS) // 60 FPS por defecto
             };
-            gameLoopTimer.Tick += GameLoop;
-            gameLoopTimer.Start();
+            gameLoopTimer.Tick += GameLoop; // Añadir el evento GameLoop al temporizador
+            gameLoopTimer.Start(); // Iniciar el temporizador
 
 
 
@@ -60,28 +60,28 @@ namespace PROYECTO_1EVA_RJT
             Tutorial = new Tutorial(Player, this);
             Taller = new Taller(this);
             Playing = new Playing(Player, this);
-            MainFrame.Navigate(Menu);
+            MainFrame.Navigate(Menu); // Navegar al menú principal
 
         }
 
-        private void GameLoop(object sender, EventArgs e)
+        private void GameLoop(object sender, EventArgs e) 
         {
 
-            long elapsedTicks = stopwatch.ElapsedTicks;
-            double elapsedSeconds = (double)elapsedTicks / Stopwatch.Frequency;
+            long elapsedTicks = stopwatch.ElapsedTicks; // Obtener el tiempo transcurrido
+            double elapsedSeconds = (double)elapsedTicks / Stopwatch.Frequency; // Convertirlo a segundos
 
-            DeltaTime = elapsedSeconds;
+            DeltaTime = elapsedSeconds; // Establecer el tiempo transcurrido como DeltaTime
             stopwatch.Restart(); // Reiniciar el temporizador
 
-            Update();
-            Render();
+            Update(); // Actualizar el juego
+            Render(); // Renderizar el juego
         }
 
         private void Render()
         {
 
-
-            switch (GameManager.State)
+             
+            switch (GameManager.State) // Renderizar el estado actual del juego
             {
                 case GameState.MENU:
 
@@ -105,7 +105,7 @@ namespace PROYECTO_1EVA_RJT
 
         public void Update()
         {
-            switch (GameManager.State)
+            switch (GameManager.State) // Actualizar el estado actual del juego
             {
                 case GameState.MENU:
                     Menu.Update();
@@ -123,12 +123,12 @@ namespace PROYECTO_1EVA_RJT
             }
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e) // Evento de cierre de la ventana
         {
 
-            Exit ventanaSalir = new GameStates.Exit(this);
-            ventanaSalir.ShowDialog();
-            if (ventanaSalir.status == 0)
+            Exit ventanaSalir = new GameStates.Exit(this); // Mostrar ventana de confirmación de salida
+            ventanaSalir.ShowDialog(); // Mostrar ventana de confirmación de salida
+            if (ventanaSalir.status == 0) // Si se ha pulsado el botón de salir, cerrar la ventana
             {
                 e.Cancel = false;
             }
