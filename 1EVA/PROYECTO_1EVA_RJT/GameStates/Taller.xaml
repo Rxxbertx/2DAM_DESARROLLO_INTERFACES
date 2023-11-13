@@ -4,11 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PROYECTO_1EVA_RJT.GameStates"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
       mc:Ignorable="d" 
       
       Title="Taller">
 
     <Grid>
+        <Grid.Resources>
+            <sys:String x:Key="textoVentana">TALLER TECNOLOGICO</sys:String>
+        </Grid.Resources>
 
         <Canvas Width="1600" Height="900" x:Name="padre">
 
@@ -39,7 +43,7 @@
                 <Rectangle x:Name="piezaFoto4" Height="148" Canvas.Left="995" Canvas.Top="330" Width="166" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Rectangle x:Name="piezaFoto5" Height="148" Canvas.Left="1271" Canvas.Top="352" Width="166" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Rectangle x:Name="piezaFoto6" Height="228" Canvas.Left="670" Canvas.Top="70" Width="260" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Label Content="TALLER TECNOLOGICO" FontSize="36" Canvas.Top="25" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Label Content="{StaticResource textoVentana}" FontSize="36" Canvas.Top="25" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <Label.Background>
                         <ImageBrush ImageSource="/recursos/ExportedIcons/Item2.png"/>
                     </Label.Background>

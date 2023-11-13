@@ -4,8 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PROYECTO_1EVA_RJT.GameStates"
+                xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              Height="900" Width="1600">
+
+    <UserControl.Resources>
+        <sys:String x:Key="textoInteractua">Interactua</sys:String>
+    </UserControl.Resources>
+    
     <Grid>
         <!--#region UI-->
 
@@ -32,7 +38,7 @@
 
             </Ellipse>
 
-            <Label Content="Encuentra la pieza" Canvas.Left="142" Canvas.Top="73" FontFamily="Comic Sans MS" FontSize="20" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label Content="{StaticResource busquedaText}" Canvas.Left="142" Canvas.Top="73" FontFamily="Comic Sans MS" FontSize="20" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Image x:Name="Pausa" MouseLeftButtonDown="Pausa_MouseLeftButtonDown" Source="/recursos/ExportedIcons/Icon_Exit.png" Stretch="Fill" Height="48" Canvas.Left="32" Canvas.Top="827" Width="36"/>
             <Image Height="42" Canvas.Left="327" Source="/recursos/ExportedIcons/Icon_Star.png" Stretch="Fill" Canvas.Top="73" Width="55"/>
 
@@ -134,7 +140,7 @@
                         <DropShadowEffect/>
                     </Image.Effect>
                 </Image>
-                <Label Content="Interactua" Canvas.Left="58" Canvas.Top="20" FontFamily="Comic Sans MS" FontSize="20" Foreground="#FF4A4A97" HorizontalAlignment="Center" VerticalAlignment="Top" Height="35" Width="114"/>
+                <Label Content="{StaticResource textoInteractua}" Canvas.Left="58" Canvas.Top="20" FontFamily="Comic Sans MS" FontSize="20" Foreground="#FF4A4A97" HorizontalAlignment="Center" VerticalAlignment="Top" Height="35" Width="114"/>
 
             </Canvas>
 

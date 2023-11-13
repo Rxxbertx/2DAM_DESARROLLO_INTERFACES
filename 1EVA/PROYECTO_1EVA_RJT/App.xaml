@@ -3,8 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:PROYECTO_1EVA_RJT"
              StartupUri="EnterPoint/Game.xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             DispatcherUnhandledException="Application_DispatcherUnhandledException"
             >
     <Application.Resources>
-         
+        <sys:String x:Key="busquedaText">Encuentra la pieza</sys:String>
     </Application.Resources>
 </Application>
