@@ -1,0 +1,52 @@
+﻿<Window x:Class="EjercicioPractico1EVA_RJT.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EjercicioPractico1EVA_RJT"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="APP" Height="450" Width="800" Icon="/images/logoApp.png">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <DockPanel LastChildFill="true">
+
+            <WrapPanel DockPanel.Dock="Top" Height="50" Background="Gray">
+                <Image Height="50" Source="/images/logoApp.png" Stretch="Fill" Width="49"/>
+                <Label Content="APP CALCULAR DISTANCIA" FontSize="20" Foreground="White" FontWeight="Bold"  VerticalAlignment="Center"/>
+            </WrapPanel>
+
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+                        <Label Content="TRANSPORTE" FontSize="20" FontStyle="Italic"/>
+                        <RadioButton x:Name="andando" Content="ANDANDO" GroupName="transporte" FontSize="20" Margin="5" VerticalContentAlignment="Center" IsChecked="false"/>
+                        <RadioButton x:Name="bicicleta" Content="BICICLETA" GroupName="transporte" FontSize="20" Margin="5" VerticalContentAlignment="Center"/>
+                        <RadioButton x:Name="patinete" Content="PATINETE ELECTRICO" GroupName="transporte" FontSize="20" Margin="5" VerticalContentAlignment="Center"/>
+                        <RadioButton x:Name="coche"  Content="COCHE" GroupName="transporte" FontSize="20" Margin="5" VerticalContentAlignment="Center"/>
+
+                    </StackPanel>
+                    <StackPanel Margin="10" VerticalAlignment="Center">
+                        <Label Content="DISTANCIA EN KM" FontSize="20"/>
+                        <TextBox x:Name="distancia" Width="150" Height="40" TextAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    </StackPanel>
+                </WrapPanel>
+
+                <WrapPanel  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+                    <StackPanel>
+                        <Button x:Name="calcular" Content="CALCULAR" FontSize="20" Margin="10" Width="150" Height="40" Click="calcular_Click"/>
+                        <TextBox x:Name="tiempoText" IsReadOnly="true" FontSize="20" Text="AQUI APARECERA EL RESULTADO" TextAlignment="Center"/>
+                    </StackPanel>
+                </WrapPanel>
+
+            </StackPanel>
+
+        </DockPanel>
+
+    </Grid>
+</Window>

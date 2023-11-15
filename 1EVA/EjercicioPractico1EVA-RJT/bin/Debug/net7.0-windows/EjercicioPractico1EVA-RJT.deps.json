@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "EjercicioPractico1EVA-RJT/1.0.0": {
+        "runtime": {
+          "EjercicioPractico1EVA-RJT.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EjercicioPractico1EVA-RJT/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
