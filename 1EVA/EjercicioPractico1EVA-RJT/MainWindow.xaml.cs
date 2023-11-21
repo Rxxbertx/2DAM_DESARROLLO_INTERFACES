@@ -72,6 +72,33 @@ namespace EjercicioPractico1EVA_RJT
              TimeSpan ts = TimeSpan.FromHours(tiempoDecimal);
             tiempoText.Text = string.Format("TIEMPO HORAS:MINUTOS:SEGUNDOS: {0}", new DateTime(ts.Ticks).ToString("HH:mm:ss"));
 
+            //ts.seconds ts.hours ts.minutes
+
+
+
+
+            // Asegurarse de que los minutos y segundos estén en el rango correcto
+            // Calcular horas, minutos y segundos
+            int horas = (int)tiempoDecimal;
+            int minutos = (int)((tiempoDecimal - horas) * 60);
+            int segundos = (int)Math.Round(((tiempoDecimal - minutos) * 60));
+
+            // Ajustar los minutos si los segundos han redondeado a 60
+            if (segundos == 60)
+            {
+                segundos = 0;
+                minutos++;
+            }
+
+            // Ajustar las horas si los minutos han redondeado a 60
+            if (minutos == 60)
+            {
+                minutos = 0;
+                horas++;
+            }
+            MessageBox.Show($"{horas},{minutos},{segundos}");
+
+
 
 
 
