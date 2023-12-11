@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "hVbWLLkkpwGhfM8FK+nrR4VvxB69XBcFatZ1tXapoHzAIllZG1FGIWllnPuW1l/maoJrqOHQTSEvSNCv+8mcvw==",
+  "dgSpecHash": "PXJsBYbm7DmIimLuOzHp0tWASfEjdLbH2rddLIKVMcglvT4nXkSUv5Iuid3DiCdbQ4xNowGUzbJwQVLmve4jbA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\practicaLoginRJT\\practicaLoginRJT.csproj",
+  "projectFilePath": "C:\\Users\\dam2t06\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PRACTICA_LOGIN_RJT\\practicaLoginRJT\\InicioSesionUsuario_RJT.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Roberto\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
-    "C:\\Users\\Roberto\\.nuget\\packages\\mysqlconnector\\2.3.1\\mysqlconnector.2.3.1.nupkg.sha512"
+    "C:\\Users\\dam2t06\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
+    "C:\\Users\\dam2t06\\.nuget\\packages\\mysqlconnector\\2.3.1\\mysqlconnector.2.3.1.nupkg.sha512"
   ],
   "logs": []
 }

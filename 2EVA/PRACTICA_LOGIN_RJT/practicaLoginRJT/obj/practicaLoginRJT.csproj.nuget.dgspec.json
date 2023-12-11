@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\practicaLoginRJT\\practicaLoginRJT.csproj": {}
+    "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PRACTICA_LOGIN_RJT\\practicaLoginRJT\\practicaLoginRJT.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\practicaLoginRJT\\practicaLoginRJT.csproj": {
+    "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PRACTICA_LOGIN_RJT\\practicaLoginRJT\\practicaLoginRJT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\practicaLoginRJT\\practicaLoginRJT.csproj",
+        "projectUniqueName": "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PRACTICA_LOGIN_RJT\\practicaLoginRJT\\practicaLoginRJT.csproj",
         "projectName": "practicaLoginRJT",
-        "projectPath": "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\practicaLoginRJT\\practicaLoginRJT.csproj",
+        "projectPath": "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PRACTICA_LOGIN_RJT\\practicaLoginRJT\\practicaLoginRJT.csproj",
         "packagesPath": "C:\\Users\\Roberto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\practicaLoginRJT\\obj\\",
+        "outputPath": "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PRACTICA_LOGIN_RJT\\practicaLoginRJT\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Roberto\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
