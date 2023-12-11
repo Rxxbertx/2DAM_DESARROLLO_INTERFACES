@@ -1,0 +1,88 @@
+﻿<Window x:Class="practicaLoginRJT.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:practicaLoginRJT"
+        mc:Ignorable="d"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing"
+        
+        Title="APPLOGIN" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FF2F2222" Offset="0"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+        <Menu VerticalContentAlignment="Top" VerticalAlignment="Top" Background="#FF2F2222" Foreground="{x:Null}">
+            <Label Content="Exit" MouseLeftButtonDown="Exit" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="18"/>
+        </Menu>
+
+        <WrapPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,40,0,0">
+
+            <Label Content="LOGIN IN" HorizontalAlignment="Center" Margin="0,0,0,0" FontSize="36" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center" Background="{x:Null}">
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.615"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+
+
+            <Label Content="Username" FontFamily="Bahnschrift" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF403F3D" Offset="1"/>
+                        <GradientStop Color="#FFFFBA00" Offset="0"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+            <TextBox TextWrapping="NoWrap" x:Name="username" Width="150" FontFamily="Bahnschrift" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}">
+                <TextBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF231919" Offset="1"/>
+                        <GradientStop Color="White" Offset="0"/>
+                    </LinearGradientBrush>
+                </TextBox.Background>
+            </TextBox>
+            <Separator Background="{x:Null}"/>
+            <Label Content="Password" FontFamily="Bahnschrift" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFBA00" Offset="0"/>
+                        <GradientStop Color="#FF403F3D" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+            <PasswordBox Width="150" x:Name="password" FontFamily="Bahnschrift" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}">
+                <PasswordBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF221919" Offset="1"/>
+                        <GradientStop Color="White" Offset="0"/>
+                    </LinearGradientBrush>
+                </PasswordBox.Background>
+            </PasswordBox>
+            <Separator Background="{x:Null}"/>
+            <Button Content="Connect" FontFamily="Bahnschrift" FontSize="24" Margin="0,10,0,10" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="150" Foreground="White" BorderBrush="{x:Null}" FontWeight="Bold" Click="Button_Click">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFFFBA00"/>
+                        <GradientStop Color="#001B1414" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <Label x:Name="infoText" Content="Enter a username and a password" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Foreground="#FFB9B9B9"/>
+
+
+        </WrapPanel>
+
+
+
+
+    </Grid>
+</Window>

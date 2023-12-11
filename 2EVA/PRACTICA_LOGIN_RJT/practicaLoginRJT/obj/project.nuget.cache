@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "hVbWLLkkpwGhfM8FK+nrR4VvxB69XBcFatZ1tXapoHzAIllZG1FGIWllnPuW1l/maoJrqOHQTSEvSNCv+8mcvw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Roberto\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\practicaLoginRJT\\practicaLoginRJT.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Roberto\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
+    "C:\\Users\\Roberto\\.nuget\\packages\\mysqlconnector\\2.3.1\\mysqlconnector.2.3.1.nupkg.sha512"
+  ],
+  "logs": []
+}
