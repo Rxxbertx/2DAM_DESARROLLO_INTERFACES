@@ -19,3 +19,6 @@ C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\WpfAppBINDING_TE
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\WpfAppBINDING_TEST\obj\Debug\net8.0-windows\WpfAppBINDING_TEST.pdb
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\WpfAppBINDING_TEST\obj\Debug\net8.0-windows\WpfAppBINDING_TEST.genruntimeconfig.cache
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\WpfAppBINDING_TEST\obj\Debug\net8.0-windows\ref\WpfAppBINDING_TEST.dll
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\WpfAppBINDING_TEST\bin\Debug\net8.0-windows\Microsoft.Toolkit.Uwp.Notifications.dll
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\WpfAppBINDING_TEST\obj\Debug\net8.0-windows\WpfAppBINDING_TEST.csproj.AssemblyReference.cache
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\WpfAppBINDING_TEST\obj\Debug\net8.0-windows\WpfAppBINDING_TEST.csproj.CopyComplete

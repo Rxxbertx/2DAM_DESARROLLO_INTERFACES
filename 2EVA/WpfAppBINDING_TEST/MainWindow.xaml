@@ -5,10 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppBINDING_TEST"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450"  Width="800">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New" CanExecute="PuedoNuevo" Executed="CommandBinding_Executed_Nuevo" />
+        <CommandBinding Command="ApplicationCommands.Cut" CanExecute="PuedoCortar" Executed="CommandBinding_Executed_Cortar" />
+        <CommandBinding Command="ApplicationCommands.Paste" CanExecute="PuedoPegar" Executed="CommandBinding_Executed_Pegar" />
+        <CommandBinding Command="local:Comandos.salir" CanExecute="PuedoSalir" Executed="CommandBinding_Executed_Salir" />
+        <CommandBinding Command="local:Comandos.salir" CanExecute="PuedoSalir" Executed="CommandBinding_Executed_Salir" />
+        <CommandBinding Command="local:Comandos.notificacion" CanExecute="PuedoNotificar" Executed="CommandBinding_Executed_Notificar" />
+    </Window.CommandBindings>
 
+
+    <Grid>
+        
         <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+
+            <Button Command="ApplicationCommands.New">New</Button>
+            <Button Command="ApplicationCommands.Cut">Cut</Button>
+            <Button Command="ApplicationCommands.Paste">Paste</Button>
+            <Button Command="local:Comandos.salir">Salir</Button>
+            
             <TextBlock Name="tbName" FontSize="20" Text="{Binding ElementName=sName, Path=Value, Mode=TwoWay}"/>
             <Slider Name="sName" Maximum="10" Minimum="0" TickFrequency="1" Width="150" IsSnapToTickEnabled="True"></Slider>
             <Label Name="lbName" FontSize="20">Nombre</Label>
@@ -22,7 +38,7 @@
             <Label Name="lbEdad1" FontSize="20">Apellido</Label>
             <TextBox Name="tbxEdad1" Text="{Binding Apellido,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <Label  Name="lbNombreCompleto" FontSize="20">NOMBRE COMPLETO: </Label>
-            <TextBox Text="{Binding NombreCompleto,Mode=TwoWay}"/>
+            <TextBox x:Name="nombreCompleto" Text="{Binding NombreCompleto,Mode=OneWay}"/>
             
         </WrapPanel>
     </Grid>

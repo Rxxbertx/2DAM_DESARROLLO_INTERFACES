@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WpfAppBINDING_TEST")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d8e1e1956f5ffbd8904edf5703f083e1932b0dc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("WpfAppBINDING_TEST")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WpfAppBINDING_TEST")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
