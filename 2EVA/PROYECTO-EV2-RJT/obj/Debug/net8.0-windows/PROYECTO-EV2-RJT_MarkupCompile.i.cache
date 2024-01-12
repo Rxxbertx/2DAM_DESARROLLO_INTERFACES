@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-R:\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\obj\Debug\net8.0-windows\
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\obj\Debug\net8.0-windows\
 PROYECTO_EV2_RJT
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-R:\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\App.xaml
-767393520
-11-539324032
-81016132718
+C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\App.xaml
+10445976369
+13-965797638
+112002466528
 198-294894759
-THEME\ModernBorder.xaml;THEME\ModernMenuButton.xaml;THEME\RoundedButton.xaml;THEME\RoundedTextBox.xaml;VIEW\V_HomePage.xaml;VIEW\V_Login.xaml;VIEW\V_MainWindow.xaml;
+THEME\ModernBorder.xaml;THEME\ModernMenuButton.xaml;THEME\RoundedButton.xaml;THEME\RoundedTextBox.xaml;VIEW\V_Exit.xaml;VIEW\V_Help.xaml;VIEW\V_Home.xaml;VIEW\V_Informs.xaml;VIEW\V_Login.xaml;VIEW\V_MainWindow.xaml;
 
-True
+False
 

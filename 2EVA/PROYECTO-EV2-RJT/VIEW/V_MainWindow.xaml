@@ -5,14 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROYECTO_EV2_RJT"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="920"
+        Title="MainWindow" Height="720" Width="1280"
+        MinHeight="600"
+        MinWidth="900"
         WindowStyle="None"
+        ResizeMode="CanResizeWithGrip"
         WindowStartupLocation="CenterScreen"
         Background="Transparent"
         AllowsTransparency="True">
 
     <Window.FontFamily>
-        <FontFamily>Bahnschrift Light</FontFamily>
+        <FontFamily>Bahnschrift</FontFamily>
     </Window.FontFamily>
 
 
@@ -58,19 +61,19 @@
 
                             <Image Source="/CORE/IMAGES/icons/Home.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" />
 
-                         
-                            
+
+
                         </Border>
 
 
-                        <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="inicio" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" FontWeight="Bold" Content="Almacén" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu"/>
+                        <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="inicio" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0"  Content="Almacén" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu"/>
 
                         <StackPanel Margin="15,5,5,0" HorizontalAlignment="Center">
 
-                            <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="i_almacenamiento" Content="Almacenamiento" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" FontWeight="Bold"/>
-                            <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="i_marcas" Content="Marcas" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" FontWeight="Bold"/>
-                            <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="i_procesadores" Content="Procesadores" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" FontWeight="Bold"/>
-                            <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="i_moviles" Content="Moviles" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" FontWeight="Bold"/>
+                            <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="i_almacenamiento" Content="Almacenamiento" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
+                            <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="i_marcas" Content="Marcas" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
+                            <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="i_procesadores" Content="Procesadores" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
+                            <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="i_moviles" Content="Moviles" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
 
                         </StackPanel>
 
@@ -85,7 +88,7 @@
                             </Separator.RenderTransform>
                         </Separator>
 
-                        <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="informes" Content="Informes" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" FontWeight="Bold"/>
+                        <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="informes" Content="Informes" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
 
                         <Separator Margin="10" Background="Orange">
                             <Separator.RenderTransform>
@@ -98,7 +101,7 @@
                             </Separator.RenderTransform>
                         </Separator>
 
-                        <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="ayuda" Content="Ayuda" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" FontWeight="Bold"/>
+                        <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="ayuda" Content="Ayuda" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0"/>
 
 
                         <Separator Margin="10" Background="Orange">
@@ -114,7 +117,7 @@
 
                     </StackPanel>
 
-                    <RadioButton Style="{StaticResource ModernRadioButton}" Grid.Row="1" x:Name="salir" Content="Salir" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" VerticalAlignment="Bottom" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" FontWeight="Bold"/>
+                    <RadioButton Style="{StaticResource ModernRadioButton}" Grid.Row="1" x:Name="salir" Content="Salir" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" VerticalAlignment="Bottom" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
 
 
                 </Grid>
@@ -151,15 +154,14 @@
 
 
 
-            
-            <StackPanel DockPanel.Dock="Right" Orientation="Vertical" VerticalAlignment="Center">
 
-                <Image Source="/CORE/IMAGES/logoapp.png" Width="150" Height="150" />
+            <StackPanel DockPanel.Dock="Right" Orientation="Vertical" VerticalAlignment="Bottom">
+
+                <Image Source="/CORE/IMAGES/logoapp.png" Width="305" Height="261" Opacity="0.75" />
 
             </StackPanel>
-            
-            <Frame Margin="20,0,-20,0" Source="V_HomePage.xaml" x:Name="mainFrame" NavigationUIVisibility="Hidden" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
+            <Frame Margin="20,0,-200,0" Source="V_Help.xaml" x:Name="mainFrame" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
 
         </DockPanel>
 

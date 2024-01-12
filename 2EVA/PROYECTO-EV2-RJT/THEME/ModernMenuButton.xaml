@@ -25,9 +25,18 @@
                     <ControlTemplate.Triggers>
 
 
+
+                        
                         <Trigger Property="IsChecked" Value="False">
                             <Setter TargetName="Border" Property="BorderThickness" Value="0"></Setter>
-                            <Setter TargetName="Text" Property="FontWeight" Value="Normal"></Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Text" Property="FontWeight" Value="Bold"></Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Text" Property="FontWeight" Value="ExtraBold"></Setter>
                         </Trigger>
 
                     </ControlTemplate.Triggers>

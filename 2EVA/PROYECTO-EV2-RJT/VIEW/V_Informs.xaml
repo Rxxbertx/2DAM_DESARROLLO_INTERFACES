@@ -1,0 +1,39 @@
+﻿<Page x:Class="PROYECTO_EV2_RJT.VIEW.V_Informs"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROYECTO_EV2_RJT.VIEW"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="V_Informs">
+
+    <Grid>
+        
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <Image Source="/CORE/IMAGES/informe.png"  Width="75" Height="75"/>
+            <Label Content="INFORMES" FontSize="30" HorizontalAlignment="Left" FontWeight="Bold"  VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <Button Style="{StaticResource RoundedButton}" Background="Orange" Foreground="White" FontWeight="DemiBold" FontSize="20" Content="Realizar Informe Moviles" Height="45" HorizontalAlignment="Stretch"/>
+            <Button Style="{StaticResource RoundedButton}" Background="Orange" Foreground="White" FontWeight="DemiBold" Margin="0,20,0,20" FontSize="20" Content="Realizar Informe Procesadores" Height="45" HorizontalAlignment="Stretch"/>
+            <Button Style="{StaticResource RoundedButton}" Background="Orange" Foreground="White" FontWeight="DemiBold" Margin="0,0,0,20" FontSize="20" Content="Realizar Informe Marcas" Height="45" HorizontalAlignment="Stretch"/>
+            <Button Style="{StaticResource RoundedButton}" Background="Orange" Foreground="White" FontWeight="DemiBold" FontSize="20" Content="Realizar Informe Almacenamiento" Height="45" HorizontalAlignment="Stretch"/>
+
+        </StackPanel>
+
+
+    </Grid>
+</Page>

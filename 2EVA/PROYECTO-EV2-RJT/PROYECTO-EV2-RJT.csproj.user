@@ -7,7 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="VIEW\V_HomePage.xaml.cs">
+    <Compile Update="VIEW\V_Exit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEW\V_Home.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEW\V_Informs.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -24,7 +30,16 @@
     <Page Update="THEME\RoundedTextBox.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VIEW\V_HomePage.xaml">
+    <Page Update="VIEW\V_Exit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\V_Home.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\V_Help.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\V_Informs.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="VIEW\V_MainWindow.xaml">

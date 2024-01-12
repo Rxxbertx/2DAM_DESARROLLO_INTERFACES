@@ -11,6 +11,8 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/box.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/close.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_home.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_menu.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/home.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/informe.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/logoapp.png")]
