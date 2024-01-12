@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dam2t06\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PRACTICA_LOGIN_RJT\\practicaLoginRJT\\InicioSesionUsuario_RJT.csproj": {}
+    "R:\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PRACTICA_LOGIN_RJT\\practicaLoginRJT\\InicioSesionUsuario_RJT.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dam2t06\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PRACTICA_LOGIN_RJT\\practicaLoginRJT\\InicioSesionUsuario_RJT.csproj": {
+    "R:\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PRACTICA_LOGIN_RJT\\practicaLoginRJT\\InicioSesionUsuario_RJT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dam2t06\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PRACTICA_LOGIN_RJT\\practicaLoginRJT\\InicioSesionUsuario_RJT.csproj",
+        "projectUniqueName": "R:\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PRACTICA_LOGIN_RJT\\practicaLoginRJT\\InicioSesionUsuario_RJT.csproj",
         "projectName": "InicioSesionUsuario_RJT",
-        "projectPath": "C:\\Users\\dam2t06\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PRACTICA_LOGIN_RJT\\practicaLoginRJT\\InicioSesionUsuario_RJT.csproj",
-        "packagesPath": "C:\\Users\\dam2t06\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dam2t06\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PRACTICA_LOGIN_RJT\\practicaLoginRJT\\obj\\",
+        "projectPath": "R:\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PRACTICA_LOGIN_RJT\\practicaLoginRJT\\InicioSesionUsuario_RJT.csproj",
+        "packagesPath": "C:\\Users\\Roberto\\.nuget\\packages\\",
+        "outputPath": "R:\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PRACTICA_LOGIN_RJT\\practicaLoginRJT\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dam2t06\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Roberto\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

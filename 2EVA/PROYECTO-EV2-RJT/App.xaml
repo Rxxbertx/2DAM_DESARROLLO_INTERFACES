@@ -1,9 +1,27 @@
-﻿<Application x:Class="PROYECTO_EV2_RJT.App"
+﻿<Application
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:PROYECTO_EV2_RJT"
-             StartupUri="VIEW/V_Login.xaml">
+             x:Class="PROYECTO_EV2_RJT.App"
+             StartupUri="VIEW/V_MainWindow.xaml">
+
     <Application.Resources>
-         
+
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="THEME/RoundedButton.xaml"/>
+                <ResourceDictionary Source="THEME/RoundedTextBox.xaml"/>
+                <ResourceDictionary Source="THEME/ModernBorder.xaml"/>
+                <ResourceDictionary Source="THEME/ModernMenuButton.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+            
+            </ResourceDictionary>
+        
+        
     </Application.Resources>
+    
+    
 </Application>

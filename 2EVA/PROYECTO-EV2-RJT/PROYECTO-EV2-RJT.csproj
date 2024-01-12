@@ -10,8 +10,64 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="CORE\IMAGES\box.png" />
+    <None Remove="CORE\IMAGES\close.png" />
+    <None Remove="CORE\IMAGES\fullscreen.png" />
+    <None Remove="CORE\IMAGES\help.png" />
+    <None Remove="CORE\IMAGES\icons\Home.png" />
+    <None Remove="CORE\IMAGES\informe.png" />
+    <None Remove="CORE\IMAGES\logoapp.png" />
+    <None Remove="CORE\IMAGES\logPassword.png" />
+    <None Remove="CORE\IMAGES\logTextBox.png" />
+    <None Remove="CORE\IMAGES\minimize.png" />
+    <None Remove="CORE\IMAGES\salir.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="CORE\IMAGES\box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\close.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\help.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\icons\Home.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\informe.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\logoapp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\minimize.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="CORE\IMAGES\logPassword.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\logTextBox.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\salir.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="MODEL\" />
     <Folder Include="VIEWMODEL\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="CORE\IMAGES\fullscreen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

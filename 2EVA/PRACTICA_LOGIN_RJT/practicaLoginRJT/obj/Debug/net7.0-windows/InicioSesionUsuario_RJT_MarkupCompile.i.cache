@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\PRACTICA_LOGIN_RJT\practicaLoginRJT\obj\Debug\net7.0-windows\
+R:\2DAM_DESARROLLO_INTERFACES\2EVA\PRACTICA_LOGIN_RJT\practicaLoginRJT\obj\Debug\net7.0-windows\
 InicioSesionUsuario_RJT
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\PRACTICA_LOGIN_RJT\practicaLoginRJT\App.xaml
+R:\2DAM_DESARROLLO_INTERFACES\2EVA\PRACTICA_LOGIN_RJT\practicaLoginRJT\App.xaml
 3-257598054
 
 9-1717209039
-200-957105999
+200-330123769
 MainWindow.xaml;Windows\AdminWindow.xaml;Windows\UserWindow.xaml;
 
 True

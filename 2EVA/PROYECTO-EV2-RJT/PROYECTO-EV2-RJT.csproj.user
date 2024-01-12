@@ -7,6 +7,29 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="VIEW\V_HomePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="THEME\ModernBorder.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="THEME\ModernMenuButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="THEME\RoundedButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="THEME\RoundedTextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\V_HomePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\V_MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="VIEW\V_Login.xaml">
       <SubType>Designer</SubType>
     </Page>
