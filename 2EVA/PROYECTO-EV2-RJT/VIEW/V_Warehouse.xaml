@@ -1,0 +1,354 @@
+﻿<Page x:Class="PROYECTO_EV2_RJT.VIEW.V_Warehouse"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROYECTO_EV2_RJT.VIEW"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="V_Warehouse">
+
+
+    <Grid HorizontalAlignment="Stretch">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Image Source="/CORE/IMAGES/box.png" Width="75" Height="75"/>
+            <Label Content="ALMACEN" FontFamily="Bahnschrift" FontSize="30" FontWeight="DemiBold" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        </StackPanel>
+        
+        
+        <TabControl Grid.Row="1" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" BorderBrush="{x:Null}" >
+            <TabItem Style="{StaticResource ModernTabItem}" FontSize="20"  Header="MOVILES" HorizontalContentAlignment="Stretch" HorizontalAlignment="Center" Background="Transparent">
+                <Grid Background="Transparent" HorizontalAlignment="Stretch">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Margin="10" Grid.Row="0" CornerRadius="10" Background="#FFBDBDBD" VerticalAlignment="Top" >
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="15" Opacity="0.75"/>
+                        </Border.Effect>
+
+                        <DataGrid HorizontalAlignment="Stretch"
+                                  HorizontalContentAlignment="Stretch"
+                                
+                                  x:Name="PhonesGrid" 
+                                  Margin="10"  
+                                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" 
+                                  Style="{DynamicResource DataGridStyle}"
+                                  RowStyle="{StaticResource DataGridRowStyle}"
+                                  CellStyle="{StaticResource DataGridCellStyle}"
+                                  Background="Gray" 
+                                  SelectionMode="Single"
+                                  HeadersVisibility="Column"  
+                                  AutoGenerateColumns="False"  
+                                  VerticalAlignment="Top" 
+                                  VerticalContentAlignment="Center" 
+                                  FontSize="22" FontFamily="Bahnschrift" 
+                                  CanUserReorderColumns="False" 
+                                  CanUserDeleteRows="False" 
+                                  CanUserAddRows="False" 
+                                  GridLinesVisibility="None">
+                            <DataGrid.Columns>
+                            
+                                <DataGridTextColumn Header="Marca" Binding="{Binding Brand}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Modelo" Binding="{Binding Model}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Procesador" Binding="{Binding Processor}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Pantalla" Binding="{Binding Screen}" IsReadOnly="True" />
+                                <DataGridTextColumn Header="Ram" Binding="{Binding Ram}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Bateria" Binding="{Binding Battery}" IsReadOnly="True" />
+                                <DataGridTextColumn Header="Sistema" Binding="{Binding Os}" IsReadOnly="True" />
+                                   
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    </Border>
+
+                    <Button Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
+
+                    <TextBlock Margin="10" Grid.Row="2" Text="info para el user" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="DimGray"/>
+
+                    <StackPanel Margin="10" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <Button Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="0,0,50,0" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
+                        <Button Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
+                    </StackPanel>
+
+
+                </Grid>
+ 
+            </TabItem>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <TabItem Style="{StaticResource ModernTabItem}" FontSize="20" Header="ALMACENAMIENTO" HorizontalAlignment="Stretch">
+                <Grid Background="Transparent" HorizontalAlignment="Stretch">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Margin="10" Grid.Row="0" CornerRadius="10" Background="#FFBDBDBD" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="15" Opacity="0.75"/>
+                        </Border.Effect>
+
+
+                        <Grid HorizontalAlignment="Stretch">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                      
+                        
+                        
+                        
+                        
+                        <DataGrid Grid.Column="0" HorizontalAlignment="Center" Margin="10"
+                  HorizontalScrollBarVisibility="Auto"
+               
+                  x:Name="StoragesGrid" 
+                  
+                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" 
+                  Style="{DynamicResource DataGridStyle}"
+                  RowStyle="{StaticResource DataGridRowStyle}"
+                  CellStyle="{StaticResource DataGridCellStyle}"
+                  Background="Gray" 
+                  SelectionMode="Single"
+                  HeadersVisibility="Column"  
+                  AutoGenerateColumns="False"  
+                  VerticalAlignment="Top" 
+                  VerticalContentAlignment="Center" 
+                  FontSize="22" FontFamily="Bahnschrift" 
+                  CanUserReorderColumns="False" 
+                  CanUserDeleteRows="False" 
+                  CanUserAddRows="False" 
+                  GridLinesVisibility="None">
+                            <DataGrid.Columns>
+
+                                <DataGridTextColumn Header="Id" Binding="{Binding Brand}" IsReadOnly="True" Width="auto" />
+                                <DataGridTextColumn Header="Capacidad" Binding="{Binding Model}" IsReadOnly="True" Width="auto"/>
+
+                            </DataGrid.Columns>
+                        </DataGrid>                        
+                            
+                            
+                        
+                        <DataGrid Grid.Column="1" HorizontalAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch"
+                  HorizontalScrollBarVisibility="Auto"
+               
+                  x:Name="PhonesStoragesGrid" 
+                  Margin="10"  
+                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" 
+                  Style="{DynamicResource DataGridStyle}"
+                  RowStyle="{StaticResource DataGridRowStyle}"
+                  CellStyle="{StaticResource DataGridCellStyle}"
+                  Background="Gray" 
+                  SelectionMode="Single"
+                  HeadersVisibility="Column"  
+                  AutoGenerateColumns="False"  
+                  VerticalAlignment="Top" 
+                  VerticalContentAlignment="Center" 
+                  FontSize="22" FontFamily="Bahnschrift" 
+                  CanUserReorderColumns="False" 
+                  CanUserDeleteRows="False" 
+                  CanUserAddRows="False" 
+                  GridLinesVisibility="None">
+                            <DataGrid.Columns>
+
+                                <DataGridTextColumn Header="Marca" Binding="{Binding Brand}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Modelo" Binding="{Binding Model}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Capacidad" Binding="{Binding Storage}" IsReadOnly="True"/>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+
+
+                        </Grid>
+
+
+                    </Border>
+
+                    <Button Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
+                    <Button Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
+
+                    <TextBlock Margin="10" Grid.Row="2" Text="info para el user" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="DimGray"/>
+
+                    <StackPanel Margin="10" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <Button Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="0,0,50,0" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
+                        <Button Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
+                    </StackPanel>
+
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Style="{StaticResource ModernTabItem}" FontSize="20"  Header="MARCAS" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent">
+                <Grid Background="Transparent" HorizontalAlignment="Stretch">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Margin="10" Grid.Row="0" CornerRadius="10" Background="#FFBDBDBD" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="15" Opacity="0.75"/>
+                        </Border.Effect>
+
+                        <DataGrid HorizontalAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch"
+                  HorizontalScrollBarVisibility="Auto"
+               
+                  x:Name="BrandsGrid" 
+                  Margin="10"  
+                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" 
+                  Style="{DynamicResource DataGridStyle}"
+                  RowStyle="{StaticResource DataGridRowStyle}"
+                  CellStyle="{StaticResource DataGridCellStyle}"
+                  Background="Gray" 
+                  SelectionMode="Single"
+                  HeadersVisibility="Column"  
+                  AutoGenerateColumns="False"  
+                  VerticalAlignment="Top" 
+                  VerticalContentAlignment="Center" 
+                  FontSize="22" FontFamily="Bahnschrift" 
+                  CanUserReorderColumns="False" 
+                  CanUserDeleteRows="False" 
+                  CanUserAddRows="False" 
+                  GridLinesVisibility="None">
+                            <DataGrid.Columns>
+
+                                <DataGridTextColumn Header="Id" Binding="{Binding Id}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Marca" Binding="{Binding Brand}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Compañia" Binding="{Binding Company}" IsReadOnly="True"/>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Border>
+
+                    <Button Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
+
+                    <TextBlock Margin="10" Grid.Row="2" Text="info para el user" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="DimGray"/>
+
+                    <StackPanel Margin="10" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <Button Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="0,0,50,0" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
+                        <Button Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
+                    </StackPanel>
+
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Style="{StaticResource ModernTabItem}" FontSize="20" Header="PROCESADORES" HorizontalAlignment="Stretch">
+                <Grid Background="Transparent" HorizontalAlignment="Stretch">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Margin="10" Grid.Row="0" CornerRadius="10" Background="#FFBDBDBD" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="15" Opacity="0.75"/>
+                        </Border.Effect>
+
+                        <DataGrid HorizontalAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch"
+                  HorizontalScrollBarVisibility="Auto"
+               
+                  x:Name="ProcessorsGrid" 
+                  Margin="10"  
+                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" 
+                  Style="{DynamicResource DataGridStyle}"
+                  RowStyle="{StaticResource DataGridRowStyle}"
+                  CellStyle="{StaticResource DataGridCellStyle}"
+                  Background="Gray" 
+                  SelectionMode="Single"
+                  HeadersVisibility="Column"  
+                  AutoGenerateColumns="False"  
+                  VerticalAlignment="Top" 
+                  VerticalContentAlignment="Center" 
+                  FontSize="22" FontFamily="Bahnschrift" 
+                  CanUserReorderColumns="False" 
+                  CanUserDeleteRows="False" 
+                  CanUserAddRows="False" 
+                  GridLinesVisibility="None">
+                            <DataGrid.Columns>
+
+                                <DataGridTextColumn Header="Nombre" Binding="{Binding Name}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Nucleos" Binding="{Binding Cores}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Gpu" Binding="{Binding Gpu}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Nanometros" Binding="{Binding Nanometers}" IsReadOnly="True" />
+                                <DataGridTextColumn Header="Marca" Binding="{Binding Brand}" IsReadOnly="True"/>
+
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Border>
+
+                    <Button Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
+
+                    <TextBlock Margin="10" Grid.Row="2" Text="info para el user" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="DimGray"/>
+
+                    <StackPanel Margin="10" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <Button Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="0,0,50,0" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
+                        <Button Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
+                    </StackPanel>
+
+
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Page>

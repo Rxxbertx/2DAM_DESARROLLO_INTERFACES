@@ -22,7 +22,7 @@
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
             <Image Source="/CORE/IMAGES/informe.png"  Width="75" Height="75"/>
-            <Label Content="INFORMES" FontSize="30" HorizontalAlignment="Left" FontWeight="Bold"  VerticalAlignment="Center"/>
+            <Label Content="INFORMES" FontFamily="Bahnschrift" FontSize="30" FontWeight="DemiBold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">

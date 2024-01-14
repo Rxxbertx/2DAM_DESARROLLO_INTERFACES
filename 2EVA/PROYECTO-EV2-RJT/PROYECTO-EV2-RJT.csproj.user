@@ -16,12 +16,21 @@
     <Compile Update="VIEW\V_Informs.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="VIEW\V_Warehouse.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="THEME\ModernBorder.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="THEME\ModernDataGrid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="THEME\ModernMenuButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="THEME\ModernTabItem.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="THEME\RoundedButton.xaml">
@@ -46,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="VIEW\V_Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\V_Warehouse.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

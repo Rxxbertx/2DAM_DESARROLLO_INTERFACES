@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280"
         MinHeight="600"
-        MinWidth="900"
+        MinWidth="400"
         WindowStyle="None"
         ResizeMode="CanResizeWithGrip"
         WindowStartupLocation="CenterScreen"
@@ -161,7 +161,7 @@
 
             </StackPanel>
 
-            <Frame Margin="20,0,-200,0" Source="V_Help.xaml" x:Name="mainFrame" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Frame Margin="20,0,-200,0" Source="V_Warehouse.xaml" x:Name="mainFrame" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
 
         </DockPanel>
 
