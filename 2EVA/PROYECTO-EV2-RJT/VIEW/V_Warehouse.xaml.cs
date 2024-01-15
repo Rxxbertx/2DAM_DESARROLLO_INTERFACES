@@ -29,5 +29,10 @@ namespace PROYECTO_EV2_RJT.VIEW
             PhonesGrid.ItemsSource = phones;
 
         }
+
+        private void add_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

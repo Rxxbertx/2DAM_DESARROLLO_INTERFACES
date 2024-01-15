@@ -73,7 +73,8 @@
                     </DataGrid>
                     </Border>
 
-                    <Button Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
+                    <Button x:Name="addPhone" Click="add_Click"
+                            Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
 
                     <TextBlock Margin="10" Grid.Row="2" Text="info para el user" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="DimGray"/>
 
@@ -148,7 +149,7 @@
                         
                         <DataGrid Grid.Column="0" HorizontalAlignment="Center" Margin="10"
                   HorizontalScrollBarVisibility="Auto"
-               
+                    d:ItemsSource="{d:SampleData ItemCount=5}"
                   x:Name="StoragesGrid" 
                   
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" 
@@ -179,7 +180,7 @@
                         <DataGrid Grid.Column="1" HorizontalAlignment="Stretch"
                   HorizontalContentAlignment="Stretch"
                   HorizontalScrollBarVisibility="Auto"
-               
+               d:ItemsSource="{d:SampleData ItemCount=5}"
                   x:Name="PhonesStoragesGrid" 
                   Margin="10"  
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" 
@@ -213,15 +214,26 @@
 
                     </Border>
 
-                    <Button Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
-                    <Button Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
 
-                    <TextBlock Margin="10" Grid.Row="2" Text="info para el user" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="DimGray"/>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                        
+                        <Button x:Name="addPhoneStorage" Click="add_Click" Margin="10,0,0,0"  Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
+                        <Button x:Name="modifyPhoneStorage" Click="modify_Click" Grid.Row="1" Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="10" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
+                        <Button x:Name="deletePhoneStorage" Click="delete_Click" Padding="5" Grid.Row="1" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
 
-                    <StackPanel Margin="10" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                        <Button Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="0,0,50,0" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
-                        <Button Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
                     </StackPanel>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
+
+                        <Button x:Name="addStorage" Click="add_Click" Margin="10,0,0,0"  Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
+                        <Button x:Name="modifyStorage" Click="modify_Click" Grid.Row="1" Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="10" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
+                        <Button  x:Name="deleteStorage" Click="delete_Click" Padding="5" Grid.Row="1" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
+
+                    </StackPanel>
+
+
+
+
+                    <TextBlock  x:Name="infoTextStorage" Margin="10" Grid.Row="2" Text="info para el user" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="DimGray"/>
 
 
                 </Grid>
@@ -245,7 +257,7 @@
                         <DataGrid HorizontalAlignment="Stretch"
                   HorizontalContentAlignment="Stretch"
                   HorizontalScrollBarVisibility="Auto"
-               
+               d:ItemsSource="{d:SampleData ItemCount=5}"
                   x:Name="BrandsGrid" 
                   Margin="10"  
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" 
@@ -273,13 +285,13 @@
                         </DataGrid>
                     </Border>
 
-                    <Button Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
+                    <Button x:Name="addBrand" Click="add_Click" Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
 
-                    <TextBlock Margin="10" Grid.Row="2" Text="info para el user" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="DimGray"/>
+                    <TextBlock x:Name="infoTextBrand" Margin="10" Grid.Row="2" Text="info para el user" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="DimGray"/>
 
                     <StackPanel Margin="10" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                        <Button Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="0,0,50,0" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
-                        <Button Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
+                        <Button x:Name="modifyBrand" Click="modify_Click" Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="0,0,50,0" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
+                        <Button x:Name="deleteBrand" Click="delete_Click" Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
                     </StackPanel>
 
 
@@ -304,7 +316,7 @@
                         <DataGrid HorizontalAlignment="Stretch"
                   HorizontalContentAlignment="Stretch"
                   HorizontalScrollBarVisibility="Auto"
-               
+               d:ItemsSource="{d:SampleData ItemCount=5}"
                   x:Name="ProcessorsGrid" 
                   Margin="10"  
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" 
@@ -335,13 +347,13 @@
                         </DataGrid>
                     </Border>
 
-                    <Button Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
+                    <Button x:Name="addProcessor" Click="add_Click" Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
 
-                    <TextBlock Margin="10" Grid.Row="2" Text="info para el user" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="DimGray"/>
+                    <TextBlock x:Name="infoTextProcessor" Margin="10" Grid.Row="2" Text="info para el user" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="DimGray"/>
 
                     <StackPanel Margin="10" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                        <Button Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="0,0,50,0" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
-                        <Button Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
+                        <Button x:Name="modifyProcessor" Click="modify_Click" Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="0,0,50,0" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
+                        <Button x:Name="deleteProcessor" Click="delete_Click" Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
                     </StackPanel>
 
 

@@ -21,5 +21,10 @@ namespace PROYECTO_EV2_RJT
             InitializeComponent();
            
         }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

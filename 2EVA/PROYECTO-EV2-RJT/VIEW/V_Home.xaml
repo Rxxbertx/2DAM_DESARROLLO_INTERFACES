@@ -45,7 +45,7 @@
                 </Grid.RowDefinitions>
 
 
-                <Border  Style="{StaticResource BorderWithHover}" Grid.Column="0" CornerRadius="20" BorderBrush="Orange" BorderThickness="0" Padding="10">
+                <Border  MouseLeftButtonDown="WareHouse_Click" Style="{StaticResource BorderWithHover}" Grid.Column="0" CornerRadius="20" BorderBrush="Orange" BorderThickness="0" Padding="10">
 
                     <Grid Background="Transparent">
 
@@ -78,7 +78,7 @@
                     
                 </Border>
 
-                <Border  Style="{StaticResource BorderWithHover}" Margin="10,0,0,0" Grid.Column="1" CornerRadius="20" BorderBrush="Orange"  Padding="10">
+                <Border MouseLeftButtonDown="Informs_Click"  Style="{StaticResource BorderWithHover}" Margin="10,0,0,0" Grid.Column="1" CornerRadius="20" BorderBrush="Orange"  Padding="10">
 
                     <Grid Background="Transparent">
 
@@ -112,7 +112,7 @@
                 </Border>
 
 
-                <Border  Style="{StaticResource BorderWithHover}" Margin="0,10,0,0" Grid.Column="0" Grid.Row="1" CornerRadius="20" BorderBrush="Orange"  Padding="10">
+                <Border  MouseLeftButtonDown="Help_Click" Style="{StaticResource BorderWithHover}" Margin="0,10,0,0" Grid.Column="0" Grid.Row="1" CornerRadius="20" BorderBrush="Orange"  Padding="10">
 
                     <Grid Background="Transparent">
 
@@ -145,7 +145,7 @@
 
                 </Border>
 
-                <Border  Style="{StaticResource BorderWithHover}" Margin="10,10,0,0" Grid.Column="1" Grid.Row="1" CornerRadius="20" BorderBrush="Orange"  Padding="10">
+                <Border  MouseLeftButtonDown="Exit_Click" Style="{StaticResource BorderWithHover}" Margin="10,10,0,0" Grid.Column="1" Grid.Row="1" CornerRadius="20" BorderBrush="Orange"  Padding="10">
 
                     <Grid Background="Transparent" >
 

@@ -27,10 +27,10 @@
 
         <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-            <Button Style="{StaticResource RoundedButton}" Background="Orange" Foreground="White" FontWeight="DemiBold" FontSize="20" Content="Realizar Informe Moviles" Height="45" HorizontalAlignment="Stretch"/>
-            <Button Style="{StaticResource RoundedButton}" Background="Orange" Foreground="White" FontWeight="DemiBold" Margin="0,20,0,20" FontSize="20" Content="Realizar Informe Procesadores" Height="45" HorizontalAlignment="Stretch"/>
-            <Button Style="{StaticResource RoundedButton}" Background="Orange" Foreground="White" FontWeight="DemiBold" Margin="0,0,0,20" FontSize="20" Content="Realizar Informe Marcas" Height="45" HorizontalAlignment="Stretch"/>
-            <Button Style="{StaticResource RoundedButton}" Background="Orange" Foreground="White" FontWeight="DemiBold" FontSize="20" Content="Realizar Informe Almacenamiento" Height="45" HorizontalAlignment="Stretch"/>
+            <Button Click="Phones_Click" Style="{StaticResource RoundedButton}" Background="Orange" Foreground="White" FontWeight="DemiBold" FontSize="20" Content="Realizar Informe Moviles" Height="45" HorizontalAlignment="Stretch"/>
+            <Button Click="Processors_Click"  Style="{StaticResource RoundedButton}" Background="Orange" Foreground="White" FontWeight="DemiBold" Margin="0,20,0,20" FontSize="20" Content="Realizar Informe Procesadores" Height="45" HorizontalAlignment="Stretch"/>
+            <Button Click="Brand_Click" Style="{StaticResource RoundedButton}" Background="Orange" Foreground="White" FontWeight="DemiBold" Margin="0,0,0,20" FontSize="20" Content="Realizar Informe Marcas" Height="45" HorizontalAlignment="Stretch"/>
+            <Button Click="Storage_Click" Style="{StaticResource RoundedButton}" Background="Orange" Foreground="White" FontWeight="DemiBold" FontSize="20" Content="Realizar Informe Almacenamiento" Height="45" HorizontalAlignment="Stretch"/>
 
         </StackPanel>
 

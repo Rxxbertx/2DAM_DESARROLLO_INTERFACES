@@ -55,7 +55,7 @@
             <StackPanel DockPanel.Dock="Right" Orientation="Vertical" VerticalAlignment="Center" Margin="10">
 
                 <Image Source="/CORE/IMAGES/logoapp.png" Width="300" Height="300" />
-                <TextBlock Width="300" FontFamily="Candara" Opacity="0.75" TextAlignment="Center"  Text="Mobile management app, you can create new mobiles, delete them, view details about them and also make reports." FontSize="15"  Foreground="#FFD08A09"  VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+                <TextBlock Width="300" FontFamily="Candara" Opacity="0.75" TextAlignment="Center"  Text="Aplicación de gestión de móviles, puedes crear nuevos móviles, eliminarlos, ver detalles sobre ellos y también generar informes." FontSize="15"  Foreground="#FFD08A09"  VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
 
             </StackPanel>
 
@@ -63,24 +63,24 @@
 
             <WrapPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
 
-                <Label Content="SIGN IN" HorizontalAlignment="Center" Margin="0,0,0,0" FontSize="60" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center" Background="{x:Null}">
+                <Label Content="INICIAR SESION" HorizontalAlignment="Center" Margin="0,0,0,0" FontSize="60" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bahnschrift" VerticalContentAlignment="Center" Background="{x:Null}">
 
                 </Label>
 
 
-                <Label Content="Username" FontFamily="Bahnschrift" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                <Label Content="Usuario" FontFamily="Bahnschrift" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
 
                 </Label>
                 <TextBox Style="{StaticResource RoundedTextBox}" TextWrapping="NoWrap" x:Name="username" Width="252" FontFamily="Bahnschrift" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Black"/>
                 <Separator Background="{x:Null}"/>
-                <Label Content="Password" FontFamily="Bahnschrift" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                <Label Content="Contraseña" FontFamily="Bahnschrift" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
                 </Label>
                 <PasswordBox Style="{StaticResource RoundedPasswordBox}" Width="252" x:Name="password" FontFamily="Bahnschrift" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}"/>
                 <Separator Background="{x:Null}"/>
 
-                <Button Style="{StaticResource RoundedButton}" Margin="0,20,0,0" Content="LOGIN" FontSize="35" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" Background="Orange" FontFamily="Candara" Width="251"/>
+                <Button Style="{StaticResource RoundedButton}" Margin="0,20,0,0" Content="ENTRAR" FontSize="35" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" Background="Orange" FontFamily="Candara" Width="251" Click="Login_Click"/>
 
-                <Label x:Name="infoText" Padding="20" Content="Enter an username and a password" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="25" Foreground="#FFB9B9B9"/>
+                <Label x:Name="infoText" Padding="20" Content="Introduce un usuario y contraseña" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="25" Foreground="#FFB9B9B9"/>
 
 
             </WrapPanel>

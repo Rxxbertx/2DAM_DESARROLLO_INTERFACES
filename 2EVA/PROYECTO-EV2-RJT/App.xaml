@@ -17,6 +17,8 @@
                 <ResourceDictionary Source="THEME/ModernMenuButton.xaml"/>
                 <ResourceDictionary Source="THEME/ModernTabItem.xaml"/>
                 <ResourceDictionary Source="THEME/ModernDataGrid.xaml"/>
+                <ResourceDictionary Source="THEME/ModernComboBox.xaml"/>
+                
 
             </ResourceDictionary.MergedDictionaries>
             

@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="VIEW\V_PhoneWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="VIEW\V_Exit.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -24,6 +27,9 @@
     <Page Update="THEME\ModernBorder.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="THEME\ModernComboBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="THEME\ModernDataGrid.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -37,6 +43,21 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="THEME\RoundedTextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\V_PhoneStorageWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\V_CpuWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\V_StorageWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\V_BrandWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\V_PhoneWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="VIEW\V_Exit.xaml">

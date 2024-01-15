@@ -24,5 +24,23 @@ namespace PROYECTO_EV2_RJT.VIEW
         {
             InitializeComponent();
         }
+
+        private void WareHouse_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Informs_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }        
+        private void Help_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }        
+        private void Exit_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

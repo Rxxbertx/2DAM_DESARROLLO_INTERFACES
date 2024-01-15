@@ -78,9 +78,27 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="VIEW\V_PhoneStorageWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEW\V_CpuWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEW\V_StorageWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEW\V_BrandWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="VIEW\V_Help.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="VIEW\V_BrandWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>

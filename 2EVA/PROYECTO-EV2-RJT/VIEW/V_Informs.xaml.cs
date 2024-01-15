@@ -24,5 +24,21 @@ namespace PROYECTO_EV2_RJT.VIEW
         {
             InitializeComponent();
         }
+
+        private void Phones_Click(object sender, RoutedEventArgs e)
+        {
+
+        }        private void Storage_Click(object sender, RoutedEventArgs e)
+        {
+
+        }        private void Processors_Click(object sender, RoutedEventArgs e)
+        {
+
+        }        private void Brand_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }

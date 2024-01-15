@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 R:\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\App.xaml
-13-715761961
+19-936063017
 13-965797638
-12-1120787785
+17-1470593937
 198-294894759
-THEME\ModernBorder.xaml;THEME\ModernDataGrid.xaml;THEME\ModernMenuButton.xaml;THEME\ModernTabItem.xaml;THEME\RoundedButton.xaml;THEME\RoundedTextBox.xaml;VIEW\V_Exit.xaml;VIEW\V_Help.xaml;VIEW\V_Home.xaml;VIEW\V_Informs.xaml;VIEW\V_Login.xaml;VIEW\V_MainWindow.xaml;VIEW\V_Warehouse.xaml;
+THEME\ModernBorder.xaml;THEME\ModernComboBox.xaml;THEME\ModernDataGrid.xaml;THEME\ModernMenuButton.xaml;THEME\ModernTabItem.xaml;THEME\RoundedButton.xaml;THEME\RoundedTextBox.xaml;VIEW\V_BrandWindow.xaml;VIEW\V_CpuWindow.xaml;VIEW\V_Exit.xaml;VIEW\V_Help.xaml;VIEW\V_Home.xaml;VIEW\V_Informs.xaml;VIEW\V_Login.xaml;VIEW\V_MainWindow.xaml;VIEW\V_PhoneStorageWindow.xaml;VIEW\V_PhoneWindow.xaml;VIEW\V_StorageWindow.xaml;VIEW\V_Warehouse.xaml;
 
 False
 
