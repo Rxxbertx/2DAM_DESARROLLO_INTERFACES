@@ -7,19 +7,19 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="VIEW\V_PhoneWindow.xaml.cs">
+    <Compile Update="VIEW\WINDOW\V_PhoneWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="VIEW\V_Exit.xaml.cs">
+    <Compile Update="VIEW\PAGES\V_Exit.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="VIEW\V_Home.xaml.cs">
+    <Compile Update="VIEW\PAGES\V_Home.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="VIEW\V_Informs.xaml.cs">
+    <Compile Update="VIEW\PAGES\V_Informs.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="VIEW\V_Warehouse.xaml.cs">
+    <Compile Update="VIEW\PAGES\V_Warehouse.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -45,40 +45,40 @@
     <Page Update="THEME\RoundedTextBox.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VIEW\V_PhoneStorageWindow.xaml">
+    <Page Update="VIEW\WINDOW\V_PhoneStorageWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VIEW\V_CpuWindow.xaml">
+    <Page Update="VIEW\WINDOW\V_CpuWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VIEW\V_StorageWindow.xaml">
+    <Page Update="VIEW\WINDOW\V_StorageWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VIEW\V_BrandWindow.xaml">
+    <Page Update="VIEW\WINDOW\V_BrandWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VIEW\V_PhoneWindow.xaml">
+    <Page Update="VIEW\WINDOW\V_PhoneWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VIEW\V_Exit.xaml">
+    <Page Update="VIEW\PAGES\V_Exit.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VIEW\V_Home.xaml">
+    <Page Update="VIEW\PAGES\V_Home.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VIEW\V_Help.xaml">
+    <Page Update="VIEW\PAGES\V_Help.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VIEW\V_Informs.xaml">
+    <Page Update="VIEW\PAGES\V_Informs.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VIEW\V_MainWindow.xaml">
+    <Page Update="VIEW\WINDOW\V_MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VIEW\V_Login.xaml">
+    <Page Update="VIEW\WINDOW\V_Login.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VIEW\V_Warehouse.xaml">
+    <Page Update="VIEW\PAGES\V_Warehouse.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

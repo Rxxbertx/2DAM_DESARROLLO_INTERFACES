@@ -21,5 +21,27 @@ namespace PROYECTO_EV2_RJT
             InitializeComponent();
            
         }
+
+        private void Control_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Home_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Menu_Checked(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Exit_Checked(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+
     }
 }

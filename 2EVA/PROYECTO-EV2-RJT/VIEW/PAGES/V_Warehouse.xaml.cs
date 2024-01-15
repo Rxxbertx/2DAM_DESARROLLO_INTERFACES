@@ -33,6 +33,15 @@ namespace PROYECTO_EV2_RJT.VIEW
         private void add_Click(object sender, RoutedEventArgs e)
         {
 
+        }        
+        private void modify_Click(object sender, RoutedEventArgs e)
+        {
+
+        }        
+        private void delete_Click(object sender, RoutedEventArgs e)
+        {
+
+
         }
     }
 }

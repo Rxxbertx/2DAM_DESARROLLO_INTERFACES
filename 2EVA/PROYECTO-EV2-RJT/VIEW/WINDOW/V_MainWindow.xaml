@@ -36,9 +36,9 @@
             <!--#region-->
 
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
-                <Button Style="{StaticResource RoundedMinimizeButton}" Margin="3"/>
-                <Button Style="{StaticResource RoundedMaximizeButton}" Margin="3"/>
-                <Button Style="{StaticResource RoundedExitButton}" Margin="3"/>
+                <Button  Click="Control_Click" x:Name="minimize" Style="{StaticResource RoundedMinimizeButton}" Margin="3"/>
+                <Button Click="Control_Click" x:Name="maximize" Style="{StaticResource RoundedMaximizeButton}" Margin="3"/>
+                <Button Click="Control_Click" x:Name="exit" Style="{StaticResource RoundedExitButton}" Margin="3"/>
             </StackPanel>
 
             <!--#endregion-->
@@ -57,7 +57,7 @@
 
                     <StackPanel Orientation="Vertical" Grid.Row="0" >
 
-                        <Border Style="{StaticResource BorderWithHover}" CornerRadius="10" BorderBrush="#7FFFA500" Background="Orange" VerticalAlignment="Top" HorizontalAlignment="Center" Padding="40,5">
+                        <Border x:Name="HomeButton" MouseLeftButtonDown="Home_Click" Style="{StaticResource BorderWithHover}" CornerRadius="10" BorderBrush="#7FFFA500" Background="Orange" VerticalAlignment="Top" HorizontalAlignment="Center" Padding="40,5">
 
                             <Image Source="/CORE/IMAGES/icons/Home.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" />
 
@@ -66,14 +66,14 @@
                         </Border>
 
 
-                        <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="inicio" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0"  Content="Almacén" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu"/>
+                        <RadioButton Checked="Menu_Checked" Style="{StaticResource ModernRadioButton}" x:Name="warehouse" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0"  Content="Almacén" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu"/>
 
                         <StackPanel Margin="15,5,5,0" HorizontalAlignment="Center">
 
-                            <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="i_almacenamiento" Content="Almacenamiento" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
-                            <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="i_marcas" Content="Marcas" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
-                            <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="i_procesadores" Content="Procesadores" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
-                            <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="i_moviles" Content="Moviles" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
+                            <RadioButton Checked="Menu_Checked" Style="{StaticResource ModernRadioButton}" x:Name="w_storages" Content="Almacenamiento" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
+                            <RadioButton Checked="Menu_Checked" Style="{StaticResource ModernRadioButton}" x:Name="w_brands" Content="Marcas" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
+                            <RadioButton Checked="Menu_Checked" Style="{StaticResource ModernRadioButton}" x:Name="w_processors" Content="Procesadores" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
+                            <RadioButton Checked="Menu_Checked" Style="{StaticResource ModernRadioButton}" x:Name="w_phones" Content="Moviles" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
 
                         </StackPanel>
 
@@ -88,7 +88,7 @@
                             </Separator.RenderTransform>
                         </Separator>
 
-                        <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="informes" Content="Informes" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
+                        <RadioButton Checked="Menu_Checked" Style="{StaticResource ModernRadioButton}" x:Name="informs" Content="Informes" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
 
                         <Separator Margin="10" Background="Orange">
                             <Separator.RenderTransform>
@@ -101,7 +101,7 @@
                             </Separator.RenderTransform>
                         </Separator>
 
-                        <RadioButton Style="{StaticResource ModernRadioButton}" x:Name="ayuda" Content="Ayuda" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0"/>
+                        <RadioButton Checked="Menu_Checked" Style="{StaticResource ModernRadioButton}" x:Name="help" Content="Ayuda" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0"/>
 
 
                         <Separator Margin="10" Background="Orange">
@@ -117,7 +117,7 @@
 
                     </StackPanel>
 
-                    <RadioButton Style="{StaticResource ModernRadioButton}" Grid.Row="1" x:Name="salir" Content="Salir" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" VerticalAlignment="Bottom" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
+                    <RadioButton Checked="Exit_Checked" Style="{StaticResource ModernRadioButton}" Grid.Row="1" Content="Salir" Margin="10" Foreground="DimGray" FontSize="20" GroupName="Menu" VerticalAlignment="Bottom" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Orange" BorderThickness="5,0,0,0" />
 
 
                 </Grid>

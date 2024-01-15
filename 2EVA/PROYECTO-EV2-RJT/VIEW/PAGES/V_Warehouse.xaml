@@ -76,11 +76,11 @@
                     <Button x:Name="addPhone" Click="add_Click"
                             Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
 
-                    <TextBlock Margin="10" Grid.Row="2" Text="info para el user" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="DimGray"/>
+                    <TextBlock x:Name="infoTextPhone" Margin="10" Grid.Row="2" Text="info para el user" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="DimGray"/>
 
                     <StackPanel Margin="10" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                        <Button Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="0,0,50,0" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
-                        <Button Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
+                        <Button x:Name="modifyPhone" Click="modify_Click" Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="0,0,50,0" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
+                        <Button x:Name="deletePhone" Click="delete_Click" Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
                     </StackPanel>
 
 
