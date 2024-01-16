@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PROYECTO_EV2_RJT.MODEL
 {
-    class Phone
+    public class Phone
     {
 
         #region Atributos

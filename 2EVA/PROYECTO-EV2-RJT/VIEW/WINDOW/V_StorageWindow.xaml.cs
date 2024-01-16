@@ -33,5 +33,9 @@ namespace PROYECTO_EV2_RJT.VIEW
         {
 
         }
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Owner.Effect = null;
+        }
     }
 }

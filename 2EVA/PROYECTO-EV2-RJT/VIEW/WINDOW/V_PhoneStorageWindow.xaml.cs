@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -22,6 +23,13 @@ namespace PROYECTO_EV2_RJT.VIEW
         public V_PhoneStorageWindow()
         {
             InitializeComponent();
+        }
+
+        public V_PhoneStorageWindow(Window window)
+        {
+            InitializeComponent();
+            Owner = window;
+            Owner.Effect = new BlurEffect();
         }
 
         private void btnAddOrModify_Click(object sender, RoutedEventArgs e)

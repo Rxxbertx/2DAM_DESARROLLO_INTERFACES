@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -24,6 +25,13 @@ namespace PROYECTO_EV2_RJT.VIEW
             InitializeComponent();
         }
 
+        public V_BrandWindow(Window window)
+        {
+            InitializeComponent();
+            Owner = window;
+            Owner.Effect = new BlurEffect();
+        }
+
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
 
@@ -32,6 +40,11 @@ namespace PROYECTO_EV2_RJT.VIEW
         private void btnAddOrModify_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Owner.Effect = null;
         }
     }
 }

@@ -27,11 +27,21 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
+            try { NavigationService.GoBack(); }
+            catch (Exception) { 
+            
+                NavigationService.Navigate(new V_Home());
+               
+               
 
+            }
+            
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
+
+            Application.Current.Shutdown();
 
         }
     }

@@ -37,6 +37,8 @@
                                 </Setter.Value>
                             </Setter>
                         </Trigger>
+                        
+                       
                     </ControlTemplate.Triggers>
 
 
@@ -229,6 +231,12 @@
                                     <DropShadowEffect BlurRadius="10" Color="#FF000000" ShadowDepth="0" Opacity="0.5"/>
                                 </Setter.Value>
                             </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+
+                            <Setter Property="Opacity" Value="0.5"/>
+
                         </Trigger>
                     </ControlTemplate.Triggers>
 

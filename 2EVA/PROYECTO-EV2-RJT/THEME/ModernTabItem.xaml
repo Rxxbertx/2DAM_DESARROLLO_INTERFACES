@@ -46,7 +46,7 @@
                                             Storyboard.TargetName="scaleTransform"
                                             Storyboard.TargetProperty="ScaleX" 
                                             To="0"  
-                                            Duration="0:0:1"/>
+                                            Duration="0:0:0"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
@@ -65,7 +65,7 @@
                                         Storyboard.TargetName="scaleTransform"
                                         Storyboard.TargetProperty="ScaleX" 
                                         To="0"  
-                                        Duration="0:0:1"/>
+                                        Duration="0:0:0"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </MultiTrigger.EnterActions>

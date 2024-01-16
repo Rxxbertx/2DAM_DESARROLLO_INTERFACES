@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PROYECTO_EV2_RJT
+namespace PROYECTO_EV2_RJT.VIEW
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
