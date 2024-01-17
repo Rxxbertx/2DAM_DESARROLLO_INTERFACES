@@ -3,19 +3,25 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PROYECTO_EV2_RJT.VIEW"
+        xmlns:local="clr-namespace:PROYECTO_EV2_RJT"
         mc:Ignorable="d"
         AllowsTransparency="True"
         WindowStartupLocation="CenterOwner"
         Background="Transparent"
         WindowStyle="None"
-        Title="V_StorageWindow" Height="auto" Width="auto">
+        Title="V_StorageWindow" Height="auto" Width="auto"
+        Closing="Window_Closing">
 
     <Window.FontFamily>
         <FontFamily>Bahnschrift</FontFamily>
     </Window.FontFamily>
 
-    <Border Background="LightGray" CornerRadius="20" Padding="25">
+    <Window.CommandBindings>
+        <CommandBinding Command="local:Commands.AddModifyStorage" CanExecute="AddModifyStorage_CanExecute" Executed="AddModifyStorage_Executed"/>
+
+    </Window.CommandBindings>
+
+    <Border Background="LightGray" CornerRadius="20" Padding="25" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Border.Effect>
             <DropShadowEffect ShadowDepth="0"/>
         </Border.Effect>
@@ -55,8 +61,8 @@
                 <!-- Fila 1 -->
 
                     <!-- Fila 2 -->
-                <TextBlock Grid.Row="1" Text="Capacidad" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                    <TextBox Grid.Row="1" Style="{StaticResource RoundedTextBox}" x:Name="txtStorage" Width="200" FontSize="16" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                <TextBlock Grid.Row="1" Text="Capacidad" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <TextBox Style="{DynamicResource RoundedTextBox}"  Grid.Row="1"  x:Name="txtStorage" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
                     <!-- Fila 3 -->
 
@@ -74,11 +80,16 @@
                     <!-- Fila 8 -->
                 </Grid>
             </Border>
-            <TextBlock  x:Name="infoText" Margin="5" Text="INFO USUARIO" FontSize="14" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Bahnschrift"/>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
 
+                <Border Visibility="{Binding ElementName=infoTextStorage , Path=Visibility}"  Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.5" Width="{Binding ElementName=infoTextStorage, Path=ActualWidth}"  Height="{Binding ElementName=infoTextStorage, Path=ActualHeight}" Background="{Binding ElementName=infoTextStorage, Path=Foreground}" CornerRadius="10"/>
+
+                <TextBlock Visibility="Hidden" Padding="10" TextAlignment="Center" Grid.Row="2"  x:Name="infoTextStorage" Text="info para el user" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            </Grid>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,10,0,0">
-                <Button Style="{StaticResource RoundedButton}" x:Name="btnAddOrModify" Padding="10,0" Content="" Foreground="White" Background="Orange" Margin="0,0,20,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Click="btnAddOrModify_Click" />
-                <Button Style="{StaticResource RoundedButton}" x:Name="btnCancel" Padding="10,0" Content="Cancelar" Foreground="#FF464646" Background="Gray"   HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Click="btnCancel_Click"/>
+                <Button Command="local:Commands.AddModifyStorage" Style="{StaticResource RoundedButton}" x:Name="BtnAddOrModify" Padding="10,0" Content="" Foreground="White" Background="Orange" Margin="0,0,20,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" />
+                <Button Style="{StaticResource RoundedButton}" x:Name="BtnCancel" Padding="10,0" Content="Cancelar" Foreground="#FF464646" Background="Gray"   HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Click="BtnCancel_Click"/>
             </StackPanel>
 
 

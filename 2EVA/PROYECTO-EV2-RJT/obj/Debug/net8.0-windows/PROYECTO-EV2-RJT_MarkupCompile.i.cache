@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\obj\Debug\net8.0-windows\
+R:\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\obj\Debug\net8.0-windows\
 PROYECTO_EV2_RJT
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\App.xaml
+R:\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\App.xaml
 1971561121
 13-965797638
-231719389998
-198-294894759
+28-863930637
+200-1110089490
 THEME\ModernBorder.xaml;THEME\ModernComboBox.xaml;THEME\ModernDataGrid.xaml;THEME\ModernMenuButton.xaml;THEME\ModernTabItem.xaml;THEME\RoundedButton.xaml;THEME\RoundedTextBox.xaml;VIEW\PAGES\V_Exit.xaml;VIEW\PAGES\V_Help.xaml;VIEW\PAGES\V_Home.xaml;VIEW\PAGES\V_Informs.xaml;VIEW\PAGES\V_Warehouse.xaml;VIEW\WINDOW\V_BrandWindow.xaml;VIEW\WINDOW\V_CpuWindow.xaml;VIEW\WINDOW\V_Login.xaml;VIEW\WINDOW\V_MainWindow.xaml;VIEW\WINDOW\V_PhoneStorageWindow.xaml;VIEW\WINDOW\V_PhoneWindow.xaml;VIEW\WINDOW\V_StorageWindow.xaml;
 
-True
+False
 

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PROYECTO_EV2_RJT.CORE.COMMANDS"
+        xmlns:local="clr-namespace:PROYECTO_EV2_RJT"
         mc:Ignorable="d"
         AllowsTransparency="True"
         WindowStartupLocation="CenterOwner"
@@ -16,6 +16,10 @@
         <FontFamily>Bahnschrift</FontFamily>
     </Window.FontFamily>
 
+    <Window.CommandBindings>
+        <CommandBinding Command="local:Commands.AddModifyPhone" Executed="AddModifyPhone_Executed" CanExecute="AddModifyPhone_CanExecute"/>
+    </Window.CommandBindings>
+
 
     <Border Background="LightGray" CornerRadius="20" Padding="25" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Border.Effect>
@@ -27,7 +31,7 @@
         <WrapPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
 
             
-            <TextBlock x:Name="Title" Margin="10,0,10,10" Text="Telefono" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Bahnschrift"/>
+            <TextBlock x:Name="Title" Margin="10,0,10,10" Text="Movil" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Bahnschrift"/>
 
             <Border Background="Gray" CornerRadius="20" Padding="10" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid VerticalAlignment="Center">
@@ -55,45 +59,52 @@
                 </Grid.RowDefinitions>
 
                 <!-- Fila 1 -->
-                <TextBlock Grid.Row="0" Text="Marca" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
-                    <ComboBox Style="{DynamicResource ModernComboBox}" Grid.Row="0" x:Name="cbxBrand" Width="200" FontSize="16" Height="auto" VerticalAlignment="Center" Grid.Column="1"/>
+                <TextBlock Grid.Row="0" Text="Marca" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+                    <ComboBox Style="{DynamicResource ModernComboBox}" Grid.Row="0" x:Name="cbxBrand" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1"/>
 
                 <!-- Fila 2 -->
-                <TextBlock Grid.Row="1" Text="Modelo" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                    <TextBox Grid.Row="1" Style="{StaticResource RoundedTextBox}" x:Name="txtModel" Width="200" FontSize="16" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                <TextBlock Grid.Row="1" Text="Modelo" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <TextBox Text="{Binding Model}" Grid.Row="1" Style="{StaticResource RoundedTextBox}" x:Name="txtModel" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
                     <!-- Fila 3 -->
-                <TextBlock Grid.Row="2" Text="Procesador" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                    <ComboBox d:ItemsSource="{d:SampleData ItemCount=5}" Style="{DynamicResource ModernComboBox}" Grid.Row="2" x:Name="cbxProcessor" Width="200" FontSize="16" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                <TextBlock Grid.Row="2" Text="Procesador" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <ComboBox d:ItemsSource="{d:SampleData ItemCount=5}" Style="{DynamicResource ModernComboBox}" Grid.Row="2" x:Name="cbxProcessor" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
                 <!-- Fila 4 -->
-                <TextBlock Grid.Row="3" Text="Memoria RAM" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                <TextBox Grid.Row="3" Style="{StaticResource RoundedTextBox}" x:Name="txtRam" Width="200" FontSize="16" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                <TextBlock Grid.Row="3" Text="Memoria RAM" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <TextBox Text="{Binding Ram}" Grid.Row="3" Style="{StaticResource RoundedTextBox}" x:Name="txtRam" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
 
                 <!-- Fila 5 -->
-                <TextBlock Grid.Row="4" Text="Almacenamiento" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                <TextBlock Grid.Row="4" Text="Almacenamiento" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
                 <ListBox  Grid.Row="4" x:Name="cbxStorage" Width="200" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="50" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0" BorderBrush="Orange" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionMode="Multiple"/>
 
                 <!-- Repite el mismo patrón para los demás elementos -->
 
                 <!-- Fila 6 -->
-                <TextBlock Grid.Row="5" Text="Pantalla" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                <TextBox Style="{StaticResource RoundedTextBox}" Grid.Row="5" x:Name="txtScreen" Width="200" FontSize="16" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                <TextBlock Grid.Row="5" Text="Pantalla" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <TextBox  Text="{Binding Screen}" Style="{StaticResource RoundedTextBox}" Grid.Row="5" x:Name="txtScreen" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
                 <!-- Fila 7 -->
-                <TextBlock Grid.Row="6" Text="Bateria" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                <TextBox Grid.Row="6" Style="{StaticResource RoundedTextBox}" x:Name="txtBattery" Width="200" FontSize="16" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                <TextBlock Grid.Row="6" Text="Bateria" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <TextBox Text="{Binding Battery}" Grid.Row="6" Style="{StaticResource RoundedTextBox}" x:Name="txtBattery" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
                 <!-- Fila 8 -->
-                <TextBlock Grid.Row="7" Text="Sistema Operativo" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                <TextBox Grid.Row="7" Style="{StaticResource RoundedTextBox}" x:Name="txtSO" Width="200" FontSize="16" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                <TextBlock Grid.Row="7" Text="Sistema Operativo" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <TextBox Text="{Binding OS}" Grid.Row="7" Style="{StaticResource RoundedTextBox}" x:Name="txtOS" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
             </Grid>
             </Border>
-            <TextBlock x:Name="infoText" Margin="5" Text="INFO USUARIO" FontSize="14" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Bahnschrift"/>
+            
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
 
+                <Border Visibility="{Binding ElementName=infoTextPhone , Path=Visibility}"  Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.5" Width="{Binding ElementName=infoTextPhone, Path=ActualWidth}"  Height="{Binding ElementName=infoTextPhone, Path=ActualHeight}" Background="{Binding ElementName=infoTextPhone, Path=Foreground}" CornerRadius="10"/>
+
+                <TextBlock Visibility="Hidden" Padding="10" TextAlignment="Center" Grid.Row="2"  x:Name="infoTextPhone" Text="info para el user" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            </Grid>
+            
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,10,0,0">
-                <Button Style="{StaticResource RoundedButton}" x:Name="btnAddOrModify" Padding="10,0" Content="" Foreground="White" Background="Orange" Margin="0,0,20,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Click="BtnAddOrModify_Click" />
+                <Button Command="local:Commands.AddModifyPhone" Style="{StaticResource RoundedButton}" x:Name="btnAddOrModify" Padding="10,0" Content="" Foreground="White" Background="Orange" Margin="0,0,20,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" />
                 <Button Style="{StaticResource RoundedButton}" x:Name="btnCancel" Padding="10,0" Content="Cancelar" Foreground="#FF464646" Background="Gray"   HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Click="BtnCancel_Click"/>
             </StackPanel>
 

@@ -68,14 +68,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CORE\DBCONNECTION\" />
-    <Folder Include="VIEWMODEL\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="CORE\IMAGES\fullscreen.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="2.3.4" />
   </ItemGroup>
 
   <ItemGroup>

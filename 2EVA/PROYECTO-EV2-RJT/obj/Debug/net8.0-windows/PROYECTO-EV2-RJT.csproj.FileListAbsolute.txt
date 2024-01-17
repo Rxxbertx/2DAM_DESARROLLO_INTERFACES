@@ -128,3 +128,8 @@ C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\obj\Debug\net8.0-windows\VIEW\WINDOW\V_PhoneStorageWindow.baml
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\obj\Debug\net8.0-windows\VIEW\WINDOW\V_PhoneWindow.baml
 C:\Users\dam2t06\Documents\CODE\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\obj\Debug\net8.0-windows\VIEW\WINDOW\V_StorageWindow.baml
+R:\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+R:\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+R:\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\bin\Debug\net8.0-windows\MySqlConnector.dll
+R:\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\obj\Debug\net8.0-windows\PROYECTO-EV2-RJT.csproj.AssemblyReference.cache
+R:\2DAM_DESARROLLO_INTERFACES\2EVA\PROYECTO-EV2-RJT\obj\Debug\net8.0-windows\PROYECTO-EV2-RJT.csproj.CopyComplete

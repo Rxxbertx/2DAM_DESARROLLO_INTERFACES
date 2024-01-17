@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "BbaWCPItw3yp0ACXkAR9nn9kjXqkRw1I1ZelPqQtWgCVr8wlGpWRLeLgrdfUxqTOqkEKzdQtOKaF154RcNqaEA==",
+  "dgSpecHash": "a9StDAngi+7Co2zLDvRmqykDcP2tXRzb9IY9/zmR3dFQLa6sME5uroqVTpzZ62W5+b9iignzJ6C0E1AHhpVe4g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dam2t06\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PROYECTO-EV2-RJT\\PROYECTO-EV2-RJT.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "R:\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PROYECTO-EV2-RJT\\PROYECTO-EV2-RJT.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Roberto\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
+    "C:\\Users\\Roberto\\.nuget\\packages\\mysqlconnector\\2.3.4\\mysqlconnector.2.3.4.nupkg.sha512"
+  ],
   "logs": []
 }

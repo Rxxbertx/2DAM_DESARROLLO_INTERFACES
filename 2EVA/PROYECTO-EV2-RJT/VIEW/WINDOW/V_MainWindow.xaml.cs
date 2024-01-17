@@ -20,6 +20,8 @@ namespace PROYECTO_EV2_RJT.VIEW
         public V_MainWindow()
         {
             InitializeComponent();
+            mainFrame.NavigationService.Navigate(new V_Home { parentWindow = this});
+            Focus();
         }
 
         private void Control_Click(object sender, RoutedEventArgs e)
@@ -45,7 +47,7 @@ namespace PROYECTO_EV2_RJT.VIEW
             {
                 return;
             }
-            mainFrame.NavigationService.Navigate(new V_Home());
+            mainFrame.NavigationService.Navigate(new V_Home { parentWindow = this });
             clearSelection();
         }
 
@@ -60,6 +62,7 @@ namespace PROYECTO_EV2_RJT.VIEW
             if (element.Equals(warehouse))
             {
                 mainFrame.NavigationService.Navigate(wh);
+                wh.Focus();
             }
             else if (element.Equals(informs))
             {
@@ -73,6 +76,7 @@ namespace PROYECTO_EV2_RJT.VIEW
             {
                 wh.brandTab.IsSelected = true;
                 mainFrame.NavigationService.Navigate(wh);
+                wh.Focus();
             }
             else if (element.Equals(w_phones))
             {

@@ -3,65 +3,166 @@
 
 
 
+    <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+    <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+    <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
 
-    <Style TargetType="TextBox" x:Key="RoundedTextBox">
-
+    <Style x:Key="PasswordBoxStyle1" TargetType="{x:Type PasswordBox}">
+        <Setter Property="PasswordChar" Value="●"/>
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
         <Setter Property="Template">
-
             <Setter.Value>
+                <ControlTemplate TargetType="{x:Type PasswordBox}">
+                    <Border CornerRadius="10" Background="FloralWhite" BorderThickness="3" BorderBrush="Orange"  x:Name="border" SnapsToDevicePixels="True" Padding="5">
 
 
-                <ControlTemplate TargetType="TextBox">
 
 
-                    <Border CornerRadius="10" Background="FloralWhite" BorderThickness="3" BorderBrush="Orange">
-
-                        <Grid>
-
-                            <Rectangle StrokeThickness="1"/>
-                            <TextBox Margin="1" Text="{TemplateBinding Text}"
-                                 BorderThickness="0"
-                                
-                                 Background="Transparent"
-                                 VerticalAlignment="Center"
-                                 Padding="5"/>
-                            <Image Source="../CORE/IMAGES/logTextBox.png" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0" />
-
-
+                        <Grid Focusable="false">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden">
+                                <ScrollViewer.Style>
+                                    <Style TargetType="ScrollViewer">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ScrollViewer">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <ScrollContentPresenter Grid.Column="0" x:Name="PART_ScrollContentPresenter" CanContentScroll="True" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}"/>
+                                                        <Image Grid.Column="1" Source="/CORE/IMAGES/logPassword.png" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0" />
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ScrollViewer.Style>
+                            </ScrollViewer>
                         </Grid>
 
 
 
 
-                    </Border>
 
+
+
+                    </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                    
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
                             <Setter Property="Effect" >
                                 <Setter.Value>
                                     <DropShadowEffect BlurRadius="10" Color="#FF000000" ShadowDepth="0" Opacity="0.5"/>
                                 </Setter.Value>
                             </Setter>
                         </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                        </Trigger>
                     </ControlTemplate.Triggers>
-
-
                 </ControlTemplate>
-
-
-
-
-
-
-
             </Setter.Value>
-
-
-
         </Setter>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                    <Condition Property="IsSelectionActive" Value="false"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="RoundedTextBox" TargetType="{x:Type TextBox}">
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border CornerRadius="10" Background="FloralWhite" BorderThickness="3" BorderBrush="Orange"  x:Name="border" SnapsToDevicePixels="True" Padding="5">
 
 
+
+
+                        <Grid Focusable="false">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden">
+                                <ScrollViewer.Style>
+                                    <Style TargetType="ScrollViewer">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ScrollViewer">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <ScrollContentPresenter Grid.Column="0" x:Name="PART_ScrollContentPresenter" CanContentScroll="True" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}"/>
+                                                        <Image Grid.Column="1" Source="/CORE/IMAGES/logTextBox.png" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0" />
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ScrollViewer.Style>
+                            </ScrollViewer>
+                        </Grid>
+
+
+
+                    
+                    
+                    
+                    
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                            <Setter Property="Effect" >
+                                <Setter.Value>
+                                    <DropShadowEffect BlurRadius="10" Color="#FF000000" ShadowDepth="0" Opacity="0.5"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                    <Condition Property="IsSelectionActive" Value="false"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+            </MultiTrigger>
+        </Style.Triggers>
     </Style>
     <Style TargetType="PasswordBox" x:Key="RoundedPasswordBox">
 
@@ -127,13 +228,6 @@
     
     
 
-        <Style x:Key="MessageTextBlock" TargetType="TextBlock">
-            <Setter Property="TextWrapping" Value="NoWrap"/>
-            <Setter Property="TextTrimming" Value="None"/>
-        <Setter Property="Background" Value="{x:Null}"/>
-
-
-    </Style>
 
 
 

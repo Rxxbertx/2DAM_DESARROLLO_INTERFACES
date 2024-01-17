@@ -86,28 +86,6 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         }
 
-        private void BtnAddOrModify_Click(object sender, RoutedEventArgs e)
-        {
-
-
-            if (v_Warehouse == null)
-            {
-                infoText.Text = "Error, no se puede realizar la operacion en estos momentos. COD:NO_PAGE";
-                return;
-            }
-
-            if(operation == Operation.Add)
-            {
-                Utils.SuccessMessage(v_Warehouse.infoTextPhone,"Movil Añadido Con Exito");
-            }
-            if (operation == Operation.Modify)
-            {
-                Utils.SuccessMessage(v_Warehouse.infoTextPhone,"Movil Modificado Con Exito");
-            }
-
-            Close();
-
-        }
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             
@@ -127,5 +105,40 @@ namespace PROYECTO_EV2_RJT.VIEW
             Owner.Effect = null;
         }
 
+        private void AddModifyPhone_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
+            if (v_Warehouse == null)
+            {
+                Utils.ErrorMessage(infoTextPhone, "Error Interno");
+                return;
+            }
+
+
+        }
+
+        private void AddModifyPhone_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+
+
+                if ( 
+                    string.IsNullOrEmpty(txtModel.Text) || 
+                    string.IsNullOrEmpty(txtBattery.Text) || 
+                    string.IsNullOrEmpty(txtOS.Text) || 
+                    string.IsNullOrEmpty(txtRam.Text)||
+                    string.IsNullOrEmpty(txtScreen.Text)||
+                    cbxProcessor.SelectedIndex == -1||
+                    cbxBrand.SelectedIndex == -1 ||
+                    cbxStorage.SelectedIndex == -1)
+
+                {
+                    e.CanExecute = false;
+                    return;
+                }
+                e.CanExecute = true;
+                return;
+
+
+        }
     }
 }

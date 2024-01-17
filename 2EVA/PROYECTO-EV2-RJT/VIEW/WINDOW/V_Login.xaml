@@ -3,13 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PROYECTO_EV2_RJT"
+        xmlns:local="clr-namespace:PROYECTO_EV2_RJT" 
+        xmlns:utils="clr-namespace:PROYECTO_EV2_RJT.CORE"
+        xmlns:viewmodel="clr-namespace:PROYECTO_EV2_RJT.VIEWMODEL" d:DataContext="{d:DesignInstance Type=viewmodel:VM_LoginUser}"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="920"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         Background="Transparent"
         AllowsTransparency="True">
+    <Window.CommandBindings>
+
+        <CommandBinding Command="local:Commands.Login" Executed="Login_Command_Executed" CanExecute="Login_Command_CanExecute"/>
+
+    </Window.CommandBindings>
 
 
 
@@ -29,7 +36,7 @@
 
             <!--#region-->
 
-            <Border VerticalAlignment="Top" DockPanel.Dock="Top" CornerRadius="10" Background="#FFD08A09" Padding="20,20">
+            <Border MouseLeftButtonDown="Border_MouseLeftButtonDown" VerticalAlignment="Top" DockPanel.Dock="Top" CornerRadius="10" Background="#FFD08A09" Padding="20,20">
 
                 <Grid VerticalAlignment="Top" DockPanel.Dock="Top">
                     <Grid.ColumnDefinitions>
@@ -42,9 +49,9 @@
                     <TextBlock FontSize="20" Grid.Column="0"  Text="CRUD APP" FontFamily="Bahnschrift Light" LineHeight="1" TextTrimming="CharacterEllipsis" FontStyle="Italic" HorizontalAlignment="Center" Foreground="#FFF5F2F2"/>
 
                     <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                        <Button Style="{StaticResource RoundedMinimizeButton}" Margin="3"/>
-                        <Button Style="{StaticResource RoundedMaximizeButton}" Margin="3"/>
-                        <Button Style="{StaticResource RoundedExitButton}" Margin="3"/>
+                        <Button Click="Control_Click" x:Name="minimize" Style="{StaticResource RoundedMinimizeButton}" Margin="3"/>
+                        <Button Click="Control_Click" x:Name="maximize" Style="{StaticResource RoundedMaximizeButton}" Margin="3"/>
+                        <Button Click="Control_Click" x:Name="exit" Style="{StaticResource RoundedExitButton}" Margin="3"/>
                     </StackPanel>
 
                 </Grid>
@@ -71,16 +78,16 @@
                 <Label Content="Usuario" FontFamily="Bahnschrift" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
 
                 </Label>
-                <TextBox Style="{StaticResource RoundedTextBox}" TextWrapping="NoWrap" x:Name="username" Width="252" FontFamily="Bahnschrift" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Black"/>
+                <TextBox Text="{Binding Username, Mode=TwoWay}" Style="{StaticResource RoundedTextBox}"  x:Name="username" Width="252" FontFamily="Bahnschrift" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
                 <Separator Background="{x:Null}"/>
                 <Label Content="Contraseña" FontFamily="Bahnschrift" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
                 </Label>
-                <PasswordBox Style="{StaticResource RoundedPasswordBox}" Width="252" x:Name="password" FontFamily="Bahnschrift" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}"/>
+                <PasswordBox utils:PasswordHelper.Attach="True" utils:PasswordHelper.Password="{Binding Password, Mode=TwoWay}"  Style="{DynamicResource PasswordBoxStyle1}"  Width="252" x:Name="password" FontFamily="Bahnschrift" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"  VerticalContentAlignment="Center" />
                 <Separator Background="{x:Null}"/>
 
-                <Button Style="{StaticResource RoundedButton}" Margin="0,20,0,0" Content="ENTRAR" FontSize="35" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" Background="Orange" FontFamily="Candara" Width="251" Click="Login_Click"/>
+                <Button Command="local:Commands.Login" Style="{StaticResource RoundedButton}" Margin="0,20,0,0" Content="ENTRAR" FontSize="35" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" Background="Orange" FontFamily="Candara" Width="251"/>
 
-                <Label x:Name="infoText" Padding="20" Content="Introduce un usuario y contraseña" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="25" Foreground="#FFB9B9B9"/>
+                <TextBlock x:Name="loginResultTextBox"  Background="Transparent"  Padding="20"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="25" Foreground="#FF757272" />
 
 
             </WrapPanel>
