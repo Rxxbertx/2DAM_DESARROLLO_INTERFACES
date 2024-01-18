@@ -1,10 +1,11 @@
 ﻿using MySqlConnector;
 using PROYECTO_EV2_RJT.MODEL;
 using System;
+using System.Windows;
 
 namespace practicaLoginRJT.database
 {
-    class DBConnection
+    public class DBConnection
     {
         // Campos privados para las propiedades de conexión a la base de datos
         private MySqlConnectionStringBuilder? builder;
@@ -78,13 +79,13 @@ namespace practicaLoginRJT.database
 
             if (connection == null)
             {
-                Console.WriteLine("No se puede conectar a la base de datos, la conexión es nula");
+                
                 return null;
             }
 
             if (connection.State == System.Data.ConnectionState.Open)
             {
-                Console.WriteLine("Conectado a la base de datos");
+               
                 return connection;
             }
 
@@ -97,7 +98,7 @@ namespace practicaLoginRJT.database
                 }
                 catch (MySqlException ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    MessageBox.Show(ex.Message);
                     return null;
                 }
             }

@@ -1,20 +1,28 @@
-﻿using PROYECTO_EV2_RJT.CORE.CONSTANTS;
+﻿using MySqlConnector;
+using practicaLoginRJT.database;
+using PROYECTO_EV2_RJT.CORE.CONSTANTS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PROYECTO_EV2_RJT.MODEL
 {
     class User
     {
-        private static User instance;
-        private string password;
-        internal readonly bool SpecialRole;
+        private static User? instance;
+        private readonly string password;
+        private bool specialRole;
 
         public string Username { get; set; }
         public string Name { get; set; }
+        public bool SpecialRole
+        {
+            get { return specialRole; }
+            private set { specialRole = value; }
+        }
 
         private User(string username, string password, string name)
         {
@@ -43,10 +51,95 @@ namespace PROYECTO_EV2_RJT.MODEL
 
         public static int AuthenticateUser(string username, string password)
         {
+            DBConnection db = DBConnection.DBInit();
+            string query = "SELECT * FROM users WHERE username_user = @username AND password_user = @password";
 
-            return 0;
+            using (MySqlCommand command = new(query, DBConnection.OpenConnection(db)))
+            {
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
 
+                try
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            int id = -1;
+                            while (reader.Read())
+                            {
+                                string name = reader.GetString(2);
+                                id = reader.GetInt32(0);
+                                GetInstance(username, password, name);
+                            }
+
+                            CheckAdminUsername(id);
+                            return LoginConstants.SUCCESS;
+                        }
+                        else
+                        {
+                            return CheckUsername(username, db);
+                        }
+                    }
+                }
+                catch (MySqlException e)
+                {
+                    MessageBox.Show(e.Message);
+                    return LoginConstants.ERROR;
+                }
+            }
         }
-        
+
+        private static void CheckAdminUsername(int id)
+        {
+            DBConnection db = DBConnection.DBInit();
+            string query = "SELECT special_users_users FROM specialusers WHERE special_users_users = @id";
+
+            using (MySqlCommand command = new(query, DBConnection.OpenConnection(db)))
+            {
+                command.Parameters.AddWithValue("@id", id);
+
+                try
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            GetInstance().SpecialRole = true;
+                        }
+                        else
+                        {
+                            GetInstance().SpecialRole = false;
+                        }
+                    }
+                }
+                catch (MySqlException e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
+
+        private static int CheckUsername(string username, DBConnection db)
+        {
+            string query = "SELECT * FROM users WHERE username = @username";
+
+            using (MySqlCommand command = new(query, DBConnection.OpenConnection(db)))
+            {
+                command.Parameters.AddWithValue("@username", username);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        return LoginConstants.PASSWORD_INCORRECT;
+                    }
+                    else
+                    {
+                        return LoginConstants.USER_NOT_FOUND;
+                    }
+                }
+            }
+        }
     }
 }
