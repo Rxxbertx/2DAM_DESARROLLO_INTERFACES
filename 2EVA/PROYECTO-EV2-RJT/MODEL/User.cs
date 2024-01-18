@@ -1,11 +1,6 @@
 ﻿using MySqlConnector;
 using practicaLoginRJT.database;
 using PROYECTO_EV2_RJT.CORE.CONSTANTS;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace PROYECTO_EV2_RJT.MODEL
@@ -73,11 +68,15 @@ namespace PROYECTO_EV2_RJT.MODEL
                                 GetInstance(username, password, name);
                             }
 
+                            command.Dispose();
+                            reader.Close();
                             CheckAdminUsername(id);
                             return LoginConstants.SUCCESS;
                         }
                         else
                         {
+                            command.Dispose();
+                            reader.Close();
                             return CheckUsername(username, db);
                         }
                     }
@@ -87,13 +86,18 @@ namespace PROYECTO_EV2_RJT.MODEL
                     MessageBox.Show(e.Message);
                     return LoginConstants.ERROR;
                 }
+                finally
+                {
+                    DBConnection.CloseConnection(db);
+                }
+
             }
         }
 
         private static void CheckAdminUsername(int id)
         {
             DBConnection db = DBConnection.DBInit();
-            string query = "SELECT special_users_users FROM specialusers WHERE special_users_users = @id";
+            string query = "SELECT special_users_users FROM special_users WHERE special_users_users = @id";
 
             using (MySqlCommand command = new(query, DBConnection.OpenConnection(db)))
             {
@@ -118,11 +122,16 @@ namespace PROYECTO_EV2_RJT.MODEL
                     MessageBox.Show(e.Message);
                 }
             }
+
+
+            if(GetInstance().SpecialRole)DBConnection.DBInit().ModifyConnection().Commit();
+            
+
         }
 
         private static int CheckUsername(string username, DBConnection db)
         {
-            string query = "SELECT * FROM users WHERE username = @username";
+            string query = "SELECT * FROM users WHERE username_user = @username";
 
             using (MySqlCommand command = new(query, DBConnection.OpenConnection(db)))
             {

@@ -10,20 +10,20 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `mydb` ;
+DROP SCHEMA IF EXISTS `dbRoberto` ;
 
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `dbRoberto` DEFAULT CHARACTER SET utf8 ;
+USE `dbRoberto` ;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`users`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`users` ;
+DROP TABLE IF EXISTS `dbRoberto`.`users` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`users` (
+CREATE TABLE IF NOT EXISTS `dbRoberto`.`users` (
   `id_user` INT NOT NULL AUTO_INCREMENT,
   `name_user` VARCHAR(45) NOT NULL,
   `username_user` VARCHAR(45) NOT NULL,
@@ -37,16 +37,16 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`special_users`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`special_users` ;
+DROP TABLE IF EXISTS `dbRoberto`.`special_users` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`special_users` (
+CREATE TABLE IF NOT EXISTS `dbRoberto`.`special_users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `special_users_users` INT NOT NULL,
   PRIMARY KEY (`id`, `special_users_users`),
   INDEX `fk_special_users_users1_idx` (`special_users_users` ASC) VISIBLE,
   CONSTRAINT `fk_special_users_users1`
     FOREIGN KEY (`special_users_users`)
-    REFERENCES `mydb`.`users` (`id_user`)
+    REFERENCES `dbRoberto`.`users` (`id_user`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
@@ -55,9 +55,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`brands`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`brands` ;
+DROP TABLE IF EXISTS `dbRoberto`.`brands` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`brands` (
+CREATE TABLE IF NOT EXISTS `dbRoberto`.`brands` (
   `id_brand` INT NOT NULL AUTO_INCREMENT,
   `brand_brand` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_brand`),
@@ -68,9 +68,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`cpu`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`cpu` ;
+DROP TABLE IF EXISTS `dbRoberto`.`cpu` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`cpu` (
+CREATE TABLE IF NOT EXISTS `dbRoberto`.`cpu` (
   `id_cpu` INT NOT NULL AUTO_INCREMENT,
   `name_cpu` VARCHAR(45) NOT NULL,
   `nanometers_cpu` INT UNSIGNED NOT NULL,
@@ -85,9 +85,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`phones`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`phones` ;
+DROP TABLE IF EXISTS `dbRoberto`.`phones` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`phones` (
+CREATE TABLE IF NOT EXISTS `dbRoberto`.`phones` (
   `id_phone` INT NOT NULL AUTO_INCREMENT,
   `model_phone` VARCHAR(45) NOT NULL,
   `screen_phone` FLOAT NOT NULL,
@@ -101,12 +101,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`phones` (
   INDEX `fk_phones_cpu1_idx` (`cpu_phone_cpu` ASC) VISIBLE,
   CONSTRAINT `fk_phones_brands`
     FOREIGN KEY (`brand_phone_brand`)
-    REFERENCES `mydb`.`brands` (`id_brand`)
+    REFERENCES `dbRoberto`.`brands` (`id_brand`)
     ON DELETE NO ACTION
     ON UPDATE CASCADE,
   CONSTRAINT `fk_phones_cpu`
     FOREIGN KEY (`cpu_phone_cpu`)
-    REFERENCES `mydb`.`cpu` (`id_cpu`)
+    REFERENCES `dbRoberto`.`cpu` (`id_cpu`)
     ON DELETE NO ACTION
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
@@ -115,9 +115,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`storages`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`storages` ;
+DROP TABLE IF EXISTS `dbRoberto`.`storages` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`storages` (
+CREATE TABLE IF NOT EXISTS `dbRoberto`.`storages` (
   `storage_storage` INT NOT NULL,
   PRIMARY KEY (`storage_storage`))
 ENGINE = InnoDB;
@@ -126,9 +126,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`phones_storage`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`phones_storage` ;
+DROP TABLE IF EXISTS `dbRoberto`.`phones_storage` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`phones_storage` (
+CREATE TABLE IF NOT EXISTS `dbRoberto`.`phones_storage` (
   `id_phone` INT NOT NULL,
   `storage_storage` INT NOT NULL,
   PRIMARY KEY (`id_phone`, `storage_storage`),
@@ -136,12 +136,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`phones_storage` (
   INDEX `fk_phones_has_storage_phones1_idx` (`id_phone` ASC) VISIBLE,
   CONSTRAINT `fk_phones_has_storage_phones1`
     FOREIGN KEY (`id_phone`)
-    REFERENCES `mydb`.`phones` (`id_phone`)
+    REFERENCES `dbRoberto`.`phones` (`id_phone`)
     ON DELETE NO ACTION
     ON UPDATE CASCADE,
   CONSTRAINT `fk_phones_has_storage_storage1`
     FOREIGN KEY (`storage_storage`)
-    REFERENCES `mydb`.`storages` (`storage_storage`)
+    REFERENCES `dbRoberto`.`storages` (`storage_storage`)
     ON DELETE NO ACTION
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
@@ -150,7 +150,7 @@ ENGINE = InnoDB;
 
 
 -- Insertar 10 usuarios de ejemplo sin especificar el id_user (se autoincrementará)
-INSERT INTO `mydb`.`users` (`name_user`, `username_user`, `password_user`) VALUES
+INSERT INTO `dbRoberto`.`users` (`name_user`, `username_user`, `password_user`) VALUES
 ('Usuario1', 'user1', 'password1'),
 ('Usuario2', 'user2', 'password2'),
 ('Usuario3', 'user3', 'password3'),
@@ -165,7 +165,7 @@ INSERT INTO `mydb`.`users` (`name_user`, `username_user`, `password_user`) VALUE
 
 
 -- Insertar los tres usuarios en la tabla 'special_users'
-INSERT INTO `mydb`.`special_users` (`special_users_users`) VALUES
+INSERT INTO `dbRoberto`.`special_users` (`special_users_users`) VALUES
 (1), -- ID del primer usuario
 (2), -- ID del segundo usuario 
 (3); -- ID del tercer usuario 
@@ -173,7 +173,7 @@ INSERT INTO `mydb`.`special_users` (`special_users_users`) VALUES
 
 
 -- Insertar datos en la tabla 'storages'
-INSERT INTO `mydb`.`storages` (`storage_storage`) VALUES
+INSERT INTO `dbRoberto`.`storages` (`storage_storage`) VALUES
 (64),   -- Ejemplo para un móvil con 64 GB de almacenamiento
 (128),  -- Ejemplo para un móvil con 128 GB de almacenamiento
 (256),  -- Ejemplo para un móvil con 256 GB de almacenamiento
@@ -181,7 +181,7 @@ INSERT INTO `mydb`.`storages` (`storage_storage`) VALUES
 
 
 -- Insertar datos en la tabla 'brands'
-INSERT INTO `mydb`.`brands` (`brand_brand`) VALUES
+INSERT INTO `dbRoberto`.`brands` (`brand_brand`) VALUES
 ('Samsung'),
 ('Apple'),
 ('Huawei'),
@@ -196,7 +196,7 @@ INSERT INTO `mydb`.`brands` (`brand_brand`) VALUES
 
 
 -- Insertar datos en la tabla 'cpu' para móviles
-INSERT INTO `mydb`.`cpu` (`name_cpu`, `nanometers_cpu`, `graphicsrender_cpu`, `manufacturer_cpu`, `cores_cpu`) VALUES
+INSERT INTO `dbRoberto`.`cpu` (`name_cpu`, `nanometers_cpu`, `graphicsrender_cpu`, `manufacturer_cpu`, `cores_cpu`) VALUES
 ('Snapdragon 888', 5, 'Adreno 660', 'Qualcomm', 8),
 ('Exynos 2100', 5, 'Mali-G78 MP14', 'Samsung', 8),
 ('Apple A15 Bionic', 5, 'Apple GPU (4-core graphics)', 'Apple', 6),
@@ -221,7 +221,7 @@ INSERT INTO `mydb`.`cpu` (`name_cpu`, `nanometers_cpu`, `graphicsrender_cpu`, `m
 
 
 -- Insertar más datos en la tabla 'phones'
-INSERT INTO `mydb`.`phones` (`model_phone`, `screen_phone`, `ram_phone`, `battery_phone`, `brand_phone_brand`, `cpu_phone_cpu`, `operatingsystem_phones`) VALUES
+INSERT INTO `dbRoberto`.`phones` (`model_phone`, `screen_phone`, `ram_phone`, `battery_phone`, `brand_phone_brand`, `cpu_phone_cpu`, `operatingsystem_phones`) VALUES
 ('Samsung Galaxy S23', 6.3, 16, 4800, 1, 1, 'Android 13'),
 ('iPhone 15 Pro', 6.6, 10, 3700, 2, 3, 'iOS 17'),
 ('Huawei Mate 50', 6.5, 14, 4500, 3, 4, 'Android 12'),
@@ -245,6 +245,20 @@ INSERT INTO `mydb`.`phones` (`model_phone`, `screen_phone`, `ram_phone`, `batter
 
 
 
+-- Crear usuario 'admin' con contraseña 'dam2t'
+CREATE USER IF NOT EXISTS 'admin'@'%' IDENTIFIED BY 'dam2t';
+
+-- Asignar privilegios de administrador al usuario 'admin'
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%';
+
+-- Crear usuario 'basic' con contraseña 'basic'
+CREATE USER IF NOT EXISTS 'basic'@'%' IDENTIFIED BY 'basic';
+
+-- Asignar privilegios de solo lectura (SELECT) al usuario 'basic'
+GRANT SELECT ON *.* TO 'basic'@'%';
+
+-- Aplicar cambios para que tengan efecto
+FLUSH PRIVILEGES;
 
 
 

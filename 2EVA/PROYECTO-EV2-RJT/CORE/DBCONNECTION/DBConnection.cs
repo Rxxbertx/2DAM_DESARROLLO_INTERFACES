@@ -32,9 +32,9 @@ namespace practicaLoginRJT.database
         private DBConnection()
         {
             Server = "127.0.0.1";
-            Uid = "admin";
-            Password = "dam2t";
-            Database = "mydb";
+            Uid = "basic";
+            Password = "basic";
+            Database = "dbRoberto";
             Port = 3306;
         }
 
@@ -157,7 +157,7 @@ namespace practicaLoginRJT.database
         public void Commit()
         {
 
-            connection = null;
+            CloseConnection(this);
 
             connection = Connection();
 

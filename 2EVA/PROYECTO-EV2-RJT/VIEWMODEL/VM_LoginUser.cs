@@ -1,5 +1,6 @@
 ﻿using PROYECTO_EV2_RJT.CORE.CONSTANTS;
 using PROYECTO_EV2_RJT.MODEL;
+using PROYECTO_EV2_RJT.VIEW;
 using System.ComponentModel;
 using System.Windows;
 
@@ -47,6 +48,14 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
 
             
             ShowMessage(state);
+
+            if (state == LoginConstants.SUCCESS)
+            {
+                V_MainWindow mainWindow = new();
+                mainWindow.Show();
+                Application.Current.MainWindow.Close();
+                
+            }
 
             init();
 
