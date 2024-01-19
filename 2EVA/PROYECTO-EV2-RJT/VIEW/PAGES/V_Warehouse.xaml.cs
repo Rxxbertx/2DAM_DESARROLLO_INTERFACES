@@ -1,6 +1,7 @@
-﻿using PROYECTO_EV2_RJT.CORE;
-using PROYECTO_EV2_RJT.CORE.ENUMS;
+﻿using PROYECTO_EV2_RJT.CORE.ENUMS;
+using PROYECTO_EV2_RJT.CORE.UTILS;
 using PROYECTO_EV2_RJT.MODEL;
+using PROYECTO_EV2_RJT.VIEWMODEL;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -14,13 +15,15 @@ namespace PROYECTO_EV2_RJT.VIEW
     {
 
         V_MainWindow? parent = null;
+        VM_Processor vm_processor = new();
 
         public V_Warehouse()
         {
             InitializeComponent();
 
-            PhoneCollection phones = [];
-            PhonesGrid.ItemsSource = phones;
+            
+            
+            
 
         }
 
@@ -77,7 +80,7 @@ namespace PROYECTO_EV2_RJT.VIEW
                                 parent.w_processors.Checked -= parent.Menu_Checked; // Remove the event handler temporarily
                                 parent.w_processors.IsChecked = true;
                                 parent.w_processors.Checked += parent.Menu_Checked; // Add the event handler back
-
+                                DataContext = vm_processor;
                                 break;
 
 
@@ -402,10 +405,13 @@ namespace PROYECTO_EV2_RJT.VIEW
         {
 
             window.Owner = Window.GetWindow(this);
+            window.DataContext = this.DataContext;
             window.ShowDialog();
 
 
         }
+
+
 
     }
 }

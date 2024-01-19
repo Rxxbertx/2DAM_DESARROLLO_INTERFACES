@@ -350,7 +350,7 @@
                         <DataGrid HorizontalAlignment="Stretch"
                   HorizontalContentAlignment="Stretch"
                   HorizontalScrollBarVisibility="Auto"
-               d:ItemsSource="{d:SampleData ItemCount=5}"
+                  ItemsSource="{Binding ProcessorsCollection}"
                   x:Name="ProcessorsGrid" 
                   Margin="10"  
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" 
@@ -374,7 +374,7 @@
                                 <DataGridTextColumn Header="Nucleos" Binding="{Binding Cores}" IsReadOnly="True"/>
                                 <DataGridTextColumn Header="Gpu" Binding="{Binding Gpu}" IsReadOnly="True"/>
                                 <DataGridTextColumn Header="Nanometros" Binding="{Binding Nanometers}" IsReadOnly="True" />
-                                <DataGridTextColumn Header="Marca" Binding="{Binding Brand}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Marca" Binding="{Binding Manufacturer}" IsReadOnly="True"/>
 
 
                             </DataGrid.Columns>

@@ -1,6 +1,8 @@
-﻿using PROYECTO_EV2_RJT.CORE;
-using PROYECTO_EV2_RJT.CORE.COMMANDS;
+﻿using PROYECTO_EV2_RJT.CORE.COMMANDS;
+using PROYECTO_EV2_RJT.CORE.CONSTANTS;
 using PROYECTO_EV2_RJT.CORE.ENUMS;
+using PROYECTO_EV2_RJT.CORE.UTILS;
+using PROYECTO_EV2_RJT.VIEWMODEL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +57,9 @@ namespace PROYECTO_EV2_RJT.VIEW
                 Title.Text = "Modificar " + Title.Text;
             }
 
+            
+            
+
         }
 
 
@@ -62,6 +67,10 @@ namespace PROYECTO_EV2_RJT.VIEW
         {
 
             Cancel();
+
+            if(DataContext != null)
+                ((VM_Processor)DataContext).Processor = null;
+                
 
         }
 
@@ -80,14 +89,62 @@ namespace PROYECTO_EV2_RJT.VIEW
         private void AddModifyProcessor_Executed(object sender, ExecutedRoutedEventArgs e)
         {
 
-            if (v_Warehouse == null)
+            if (DataContext != null) {
+
+                if (v_Warehouse == null)
+                {
+                    Utils.ErrorMessage(infoTextProcessor, "Error Interno");
+                    return;
+                }
+
+                if (!CheckInputFields()) return;
+
+                if (operation == Operation.Add) {
+
+                    
+                
+                    int i = ((VM_Processor)DataContext).AddProcessor();
+
+                    if (i == DBConstants.REGISTER_ADDED)
+                    {
+                        Utils.ErrorMessage(v_Warehouse.infoTextPhone, "Procesador Añadido");
+                        Close();
+                        return;
+                    }
+                    else if (i == DBConstants.REGISTER_NOT_ADDED)
+                    {
+                        Utils.ErrorMessage(infoTextProcessor, "Error Interno, No se ha podido añadir el procesador");
+                        return;
+                    }
+                    else if (i == DBConstants.REGISTER_FOUNDED)
+                    {
+                        Utils.ErrorMessage(infoTextProcessor, "Error Interno, El procesador ya existe");
+                        return;
+                    }
+                    else if (i == DBConstants.SQL_EXCEPTION)
+                    {
+                        Utils.ErrorMessage(infoTextProcessor, "Error Interno, Intentelo de nuevo mas tarde");
+                        return;
+                    }
+                    else
+                    {
+                        Utils.ErrorMessage(infoTextProcessor, "Error Interno, CODIGO: "+i);
+                    }
+                
+                };
+
+
+            }
+            else
             {
-                Utils.ErrorMessage(infoTextProcessor, "Error Interno");
-                return;
+                Utils.ErrorMessage(infoTextProcessor, "Error Interno, No se ha podido establecer la conexion");
             }
 
 
+
+
         }
+
 
         private void AddModifyProcessor_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {

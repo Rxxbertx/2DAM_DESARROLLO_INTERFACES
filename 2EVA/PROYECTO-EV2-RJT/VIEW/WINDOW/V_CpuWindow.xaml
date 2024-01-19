@@ -60,11 +60,11 @@
 
                     <!-- Fila 1 -->
                     <TextBlock Grid.Row="0" Text="Nombre" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
-                    <TextBox Text="{Binding Name}" Grid.Row="0" Style="{StaticResource RoundedTextBox}" x:Name="txtName" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                    <TextBox Text="{Binding Processor.Name}" Grid.Row="0" Style="{StaticResource RoundedTextBox}" x:Name="txtName" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
                     <!-- Fila 2 -->
                     <TextBlock Grid.Row="1" Text="Gpu" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                    <TextBox Text="{Binding Gpu}" Grid.Row="1" Style="{StaticResource RoundedTextBox}" x:Name="txtGpu" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                    <TextBox Text="{Binding Processor.Gpu}" Grid.Row="1" Style="{StaticResource RoundedTextBox}" x:Name="txtGpu" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
                     <!-- Fila 3 -->
                     <TextBlock Grid.Row="2" Text="Nucleos" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
@@ -77,7 +77,7 @@
 
                     <!-- Fila 5 -->
                     <TextBlock Grid.Row="4" Text="Fabricante" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                    <TextBox Text="{Binding Manufacturer}" Grid.Row="4" Style="{StaticResource RoundedTextBox}" x:Name="txtManufacturer" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                    <TextBox Text="{Binding Processor.Manufacturer}" Grid.Row="4" Style="{StaticResource RoundedTextBox}" x:Name="txtManufacturer" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
 
                     <!-- Repite el mismo patrón para los demás elementos -->

@@ -32,8 +32,8 @@ namespace practicaLoginRJT.database
         private DBConnection()
         {
             Server = "127.0.0.1";
-            Uid = "basic";
-            Password = "basic";
+            Uid = "admin";
+            Password = "dam2t";
             Database = "dbRoberto";
             Port = 3306;
         }

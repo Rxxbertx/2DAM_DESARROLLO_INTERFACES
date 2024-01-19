@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace PROYECTO_EV2_RJT.CORE
+namespace PROYECTO_EV2_RJT.CORE.UTILS
 {
     public static class Utils
     {
@@ -38,13 +38,13 @@ namespace PROYECTO_EV2_RJT.CORE
             }
             catch (TaskCanceledException)
             {
-               
-                
+
+
             }
             finally
             {
-                
-                
+
+
             }
         }
 
@@ -57,5 +57,8 @@ namespace PROYECTO_EV2_RJT.CORE
         {
             ShowMessage(textBlock, message, Brushes.Red, 5);
         }
+
+
+
     }
 }
