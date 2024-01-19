@@ -15,17 +15,17 @@ namespace PROYECTO_EV2_RJT.MODEL
     {
 
 
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
-        public string Manufacturer { get; set; }
+        public string? Manufacturer { get; set; }
 
-        public string Gpu { get; set; }
+        public string? Gpu { get; set; }
 
-        public int Cores { get; set; }
+        public int? Cores { get; set; }
 
-        public int Nanometers { get; set; }
+        public int? Nanometers { get; set; }
 
 
         public M_Processor()
@@ -61,38 +61,33 @@ namespace PROYECTO_EV2_RJT.MODEL
 
                 string query = "SELECT * FROM cpu WHERE id_cpu = @id";
 
-                using (MySqlCommand command = new(query, DBConnection.OpenConnection(db)))
+                using MySqlCommand command = new(query, DBConnection.OpenConnection(db));
+
+                command.Parameters.AddWithValue("@id", id);
+
+                using MySqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
                 {
 
-                    command.Parameters.AddWithValue("@id", id);
 
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    while (reader.Read())
                     {
 
-                        if (reader.HasRows)
-                        {
-                            
+                        Id = reader.GetInt32(0);
+                        Name = reader.GetString(1);
+                        Nanometers = reader.GetInt32(5);
+                        Gpu = reader.GetString(3);
+                        Manufacturer = reader.GetString(2);
+                        Cores = reader.GetInt32(4);
 
-                            while (reader.Read())
-                            {
-
-                                Id = reader.GetInt32(0);
-                                Name = reader.GetString(1);
-                                Nanometers = reader.GetInt32(5);
-                                Gpu = reader.GetString(3);
-                                Manufacturer = reader.GetString(2);
-                                Cores = reader.GetInt32(4);
-
-
-                            }
-
-                            return this;
-
-                        }
-                        else return null;
 
                     }
+
+                    return this;
+
                 }
+                else return null;
             }
             catch (MySqlException s)
             {
@@ -122,17 +117,15 @@ namespace PROYECTO_EV2_RJT.MODEL
 
                 string query = "SELECT COUNT(*) FROM cpu WHERE name_cpu = @name AND nanometers_cpu = @nanometers AND graphicsrender_cpu = @gpu AND manufacturer_cpu = @manufacturer";
 
-                using (MySqlCommand command = new(query, DBConnection.OpenConnection(db)))
-                {
-                    command.Parameters.AddWithValue("@name", Name);
-                    command.Parameters.AddWithValue("@nanometers", Nanometers);
-                    command.Parameters.AddWithValue("@gpu", Gpu);
-                    command.Parameters.AddWithValue("@manufacturer", Manufacturer);
+                using MySqlCommand command = new(query, DBConnection.OpenConnection(db));
+                command.Parameters.AddWithValue("@name", Name);
+                command.Parameters.AddWithValue("@nanometers", Nanometers);
+                command.Parameters.AddWithValue("@gpu", Gpu);
+                command.Parameters.AddWithValue("@manufacturer", Manufacturer);
 
-                    int count = Convert.ToInt32(command.ExecuteScalar());
+                int count = Convert.ToInt32(command.ExecuteScalar());
 
-                    return count > 0 ? DBConstants.REGISTER_FOUNDED : DBConstants.REGISTER_NOT_FOUND;
-                }
+                return count > 0 ? DBConstants.REGISTER_FOUNDED : DBConstants.REGISTER_NOT_FOUND;
             }
             catch (MySqlException s)
             {
@@ -146,7 +139,7 @@ namespace PROYECTO_EV2_RJT.MODEL
         }
 
 
-        public int AddProcessor()
+        public int Add()
         {
             DBConnection db = DBConnection.DBInit();
 
@@ -161,21 +154,18 @@ namespace PROYECTO_EV2_RJT.MODEL
 
                     string query = "INSERT INTO cpu (name_cpu, nanometers_cpu, graphicsrender_cpu, manufacturer_cpu, cores_cpu) VALUES (@name, @nanometers, @gpu, @manufacturer, @cores)";
 
-                    using (MySqlCommand command = new(query, DBConnection.OpenConnection(db)))
+                    using MySqlCommand command = new(query, DBConnection.OpenConnection(db));
+                    command.Parameters.AddWithValue("@name", Name);
+                    command.Parameters.AddWithValue("@nanometers", Nanometers);
+                    command.Parameters.AddWithValue("@gpu", Gpu);
+                    command.Parameters.AddWithValue("@manufacturer", Manufacturer);
+                    command.Parameters.AddWithValue("@cores", Cores);
+
+                    if (command.ExecuteNonQuery() > 0)
                     {
-                        command.Parameters.AddWithValue("@name", Name);
-                        command.Parameters.AddWithValue("@nanometers", Nanometers);
-                        command.Parameters.AddWithValue("@gpu", Gpu);
-                        command.Parameters.AddWithValue("@manufacturer", Manufacturer);
-                        command.Parameters.AddWithValue("@cores", Cores);
-
-                        if (command.ExecuteNonQuery() > 0)
-                        {
-                           return DBConstants.REGISTER_ADDED;
-                        }
-                        return DBConstants.SQL_EXCEPTION;
-
+                        return DBConstants.REGISTER_ADDED;
                     }
+                    return DBConstants.SQL_EXCEPTION;
                 }
                 catch (MySqlException s)
                 {
@@ -187,79 +177,61 @@ namespace PROYECTO_EV2_RJT.MODEL
                 }
 
 
-            }else
+            }
+            else
                 return i;
         }
 
         #endregion CRUD
 
 
+        public override string ToString()
+        {
+            return this.Name + " Gpu: " + this.Gpu + " Nanometros: " + this.Nanometers + "nm Nucleos: " + this.Cores + " Fabricante: " + this.Manufacturer;
+        }
     }
-
     public class M_ProcessorsCollection : ObservableCollection<M_Processor>
     {
-
-
-
-
         public void AddProcessor(M_Processor processor)
         {
-
-
             this.Add(processor);
-
         }
-
         public void RemoveProcessor(M_Processor processor)
         {
-
             this.Remove(processor);
-
         }
-
         public void LoadProcessors()
         {
-
             DBConnection db = DBConnection.DBInit();
-
-
             try
             {
-
                 DBConnection.OpenConnection(db);
-
                 string query = "SELECT * FROM cpu";
 
-                using (MySqlCommand command = new(query, DBConnection.OpenConnection(db)))
+                using MySqlCommand command = new(query, DBConnection.OpenConnection(db));
+
+                using MySqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
                 {
 
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    while (reader.Read())
                     {
 
-                        if (reader.HasRows)
+                        M_Processor processor = new()
                         {
-
-                            while (reader.Read())
-                            {
-
-                                M_Processor processor = new M_Processor();
-
-                                processor.Id = reader.GetInt32(M_ProcessorsStatics.ID);
-                                processor.Name = reader.GetString(M_ProcessorsStatics.NAME);
-                                processor.Nanometers = reader.GetInt32(M_ProcessorsStatics.NANOMETERS);
-                                processor.Gpu = reader.GetString(M_ProcessorsStatics.GPU);
-                                processor.Manufacturer = reader.GetString(M_ProcessorsStatics.MANUFACTURER);
-                                processor.Cores = reader.GetInt32(M_ProcessorsStatics.CORES);
+                            Id = reader.GetInt32(ProcessorsStatics.ID),
+                            Name = reader.GetString(ProcessorsStatics.NAME),
+                            Nanometers = reader.GetInt32(ProcessorsStatics.NANOMETERS),
+                            Gpu = reader.GetString(ProcessorsStatics.GPU),
+                            Manufacturer = reader.GetString(ProcessorsStatics.MANUFACTURER),
+                            Cores = reader.GetInt32(ProcessorsStatics.CORES)
+                        };
 
 
-                                this.Add(processor);
-
-                            }
-
-                        }
+                        this.Add(processor);
 
                     }
-
 
                 }
 

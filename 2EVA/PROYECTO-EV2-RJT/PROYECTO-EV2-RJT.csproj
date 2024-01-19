@@ -81,7 +81,7 @@
     <Compile Update="VIEW\WINDOW\V_PhoneStorageWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="VIEW\WINDOW\V_CpuWindow.xaml.cs">
+    <Compile Update="VIEW\WINDOW\V_ProcessorWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="VIEW\WINDOW\V_StorageWindow.xaml.cs">

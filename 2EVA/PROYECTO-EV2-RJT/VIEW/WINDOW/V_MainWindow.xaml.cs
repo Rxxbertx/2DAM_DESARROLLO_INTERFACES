@@ -1,14 +1,8 @@
-﻿using PROYECTO_EV2_RJT.VIEW;
-using System.Text;
+﻿using PROYECTO_EV2_RJT.CORE.UTILS;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PROYECTO_EV2_RJT.VIEW
 {
@@ -17,10 +11,14 @@ namespace PROYECTO_EV2_RJT.VIEW
     /// </summary>
     public partial class V_MainWindow : Window
     {
+
+        Page page = new();
+
         public V_MainWindow()
         {
+            
             InitializeComponent();
-            mainFrame.NavigationService.Navigate(new V_Home { parentWindow = this});
+            mainFrame.NavigationService.Navigate(new V_Home { parentWindow = this });
             Focus();
         }
 
@@ -42,11 +40,12 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void Home_Click(object sender, MouseButtonEventArgs e)
         {
-            
+
             if (mainFrame.NavigationService.Content is V_Home)
             {
                 return;
             }
+
             mainFrame.NavigationService.Navigate(new V_Home { parentWindow = this });
             clearSelection();
         }
@@ -59,24 +58,33 @@ namespace PROYECTO_EV2_RJT.VIEW
             V_Warehouse wh = new();
             wh.SetOwner(this);
 
+            page = (Page)mainFrame.NavigationService.Content;
+
             if (element.Equals(warehouse))
             {
+
                 mainFrame.NavigationService.Navigate(wh);
-                wh.Focus();
+
             }
             else if (element.Equals(informs))
             {
+
                 mainFrame.NavigationService.Navigate(new V_Informs());
+
             }
             else if (element.Equals(help))
             {
                 mainFrame.NavigationService.Navigate(new V_Help());
+
+
+
             }
             else if (element.Equals(w_brands))
             {
                 wh.brandTab.IsSelected = true;
+
                 mainFrame.NavigationService.Navigate(wh);
-                wh.Focus();
+
             }
             else if (element.Equals(w_phones))
             {
@@ -97,6 +105,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void Exit_Checked(object sender, RoutedEventArgs e)
         {
+
             mainFrame.NavigationService.Navigate(new V_Exit());
         }
 
@@ -112,6 +121,10 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void mainFrame_Navigated(object sender, NavigationEventArgs e)
         {
+            
+            PageNavigationUtils.NavigateWithFadeOut(page, (Page)e.Content);
+            
+            
 
             if (e.Content is V_Home)
             {
@@ -136,7 +149,8 @@ namespace PROYECTO_EV2_RJT.VIEW
                 else if (wh.processorTab.IsSelected)
                 {
                     w_processors.IsChecked = true;
-                }else
+                }
+                else
                 {
                     warehouse.IsChecked = true;
                 }
@@ -154,13 +168,13 @@ namespace PROYECTO_EV2_RJT.VIEW
                 exit.IsChecked = true;
             }
 
-             
+
 
         }
 
         private void clearSelection()
         {
-            
+
             warehouse.IsChecked = false;
             informs.IsChecked = false;
             help.IsChecked = false;

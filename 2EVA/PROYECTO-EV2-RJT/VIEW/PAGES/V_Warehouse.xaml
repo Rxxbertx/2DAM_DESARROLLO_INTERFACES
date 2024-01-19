@@ -370,9 +370,9 @@
                   GridLinesVisibility="None">
                             <DataGrid.Columns>
 
-                                <DataGridTextColumn Header="Nombre" Binding="{Binding Name}" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Nucleos" Binding="{Binding Cores}" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Gpu" Binding="{Binding Gpu}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Nombre" Binding="{Binding Name}" IsReadOnly="True" Width="auto"/>
+                                <DataGridTextColumn Header="Nucleos" Binding="{Binding Cores}" IsReadOnly="True" />
+                                <DataGridTextColumn Header="Gpu" Binding="{Binding Gpu}" IsReadOnly="True" Width="auto"/>
                                 <DataGridTextColumn Header="Nanometros" Binding="{Binding Nanometers}" IsReadOnly="True" />
                                 <DataGridTextColumn Header="Marca" Binding="{Binding Manufacturer}" IsReadOnly="True"/>
 

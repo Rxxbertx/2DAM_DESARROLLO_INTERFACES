@@ -2,20 +2,11 @@
 using PROYECTO_EV2_RJT.CORE.ENUMS;
 using PROYECTO_EV2_RJT.CORE.UTILS;
 using PROYECTO_EV2_RJT.MODEL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace PROYECTO_EV2_RJT.VIEW
 {
@@ -26,8 +17,8 @@ namespace PROYECTO_EV2_RJT.VIEW
     {
         private readonly V_Warehouse? v_Warehouse;
         private readonly Operation operation;
-        private Phone? phone;
-        private ExitCommand ExitCommand => new ExitCommand(Cancel, Key.Escape);
+        private readonly Phone? phone;
+        private ExitCommand ExitCommand => new(Cancel, Key.Escape);
 
         public V_PhoneWindow()
         {
@@ -49,12 +40,12 @@ namespace PROYECTO_EV2_RJT.VIEW
             if (operation == Operation.Add)
             {
                 btnAddOrModify.Content = "Añadir";
-                Title.Text = "Añadir "+Title.Text;
+                TitlePhone.Text = "Añadir " + TitlePhone.Text;
             }
             if (operation == Operation.Modify)
             {
                 btnAddOrModify.Content = "Modificar";
-                Title.Text = "Modificar " + Title.Text;
+                TitlePhone.Text = "Modificar " + TitlePhone.Text;
             }
 
         }
@@ -69,26 +60,26 @@ namespace PROYECTO_EV2_RJT.VIEW
 
             this.v_Warehouse = v_Warehouse;
             this.operation = operation;
-            this.phone=phone;
+            this.phone = phone;
             Owner = Window.GetWindow(v_Warehouse);
             Owner.Effect = new BlurEffect();
 
             if (operation == Operation.Add)
             {
                 btnAddOrModify.Content = "Añadir";
-                Title.Text = "Añadir " + Title.Text;
+                TitlePhone.Text = "Añadir " + TitlePhone.Text;
             }
             if (operation == Operation.Modify)
             {
                 btnAddOrModify.Content = "Modificar";
-                Title.Text = "Modificar " + Title.Text;
+                TitlePhone.Text = "Modificar " + TitlePhone.Text;
             }
 
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
-            
+
             Cancel();
 
         }
@@ -121,24 +112,26 @@ namespace PROYECTO_EV2_RJT.VIEW
         {
 
 
-                if ( 
-                    string.IsNullOrEmpty(txtModel.Text) || 
-                    string.IsNullOrEmpty(txtBattery.Text) || 
-                    string.IsNullOrEmpty(txtOS.Text) || 
-                    string.IsNullOrEmpty(txtRam.Text)||
-                    string.IsNullOrEmpty(txtScreen.Text)||
-                    cbxProcessor.SelectedIndex == -1||
-                    cbxBrand.SelectedIndex == -1 ||
-                    cbxStorage.SelectedIndex == -1)
+            if (
+                string.IsNullOrEmpty(txtModel.Text) ||
+                string.IsNullOrEmpty(txtBattery.Text) ||
+                string.IsNullOrEmpty(txtOS.Text) ||
+                string.IsNullOrEmpty(txtRam.Text) ||
+                string.IsNullOrEmpty(txtScreen.Text) ||
+                cbxProcessor.SelectedIndex == -1 ||
+                cbxBrand.SelectedIndex == -1 ||
+                cbxStorage.SelectedIndex == -1)
 
-                {
-                    e.CanExecute = false;
-                    return;
-                }
-                e.CanExecute = true;
+            {
+                e.CanExecute = false;
                 return;
+            }
+            e.CanExecute = true;
+            return;
 
 
         }
     }
+
+
 }

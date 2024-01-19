@@ -1,25 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
 namespace PROYECTO_EV2_RJT.CORE.COMMANDS
 {
-    public class ExitCommand : ICommand
+    public class ExitCommand(Action accion, Key tecla, ModifierKeys modificadores = ModifierKeys.None) : ICommand
     {
-        private Action _accion;
+        private readonly Action _accion = accion;
 
-        public Key Tecla { get; private set; }
-        public ModifierKeys Modificadores { get; private set; }
+        public event EventHandler? CanExecuteChanged;
 
-        public ExitCommand(Action accion, Key tecla, ModifierKeys modificadores = ModifierKeys.None)
-        {
-            _accion = accion;
-            Tecla = tecla;
-            Modificadores = modificadores;
-        }
+        public Key Tecla { get; private set; } = tecla;
+        public ModifierKeys Modificadores { get; private set; } = modificadores;
 
         public bool CanExecute(object? parameter)
         {
@@ -31,7 +21,7 @@ namespace PROYECTO_EV2_RJT.CORE.COMMANDS
             _accion?.Invoke();
         }
 
-        public event EventHandler? CanExecuteChanged;
+
 
         public InputGesture InputGesture => new KeyGesture(Tecla, Modificadores);
     }

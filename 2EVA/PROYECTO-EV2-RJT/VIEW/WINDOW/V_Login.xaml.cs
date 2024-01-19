@@ -1,16 +1,8 @@
 ﻿using PROYECTO_EV2_RJT.CORE.COMMANDS;
-using PROYECTO_EV2_RJT.CORE.CONSTANTS;
 using PROYECTO_EV2_RJT.VIEWMODEL;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PROYECTO_EV2_RJT.VIEW
 {
@@ -27,8 +19,8 @@ namespace PROYECTO_EV2_RJT.VIEW
             InitializeComponent();
             InputBindings.Add(new InputBinding(exitCommand, exitCommand.InputGesture));
             DataContext = vM_LoginUser;
-           
-           
+
+
         }
 
         private void Control_Click(object sender, RoutedEventArgs e)

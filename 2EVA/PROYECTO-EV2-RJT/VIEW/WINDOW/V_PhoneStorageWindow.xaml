@@ -30,7 +30,7 @@
         <WrapPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
 
             
-            <TextBlock x:Name="Title"  Margin="10,0,10,10" Text="Capacidad Telefono" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Bahnschrift"/>
+            <TextBlock x:Name="TitleStoragePhone"  Margin="10,0,10,10" Text="Capacidad Telefono" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Bahnschrift"/>
 
             <Border Background="Gray" CornerRadius="20" Padding="10" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid VerticalAlignment="Center">

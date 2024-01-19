@@ -11,8 +11,8 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        private string username ="";
-        private string password="";
+        private string username = "";
+        private string password = "";
         public string LoginResult = "";
 
         public string Username
@@ -46,7 +46,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
 
             int state = User.AuthenticateUser(username, password);
 
-            
+
             ShowMessage(state);
 
             if (state == LoginConstants.SUCCESS)
@@ -54,7 +54,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 V_MainWindow mainWindow = new();
                 mainWindow.Show();
                 Application.Current.MainWindow.Close();
-                
+
             }
 
             init();

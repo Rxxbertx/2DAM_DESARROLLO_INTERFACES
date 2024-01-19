@@ -48,7 +48,7 @@
     <Page Update="VIEW\WINDOW\V_PhoneStorageWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VIEW\WINDOW\V_CpuWindow.xaml">
+    <Page Update="VIEW\WINDOW\V_ProcessorWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="VIEW\WINDOW\V_StorageWindow.xaml">

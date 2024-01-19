@@ -1,21 +1,9 @@
 ﻿using PROYECTO_EV2_RJT.CORE.COMMANDS;
 using PROYECTO_EV2_RJT.CORE.ENUMS;
 using PROYECTO_EV2_RJT.CORE.UTILS;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Channels;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Effects;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace PROYECTO_EV2_RJT.VIEW
 {
@@ -24,7 +12,7 @@ namespace PROYECTO_EV2_RJT.VIEW
     /// </summary>
     public partial class V_StorageWindow : Window
     {
-        private ExitCommand ExitCommand => new ExitCommand(Cancel, Key.Escape);
+        private ExitCommand ExitCommand => new(Cancel, Key.Escape);
         private readonly V_Warehouse? v_Warehouse;
         private readonly Operation operation;
 
@@ -47,12 +35,12 @@ namespace PROYECTO_EV2_RJT.VIEW
             if (operation == Operation.Add)
             {
                 BtnAddOrModify.Content = "Añadir";
-                Title.Text = "Añadir " + Title.Text;
+                TitleStorage.Text = "Añadir " + TitleStorage.Text;
             }
             if (operation == Operation.Modify)
             {
                 BtnAddOrModify.Content = "Modificar";
-                Title.Text = "Modificar " + Title.Text;
+                TitleStorage.Text = "Modificar " + TitleStorage.Text;
             }
 
         }
@@ -95,12 +83,12 @@ namespace PROYECTO_EV2_RJT.VIEW
             if (string.IsNullOrEmpty(txtStorage.Text))
 
             {
-              e.CanExecute = false;
+                e.CanExecute = false;
 
             }
             else { e.CanExecute = true; }
-            
-            
+
+
 
 
         }

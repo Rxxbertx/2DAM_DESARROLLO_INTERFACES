@@ -124,8 +124,8 @@ namespace PROYECTO_EV2_RJT.MODEL
             }
 
 
-            if(GetInstance().SpecialRole)DBConnection.DBInit().ModifyConnection().Commit();
-            
+            if (GetInstance().SpecialRole) DBConnection.DBInit().ModifyConnection().Commit();
+
 
         }
 

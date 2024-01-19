@@ -1,6 +1,6 @@
-﻿using PROYECTO_EV2_RJT.CORE.ENUMS;
+﻿using PROYECTO_EV2_RJT.CORE.CONSTANTS;
+using PROYECTO_EV2_RJT.CORE.ENUMS;
 using PROYECTO_EV2_RJT.CORE.UTILS;
-using PROYECTO_EV2_RJT.MODEL;
 using PROYECTO_EV2_RJT.VIEWMODEL;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,15 +15,15 @@ namespace PROYECTO_EV2_RJT.VIEW
     {
 
         V_MainWindow? parent = null;
-        VM_Processor vm_processor = new();
+        private readonly VM_Processor vm_processor = new();
 
         public V_Warehouse()
         {
             InitializeComponent();
 
-            
-            
-            
+
+
+
 
         }
 
@@ -37,8 +37,9 @@ namespace PROYECTO_EV2_RJT.VIEW
                 if (tabControl.SelectedItem is TabItem tabItem)
                 {
 
-                       
-                    if(parent != null) { 
+
+                    if (parent != null)
+                    {
 
 
                         switch (tabItem.Name)
@@ -87,14 +88,14 @@ namespace PROYECTO_EV2_RJT.VIEW
                         }
                     }
                 }
-                }
             }
+        }
 
 
         public void SetOwner(V_MainWindow v_MainWindow)
         {
-           
-           parent = v_MainWindow;
+
+            parent = v_MainWindow;
         }
 
         #region Commands
@@ -104,13 +105,13 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void AddPhone_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_PhoneWindow(this,CORE.ENUMS.Operation.Add));
+            LoadWindow(new V_PhoneWindow(this, CORE.ENUMS.Operation.Add));
         }
 
         private void AddPhone_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
 
-            if (tabControl.SelectedItem==phoneTab)
+            if (tabControl.SelectedItem == phoneTab)
             {
                 e.CanExecute = true; System.Diagnostics.Debug.WriteLine("CanExecuteppppp");
             }
@@ -124,7 +125,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void ModifyPhone_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_PhoneWindow(this, CORE.ENUMS.Operation.Modify,null));
+            LoadWindow(new V_PhoneWindow(this, CORE.ENUMS.Operation.Modify));
 
         }
 
@@ -150,7 +151,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
             if (result == MessageBoxResult.Yes)
             {
-                Utils.SuccessMessage(infoTextPhone,"Movil eliminado correctamente");
+                Utils.SuccessMessage(infoTextPhone, "Movil eliminado correctamente");
             }
 
         }
@@ -172,7 +173,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void AddStorage_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_StorageWindow(this,Operation.Add));
+            LoadWindow(new V_StorageWindow(this, Operation.Add));
         }
 
         private void AddStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
@@ -189,12 +190,12 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void ModifyStorage_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_StorageWindow(this,Operation.Modify));
+            LoadWindow(new V_StorageWindow(this, Operation.Modify));
         }
 
         private void ModifyStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
-            
+
             if (storageTab.IsSelected && StoragesGrid.SelectedItem != null)
             {
                 e.CanExecute = true;
@@ -211,7 +212,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void DeleteStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
-            
+
             if (storageTab.IsSelected && StoragesGrid.SelectedItem != null)
             {
                 e.CanExecute = true;
@@ -227,17 +228,18 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void AddBrand_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_BrandWindow(this,Operation.Add));
+            LoadWindow(new V_BrandWindow(this, Operation.Add));
         }
 
         private void AddBrand_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
-           
+
             if (brandTab.IsSelected)
             {
                 e.CanExecute = true;
-                
-            }else
+
+            }
+            else
             {
                 e.CanExecute = false;
             }
@@ -245,12 +247,12 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void ModifyBrand_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_BrandWindow(this,Operation.Modify));
+            LoadWindow(new V_BrandWindow(this, Operation.Modify));
         }
 
         private void ModifyBrand_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
-            
+
             if (brandTab.IsSelected && BrandsGrid.SelectedItem != null)
             {
                 e.CanExecute = true;
@@ -263,12 +265,12 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void DeleteBrand_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            
+
         }
 
         private void DeleteBrand_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
-            
+
             if (brandTab.IsSelected && BrandsGrid.SelectedItem != null)
             {
                 e.CanExecute = true;
@@ -283,12 +285,12 @@ namespace PROYECTO_EV2_RJT.VIEW
         #region Processor
         private void AddProcessor_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_CpuWindow(this,Operation.Add));
+            LoadWindow(new V_ProcessorWindow(this, Operation.Add) { ViewModel = vm_processor });
         }
 
         private void AddProcessor_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
-            
+
             if (processorTab.IsSelected)
             {
                 e.CanExecute = true;
@@ -301,12 +303,12 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void ModifyProcessor_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_CpuWindow(this,Operation.Modify));
+            LoadWindow(new V_ProcessorWindow(this, Operation.Modify));
         }
 
         private void ModifyProcessor_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
-            
+
             if (processorTab.IsSelected && ProcessorsGrid.SelectedItem != null)
             {
                 e.CanExecute = true;
@@ -321,12 +323,12 @@ namespace PROYECTO_EV2_RJT.VIEW
         {
 
 
-            
+
         }
 
         private void DeleteProcessor_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
-            
+
             if (processorTab.IsSelected && ProcessorsGrid.SelectedItem != null)
             {
                 e.CanExecute = true;
@@ -342,12 +344,12 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void AddPhoneStorage_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_PhoneStorageWindow(this,Operation.Add));
+            LoadWindow(new V_PhoneStorageWindow(this, Operation.Add));
         }
 
         private void AddPhoneStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
-            
+
             if (storageTab.IsSelected)
             {
                 e.CanExecute = true;
@@ -360,12 +362,12 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void ModifyPhoneStorage_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_PhoneStorageWindow(this,Operation.Modify));
+            LoadWindow(new V_PhoneStorageWindow(this, Operation.Modify));
         }
 
         private void ModifyPhoneStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
-            
+
             if (storageTab.IsSelected && PhonesStoragesGrid.SelectedItem != null)
             {
                 e.CanExecute = true;
@@ -378,13 +380,13 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void DeletePhoneStorage_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            
-           
+
+
         }
 
         private void DeletePhoneStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
-            
+
             if (storageTab.IsSelected && PhonesStoragesGrid.SelectedItem != null)
             {
                 e.CanExecute = true;
@@ -401,12 +403,18 @@ namespace PROYECTO_EV2_RJT.VIEW
 
 
 
-        private void LoadWindow(Window window)
+        private  void LoadWindow(Window window)
         {
 
             window.Owner = Window.GetWindow(this);
             window.DataContext = this.DataContext;
-            window.ShowDialog();
+            window.Opacity = 0;
+            _=WindowAnimationUtils.FadeIn(window, 0.5);
+            window.Show();
+            
+            
+
+
 
 
         }

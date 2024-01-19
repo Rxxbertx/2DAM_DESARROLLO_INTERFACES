@@ -1,6 +1,5 @@
 ﻿using MySqlConnector;
 using PROYECTO_EV2_RJT.MODEL;
-using System;
 using System.Windows;
 
 namespace practicaLoginRJT.database
@@ -16,7 +15,7 @@ namespace practicaLoginRJT.database
         private string? database;
         private string? uid;
         private string? password;
-        private uint? port;
+        private uint port;
 
         // Instancia única de DBConnection (patrón Singleton)
         private static DBConnection? instance;
@@ -26,7 +25,7 @@ namespace practicaLoginRJT.database
         public string? Database { get => database; set => database = value; }
         public string? Uid { get => uid; set => uid = value; }
         public string? Password { set => password = value; }
-        public uint? Port { get => port; set => port = value; }
+        public uint Port { get => port; set => port = value; }
 
         // Constructor privado para aplicar el patrón Singleton y establecer valores predeterminados
         private DBConnection()
@@ -51,7 +50,7 @@ namespace practicaLoginRJT.database
         {
             if (builder != null) return builder;
 
-            builder = new MySqlConnectionStringBuilder();
+            builder = [];
             return builder;
         }
 
@@ -66,7 +65,8 @@ namespace practicaLoginRJT.database
             builder.UserID = Uid;
             builder.Password = password;
             builder.Database = Database;
-            builder.Port = (uint)Port;
+            builder.Port = Port;
+
 
             connection = new MySqlConnection(builder.ConnectionString);
             return connection;
@@ -79,13 +79,13 @@ namespace practicaLoginRJT.database
 
             if (connection == null)
             {
-                
+
                 return null;
             }
 
             if (connection.State == System.Data.ConnectionState.Open)
             {
-               
+
                 return connection;
             }
 
