@@ -1,6 +1,7 @@
 ﻿using PROYECTO_EV2_RJT.CORE.CONSTANTS;
 using PROYECTO_EV2_RJT.CORE.ENUMS;
 using PROYECTO_EV2_RJT.CORE.UTILS;
+using PROYECTO_EV2_RJT.MODEL;
 using PROYECTO_EV2_RJT.VIEWMODEL;
 using System.Windows;
 using System.Windows.Controls;
@@ -303,7 +304,15 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void ModifyProcessor_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_ProcessorWindow(this, Operation.Modify));
+
+            if ( ProcessorsGrid.SelectedItem is M_Processor processor)
+            {
+
+                LoadWindow(new V_ProcessorWindow(this, Operation.Modify, processor.Id) { ViewModel = vm_processor });
+            }
+
+
+            
         }
 
         private void ModifyProcessor_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
@@ -322,7 +331,11 @@ namespace PROYECTO_EV2_RJT.VIEW
         private void DeleteProcessor_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
 
-
+            if (ProcessorsGrid.SelectedItem is M_Processor processor)
+            {
+               
+                LoadWindow(new V_ProcessorWindow(this, Operation.Delete, processor.Id) { ViewModel = vm_processor });
+            }
 
         }
 
@@ -409,7 +422,7 @@ namespace PROYECTO_EV2_RJT.VIEW
             window.Owner = Window.GetWindow(this);
             window.DataContext = this.DataContext;
             window.Opacity = 0;
-            _=WindowAnimationUtils.FadeIn(window, 0.5);
+            WindowAnimationUtils.FadeIn(window);
             window.Show();
             
             

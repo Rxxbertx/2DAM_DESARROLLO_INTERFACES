@@ -42,11 +42,20 @@
 
             <!--#region-->
 
-            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
-                <Button  Click="Control_Click" x:Name="minimize" Style="{StaticResource RoundedMinimizeButton}" Margin="3"/>
-                <Button Click="Control_Click" x:Name="maximize" Style="{StaticResource RoundedMaximizeButton}" Margin="3"/>
-                <Button Command="local:Commands.Exit" Style="{StaticResource RoundedExitButton}" Margin="3"/>
-            </StackPanel>
+            <Grid MouseLeftButtonDown="DragMoveWindow" DockPanel.Dock="Top" Margin="0,-10,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="Transparent">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="PROYECTO EV2 RJT" FontSize="20" Foreground="DimGray" Margin="60,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Button Grid.Column="1" Click="Control_Click" HorizontalAlignment="Right" x:Name="minimize" Style="{StaticResource RoundedMinimizeButton}" Margin="3"/>
+                <Button Grid.Column="2" Click="Control_Click" HorizontalAlignment="Right" x:Name="maximize" Style="{StaticResource RoundedMaximizeButton}" Margin="3"/>
+                <Button Grid.Column="3" Command="local:Commands.Exit" HorizontalAlignment="Right" Style="{StaticResource RoundedExitButton}" Margin="3"/>
+            </Grid>
 
             <!--#endregion-->
 

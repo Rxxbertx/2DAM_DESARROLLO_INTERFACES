@@ -1,4 +1,5 @@
 ﻿using PROYECTO_EV2_RJT.CORE.CONSTANTS;
+using PROYECTO_EV2_RJT.CORE.UTILS;
 using PROYECTO_EV2_RJT.MODEL;
 using PROYECTO_EV2_RJT.VIEW;
 using System.ComponentModel;
@@ -52,8 +53,11 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             if (state == LoginConstants.SUCCESS)
             {
                 V_MainWindow mainWindow = new();
+                mainWindow.Opacity = 0;
+                WindowAnimationUtils.FadeIn(mainWindow);
                 mainWindow.Show();
-                Application.Current.MainWindow.Close();
+                _=WindowAnimationUtils.FadeOutAndClose(Application.Current.MainWindow);
+                
 
             }
 

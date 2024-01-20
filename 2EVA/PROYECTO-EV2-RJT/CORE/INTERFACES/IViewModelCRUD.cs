@@ -4,10 +4,10 @@
     {
 
 
-        public int Add();
-        public int Modify();
-        public int Delete();
-        public int Find();
+        public bool Add();
+        public bool Modify(int i);
+        public bool Delete(int i);
+        public bool Find();
 
 
     }

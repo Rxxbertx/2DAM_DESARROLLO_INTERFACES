@@ -103,6 +103,8 @@ namespace PROYECTO_EV2_RJT.VIEW
             }
         }
 
+        #region Exit
+
         private void Exit_Checked(object sender, RoutedEventArgs e)
         {
 
@@ -118,6 +120,8 @@ namespace PROYECTO_EV2_RJT.VIEW
         {
             e.CanExecute = true;
         }
+
+        #endregion
 
         private void mainFrame_Navigated(object sender, NavigationEventArgs e)
         {
@@ -183,6 +187,15 @@ namespace PROYECTO_EV2_RJT.VIEW
             w_phones.IsChecked = false;
             w_storages.IsChecked = false;
             w_processors.IsChecked = false;
+        }
+
+        private void DragMoveWindow(object sender, MouseButtonEventArgs e)
+        {
+
+            
+                DragMove();
+            
+
         }
     }
 }

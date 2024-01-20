@@ -65,13 +65,13 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
 
     public static class WindowAnimationUtils
     {
-        public static async Task FadeIn(Window window, double durationInSeconds)
+        public static void FadeIn(Window window)
         {
-            DoubleAnimation opacityAnimation = new DoubleAnimation
+            DoubleAnimation opacityAnimation = new()
             {
                 From = 0.0,
                 To = 1.0,
-                Duration = TimeSpan.FromSeconds(durationInSeconds)
+                Duration = AnimationConstants.FadeInDuration
             };
 
             Storyboard storyboard = new Storyboard();
@@ -83,13 +83,13 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
             storyboard.Begin();
         }
 
-        public static async Task FadeOut(Window window, double durationInSeconds)
+        public static async Task FadeOutAndClose(Window window)
         {
-            DoubleAnimation opacityAnimation = new DoubleAnimation
+            DoubleAnimation opacityAnimation = new()
             {
                 From = 1.0,
                 To = 0.0,
-                Duration = TimeSpan.FromSeconds(durationInSeconds)
+                Duration = AnimationConstants.FadeOutDuration
             };
 
             Storyboard storyboard = new Storyboard();
@@ -101,7 +101,9 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
             storyboard.Begin();
 
             // Espera a que la animación se complete antes de continuar
-            await Task.Delay(TimeSpan.FromSeconds(durationInSeconds));
+            await Task.Delay(AnimationConstants.FadeOutDuration);
+
+            window.Close();
         }
 
     }
@@ -115,7 +117,7 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
                 return;
             }
             // Create a DoubleAnimation to fade out the current page
-            DoubleAnimation fadeOutAnimation = new DoubleAnimation
+            DoubleAnimation fadeOutAnimation = new()
             {
                 From = 1.0,
                 To = 0.0,
@@ -123,7 +125,7 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
             };
 
             // Create a Storyboard and add the fade out animation
-            Storyboard storyboard = new Storyboard();
+            Storyboard storyboard = new();
             storyboard.Children.Add(fadeOutAnimation);
 
             // Set the target of the fade out animation to the current page
@@ -139,15 +141,15 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
          
 
             // Create a DoubleAnimation to fade in the next page
-            DoubleAnimation fadeInAnimation = new DoubleAnimation
+            DoubleAnimation fadeInAnimation = new()
             {
                 From = 0.0,
                 To = 1.0,
-                Duration = AnimationConstants.FadeOutDuration
+                Duration = AnimationConstants.FadeInDuration
             };
 
             // Create a Storyboard and add the fade in animation
-            storyboard = new Storyboard();
+            storyboard = new();
             storyboard.Children.Add(fadeInAnimation);
 
             // Set the target of the fade in animation to the next page
@@ -157,5 +159,69 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
             // Start the fade in animation
             storyboard.Begin();
         }
+    }
+
+    public static class  DBUtils
+    {
+        public static void CheckStatusOperation(Action<string, string> errorAction, Action<string, string> successAction, Action<string, string> infoAction, int result, string name)
+        {
+            if (result == DBConstants.REGISTER_NOT_UPDATED)
+            {
+
+                errorAction?.Invoke("Error Interno", $"No se ha podido actualizar el {name}");
+            }
+            else if (result == DBConstants.REGISTER_UPDATED)
+            {
+
+                successAction?.Invoke("Info", $"{name} Actualizado");
+            }
+
+
+            else if (result == DBConstants.REGISTER_ADDED)
+            {
+
+                successAction?.Invoke("Info", $"{name} Añadido");
+            }
+            else if (result == DBConstants.REGISTER_NOT_ADDED)
+            {
+
+                errorAction?.Invoke("Error Interno", $"No se ha podido añadir el {name}");
+            }
+
+            else if (result == DBConstants.REGISTER_FOUNDED)
+            {
+                infoAction?.Invoke("Error Interno", $"El {name} ya existe");
+
+            }
+            else if (result == DBConstants.REGISTER_NOT_FOUND)
+            {
+                errorAction?.Invoke("Error Interno", $"El {name} no existe");
+            }
+
+            else if (result == DBConstants.SQL_EXCEPTION)
+            {
+
+                errorAction?.Invoke("Error Interno", "Intentalo de nuevo mas tarde");
+
+            }
+            else if (result == DBConstants.REGISTER_NOT_DELETED)
+            {
+                errorAction?.Invoke("Error Interno", $"No se ha podido eliminar el {name}");
+            }
+            else if (result == DBConstants.REGISTER_DELETED)
+            {
+                successAction?.Invoke("Info", $"{name} Eliminado");
+            }
+            else
+            {
+                errorAction?.Invoke("Error Interno", "Revisa el codigo de error: SQL: " + result);
+            }
+
+
+
+
+        }
+
+
     }
 }

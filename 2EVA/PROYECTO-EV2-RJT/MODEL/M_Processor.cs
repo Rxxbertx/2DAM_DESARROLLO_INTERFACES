@@ -15,21 +15,23 @@ namespace PROYECTO_EV2_RJT.MODEL
     {
 
 
-        public int? Id { get; set; }
+        public int Id { get; set; }
 
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
-        public string? Manufacturer { get; set; }
+        public string Manufacturer { get; set; }
 
-        public string? Gpu { get; set; }
+        public string Gpu { get; set; }
 
-        public int? Cores { get; set; }
+        public int Cores { get; set; }
 
-        public int? Nanometers { get; set; }
+        public int Nanometers { get; set; }
 
 
         public M_Processor()
         {
+
+
 
         }
 
@@ -49,10 +51,12 @@ namespace PROYECTO_EV2_RJT.MODEL
 
         #region CRUD
 
-        public M_Processor? findCpu(int id)
+        public M_Processor? FindCpu(int id)
         {
 
             DBConnection db = DBConnection.DBInit();
+
+
 
             try
             {
@@ -74,12 +78,12 @@ namespace PROYECTO_EV2_RJT.MODEL
                     while (reader.Read())
                     {
 
-                        Id = reader.GetInt32(0);
-                        Name = reader.GetString(1);
-                        Nanometers = reader.GetInt32(5);
-                        Gpu = reader.GetString(3);
-                        Manufacturer = reader.GetString(2);
-                        Cores = reader.GetInt32(4);
+                        Id = reader.GetInt32(ProcessorsStatics.ID);
+                        Name = reader.GetString(ProcessorsStatics.NAME);
+                        Nanometers = reader.GetInt32(ProcessorsStatics.NANOMETERS);
+                        Gpu = reader.GetString(ProcessorsStatics.GPU);
+                        Manufacturer = reader.GetString(ProcessorsStatics.MANUFACTURER);
+                        Cores = reader.GetInt32(ProcessorsStatics.CORES);
 
 
                     }
@@ -107,6 +111,103 @@ namespace PROYECTO_EV2_RJT.MODEL
 
         }
 
+
+        public int ModifyProcessor()
+        {
+
+            DBConnection db = DBConnection.DBInit();
+
+            int i = CheckIfProcessorExists();
+
+            if (i == DBConstants.REGISTER_NOT_FOUND)
+            {
+
+
+                try
+                {
+
+                    DBConnection.OpenConnection(db);
+
+                    string query = "UPDATE cpu SET name_cpu = @name, nanometers_cpu = @nanometers, graphicsrender_cpu = @gpu, manufacturer_cpu = @manufacturer, cores_cpu = @cores WHERE id_cpu = @id";
+
+                    using MySqlCommand command = new(query, DBConnection.OpenConnection(db));
+
+                    command.Parameters.AddWithValue("@name", Name);
+                    command.Parameters.AddWithValue("@nanometers", Nanometers);
+                    command.Parameters.AddWithValue("@gpu", Gpu);
+                    command.Parameters.AddWithValue("@manufacturer", Manufacturer);
+                    command.Parameters.AddWithValue("@cores", Cores);
+                    command.Parameters.AddWithValue("@id", Id);
+
+                    return command.ExecuteNonQuery() > 0 ? DBConstants.REGISTER_UPDATED : DBConstants.REGISTER_NOT_UPDATED;
+
+                }
+                catch (MySqlException s)
+                {
+
+                    return (int)s.ErrorCode;
+
+                }
+                finally
+                {
+
+                    DBConnection.CloseConnection(db);
+
+                }
+            }
+            else
+            {
+                return i;
+            }
+
+        }
+
+        public int DeleteProcessor()
+        {
+
+            DBConnection db = DBConnection.DBInit();
+
+            int i = CheckIfProcessorExists();
+
+            if (i == DBConstants.REGISTER_FOUNDED)
+            {
+
+                try
+                {
+
+                    DBConnection.OpenConnection(db);
+
+                    string query = "DELETE FROM cpu WHERE id_cpu = @id";
+
+                    using MySqlCommand command = new(query, DBConnection.OpenConnection(db));
+
+                    command.Parameters.AddWithValue("@id", Id);
+
+                    return command.ExecuteNonQuery() > 0 ? DBConstants.REGISTER_DELETED : DBConstants.REGISTER_NOT_DELETED;
+
+                }
+                catch (MySqlException s)
+                {
+
+                    return (int)s.ErrorCode;
+
+                }
+                finally
+                {
+
+                    DBConnection.CloseConnection(db);
+
+                }
+
+            }
+            else
+            {
+                return i;
+            }
+
+        }
+
+
         public int CheckIfProcessorExists()
         {
             DBConnection db = DBConnection.DBInit();
@@ -115,13 +216,14 @@ namespace PROYECTO_EV2_RJT.MODEL
             {
                 DBConnection.OpenConnection(db);
 
-                string query = "SELECT COUNT(*) FROM cpu WHERE name_cpu = @name AND nanometers_cpu = @nanometers AND graphicsrender_cpu = @gpu AND manufacturer_cpu = @manufacturer";
+                string query = "SELECT COUNT(*) FROM cpu WHERE name_cpu = @name AND nanometers_cpu = @nanometers AND graphicsrender_cpu = @gpu AND manufacturer_cpu = @manufacturer AND cores_cpu = @cores";
 
                 using MySqlCommand command = new(query, DBConnection.OpenConnection(db));
                 command.Parameters.AddWithValue("@name", Name);
                 command.Parameters.AddWithValue("@nanometers", Nanometers);
                 command.Parameters.AddWithValue("@gpu", Gpu);
                 command.Parameters.AddWithValue("@manufacturer", Manufacturer);
+                command.Parameters.AddWithValue("@cores", Cores);
 
                 int count = Convert.ToInt32(command.ExecuteScalar());
 
@@ -163,9 +265,21 @@ namespace PROYECTO_EV2_RJT.MODEL
 
                     if (command.ExecuteNonQuery() > 0)
                     {
+
+                        Id = (int)command.LastInsertedId;
+
+
+
+
+
                         return DBConstants.REGISTER_ADDED;
                     }
-                    return DBConstants.SQL_EXCEPTION;
+                    else
+                    {
+                        return DBConstants.REGISTER_NOT_ADDED;
+
+                    }
+
                 }
                 catch (MySqlException s)
                 {
@@ -187,18 +301,63 @@ namespace PROYECTO_EV2_RJT.MODEL
 
         public override string ToString()
         {
-            return this.Name + " Gpu: " + this.Gpu + " Nanometros: " + this.Nanometers + "nm Nucleos: " + this.Cores + " Fabricante: " + this.Manufacturer;
+            // return this.Name + " Gpu: " + this.Gpu + " Nanometros: " + this.Nanometers + "nm Nucleos: " + this.Cores + " Fabricante: " + this.Manufacturer;
+            return this.Id.ToString();
         }
     }
     public class M_ProcessorsCollection : ObservableCollection<M_Processor>
     {
+
+
+        public int FindProcessor(M_Processor processor)
+        {
+
+            foreach (M_Processor item in this)
+            {
+
+                if (item.Id == processor.Id)
+                {
+
+                    return IndexOf(item);
+
+                }
+
+            }
+
+            return -1;
+
+        }
+
+
+        public void ModifyProcessor(int index, M_Processor processor)
+        {
+            
+            if (index != -1)
+            {
+
+                this[index]=processor;
+
+            }
+
+
+        }
+
         public void AddProcessor(M_Processor processor)
         {
+
             this.Add(processor);
         }
-        public void RemoveProcessor(M_Processor processor)
+        public void DeleteProcessor(int index)
         {
-            this.Remove(processor);
+
+            
+            if (index != -1)
+            {
+
+                this.RemoveAt(index);
+
+            }
+            
         }
         public void LoadProcessors()
         {

@@ -18,7 +18,7 @@
     </Window.FontFamily>
 
     <Window.CommandBindings>
-        <CommandBinding Command="local:Commands.AddModifyProcessor" CanExecute="AddModifyProcessor_CanExecute" Executed="AddModifyProcessor_Executed"/>
+        <CommandBinding Command="local:Commands.AddModifyProcessor" CanExecute="AddModifyDeleteProcessor_CanExecute" Executed="AddModifyDeleteProcessor_Executed"/>
 
     </Window.CommandBindings>
 
@@ -92,7 +92,7 @@
             </Border>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
 
-                <Border Visibility="{Binding ElementName=infoTextProcessor , Path=Visibility}"  Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.5" Width="{Binding ElementName=infoTextProcessor, Path=ActualWidth}"  Height="{Binding ElementName=infoTextProcessor, Path=ActualHeight}" Background="{Binding ElementName=infoTextProcessor, Path=Foreground}" CornerRadius="10"/>
+                <Border Visibility="{Binding ElementName=infoTextProcessor , Path=Visibility}"  Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.2" Width="{Binding ElementName=infoTextProcessor, Path=ActualWidth}"  Height="{Binding ElementName=infoTextProcessor, Path=ActualHeight}" Background="{Binding ElementName=infoTextProcessor, Path=Foreground}" CornerRadius="10"/>
 
                 <TextBlock Visibility="Hidden" Padding="10" TextAlignment="Center" Grid.Row="2"  x:Name="infoTextProcessor" Text="info para el user" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 

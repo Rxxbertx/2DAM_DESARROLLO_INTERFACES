@@ -1,5 +1,6 @@
 ﻿using PROYECTO_EV2_RJT.CORE.CONSTANTS;
 using PROYECTO_EV2_RJT.CORE.INTERFACES;
+using PROYECTO_EV2_RJT.CORE.UTILS;
 using PROYECTO_EV2_RJT.MODEL;
 using System.ComponentModel;
 
@@ -59,8 +60,9 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
         #region Commands
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public event Action<string, string>? InfoErrorMessage;
-        public event Action<string, string>? InfoSuccessMessage;
+        public event Action<string, string> InfoErrorMessage;
+        public event Action<string, string> InfoSuccessMessage;
+        public event Action<string, string> InfoWarningMessage;
 
 
 
@@ -71,7 +73,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             {
                 if (nanometers <= 0)
                 {
-                    InfoErrorMessage?.Invoke("Nanometros", "El campo debe ser mayor de 0");
+                    InfoWarningMessage?.Invoke("Nanometros", "El campo debe ser mayor de 0");
                     return false;
                 }
                 _processor.Nanometers = nanometers;
@@ -79,7 +81,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             }
             else
             {
-                InfoErrorMessage?.Invoke("Nanometros", "El campo debe ser numerico");
+                InfoWarningMessage?.Invoke("Nanometros", "El campo debe ser numerico");
                 return false;
             }
 
@@ -88,7 +90,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             {
                 if (cores <= 0)
                 {
-                    InfoErrorMessage?.Invoke("Nucleos", "El campo debe ser mayor de 0");
+                    InfoWarningMessage?.Invoke("Nucleos", "El campo debe ser mayor de 0");
                     return false;
                 }
                 _processor.Cores = cores;
@@ -96,7 +98,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             }
             else
             {
-                InfoErrorMessage?.Invoke("Nucleos", "El campo debe ser numerico");
+                InfoWarningMessage?.Invoke("Nucleos", "El campo debe ser numerico");
                 return false;
             }
 
@@ -118,7 +120,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
 
         #region CRUD
 
-        public int Add()
+        public bool Add()
         {
 
             int ProcessorAdded = Processor.Add();
@@ -130,52 +132,79 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 ProcessorsCollection.Add(Processor);
 
                 InfoSuccessMessage?.Invoke("Info", "Procesador Añadido");
-                return ProcessorAdded;
+                return true;
 
             }
-            else if (ProcessorAdded == DBConstants.REGISTER_NOT_ADDED)
-            {
-
-                InfoErrorMessage?.Invoke("Error Interno", "No se ha podido añadir el procesador");
-
-
-            }
-            else if (ProcessorAdded == DBConstants.REGISTER_FOUNDED)
-            {
-                InfoErrorMessage?.Invoke("Error Interno", "El procesador ya existe");
-
-            }
-            else if (ProcessorAdded == DBConstants.SQL_EXCEPTION)
-            {
-
-                InfoErrorMessage?.Invoke("Error Interno", "Intentalo de nuevo mas tarde");
-            }
-
             else
             {
-                InfoErrorMessage?.Invoke("Error Interno", "Revisa el codigo de error: SQL: " + ProcessorAdded);
-
+                DBUtils.CheckStatusOperation(InfoErrorMessage,InfoSuccessMessage,InfoWarningMessage,ProcessorAdded,"Procesador");
 
             }
+            
 
-            return ProcessorAdded;
+            return false;
         }
 
-        public int Modify()
+        public bool Modify(int selectedIndex)
         {
 
-            return 0;
+            int ProcessorModified = Processor.ModifyProcessor();
+
+
+
+            if (ProcessorModified == DBConstants.REGISTER_UPDATED)
+            {
+
+                ProcessorsCollection.ModifyProcessor(selectedIndex,Processor);
+
+                InfoSuccessMessage?.Invoke("Info", "Procesador Actualizado");
+                return true;
+
+            }
+            else DBUtils.CheckStatusOperation(InfoErrorMessage,InfoSuccessMessage,InfoWarningMessage,ProcessorModified,"Procesador");
+
+            return false;
+
+
+
         }
 
-        public int Delete()
+        
+
+        public bool Delete(int selectedIndex)
         {
 
-            return 0;
+            int ProcessorDeleted = Processor.DeleteProcessor();
+
+            if (ProcessorDeleted == DBConstants.REGISTER_DELETED)
+            {
+
+                ProcessorsCollection.DeleteProcessor(selectedIndex);
+
+                InfoSuccessMessage?.Invoke("Info", "Procesador Eliminado");
+                return true;
+
+            }
+            else DBUtils.CheckStatusOperation(InfoErrorMessage,InfoSuccessMessage,InfoWarningMessage,ProcessorDeleted,"Procesador");
+
+            return false;
+            
         }
 
-        public int Find()
+        public bool Find()
         {
-            return 0;
+
+            M_Processor? temp = Processor.FindCpu(Processor.Id);
+            if (temp == null) return false;
+            else
+            {
+                Processor = temp;
+                Cores = Processor.Cores.ToString();
+                Nanometers = Processor.Nanometers.ToString();
+                return true;
+            }
+            
+
         }
 
         #endregion CRUD

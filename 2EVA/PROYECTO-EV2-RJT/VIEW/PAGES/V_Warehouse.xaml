@@ -67,7 +67,6 @@
 
                         <DataGrid HorizontalAlignment="Stretch"
                                   HorizontalContentAlignment="Stretch"
-                                
                                   x:Name="PhonesGrid" 
                                   Margin="10"  
                                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" 
@@ -76,15 +75,15 @@
                                   CellStyle="{StaticResource DataGridCellStyle}"
                                   Background="Gray" 
                                   SelectionMode="Single"
-                                  HeadersVisibility="Column"  
-                                  AutoGenerateColumns="False"  
+                                   
+                                  AutoGenerateColumns="True"  
                                   VerticalAlignment="Top" 
                                   VerticalContentAlignment="Center" 
                                   FontSize="22" FontFamily="Bahnschrift" 
                                   CanUserReorderColumns="False" 
                                   CanUserDeleteRows="False" 
                                   CanUserAddRows="False" 
-                                  GridLinesVisibility="None">
+                                  GridLinesVisibility="All">
                             <DataGrid.Columns>
 
                                 <DataGridTextColumn Header="Marca" Binding="{Binding Brand}" IsReadOnly="True"/>
@@ -102,7 +101,7 @@
                     <Button x:Name="addPhone" Command="local:Commands.AddPhone"
                             Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
 
-                    <Border Visibility="{Binding ElementName=infoTextPhone,Path=Visibility}" Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.5" Width="{Binding ElementName=infoTextPhone, Path=ActualWidth}"  Height="{Binding ElementName=infoTextPhone, Path=ActualHeight}" Background="{Binding ElementName=infoTextPhone, Path=Foreground}" CornerRadius="10"/>
+                    <Border Visibility="{Binding ElementName=infoTextPhone,Path=Visibility}" Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.2" Width="{Binding ElementName=infoTextPhone, Path=ActualWidth}"  Height="{Binding ElementName=infoTextPhone, Path=ActualHeight}" Background="{Binding ElementName=infoTextPhone, Path=Foreground}" CornerRadius="10"/>
 
                     <TextBlock Visibility="Hidden" Padding="10" TextAlignment="Center" Grid.Row="2"  x:Name="infoTextPhone" Text="info para el user" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
@@ -263,7 +262,7 @@
 
 
 
-                    <Border Visibility="{Binding ElementName=infoTextPhoneStorage,Path=Visibility}"  Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.5" Width="{Binding ElementName=infoTextPhoneStorage, Path=ActualWidth}"  Height="{Binding ElementName=infoTextPhoneStorage, Path=ActualHeight}" Background="{Binding ElementName=infoTextPhoneStorage, Path=Foreground}" CornerRadius="10"/>
+                    <Border Visibility="{Binding ElementName=infoTextPhoneStorage,Path=Visibility}"  Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.2" Width="{Binding ElementName=infoTextPhoneStorage, Path=ActualWidth}"  Height="{Binding ElementName=infoTextPhoneStorage, Path=ActualHeight}" Background="{Binding ElementName=infoTextPhoneStorage, Path=Foreground}" CornerRadius="10"/>
 
                     <TextBlock  Visibility="Hidden" Padding="10" TextAlignment="Center" Grid.Row="2"  x:Name="infoTextPhoneStorage" Text="info para el user" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
@@ -319,7 +318,7 @@
 
                     <Button x:Name="addBrand" Command="local:Commands.AddBrand"  Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
 
-                    <Border Visibility="{Binding ElementName=infoTextBrand,Path=Visibility}" Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.5" Width="{Binding ElementName=infoTextBrand, Path=ActualWidth}"  Height="{Binding ElementName=infoTextBrand, Path=ActualHeight}" Background="{Binding ElementName=infoTextBrand, Path=Foreground}" CornerRadius="10"/>
+                    <Border Visibility="{Binding ElementName=infoTextBrand,Path=Visibility}" Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.2" Width="{Binding ElementName=infoTextBrand, Path=ActualWidth}"  Height="{Binding ElementName=infoTextBrand, Path=ActualHeight}" Background="{Binding ElementName=infoTextBrand, Path=Foreground}" CornerRadius="10"/>
 
                     <TextBlock Visibility="Hidden"  Padding="10" TextAlignment="Center" Grid.Row="2"  x:Name="infoTextBrand" Text="info para el user" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
@@ -348,7 +347,8 @@
                         </Border.Effect>
 
                         <DataGrid HorizontalAlignment="Stretch"
-                  HorizontalContentAlignment="Stretch"
+                  
+                                  
                   HorizontalScrollBarVisibility="Auto"
                   ItemsSource="{Binding ProcessorsCollection}"
                   x:Name="ProcessorsGrid" 
@@ -359,15 +359,14 @@
                   CellStyle="{StaticResource DataGridCellStyle}"
                   Background="Gray" 
                   SelectionMode="Single"
-                  HeadersVisibility="Column"  
-                  AutoGenerateColumns="False"  
+                 
+                    
                   VerticalAlignment="Top" 
                   VerticalContentAlignment="Center" 
                   FontSize="22" FontFamily="Bahnschrift" 
-                  CanUserReorderColumns="False" 
                   CanUserDeleteRows="False" 
                   CanUserAddRows="False" 
-                  GridLinesVisibility="None">
+                  GridLinesVisibility="All" AreRowDetailsFrozen="False" RowDetailsVisibilityMode="Visible" IsReadOnly="True">
                             <DataGrid.Columns>
 
                                 <DataGridTextColumn Header="Nombre" Binding="{Binding Name}" IsReadOnly="True" Width="auto"/>
@@ -383,7 +382,7 @@
 
                     <Button x:Name="addProcessor" Command="local:Commands.AddProcessor"   Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
 
-                    <Border Visibility="{Binding ElementName=infoTextProcessor,Path=Visibility}" Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.5" Width="{Binding ElementName=infoTextProcessor, Path=ActualWidth}"  Height="{Binding ElementName=infoTextProcessor, Path=ActualHeight}" Background="{Binding ElementName=infoTextProcessor, Path=Foreground}" CornerRadius="10"/>
+                    <Border Visibility="{Binding ElementName=infoTextProcessor,Path=Visibility}" Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.2" Width="{Binding ElementName=infoTextProcessor, Path=ActualWidth}"  Height="{Binding ElementName=infoTextProcessor, Path=ActualHeight}" Background="{Binding ElementName=infoTextProcessor, Path=Foreground}" CornerRadius="10"/>
 
                     <TextBlock Visibility="Hidden" Padding="10" TextAlignment="Center" Grid.Row="2"  x:Name="infoTextProcessor" Text="info para el user" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 

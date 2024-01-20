@@ -17,8 +17,9 @@ namespace PROYECTO_EV2_RJT.VIEW
         private ExitCommand ExitCommand => new(Cancel, Key.Escape);
         private readonly V_Warehouse? v_Warehouse = new();
         private readonly Operation operation = new();
-        public VM_Processor? ViewModel = new();
-       
+        public VM_Processor? ViewModel;
+
+        private int id = -1;
 
         public V_ProcessorWindow()
         {
@@ -29,11 +30,28 @@ namespace PROYECTO_EV2_RJT.VIEW
         public V_ProcessorWindow(V_Warehouse v_Warehouse, Operation operation)
         {
             InitializeComponent();
-
-            InputBindings.Add(new InputBinding(ExitCommand, ExitCommand.InputGesture));
-
             this.v_Warehouse = v_Warehouse;
             this.operation = operation;
+            InitWindow(v_Warehouse, operation);
+
+        }
+
+        public V_ProcessorWindow(V_Warehouse v_Warehouse, Operation operation, int id)
+        {
+            InitializeComponent();
+            this.v_Warehouse = v_Warehouse;
+            this.operation = operation;
+            this.id = id;
+            InitWindow(v_Warehouse, operation);
+
+
+
+        }
+
+        
+        private void InitWindow(V_Warehouse v_Warehouse, Operation operation)
+        {
+            InputBindings.Add(new InputBinding(ExitCommand, ExitCommand.InputGesture));
             Owner = Window.GetWindow(v_Warehouse);
             Owner.Effect = new BlurEffect();
 
@@ -42,17 +60,22 @@ namespace PROYECTO_EV2_RJT.VIEW
                 BtnAddOrModify.Content = "Añadir";
                 TitleProcessor.Text = "Añadir " + TitleProcessor.Text;
             }
-            if (operation == Operation.Modify)
+            else if (operation == Operation.Modify)
             {
                 BtnAddOrModify.Content = "Modificar";
                 TitleProcessor.Text = "Modificar " + TitleProcessor.Text;
             }
-
-
-
-
+            else if (operation == Operation.Delete)
+            {
+                BtnAddOrModify.Content = "Eliminar";
+                TitleProcessor.Text = "Eliminar " + TitleProcessor.Text + " ?";
+                txtCores.IsEnabled = false;
+                txtGpu.IsEnabled = false;
+                txtManufacturer.IsEnabled = false;
+                txtName.IsEnabled = false;
+                txtNanometers.IsEnabled = false;
+            }
         }
-
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
@@ -61,38 +84,25 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         }
 
-        private async void Cancel()
+        private void Cancel()
         {
             if (v_Warehouse != null)
-                Utils.ErrorMessage(v_Warehouse.infoTextProcessor, "Operacion Cancelada");
+                Utils.WarningMessage(v_Warehouse.infoTextProcessor, "Operacion Cancelada");
 
-            await WindowAnimationUtils.FadeOut(this, 10);
-
-           // Close();
-        }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Owner.Effect = null;
-            // Inicia la animación de salida
-            // Cancela el cierre inicial de la ventana
-            
-            
+            InputBindings.Clear();
+            _ = WindowAnimationUtils.FadeOutAndClose(this);
 
 
         }
 
-        private void AddModifyProcessor_Executed(object sender, ExecutedRoutedEventArgs e)
+
+        #region crud
+        private void AddModifyDeleteProcessor_Executed(object sender, ExecutedRoutedEventArgs e)
         {
 
-            if (ViewModel != null)
+            if (ViewModel != null && v_Warehouse != null)
             {
 
-                if (v_Warehouse == null)
-                {
-                    Utils.ErrorMessage(infoTextProcessor, "Error Interno");
-                    return;
-                }
 
                 if (!ViewModel.ValidateInput()) return;
 
@@ -100,35 +110,54 @@ namespace PROYECTO_EV2_RJT.VIEW
                 if (operation == Operation.Add)
                 {
 
-                    if (ViewModel.Add() == DBConstants.REGISTER_ADDED)
+                    if (ViewModel.Add())
                     {
                         Utils.SuccessMessage(v_Warehouse.infoTextProcessor, "Procesador :" + ViewModel.Processor.ToString() + " Añadido");
                         v_Warehouse.ProcessorsGrid.SelectedItem = ViewModel.Processor;
-                        Close();
-                    };
+                        v_Warehouse.ProcessorsGrid.ScrollIntoView(ViewModel.Processor);
 
-                    return;
+                    }else return;
+                    
 
                 }
+                else if (operation == Operation.Modify)
 
-                if (operation == Operation.Modify)
                 {
 
-                    ViewModel.Modify();
-                    return;
+                    if (ViewModel.Modify(v_Warehouse.ProcessorsGrid.SelectedIndex))
+                    {
+                        Utils.SuccessMessage(v_Warehouse.infoTextProcessor, "Procesador :" + ViewModel.Processor.ToString() + " Actualizado");
+                        v_Warehouse.ProcessorsGrid.SelectedItem = ViewModel.Processor;
+
+                    }
+                    else return;
+
 
                 }
+                else if (operation == Operation.Delete)
+                {
 
+                    if (ViewModel.Delete(v_Warehouse.ProcessorsGrid.SelectedIndex))
+                    {
+                        Utils.SuccessMessage(v_Warehouse.infoTextProcessor, "Procesador :" + ViewModel.Processor.ToString() + " Eliminado");
+                        v_Warehouse.ProcessorsGrid.SelectedItem = null;
+
+                    }
+                    else return;
+                }
+
+
+                _ = WindowAnimationUtils.FadeOutAndClose(this);
+                
 
             }
 
-
+            
 
 
         }
 
-
-        private void AddModifyProcessor_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        private void AddModifyDeleteProcessor_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
 
 
@@ -149,22 +178,64 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         }
 
+        private void Find()
+        {
+            if (ViewModel != null)
+            {
+                if (!ViewModel.Find())
+                {
+                    Utils.ErrorMessage(v_Warehouse.infoTextProcessor, "Procesador no encontrado");
+                    _ = WindowAnimationUtils.FadeOutAndClose(this);
+                }
+            }
+        }
+
+
+        #endregion crud
+
+        #region window events
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Owner.Effect = null;
+
+        }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             if (ViewModel != null)
             {
                 ViewModel.InfoErrorMessage += ShowErrorMessage;
                 ViewModel.InfoSuccessMessage += ShowSuccessMessage;
+                ViewModel.InfoWarningMessage += ShowWarningMessage;
                 ViewModel.CleanOldData();
+
+                if (id != -1 && operation==Operation.Modify ||operation==Operation.Delete)
+                {
+                    ViewModel.Processor.Id = id;
+                    Find();
+
+                }else if (operation != Operation.Add)
+                {
+                    Utils.ErrorMessage(v_Warehouse.infoTextProcessor, "Error Interno, No se ha podido establecer la conexion. ERROR: INCORRECTACTION");
+                    Close();
+                }
+            }
+            else if (v_Warehouse != null)
+            {
+                Utils.ErrorMessage(v_Warehouse.infoTextProcessor, "Error Interno, No se ha podido establecer la conexion. ERROR: NOMODEL");
+                Close();
             }
             else
             {
-                Utils.ErrorMessage(infoTextProcessor, "Error Interno, No se ha podido establecer la conexion");
 
+                Utils.ErrorMessage(v_Warehouse.infoTextProcessor, "Error Interno, No se ha podido establecer la conexion. ERROR: NOVIEW");
+                Close();
             }
 
         }
+        #endregion window events
 
+
+        #region message events
         private void ShowSuccessMessage(object sender, string successMessage)
         {
 
@@ -179,5 +250,12 @@ namespace PROYECTO_EV2_RJT.VIEW
 
 
         }
+
+        private void ShowWarningMessage(object sender, string warningMessage)
+        {
+
+            Utils.WarningMessage(infoTextProcessor, sender + " : " + warningMessage);
+        }
+        #endregion message events
     }
 }

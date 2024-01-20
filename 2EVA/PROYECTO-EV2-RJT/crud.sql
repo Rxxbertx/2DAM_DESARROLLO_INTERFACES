@@ -78,7 +78,6 @@ CREATE TABLE IF NOT EXISTS `dbRoberto`.`cpu` (
   `manufacturer_cpu` VARCHAR(45) NOT NULL,
   `cores_cpu` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id_cpu`),
-  UNIQUE INDEX `name_cpu_UNIQUE` (`name_cpu` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
