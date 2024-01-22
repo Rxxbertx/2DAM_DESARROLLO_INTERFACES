@@ -3,8 +3,8 @@
     public enum Operation
     {
 
-        Modify = 0,
-        Add = 1,
-        Delete = 2,
+        UPDATE = 0,
+        CREATE = 1,
+        DELETE = 2,
     }
 }

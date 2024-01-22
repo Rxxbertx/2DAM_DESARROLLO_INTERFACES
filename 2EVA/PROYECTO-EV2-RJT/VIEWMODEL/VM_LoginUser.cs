@@ -56,8 +56,8 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 mainWindow.Opacity = 0;
                 WindowAnimationUtils.FadeIn(mainWindow);
                 mainWindow.Show();
-                _=WindowAnimationUtils.FadeOutAndClose(Application.Current.MainWindow);
-                
+                _ = WindowAnimationUtils.FadeOutAndClose(Application.Current.MainWindow);
+
 
             }
 

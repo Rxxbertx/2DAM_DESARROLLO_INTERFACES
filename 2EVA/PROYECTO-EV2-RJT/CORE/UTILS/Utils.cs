@@ -1,4 +1,5 @@
-﻿using PROYECTO_EV2_RJT.CORE.CONSTANTS;
+﻿using MySqlConnector;
+using PROYECTO_EV2_RJT.CORE.CONSTANTS;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -60,6 +61,25 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
         }
 
 
+
+        public static void UpdateDataGridToNextPosition(DataGrid grid, int i)
+        {
+            if (i > 0)
+            {
+                grid.SelectedIndex = i - 1;
+            }
+            else
+            {
+                grid.SelectedIndex = i;
+
+            }
+            if (grid.SelectedIndex != -1)
+            {
+                grid.ScrollIntoView(grid.SelectedItem);
+            }
+
+
+        }
 
     }
 
@@ -138,7 +158,7 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
             // Wait for the fade out animation to complete
             Task.Delay(AnimationConstants.FadeOutDuration);
 
-         
+
 
             // Create a DoubleAnimation to fade in the next page
             DoubleAnimation fadeInAnimation = new()
@@ -161,7 +181,7 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
         }
     }
 
-    public static class  DBUtils
+    public static class DBUtils
     {
         public static void CheckStatusOperation(Action<string, string> errorAction, Action<string, string> successAction, Action<string, string> infoAction, int result, string name)
         {
@@ -190,12 +210,12 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
 
             else if (result == DBConstants.REGISTER_FOUNDED)
             {
-                infoAction?.Invoke("Error Interno", $"El {name} ya existe");
+                infoAction?.Invoke("Error Interno", $"{name} ya existe");
 
             }
             else if (result == DBConstants.REGISTER_NOT_FOUND)
             {
-                errorAction?.Invoke("Error Interno", $"El {name} no existe");
+                errorAction?.Invoke("Error Interno", $"{name} no existe");
             }
 
             else if (result == DBConstants.SQL_EXCEPTION)
@@ -212,14 +232,124 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
             {
                 successAction?.Invoke("Info", $"{name} Eliminado");
             }
-            else
+            else if (result == ((int)MySqlErrorCode.RowIsReferenced2))
             {
-                errorAction?.Invoke("Error Interno", "Revisa el codigo de error: SQL: " + result);
+
+                errorAction?.Invoke("Error Interno", $"No se puede eliminar el {name} porque esta siendo usado");
+            }
+            else if (IsMySQLIntegrityError(result))
+            {
+                HandleIntegrityError(result, errorAction, name);
             }
 
 
 
 
+
+        }
+
+
+        private static bool IsMySQLIntegrityError(int errorCode)
+        {
+            return Enum.IsDefined(typeof(MySqlErrorCode), errorCode);
+        }
+
+        private static void HandleIntegrityError(int errorCode, Action<string, string> errorAction, string name)
+        {
+            MySqlErrorCode mysqlErrorCode = (MySqlErrorCode)errorCode;
+
+            switch (mysqlErrorCode)
+            {
+                case MySqlErrorCode.RowIsReferenced2:
+                    errorAction?.Invoke("Error Interno", $"No se puede eliminar el {name} porque está siendo usado");
+                    break;
+                case MySqlErrorCode.DuplicateEntryWithKeyName:
+                    errorAction?.Invoke("Error Interno", $"Ya existe un registro con el mismo valor para {name}");
+                    break;
+                case MySqlErrorCode.CannotAddForeignConstraint:
+                    errorAction?.Invoke("Error Interno", $"No se puede agregar el {name} porque violaría la restricción de clave externa");
+                    break;
+
+                case MySqlErrorCode.DataTooLong:
+                    errorAction?.Invoke("Error Interno", $"La longitud de los datos para {name} es demasiado larga");
+                    break;
+                case MySqlErrorCode.NoReferencedRow2:
+                    errorAction?.Invoke("Error Interno", $"No hay fila referenciada para actualizar o eliminar en {name}");
+                    break;
+
+
+
+                case MySqlErrorCode.CannotCreateTable:
+                    errorAction?.Invoke("Error Interno", $"No se puede crear la tabla {name}");
+                    break;
+
+                case MySqlErrorCode.InvalidUseOfNull:
+                    errorAction?.Invoke("Error Interno", $"Uso inválido de NULL en {name}");
+                    break;
+                case MySqlErrorCode.UnableToConnectToHost:
+                    errorAction?.Invoke("Error Interno", $"No se puede conectar al host de la base de datos");
+                    break;
+                case MySqlErrorCode.TableNameErrror:
+                    errorAction?.Invoke("Error Interno", $"No se encuentra la tabla {name}");
+                    break;
+                case MySqlErrorCode.CannotCreateDatabase:
+                    errorAction?.Invoke("Error Interno", $"No se puede crear la base de datos {name}");
+                    break;
+
+                case MySqlErrorCode.DataOutOfRange:
+                    errorAction?.Invoke("Error Interno", $"Datos fuera de rango en {name}");
+                    break;
+
+                case MySqlErrorCode.HostNotPrivileged:
+                    errorAction?.Invoke("Error Interno", $"El host no está permitido para la conexión");
+                    break;
+                case MySqlErrorCode.DuplicateKeyEntry:
+                    errorAction?.Invoke("Error Interno", $"Entrada de clave duplicada para {name}");
+                    break;
+                case MySqlErrorCode.InvalidDefault:
+                    errorAction?.Invoke("Error Interno", $"Valor predeterminado no válido para {name}");
+                    break;
+
+                case MySqlErrorCode.DivisionByZero:
+                    errorAction?.Invoke("Error Interno", $"División por cero al operar en {name}");
+                    break;
+                case MySqlErrorCode.TooManyUserConnections:
+                    errorAction?.Invoke("Error Interno", $"Demasiadas conexiones a la base de datos");
+                    break;
+                case MySqlErrorCode.LockWaitTimeout:
+                    errorAction?.Invoke("Error Interno", $"Tiempo de espera de bloqueo agotado al intentar acceder a {name}");
+                    break;
+                case MySqlErrorCode.NonUnique:
+                    errorAction?.Invoke("Error Interno", $"Valores no únicos en índice para {name}");
+                    break;
+                case MySqlErrorCode.DropIndexForeignKey:
+                    errorAction?.Invoke("Error Interno", $"No se puede eliminar la columna referenciada por una clave externa en {name}");
+                    break;
+                case MySqlErrorCode.DuplicateUnique:
+                    errorAction?.Invoke("Error Interno", $"Valor duplicado en columna única para {name}");
+                    break;
+                case MySqlErrorCode.WrongColumnName:
+                    errorAction?.Invoke("Error Interno", $"Columna desconocida en {name}");
+                    break;
+                case MySqlErrorCode.UnknownTable:
+                    errorAction?.Invoke("Error Interno", $"Tabla desconocida {name}");
+                    break;
+
+                case MySqlErrorCode.WarningDataTruncated:
+                    errorAction?.Invoke("Error Interno", $"Datos truncados al insertar o actualizar en {name}");
+                    break;
+                case MySqlErrorCode.CannotCreateFile:
+                    errorAction?.Invoke("Error Interno", $"No se puede crear el archivo para {name}");
+                    break;
+
+                case MySqlErrorCode.CannotDropFieldOrKey:
+                    errorAction?.Invoke("Error Interno", $"No se puede eliminar el campo o clave en {name}");
+                    break;
+
+                default:
+                    errorAction?.Invoke("Error Desconocido", $"Error de integridad no manejado: {mysqlErrorCode}");
+                    break;
+            }
         }
 
 

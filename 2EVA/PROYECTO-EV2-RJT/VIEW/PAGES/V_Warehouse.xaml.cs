@@ -1,8 +1,8 @@
-﻿using PROYECTO_EV2_RJT.CORE.CONSTANTS;
-using PROYECTO_EV2_RJT.CORE.ENUMS;
+﻿using PROYECTO_EV2_RJT.CORE.ENUMS;
 using PROYECTO_EV2_RJT.CORE.UTILS;
 using PROYECTO_EV2_RJT.MODEL;
 using PROYECTO_EV2_RJT.VIEWMODEL;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -16,15 +16,15 @@ namespace PROYECTO_EV2_RJT.VIEW
     {
 
         V_MainWindow? parent = null;
-        private readonly VM_Processor vm_processor = new();
+        
+        VM_Brand? vm_Brand;
+        VM_Storage? vm_Storage;
+        VM_Processor? vm_Processor;
+        VM_PhoneStorage? vm_PhoneStorage;
 
         public V_Warehouse()
         {
             InitializeComponent();
-
-
-
-
 
         }
 
@@ -32,9 +32,9 @@ namespace PROYECTO_EV2_RJT.VIEW
         private void TabControl_Selected(object sender, RoutedEventArgs e)
         {
 
-
-            if (sender is TabControl tabControl)
+            if (e.OriginalSource is TabControl tabControl)
             {
+
                 if (tabControl.SelectedItem is TabItem tabItem)
                 {
 
@@ -47,42 +47,50 @@ namespace PROYECTO_EV2_RJT.VIEW
                         {
                             case "phoneTab":
 
-                                phoneTab.Focusable = true;
-                                phoneTab.Focus();
-                                parent.w_phones.Checked -= parent.Menu_Checked; // Remove the event handler temporarily
+
+                                // parent.w_phones.Checked -= parent.Menu_Checked; // Remove the event handler temporarily
                                 parent.w_phones.IsChecked = true;
-                                parent.w_phones.Checked += parent.Menu_Checked; // Add the event handler back
+                                // parent.w_phones.Checked += parent.Menu_Checked; // Create the event handler back
 
 
 
                                 break;
                             case "brandTab":
 
-                                brandTab.Focusable = true;
-                                brandTab.Focus();
-                                parent.w_brands.Checked -= parent.Menu_Checked; // Remove the event handler temporarily
+
+                                //parent.w_brands.Checked -= parent.Menu_Checked; // Remove the event handler temporarily
                                 parent.w_brands.IsChecked = true;
-                                parent.w_brands.Checked += parent.Menu_Checked; // Add the event handler back
+                                // parent.w_brands.Checked += parent.Menu_Checked; // Create the event handler back
+
+                                vm_Brand = new();
+                                BrandsGrid.DataContext = vm_Brand;
 
 
                                 break;
                             case "storageTab":
 
-                                storageTab.Focusable = true;
-                                storageTab.Focus();
-                                parent.w_storages.Checked -= parent.Menu_Checked; // Remove the event handler temporarily
+
+                                //parent.w_storages.Checked -= parent.Menu_Checked; // Remove the event handler temporarily
                                 parent.w_storages.IsChecked = true;
-                                parent.w_storages.Checked += parent.Menu_Checked; // Add the event handler back
+                                // parent.w_storages.Checked += parent.Menu_Checked; // Create the event handler back
+                                vm_Storage = new();
+                                vm_PhoneStorage = new();
+                                StoragesGrid.DataContext = vm_Storage;
+                                PhonesStoragesGrid.DataContext = vm_PhoneStorage;
+
+
 
                                 break;
                             case "processorTab":
 
-                                processorTab.Focusable = true;
-                                processorTab.Focus();
-                                parent.w_processors.Checked -= parent.Menu_Checked; // Remove the event handler temporarily
+
+                                
+                                //parent.w_processors.Checked -= parent.Menu_Checked; // Remove the event handler temporarily
                                 parent.w_processors.IsChecked = true;
-                                parent.w_processors.Checked += parent.Menu_Checked; // Add the event handler back
-                                DataContext = vm_processor;
+                                //parent.w_processors.Checked += parent.Menu_Checked; // Create the event handler back
+                                vm_Processor = new();
+                                ProcessorsGrid.DataContext = vm_Processor;
+
                                 break;
 
 
@@ -104,12 +112,12 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         #region Phone
 
-        private void AddPhone_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        private void CreatePhone_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_PhoneWindow(this, CORE.ENUMS.Operation.Add));
+            LoadWindow(new V_PhoneWindow(this, CORE.ENUMS.Operation.CREATE));
         }
 
-        private void AddPhone_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
+        private void CreatePhone_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
 
             if (tabControl.SelectedItem == phoneTab)
@@ -124,16 +132,13 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         }
 
-        private void ModifyPhone_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        private void UpdatePhone_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_PhoneWindow(this, CORE.ENUMS.Operation.Modify));
+            LoadWindow(new V_PhoneWindow(this, CORE.ENUMS.Operation.UPDATE));
 
         }
 
-
-
-
-        private void ModifyPhone_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
+        private void UpdatePhone_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
             if (phoneTab.IsSelected && PhonesGrid.SelectedItem != null)
             {
@@ -172,12 +177,12 @@ namespace PROYECTO_EV2_RJT.VIEW
         #endregion
         #region Storage
 
-        private void AddStorage_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        private void CreateStorage_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_StorageWindow(this, Operation.Add));
+            LoadWindow(new V_StorageWindow(this, Operation.CREATE) { ViewModel = vm_Storage });
         }
 
-        private void AddStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
+        private void CreateStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
             if (storageTab.IsSelected)
             {
@@ -189,12 +194,17 @@ namespace PROYECTO_EV2_RJT.VIEW
             }
         }
 
-        private void ModifyStorage_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        private void UpdateStorage_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_StorageWindow(this, Operation.Modify));
+
+            if (StoragesGrid.SelectedItem is M_Storage storage)
+            {
+                LoadWindow(new V_StorageWindow(this, Operation.UPDATE, storage.Storage) { ViewModel = vm_Storage });
+            }
+
         }
 
-        private void ModifyStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
+        private void UpdateStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
 
             if (storageTab.IsSelected && StoragesGrid.SelectedItem != null)
@@ -209,6 +219,13 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void DeleteStorage_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
+
+
+            if (StoragesGrid.SelectedItem is M_Storage storage)
+            {
+                LoadWindow(new V_StorageWindow(this, Operation.DELETE, storage.Storage) { ViewModel = vm_Storage });
+            }
+
         }
 
         private void DeleteStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
@@ -227,12 +244,12 @@ namespace PROYECTO_EV2_RJT.VIEW
         #endregion
         #region Brand
 
-        private void AddBrand_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        private void CreateBrand_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_BrandWindow(this, Operation.Add));
+            LoadWindow(new V_BrandWindow(this, Operation.CREATE) { ViewModel = vm_Brand });
         }
 
-        private void AddBrand_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
+        private void CreateBrand_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
 
             if (brandTab.IsSelected)
@@ -246,12 +263,15 @@ namespace PROYECTO_EV2_RJT.VIEW
             }
         }
 
-        private void ModifyBrand_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        private void UpdateBrand_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_BrandWindow(this, Operation.Modify));
+            if (BrandsGrid.SelectedItem is M_Brand brand)
+            {
+                LoadWindow(new V_BrandWindow(this, Operation.UPDATE, brand.Id) { ViewModel = vm_Brand });
+            }
         }
 
-        private void ModifyBrand_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
+        private void UpdateBrand_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
 
             if (brandTab.IsSelected && BrandsGrid.SelectedItem != null)
@@ -266,7 +286,10 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void DeleteBrand_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-
+            if (BrandsGrid.SelectedItem is M_Brand brand)
+            {
+                LoadWindow(new V_BrandWindow(this, Operation.DELETE, brand.Id) { ViewModel = vm_Brand });
+            }
         }
 
         private void DeleteBrand_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
@@ -284,12 +307,12 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         #endregion
         #region Processor
-        private void AddProcessor_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        private void CreateProcessor_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_ProcessorWindow(this, Operation.Add) { ViewModel = vm_processor });
+            LoadWindow(new V_ProcessorWindow(this, Operation.CREATE) { ViewModel = vm_Processor });
         }
 
-        private void AddProcessor_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
+        private void CreateProcessor_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
 
             if (processorTab.IsSelected)
@@ -302,20 +325,20 @@ namespace PROYECTO_EV2_RJT.VIEW
             }
         }
 
-        private void ModifyProcessor_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        private void UpdateProcessor_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
 
-            if ( ProcessorsGrid.SelectedItem is M_Processor processor)
+            if (ProcessorsGrid.SelectedItem is M_Processor processor)
             {
 
-                LoadWindow(new V_ProcessorWindow(this, Operation.Modify, processor.Id) { ViewModel = vm_processor });
+                LoadWindow(new V_ProcessorWindow(this, Operation.UPDATE, processor.Id) { ViewModel = vm_Processor });
             }
 
 
-            
+
         }
 
-        private void ModifyProcessor_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
+        private void UpdateProcessor_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
 
             if (processorTab.IsSelected && ProcessorsGrid.SelectedItem != null)
@@ -333,8 +356,8 @@ namespace PROYECTO_EV2_RJT.VIEW
 
             if (ProcessorsGrid.SelectedItem is M_Processor processor)
             {
-               
-                LoadWindow(new V_ProcessorWindow(this, Operation.Delete, processor.Id) { ViewModel = vm_processor });
+
+                LoadWindow(new V_ProcessorWindow(this, Operation.DELETE, processor.Id) { ViewModel = vm_Processor });
             }
 
         }
@@ -355,12 +378,12 @@ namespace PROYECTO_EV2_RJT.VIEW
         #endregion
         #region PhoneStorage
 
-        private void AddPhoneStorage_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        private void CreatePhoneStorage_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_PhoneStorageWindow(this, Operation.Add));
+            LoadWindow(new V_PhoneStorageWindow(this, Operation.CREATE) { ViewModel = vm_PhoneStorage});
         }
 
-        private void AddPhoneStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
+        private void CreatePhoneStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
 
             if (storageTab.IsSelected)
@@ -373,12 +396,18 @@ namespace PROYECTO_EV2_RJT.VIEW
             }
         }
 
-        private void ModifyPhoneStorage_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        private void UpdatePhoneStorage_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_PhoneStorageWindow(this, Operation.Modify));
+
+            if (PhonesStoragesGrid.SelectedItem is M_PhoneStorage phoneStorage)
+            {
+                LoadWindow(new V_PhoneStorageWindow(this, Operation.UPDATE, phoneStorage.Id_Phone, phoneStorage.Storage) { ViewModel = vm_PhoneStorage });
+            }
+
+            
         }
 
-        private void ModifyPhoneStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
+        private void UpdatePhoneStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
         {
 
             if (storageTab.IsSelected && PhonesStoragesGrid.SelectedItem != null)
@@ -394,6 +423,10 @@ namespace PROYECTO_EV2_RJT.VIEW
         private void DeletePhoneStorage_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
 
+            if (PhonesStoragesGrid.SelectedItem is M_PhoneStorage phoneStorage)
+            {
+                LoadWindow(new V_PhoneStorageWindow(this, Operation.DELETE, phoneStorage.Id_Phone, phoneStorage.Storage) { ViewModel = vm_PhoneStorage });
+            }
 
         }
 
@@ -416,22 +449,14 @@ namespace PROYECTO_EV2_RJT.VIEW
 
 
 
-        private  void LoadWindow(Window window)
+        private void LoadWindow(Window window)
         {
 
             window.Owner = Window.GetWindow(this);
-            window.DataContext = this.DataContext;
             window.Opacity = 0;
             WindowAnimationUtils.FadeIn(window);
-            window.Show();
-            
-            
-
-
-
-
+            window.ShowDialog();
         }
-
 
 
     }

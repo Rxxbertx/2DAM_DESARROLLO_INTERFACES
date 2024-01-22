@@ -1,17 +1,13 @@
 ﻿using MySqlConnector;
 using practicaLoginRJT.database;
 using PROYECTO_EV2_RJT.CORE.CONSTANTS;
+using PROYECTO_EV2_RJT.CORE.INTERFACES;
 using System.Collections.ObjectModel;
 using System.Windows;
 
 namespace PROYECTO_EV2_RJT.MODEL
-
-
 {
-
-
-
-    public class M_Processor
+    public class M_Processor : ICrud<M_Processor>
     {
 
 
@@ -35,7 +31,6 @@ namespace PROYECTO_EV2_RJT.MODEL
 
         }
 
-
         public M_Processor(int id, string name, int nanometers, string gpu, string manufacturer, int cores)
         {
 
@@ -51,7 +46,7 @@ namespace PROYECTO_EV2_RJT.MODEL
 
         #region CRUD
 
-        public M_Processor? FindCpu(int id)
+        public M_Processor? ReadObject()
         {
 
             DBConnection db = DBConnection.DBInit();
@@ -67,7 +62,7 @@ namespace PROYECTO_EV2_RJT.MODEL
 
                 using MySqlCommand command = new(query, DBConnection.OpenConnection(db));
 
-                command.Parameters.AddWithValue("@id", id);
+                command.Parameters.AddWithValue("@id", Id);
 
                 using MySqlDataReader reader = command.ExecuteReader();
 
@@ -78,12 +73,12 @@ namespace PROYECTO_EV2_RJT.MODEL
                     while (reader.Read())
                     {
 
-                        Id = reader.GetInt32(ProcessorsStatics.ID);
-                        Name = reader.GetString(ProcessorsStatics.NAME);
-                        Nanometers = reader.GetInt32(ProcessorsStatics.NANOMETERS);
-                        Gpu = reader.GetString(ProcessorsStatics.GPU);
-                        Manufacturer = reader.GetString(ProcessorsStatics.MANUFACTURER);
-                        Cores = reader.GetInt32(ProcessorsStatics.CORES);
+                        Id = reader.GetInt32(ProcessorStatics.ID);
+                        Name = reader.GetString(ProcessorStatics.NAME);
+                        Nanometers = reader.GetInt32(ProcessorStatics.NANOMETERS);
+                        Gpu = reader.GetString(ProcessorStatics.GPU);
+                        Manufacturer = reader.GetString(ProcessorStatics.MANUFACTURER);
+                        Cores = reader.GetInt32(ProcessorStatics.CORES);
 
 
                     }
@@ -111,13 +106,12 @@ namespace PROYECTO_EV2_RJT.MODEL
 
         }
 
-
-        public int ModifyProcessor()
+        public int Update()
         {
 
             DBConnection db = DBConnection.DBInit();
 
-            int i = CheckIfProcessorExists();
+            int i = Read();
 
             if (i == DBConstants.REGISTER_NOT_FOUND)
             {
@@ -162,12 +156,12 @@ namespace PROYECTO_EV2_RJT.MODEL
 
         }
 
-        public int DeleteProcessor()
+        public int Delete()
         {
 
             DBConnection db = DBConnection.DBInit();
 
-            int i = CheckIfProcessorExists();
+            int i = Read();
 
             if (i == DBConstants.REGISTER_FOUNDED)
             {
@@ -207,8 +201,7 @@ namespace PROYECTO_EV2_RJT.MODEL
 
         }
 
-
-        public int CheckIfProcessorExists()
+        public int Read()
         {
             DBConnection db = DBConnection.DBInit();
 
@@ -240,12 +233,11 @@ namespace PROYECTO_EV2_RJT.MODEL
             }
         }
 
-
-        public int Add()
+        public int Create()
         {
             DBConnection db = DBConnection.DBInit();
 
-            int i = CheckIfProcessorExists();
+            int i = Read();
 
             if (i == DBConstants.REGISTER_NOT_FOUND)
             {
@@ -298,18 +290,17 @@ namespace PROYECTO_EV2_RJT.MODEL
 
         #endregion CRUD
 
-
         public override string ToString()
         {
             // return this.Name + " Gpu: " + this.Gpu + " Nanometros: " + this.Nanometers + "nm Nucleos: " + this.Cores + " Fabricante: " + this.Manufacturer;
-            return this.Id.ToString();
+            return this.Name;
         }
     }
-    public class M_ProcessorsCollection : ObservableCollection<M_Processor>
+    public class M_ProcessorsCollection : ObservableCollection<M_Processor>, ICollectionCrud<M_Processor>
     {
 
 
-        public int FindProcessor(M_Processor processor)
+        public int Read(M_Processor processor)
         {
 
             foreach (M_Processor item in this)
@@ -327,40 +318,40 @@ namespace PROYECTO_EV2_RJT.MODEL
             return -1;
 
         }
-
-
-        public void ModifyProcessor(int index, M_Processor processor)
+        public void Update(int index, M_Processor processor)
         {
-            
+
             if (index != -1)
             {
 
-                this[index]=processor;
+                this[index] = processor;
 
             }
 
 
         }
-
-        public void AddProcessor(M_Processor processor)
+        public void Create(M_Processor processor)
         {
 
             this.Add(processor);
         }
-        public void DeleteProcessor(int index)
+        public void Delete(int index)
         {
 
-            
+
             if (index != -1)
             {
 
                 this.RemoveAt(index);
 
             }
-            
+
         }
-        public void LoadProcessors()
+
+        public void ReadAll()
         {
+
+
             DBConnection db = DBConnection.DBInit();
             try
             {
@@ -379,12 +370,12 @@ namespace PROYECTO_EV2_RJT.MODEL
 
                         M_Processor processor = new()
                         {
-                            Id = reader.GetInt32(ProcessorsStatics.ID),
-                            Name = reader.GetString(ProcessorsStatics.NAME),
-                            Nanometers = reader.GetInt32(ProcessorsStatics.NANOMETERS),
-                            Gpu = reader.GetString(ProcessorsStatics.GPU),
-                            Manufacturer = reader.GetString(ProcessorsStatics.MANUFACTURER),
-                            Cores = reader.GetInt32(ProcessorsStatics.CORES)
+                            Id = reader.GetInt32(ProcessorStatics.ID),
+                            Name = reader.GetString(ProcessorStatics.NAME),
+                            Nanometers = reader.GetInt32(ProcessorStatics.NANOMETERS),
+                            Gpu = reader.GetString(ProcessorStatics.GPU),
+                            Manufacturer = reader.GetString(ProcessorStatics.MANUFACTURER),
+                            Cores = reader.GetInt32(ProcessorStatics.CORES)
                         };
 
 
@@ -411,11 +402,6 @@ namespace PROYECTO_EV2_RJT.MODEL
 
 
         }
-
-
-
-
-
 
     }
 }

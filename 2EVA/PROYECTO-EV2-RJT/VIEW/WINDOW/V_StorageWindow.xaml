@@ -10,14 +10,15 @@
         Background="Transparent"
         WindowStyle="None"
         Title="V_StorageWindow" Height="auto" Width="auto"
-        Closing="Window_Closing">
+        Closing="Window_Closing"
+        Loaded="Window_Loaded">
 
     <Window.FontFamily>
         <FontFamily>Bahnschrift</FontFamily>
     </Window.FontFamily>
 
     <Window.CommandBindings>
-        <CommandBinding Command="local:Commands.AddModifyStorage" CanExecute="AddModifyStorage_CanExecute" Executed="AddModifyStorage_Executed"/>
+        <CommandBinding Command="local:Commands.CreateUpdateDeleteStorage" CanExecute="CreateUpdateDeleteStorage_CanExecute" Executed="CreateUpdateDeleteStorage_Executed"/>
 
     </Window.CommandBindings>
 
@@ -61,8 +62,8 @@
                 <!-- Fila 1 -->
 
                     <!-- Fila 2 -->
-                <TextBlock Grid.Row="1" Text="Capacidad" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                    <TextBox Style="{DynamicResource RoundedTextBox}"  Grid.Row="1"  x:Name="txtStorage" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                <TextBlock Grid.Row="1" Text="Capacidad" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="White"/>
+                    <TextBox Style="{DynamicResource RoundedTextBox}" Text="{Binding TxtStorage}" Grid.Row="1"  x:Name="txtStorage" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="5,0,0,0" />
 
                     <!-- Fila 3 -->
 
@@ -82,13 +83,13 @@
             </Border>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
 
-                <Border Visibility="{Binding ElementName=infoTextStorage , Path=Visibility}"  Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.5" Width="{Binding ElementName=infoTextStorage, Path=ActualWidth}"  Height="{Binding ElementName=infoTextStorage, Path=ActualHeight}" Background="{Binding ElementName=infoTextStorage, Path=Foreground}" CornerRadius="10"/>
+                <Border Visibility="{Binding ElementName=infoTextStorage , Path=Visibility}"  Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.2" Width="{Binding ElementName=infoTextStorage, Path=ActualWidth}"  Height="{Binding ElementName=infoTextStorage, Path=ActualHeight}" Background="{Binding ElementName=infoTextStorage, Path=Foreground}" CornerRadius="10"/>
 
                 <TextBlock Visibility="Hidden" Padding="10" TextAlignment="Center" Grid.Row="2"  x:Name="infoTextStorage" Text="info para el user" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
             </Grid>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,10,0,0">
-                <Button Command="local:Commands.AddModifyStorage" Style="{StaticResource RoundedButton}" x:Name="BtnAddOrModify" Padding="10,0" Content="" Foreground="White" Background="Orange" Margin="0,0,20,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" />
+                <Button Command="local:Commands.CreateUpdateDeleteStorage" Style="{StaticResource RoundedButton}" x:Name="BtnAddOrModify" Padding="10,0" Content="" Foreground="White" Background="Orange" Margin="0,0,20,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" />
                 <Button Style="{StaticResource RoundedButton}" x:Name="BtnCancel" Padding="10,0" Content="Cancelar" Foreground="#FF464646" Background="Gray"   HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Click="BtnCancel_Click"/>
             </StackPanel>
 

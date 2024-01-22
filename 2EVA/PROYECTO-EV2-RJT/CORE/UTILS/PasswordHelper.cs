@@ -56,7 +56,7 @@ namespace PROYECTO_EV2_RJT.CORE
             PasswordBox passwordBox = (PasswordBox)sender;
             passwordBox.PasswordChanged -= PasswordChanged;
 
-            if (!(bool)GetIsUpdating(passwordBox))
+            if (!GetIsUpdating(passwordBox))
             {
                 passwordBox.Password = (string)e.NewValue;
             }

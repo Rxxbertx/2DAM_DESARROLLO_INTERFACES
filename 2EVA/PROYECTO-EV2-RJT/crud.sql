@@ -148,6 +148,13 @@ ENGINE = InnoDB;
 
 
 
+CREATE VIEW view_phones_brands_storage AS
+SELECT p.id_phone as idPhone, b.brand_brand AS brand, p.model_phone AS model, ps.storage_storage AS storage
+FROM dbRoberto.phones p
+JOIN dbRoberto.brands b ON p.brand_phone_brand = b.id_brand
+JOIN dbRoberto.phones_storage ps ON p.id_phone = ps.id_phone;
+
+
 -- Insertar 10 usuarios de ejemplo sin especificar el id_user (se autoincrementará)
 INSERT INTO `dbRoberto`.`users` (`name_user`, `username_user`, `password_user`) VALUES
 ('Usuario1', 'user1', 'password1'),
@@ -241,6 +248,16 @@ INSERT INTO `dbRoberto`.`phones` (`model_phone`, `screen_phone`, `ram_phone`, `b
 ('Nokia X100', 6.67, 6, 5000, 8, 9, 'Android 12'),
 ('Motorola Edge 2', 6.9, 8, 4700, 9, 10, 'Android 12'),
 ('OnePlus 10', 6.8, 12, 4500, 10, 11, 'OxygenOS, Android 12');
+
+
+
+INSERT INTO `dbRoberto`.`storages` VALUES (64),(128),(256),(512);
+
+
+INSERT INTO `dbRoberto`.`phones_storage` VALUES (1,64),(2,64),(3,64),
+(4,128),(5,128),(6,128),(7,256),(8,256),(9,256),(10,512),(11,512),(12,512),
+(13,64),(14,64),(15,64),(16,128),(17,128),(18,128),(19,256),(20,256),(21,256),
+(22,512),(23,512),(24,512);
 
 
 

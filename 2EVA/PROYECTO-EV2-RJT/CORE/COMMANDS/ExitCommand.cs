@@ -6,7 +6,9 @@ namespace PROYECTO_EV2_RJT.CORE.COMMANDS
     {
         private readonly Action _accion = accion;
 
+#pragma warning disable CS0067 // El evento 'ExitCommand.CanExecuteChanged' nunca se usa
         public event EventHandler? CanExecuteChanged;
+#pragma warning restore CS0067 // El evento 'ExitCommand.CanExecuteChanged' nunca se usa
 
         public Key Tecla { get; private set; } = tecla;
         public ModifierKeys Modificadores { get; private set; } = modificadores;

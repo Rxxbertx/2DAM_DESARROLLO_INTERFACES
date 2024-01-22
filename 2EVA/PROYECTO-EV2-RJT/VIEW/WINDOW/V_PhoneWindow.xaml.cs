@@ -3,9 +3,7 @@ using PROYECTO_EV2_RJT.CORE.ENUMS;
 using PROYECTO_EV2_RJT.CORE.UTILS;
 using PROYECTO_EV2_RJT.MODEL;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
 
 namespace PROYECTO_EV2_RJT.VIEW
@@ -37,12 +35,12 @@ namespace PROYECTO_EV2_RJT.VIEW
             Owner = Window.GetWindow(v_Warehouse);
             Owner.Effect = new BlurEffect();
 
-            if (operation == Operation.Add)
+            if (operation == Operation.CREATE)
             {
                 btnAddOrModify.Content = "Añadir";
                 TitlePhone.Text = "Añadir " + TitlePhone.Text;
             }
-            if (operation == Operation.Modify)
+            if (operation == Operation.UPDATE)
             {
                 btnAddOrModify.Content = "Modificar";
                 TitlePhone.Text = "Modificar " + TitlePhone.Text;
@@ -64,12 +62,12 @@ namespace PROYECTO_EV2_RJT.VIEW
             Owner = Window.GetWindow(v_Warehouse);
             Owner.Effect = new BlurEffect();
 
-            if (operation == Operation.Add)
+            if (operation == Operation.CREATE)
             {
                 btnAddOrModify.Content = "Añadir";
                 TitlePhone.Text = "Añadir " + TitlePhone.Text;
             }
-            if (operation == Operation.Modify)
+            if (operation == Operation.UPDATE)
             {
                 btnAddOrModify.Content = "Modificar";
                 TitlePhone.Text = "Modificar " + TitlePhone.Text;

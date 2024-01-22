@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace PROYECTO_EV2_RJT.VIEWMODEL
 {
-    public class VM_Processor : IViewModelBase, INotifyPropertyChanged, IViewModelCRUD
+    public class VM_Processor : IViewModelBase, INotifyPropertyChanged, IViewModelCrud
     {
         #region Propiertes
         private M_Processor _processor = new();
@@ -110,20 +110,20 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
 
         public VM_Processor()
         {
-
-            ProcessorsCollection = [];
-            ProcessorsCollection.LoadProcessors();
             Processor = new M_Processor();
+            ProcessorsCollection = [];
+            ProcessorsCollection.ReadAll();
+
 
         }
 
 
         #region CRUD
 
-        public bool Add()
+        public bool Create()
         {
 
-            int ProcessorAdded = Processor.Add();
+            int ProcessorAdded = Processor.Create();
 
 
             if (ProcessorAdded == DBConstants.REGISTER_ADDED)
@@ -137,64 +137,17 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             }
             else
             {
-                DBUtils.CheckStatusOperation(InfoErrorMessage,InfoSuccessMessage,InfoWarningMessage,ProcessorAdded,"Procesador");
+                DBUtils.CheckStatusOperation(InfoErrorMessage, InfoSuccessMessage, InfoWarningMessage, ProcessorAdded, "Procesador");
 
             }
-            
+
 
             return false;
         }
-
-        public bool Modify(int selectedIndex)
+        public bool Read()
         {
 
-            int ProcessorModified = Processor.ModifyProcessor();
-
-
-
-            if (ProcessorModified == DBConstants.REGISTER_UPDATED)
-            {
-
-                ProcessorsCollection.ModifyProcessor(selectedIndex,Processor);
-
-                InfoSuccessMessage?.Invoke("Info", "Procesador Actualizado");
-                return true;
-
-            }
-            else DBUtils.CheckStatusOperation(InfoErrorMessage,InfoSuccessMessage,InfoWarningMessage,ProcessorModified,"Procesador");
-
-            return false;
-
-
-
-        }
-
-        
-
-        public bool Delete(int selectedIndex)
-        {
-
-            int ProcessorDeleted = Processor.DeleteProcessor();
-
-            if (ProcessorDeleted == DBConstants.REGISTER_DELETED)
-            {
-
-                ProcessorsCollection.DeleteProcessor(selectedIndex);
-
-                InfoSuccessMessage?.Invoke("Info", "Procesador Eliminado");
-                return true;
-
-            }
-            else DBUtils.CheckStatusOperation(InfoErrorMessage,InfoSuccessMessage,InfoWarningMessage,ProcessorDeleted,"Procesador");
-
-            return false;
-            
-        }
-
-        public bool Find()
-        {
-
-            M_Processor? temp = Processor.FindCpu(Processor.Id);
+            M_Processor? temp = Processor.ReadObject();
             if (temp == null) return false;
             else
             {
@@ -203,14 +156,60 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 Nanometers = Processor.Nanometers.ToString();
                 return true;
             }
-            
+
 
         }
+
+        public bool Update(int selectedIndex)
+        {
+
+            int ProcessorModified = Processor.Update();
+
+
+
+            if (ProcessorModified == DBConstants.REGISTER_UPDATED)
+            {
+
+                ProcessorsCollection.Update(selectedIndex, Processor);
+
+                InfoSuccessMessage?.Invoke("Info", "Procesador Actualizado");
+                return true;
+
+            }
+            else DBUtils.CheckStatusOperation(InfoErrorMessage, InfoSuccessMessage, InfoWarningMessage, ProcessorModified, "Procesador");
+
+            return false;
+
+
+
+        }
+
+        public bool Delete(int selectedIndex)
+        {
+
+            int ProcessorDeleted = Processor.Delete();
+
+            if (ProcessorDeleted == DBConstants.REGISTER_DELETED)
+            {
+
+                ProcessorsCollection.Delete(selectedIndex);
+
+                InfoSuccessMessage?.Invoke("Info", "Procesador Eliminado");
+                return true;
+
+            }
+            else DBUtils.CheckStatusOperation(InfoErrorMessage, InfoSuccessMessage, InfoWarningMessage, ProcessorDeleted, "Procesador");
+
+            return false;
+
+        }
+
+
 
         #endregion CRUD
 
         #region Init
-        public void CleanOldData()
+        public void ClearData()
         {
             Cores = "";
             Nanometers = "";

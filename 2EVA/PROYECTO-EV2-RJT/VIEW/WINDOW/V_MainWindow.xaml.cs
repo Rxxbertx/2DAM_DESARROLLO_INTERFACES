@@ -16,7 +16,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         public V_MainWindow()
         {
-            
+
             InitializeComponent();
             mainFrame.NavigationService.Navigate(new V_Home { parentWindow = this });
             Focus();
@@ -125,10 +125,10 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void mainFrame_Navigated(object sender, NavigationEventArgs e)
         {
-            
+
             PageNavigationUtils.NavigateWithFadeOut(page, (Page)e.Content);
-            
-            
+
+
 
             if (e.Content is V_Home)
             {
@@ -192,9 +192,9 @@ namespace PROYECTO_EV2_RJT.VIEW
         private void DragMoveWindow(object sender, MouseButtonEventArgs e)
         {
 
-            
-                DragMove();
-            
+
+            DragMove();
+
 
         }
     }

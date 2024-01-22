@@ -78,6 +78,7 @@
         <Setter Property="Margin" Value="5"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
+       
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
@@ -90,7 +91,18 @@
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
+            
         </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="FontWeight" Value="ExtraBlack"/>
+                <Setter Property="Foreground" Value="Orange"/>
+                
+            </Trigger>
+        </Style.Triggers>
+
+
     </Style>
 
 
@@ -155,7 +167,9 @@
         <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
         <Setter Property="ColumnWidth" Value="*"/>
-    
+        <Setter Property="GridLinesVisibility" Value="Vertical"/>
+        <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected"/>
+        <Setter Property="AutoGenerateColumns" Value="False"/>
         <Setter Property="MinColumnWidth" Value="200"/>
 
         <Setter Property="Template">
