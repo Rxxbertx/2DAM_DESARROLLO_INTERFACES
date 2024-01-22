@@ -14,6 +14,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
         public event Action<string, string> InfoErrorMessage;
         public event Action<string, string> InfoSuccessMessage;
         public event Action<string, string> InfoWarningMessage;
+        public event Action StoragesCollectionUpdated;
         public event PropertyChangedEventHandler? PropertyChanged;
 
         private M_Storage _storage;
@@ -37,6 +38,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             {
                 _storagesCollection = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(StoragesCollection)));
+                
             }
         }
 
@@ -56,7 +58,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
         {
             _txtStorage = "";
             Storage = new M_Storage();
-            StoragesCollection = [];
+            StoragesCollection = new();
             StoragesCollection.ReadAll();
             
         }
@@ -70,6 +72,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             {
                 InfoSuccessMessage?.Invoke("Success", "Almacenamiento añadida correctamente");
                 StoragesCollection.Create(Storage);
+                StoragesCollectionUpdated?.Invoke();
                 return true;
             }
             else
@@ -86,6 +89,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             {
                 InfoSuccessMessage?.Invoke("Success", "Almacenamiento eliminada correctamente");
                 StoragesCollection.Delete(index);
+               
                 return true;
             }
             else
@@ -117,6 +121,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             {
                 InfoSuccessMessage?.Invoke("Success", "Almacenamiento actualizada correctamente");
                 StoragesCollection.Update(i, Storage);
+               
                 return true;
             }
             else

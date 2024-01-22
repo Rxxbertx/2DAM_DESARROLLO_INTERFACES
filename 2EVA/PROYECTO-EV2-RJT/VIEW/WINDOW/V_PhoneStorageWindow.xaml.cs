@@ -19,8 +19,6 @@ namespace PROYECTO_EV2_RJT.VIEW
         private readonly Operation operation;
         public VM_PhoneStorage? ViewModel;
 
-        //public VM_Phone? ViewModelPhone;
-
         private readonly int id = -1;
         private readonly int storage = -1;
 
@@ -56,9 +54,6 @@ namespace PROYECTO_EV2_RJT.VIEW
 
             InputBindings.Add(new InputBinding(ExitCommand, ExitCommand.InputGesture));
             DataContext = ViewModel;
-
-
-
             Owner.Effect = new BlurEffect();
 
             if (operation == Operation.CREATE)
@@ -125,8 +120,7 @@ namespace PROYECTO_EV2_RJT.VIEW
             ViewModel.InfoSuccessMessage += ShowSuccessMessage;
             ViewModel.InfoWarningMessage += ShowWarningMessage;
             ViewModel.ClearData();
-            ViewModel.StoragesCollection.ReadAll();
-
+    
 
             if (id > 0 && storage > 0 && operation == Operation.UPDATE || operation == Operation.DELETE)
             {

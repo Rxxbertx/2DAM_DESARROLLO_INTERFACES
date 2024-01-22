@@ -74,7 +74,7 @@ namespace PROYECTO_EV2_RJT.VIEW
                                 parent.w_storages.IsChecked = true;
                                 // parent.w_storages.Checked += parent.Menu_Checked; // Create the event handler back
                                 vm_Storage = new();
-                                vm_PhoneStorage = new();
+                                vm_PhoneStorage = new(vm_Storage);
                                 StoragesGrid.DataContext = vm_Storage;
                                 PhonesStoragesGrid.DataContext = vm_PhoneStorage;
 

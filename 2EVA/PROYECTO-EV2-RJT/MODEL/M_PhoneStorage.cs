@@ -13,8 +13,8 @@ namespace PROYECTO_EV2_RJT.MODEL
         #region Propiertes
         public int Id_Phone { get; set; }
         public int Storage { get; set; }
-        public string Model_Phone { get; set; }
-        public string Brand_Phone { get; set; }
+        public M_Storage _storage = new();
+
         #endregion Propiertes
 
         #region Builders
@@ -63,8 +63,6 @@ namespace PROYECTO_EV2_RJT.MODEL
             else return i;
 
         }
-
-
         //no se si esto esta bien
         public int Read()
         {
@@ -182,20 +180,23 @@ namespace PROYECTO_EV2_RJT.MODEL
                 using (MySqlCommand command = new MySqlCommand(query, DBConnection.OpenConnection(db)))
                 {
                     command.Parameters.AddWithValue("@storage", Storage);
+                    command.Parameters.AddWithValue("@Id_Phone", Id_Phone);
+
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
                         {
 
                             Id_Phone = reader.GetInt32(StoragePhoneViewStatics.ID);
-                            Brand_Phone = reader.GetString(StoragePhoneViewStatics.BRAND);
-                            Model_Phone = reader.GetString(StoragePhoneViewStatics.MODEL);
                             Storage = reader.GetInt32(StoragePhoneViewStatics.STORAGE);
+                            _storage.Storage = Storage;
 
-
-                            return this;
                         }
-                        else return null;
+                        else
+                        {
+                            return null;
+                        }
+                        
                     }
                 }
             }
@@ -205,13 +206,24 @@ namespace PROYECTO_EV2_RJT.MODEL
                 return null;
             }
 
+
+
+            if (_storage.ReadObject() is M_Storage temp){
+
+                _storage = temp;
+            }
+
+
+
+            return this;
+
         }
 
 
 
         public override string ToString()
         {
-            return $"Capacidad: {Storage}, Marca: {Brand_Phone}, Modelo: {Model_Phone}";
+            return $"Capacidad: {_storage.Storage}";
         }
 
         #endregion Methods
@@ -241,10 +253,8 @@ namespace PROYECTO_EV2_RJT.MODEL
                         {
                             M_PhoneStorage phone_storage = new M_PhoneStorage();
                             phone_storage.Id_Phone = reader.GetInt32(StoragePhoneViewStatics.ID);
-                            phone_storage.Brand_Phone = reader.GetString(StoragePhoneViewStatics.BRAND);
-                            phone_storage.Model_Phone = reader.GetString(StoragePhoneViewStatics.MODEL);
                             phone_storage.Storage = reader.GetInt32(StoragePhoneViewStatics.STORAGE);
-
+                            phone_storage._storage.Storage = phone_storage.Storage;
 
                             Add(phone_storage);
                         }
