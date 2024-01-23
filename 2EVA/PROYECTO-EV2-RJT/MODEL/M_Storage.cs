@@ -103,10 +103,10 @@ namespace PROYECTO_EV2_RJT.MODEL
                 try
                 {
 
-                    String query = "UPDATE storages SET storage_storage = @new_storage WHERE storage = @old_storage";
+                    String query = "UPDATE storages SET storage_storage = @new_storage WHERE storage_storage = @old_storage";
                     using (MySqlCommand command = new MySqlCommand(query, DBConnection.OpenConnection(db)))
                     {
-                        command.Parameters.AddWithValue("@olg", OldStorage);
+                        command.Parameters.AddWithValue("@old_storage", OldStorage);
                         command.Parameters.AddWithValue("@new_storage", Storage);
                         if (command.ExecuteNonQuery() > 0)
                         {

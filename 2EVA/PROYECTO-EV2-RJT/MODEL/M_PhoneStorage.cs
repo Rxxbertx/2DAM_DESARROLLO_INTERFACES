@@ -12,8 +12,8 @@ namespace PROYECTO_EV2_RJT.MODEL
 
         #region Propiertes
         public int Id_Phone { get; set; }
-        public int Storage { get; set; }
-        public M_Storage _storage = new();
+        public int Id_Storage { get; set; }
+        public M_Storage Storage { get; set; } = new M_Storage();
 
         #endregion Propiertes
 
@@ -41,7 +41,7 @@ namespace PROYECTO_EV2_RJT.MODEL
                     String query = "INSERT INTO phones_storage VALUES (@Id_Phone,@storage)";
                     using (MySqlCommand command = new MySqlCommand(query, DBConnection.OpenConnection(db)))
                     {
-                        command.Parameters.AddWithValue("@storage", Storage);
+                        command.Parameters.AddWithValue("@storage", Id_Storage);
                         command.Parameters.AddWithValue("@Id_Phone", Id_Phone);
 
                         if (command.ExecuteNonQuery() > 0)
@@ -75,7 +75,7 @@ namespace PROYECTO_EV2_RJT.MODEL
                 String query = "SELECT * FROM view_phones_brands_storage WHERE storagege = @storage AND idPhone = @Id_Phone";
                 using (MySqlCommand command = new MySqlCommand(query, DBConnection.OpenConnection(db)))
                 {
-                    command.Parameters.AddWithValue("@storage", Storage);
+                    command.Parameters.AddWithValue("@storage", Id_Storage);
                     command.Parameters.AddWithValue("@Id_Phone", Id_Phone);
 
 
@@ -111,7 +111,7 @@ namespace PROYECTO_EV2_RJT.MODEL
                     using (MySqlCommand command = new MySqlCommand(query, DBConnection.OpenConnection(db)))
                     {
                         command.Parameters.AddWithValue("@Id_Phone", Id_Phone);
-                        command.Parameters.AddWithValue("@storage", Storage);
+                        command.Parameters.AddWithValue("@storage", Id_Storage);
 
                         if (command.ExecuteNonQuery() > 0)
                         {
@@ -146,7 +146,7 @@ namespace PROYECTO_EV2_RJT.MODEL
                     String query = "DELETE FROM phones_storage WHERE storage_storage = @storage AND id_phone = @Id_Phone";
                     using (MySqlCommand command = new MySqlCommand(query, DBConnection.OpenConnection(db)))
                     {
-                        command.Parameters.AddWithValue("@storage", Storage);
+                        command.Parameters.AddWithValue("@storage", Id_Storage);
                         command.Parameters.AddWithValue("@Id_Phone", Id_Phone);
                         if (command.ExecuteNonQuery() > 0)
                         {
@@ -179,7 +179,7 @@ namespace PROYECTO_EV2_RJT.MODEL
                 String query = "SELECT * FROM view_phones_brands_storage WHERE storage = @storage and idPhone = @Id_Phone";
                 using (MySqlCommand command = new MySqlCommand(query, DBConnection.OpenConnection(db)))
                 {
-                    command.Parameters.AddWithValue("@storage", Storage);
+                    command.Parameters.AddWithValue("@storage", Id_Storage);
                     command.Parameters.AddWithValue("@Id_Phone", Id_Phone);
 
                     using (MySqlDataReader reader = command.ExecuteReader())
@@ -188,8 +188,8 @@ namespace PROYECTO_EV2_RJT.MODEL
                         {
 
                             Id_Phone = reader.GetInt32(StoragePhoneViewStatics.ID);
-                            Storage = reader.GetInt32(StoragePhoneViewStatics.STORAGE);
-                            _storage.Storage = Storage;
+                            Id_Storage = reader.GetInt32(StoragePhoneViewStatics.STORAGE);
+                            Storage.Storage = Id_Storage;
 
                         }
                         else
@@ -208,9 +208,9 @@ namespace PROYECTO_EV2_RJT.MODEL
 
 
 
-            if (_storage.ReadObject() is M_Storage temp){
+            if (Storage.ReadObject() is M_Storage temp){
 
-                _storage = temp;
+                Storage = temp;
             }
 
 
@@ -223,7 +223,7 @@ namespace PROYECTO_EV2_RJT.MODEL
 
         public override string ToString()
         {
-            return $"Capacidad: {_storage.Storage}";
+            return $"Capacidad: {Storage.Storage}";
         }
 
         #endregion Methods
@@ -253,8 +253,8 @@ namespace PROYECTO_EV2_RJT.MODEL
                         {
                             M_PhoneStorage phone_storage = new M_PhoneStorage();
                             phone_storage.Id_Phone = reader.GetInt32(StoragePhoneViewStatics.ID);
-                            phone_storage.Storage = reader.GetInt32(StoragePhoneViewStatics.STORAGE);
-                            phone_storage._storage.Storage = phone_storage.Storage;
+                            phone_storage.Id_Storage = reader.GetInt32(StoragePhoneViewStatics.STORAGE);
+                            phone_storage.Storage.Storage = phone_storage.Id_Storage;
 
                             Add(phone_storage);
                         }
@@ -297,7 +297,7 @@ namespace PROYECTO_EV2_RJT.MODEL
 
             foreach (M_PhoneStorage item in this)
             {
-                if (item.Storage == storage.Storage && item.Id_Phone == storage.Id_Phone) return IndexOf(item);
+                if (item.Id_Storage == storage.Id_Storage && item.Id_Phone == storage.Id_Phone) return IndexOf(item);
             }
             return -1;
 

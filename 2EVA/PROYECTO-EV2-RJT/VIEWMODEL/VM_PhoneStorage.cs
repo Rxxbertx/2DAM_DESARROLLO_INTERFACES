@@ -133,10 +133,10 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             if (temp != null)
             {
                 PhoneStorage = temp;
-                // Establecer SelectedStorage en el Storage correspondiente
+                // Establecer SelectedStorage en el Id_Storage correspondiente
                 
                 
-                StorageSelected = StoragesCollection.FirstOrDefault(s => s.Storage == PhoneStorage._storage.Storage);
+                StorageSelected = StoragesCollection.FirstOrDefault(s => s.Storage == PhoneStorage.Storage.Storage);
                 
 
 

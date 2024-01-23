@@ -292,7 +292,7 @@ namespace PROYECTO_EV2_RJT.MODEL
 
         public override string ToString()
         {
-            // return this.Name + " Gpu: " + this.Gpu + " Nanometros: " + this.Nanometers + "nm Nucleos: " + this.Cores + " Fabricante: " + this.Manufacturer;
+            // return this.Model + " Gpu: " + this.Gpu + " Nanometros: " + this.Nanometers + "nm Nucleos: " + this.Cores + " Fabricante: " + this.Manufacturer;
             return this.Name;
         }
     }

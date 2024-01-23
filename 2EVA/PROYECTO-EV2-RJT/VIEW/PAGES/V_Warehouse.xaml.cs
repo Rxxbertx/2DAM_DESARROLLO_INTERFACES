@@ -114,7 +114,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void CreatePhone_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_PhoneWindow(this, CORE.ENUMS.Operation.CREATE));
+            //LoadWindow(new V_PhoneWindow(this, CORE.ENUMS.Operation.CREATE));
         }
 
         private void CreatePhone_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
@@ -134,7 +134,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void UpdatePhone_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_PhoneWindow(this, CORE.ENUMS.Operation.UPDATE));
+            //LoadWindow(new V_PhoneWindow(this, CORE.ENUMS.Operation.UPDATE));
 
         }
 
@@ -401,7 +401,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
             if (PhonesStoragesGrid.SelectedItem is M_PhoneStorage phoneStorage)
             {
-                LoadWindow(new V_PhoneStorageWindow(this, Operation.UPDATE, phoneStorage.Id_Phone, phoneStorage.Storage) { ViewModel = vm_PhoneStorage });
+                LoadWindow(new V_PhoneStorageWindow(this, Operation.UPDATE, phoneStorage.Id_Phone, phoneStorage.Id_Storage) { ViewModel = vm_PhoneStorage });
             }
 
             
@@ -425,7 +425,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
             if (PhonesStoragesGrid.SelectedItem is M_PhoneStorage phoneStorage)
             {
-                LoadWindow(new V_PhoneStorageWindow(this, Operation.DELETE, phoneStorage.Id_Phone, phoneStorage.Storage) { ViewModel = vm_PhoneStorage });
+                LoadWindow(new V_PhoneStorageWindow(this, Operation.DELETE, phoneStorage.Id_Phone, phoneStorage.Id_Storage) { ViewModel = vm_PhoneStorage });
             }
 
         }

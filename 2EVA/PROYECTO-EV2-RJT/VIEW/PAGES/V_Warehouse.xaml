@@ -236,15 +236,13 @@
                   CanUserDeleteRows="False" 
                   CanUserAddRows="False" 
                   >
-                                <DataGrid.DataContext>
-                                    <context:VM_PhoneStorage/>
-                                </DataGrid.DataContext>
+
                                 
                                 <DataGrid.Columns>
 
-                                    <DataGridTextColumn Header="Marca" Binding="{Binding Brand_Phone}" IsReadOnly="True"/>
-                                    <DataGridTextColumn Header="Modelo" Binding="{Binding Model_Phone}" IsReadOnly="True" Width="auto"/>
-                                    <DataGridTextColumn Header="Capacidad" Binding="{Binding Storage}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Marca" Binding="{Binding Phone.Brand.Name}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Modelo" Binding="{Binding Phone.Model}" IsReadOnly="True" Width="auto"/>
+                                    <DataGridTextColumn Header="Capacidad" Binding="{Binding Storage.Storage}" IsReadOnly="True"/>
 
                                 </DataGrid.Columns>
                             </DataGrid>

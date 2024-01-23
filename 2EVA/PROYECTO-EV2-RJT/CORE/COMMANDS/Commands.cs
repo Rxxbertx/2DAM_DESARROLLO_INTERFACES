@@ -14,7 +14,7 @@ namespace PROYECTO_EV2_RJT
         public static readonly RoutedUICommand CreateUpdateDeletePhone = CreateCommand("CreateUpdateDeletePhone", Key.Enter);
 
 
-        // Commands for Storage
+        // Commands for Id_Storage
         public static readonly RoutedUICommand DeleteStorage = CreateCommand("DeleteStorage");
 
 
@@ -39,7 +39,7 @@ namespace PROYECTO_EV2_RJT
         public static readonly RoutedUICommand CreateProcessor = CreateCommand("CreateProcessor");
         public static readonly RoutedUICommand CreateUpdateDeleteProcessor = CreateCommand("CreateUpdateDeleteDeleteProcessor", Key.Enter);
 
-        // Commands for Phone Storage
+        // Commands for Phone Id_Storage
         public static readonly RoutedUICommand CreatePhoneStorage = CreateCommand("CreatePhoneStorage");
         public static readonly RoutedUICommand DeletePhoneStorage = CreateCommand("DeletePhoneStorage");
         public static readonly RoutedUICommand UpdatePhoneStorage = CreateCommand("UpdatePhoneStorage");

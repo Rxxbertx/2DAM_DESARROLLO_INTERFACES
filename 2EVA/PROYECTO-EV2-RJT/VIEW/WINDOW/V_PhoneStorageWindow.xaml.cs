@@ -125,7 +125,7 @@ namespace PROYECTO_EV2_RJT.VIEW
             if (id > 0 && storage > 0 && operation == Operation.UPDATE || operation == Operation.DELETE)
             {
                 ViewModel.PhoneStorage.Id_Phone = id;
-                ViewModel.PhoneStorage.Storage = storage;
+                ViewModel.PhoneStorage.Id_Storage = storage;
                 Read();
 
             }
