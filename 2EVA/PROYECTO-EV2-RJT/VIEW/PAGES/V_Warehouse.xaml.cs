@@ -20,7 +20,9 @@ namespace PROYECTO_EV2_RJT.VIEW
         VM_Brand? vm_Brand;
         VM_Storage? vm_Storage;
         VM_Processor? vm_Processor;
+        VM_Phone? vm_Phone;
         VM_PhoneStorage? vm_PhoneStorage;
+
 
         public V_Warehouse()
         {
@@ -51,7 +53,8 @@ namespace PROYECTO_EV2_RJT.VIEW
                                 // parent.w_phones.Checked -= parent.Menu_Checked; // Remove the event handler temporarily
                                 parent.w_phones.IsChecked = true;
                                 // parent.w_phones.Checked += parent.Menu_Checked; // Create the event handler back
-
+                                vm_Phone = new();
+                                PhonesGrid.DataContext = vm_Phone;
 
 
                                 break;
@@ -114,7 +117,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void CreatePhone_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            //LoadWindow(new V_PhoneWindow(this, CORE.ENUMS.Operation.CREATE));
+            LoadWindow(new V_PhoneWindow(this, Operation.CREATE) { ViewModel = vm_Phone });
         }
 
         private void CreatePhone_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
@@ -122,7 +125,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
             if (tabControl.SelectedItem == phoneTab)
             {
-                e.CanExecute = true; System.Diagnostics.Debug.WriteLine("CanExecuteppppp");
+                e.CanExecute = true;
             }
             else
             {

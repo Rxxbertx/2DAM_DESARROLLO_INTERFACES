@@ -20,11 +20,13 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
 
 
         private M_Storage _storageSelected;
+        private M_Phone _phoneSelected;
 
 
 
         private M_PhoneStoragesCollection _phonesStoragesCollection;
         private M_StoragesCollection _storagesCollection;
+        private M_PhonesCollection _phonesCollection;
 
 
         public M_PhoneStorage PhoneStorage
@@ -47,13 +49,23 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             }
         }
 
+        public M_Phone PhoneSelected
+        {
+            get { return _phoneSelected; }
+            set
+            {
+                _phoneSelected = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PhoneSelected)));
+            }
+        }
+
         public M_PhoneStoragesCollection PhonesStoragesCollection
         {
             get { return _phonesStoragesCollection; }
             set
             {
                 _phonesStoragesCollection = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(StoragesCollection)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PhonesStoragesCollection)));
             }
         }
 
@@ -67,6 +79,16 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             }
         }
 
+        public M_PhonesCollection PhonesCollection
+        {
+            get { return _phonesCollection; }
+            set
+            {
+                _phonesCollection = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PhonesCollection)));
+            }
+        }
+
 
 
         #endregion Properties
@@ -77,6 +99,8 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             PhoneStorage = new M_PhoneStorage();
             PhonesStoragesCollection = new();
             StoragesCollection = new();
+            PhonesCollection = new();
+            PhonesCollection.ReadAll();
             StoragesCollection.ReadAll();
             PhonesStoragesCollection.ReadAll();
             vmStorage.StoragesCollectionUpdated += UpdatePhonesStoragesCollection;
@@ -130,6 +154,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
         public bool Read()
         {
             M_PhoneStorage? temp = PhoneStorage.ReadObject();
+            
             if (temp != null)
             {
                 PhoneStorage = temp;
@@ -137,6 +162,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 
                 
                 StorageSelected = StoragesCollection.FirstOrDefault(s => s.Storage == PhoneStorage.Storage.Storage);
+                PhoneSelected = PhonesCollection.FirstOrDefault(p => p.Id == PhoneStorage.Phone.Id);
                 
 
 

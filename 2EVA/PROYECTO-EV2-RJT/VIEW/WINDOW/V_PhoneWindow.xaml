@@ -39,7 +39,7 @@
             <Grid VerticalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -60,40 +60,82 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <!-- Fila 1 -->
-                <TextBlock Grid.Row="0" Text="Marca" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
-                    <ComboBox Style="{DynamicResource ModernComboBox}" Grid.Row="0" x:Name="cbxBrand" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1"/>
+
+                    <!--Fila 0-->
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Imagen (Clic en el Rectangulo)" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+
+
+
+                    <Rectangle RadiusX="10" RadiusY="10" x:Name="ImageRectangle" MouseLeftButtonDown="Image_MouseLeftButtonDown" Grid.Row="1" Grid.Column="0" Width="150" Height="150" Margin="0,0,0,20" VerticalAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Center" Stroke="Orange" StrokeThickness="5">
+                        <Rectangle.Fill>
+                            <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" ImageSource="{Binding Phone.Image, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Stretch="Uniform"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+
+                    <!-- Fila 1 -->
+                <TextBlock Grid.Row="2" Text="Marca" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+                    <ComboBox Style="{DynamicResource ModernComboBox}" HorizontalContentAlignment="Stretch" ItemsSource="{Binding BrandsCollection}" Grid.Row="2" x:Name="cbxBrand" Width="300" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1">
+
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                                    <Ellipse Width="40" Height="40" VerticalAlignment="Center" HorizontalAlignment="Left" SnapsToDevicePixels="True" >
+                                        <Ellipse.Fill>
+                                            <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" ImageSource="{Binding Path=Image}" Stretch="Uniform"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                    <TextBlock Text="{Binding}" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+
+                    </ComboBox>
 
                 <!-- Fila 2 -->
-                <TextBlock Grid.Row="1" Text="Modelo" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                    <TextBox Text="{Binding Model}" Grid.Row="1" Style="{StaticResource RoundedTextBox}" x:Name="txtModel" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                <TextBlock Grid.Row="3" Text="Modelo" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <TextBox Text="{Binding Model}" Grid.Row="3" Style="{StaticResource RoundedTextBox}" x:Name="txtModel" Width="300" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
                     <!-- Fila 3 -->
-                <TextBlock Grid.Row="2" Text="Procesador" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                    <ComboBox d:ItemsSource="{d:SampleData ItemCount=5}" Style="{DynamicResource ModernComboBox}" Grid.Row="2" x:Name="cbxProcessor" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                <TextBlock Grid.Row="4" Text="Procesador" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <ComboBox ItemsSource="{Binding ProcessorsCollection}" Style="{DynamicResource ModernComboBox}" Grid.Row="4" x:Name="cbxProcessor" Width="300" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0">
+
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Rectangle RadiusX="10" RadiusY="10" Width="40" Height="40"  VerticalAlignment="Center" HorizontalAlignment="Left" SnapsToDevicePixels="True" >
+                                        <Rectangle.Fill>
+                                            <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" ImageSource="{Binding Path=Image}" Stretch="Uniform"/>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                    <TextBlock Text="{Binding}" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+
+                    </ComboBox>
 
                 <!-- Fila 4 -->
-                <TextBlock Grid.Row="3" Text="Memoria RAM" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                    <TextBox Text="{Binding Ram}" Grid.Row="3" Style="{StaticResource RoundedTextBox}" x:Name="txtRam" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                <TextBlock Grid.Row="5" Text="Memoria RAM" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <TextBox Text="{Binding Ram}" Grid.Row="5" Style="{StaticResource RoundedTextBox}" x:Name="txtRam" Width="300" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
 
                 <!-- Fila 5 -->
-                <TextBlock Grid.Row="4" Text="Almacenamiento" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                <ListBox  Grid.Row="4" x:Name="cbxStorage" Width="200" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="50" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0" BorderBrush="Orange" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionMode="Multiple"/>
+                <TextBlock Grid.Row="6" Text="Almacenamiento" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                <ListBox  Grid.Row="6" x:Name="cbxStorage" Width="300" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="100" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0" BorderBrush="Orange" ItemsSource="{Binding StoragesCollection}" SelectionMode="Multiple"/>
 
                 <!-- Repite el mismo patrón para los demás elementos -->
 
                 <!-- Fila 6 -->
-                <TextBlock Grid.Row="5" Text="Pantalla" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                    <TextBox  Text="{Binding Screen}" Style="{StaticResource RoundedTextBox}" Grid.Row="5" x:Name="txtScreen" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                <TextBlock Grid.Row="7" Text="Pantalla" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <TextBox  Text="{Binding Screen}" Style="{StaticResource RoundedTextBox}" Grid.Row="7" x:Name="txtScreen" Width="300" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
                 <!-- Fila 7 -->
-                <TextBlock Grid.Row="6" Text="Bateria" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                    <TextBox Text="{Binding Battery}" Grid.Row="6" Style="{StaticResource RoundedTextBox}" x:Name="txtBattery" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                <TextBlock Grid.Row="8" Text="Bateria" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <TextBox Text="{Binding Battery}" Grid.Row="8" Style="{StaticResource RoundedTextBox}" x:Name="txtBattery" Width="300" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
                 <!-- Fila 8 -->
-                <TextBlock Grid.Row="7" Text="Sistema Operativo" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                    <TextBox Text="{Binding OS}" Grid.Row="7" Style="{StaticResource RoundedTextBox}" x:Name="txtOS" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                <TextBlock Grid.Row="9" Text="Sistema Operativo" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <TextBox Text="{Binding Os}" Grid.Row="9" Style="{StaticResource RoundedTextBox}" x:Name="txtOS" Width="300" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
             </Grid>
             </Border>
             

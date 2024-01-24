@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using PROYECTO_EV2_RJT.CORE.CONSTANTS;
 using System.Windows;
 using PROYECTO_EV2_RJT.CORE.INTERFACES;
+using PROYECTO_EV2_RJT.CORE.UTILS;
 
 namespace PROYECTO_EV2_RJT.MODEL
 {
@@ -14,6 +15,7 @@ namespace PROYECTO_EV2_RJT.MODEL
         public int Id_Phone { get; set; }
         public int Id_Storage { get; set; }
         public M_Storage Storage { get; set; } = new M_Storage();
+        public M_Phone Phone { get; set; } = new M_Phone();
 
         #endregion Propiertes
 
@@ -190,6 +192,7 @@ namespace PROYECTO_EV2_RJT.MODEL
                             Id_Phone = reader.GetInt32(StoragePhoneViewStatics.ID);
                             Id_Storage = reader.GetInt32(StoragePhoneViewStatics.STORAGE);
                             Storage.Storage = Id_Storage;
+                            Phone.Id = Id_Phone;
 
                         }
                         else
@@ -197,7 +200,9 @@ namespace PROYECTO_EV2_RJT.MODEL
                             return null;
                         }
                         
+                        reader.Close();
                     }
+                    command.Dispose();
                 }
             }
 
@@ -208,9 +213,17 @@ namespace PROYECTO_EV2_RJT.MODEL
 
 
 
-            if (Storage.ReadObject() is M_Storage temp){
+            if (Storage.ReadObject() is  M_Storage storage){
 
-                Storage = temp;
+                
+                    Storage = storage;
+                
+            }
+
+            if (Phone.ReadObject() is M_Phone phone)
+            {
+
+                Phone = phone;
             }
 
 
@@ -255,6 +268,23 @@ namespace PROYECTO_EV2_RJT.MODEL
                             phone_storage.Id_Phone = reader.GetInt32(StoragePhoneViewStatics.ID);
                             phone_storage.Id_Storage = reader.GetInt32(StoragePhoneViewStatics.STORAGE);
                             phone_storage.Storage.Storage = phone_storage.Id_Storage;
+                            phone_storage.Phone.Id = phone_storage.Id_Phone;
+                            phone_storage.Phone.Model = reader.GetString(StoragePhoneViewStatics.MODEL);
+                            phone_storage.Phone.Brand.Name = reader.GetString(StoragePhoneViewStatics.BRAND);
+
+                            try
+                            {
+                                byte[] img = reader.GetFieldValue<byte[]>(StoragePhoneViewStatics.BRAND_IMAGE);
+                                if (img != null)
+                                {
+                                    phone_storage.Phone.Brand.Image = Utils.BytesToImage(img);
+                                }
+                            }
+                            catch (Exception)
+                            {
+
+                                throw;
+                            }
 
                             Add(phone_storage);
                         }

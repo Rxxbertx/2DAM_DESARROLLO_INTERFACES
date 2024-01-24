@@ -1,9 +1,11 @@
 ﻿using MySqlConnector;
 using PROYECTO_EV2_RJT.CORE.CONSTANTS;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Media.Imaging;
 
 namespace PROYECTO_EV2_RJT.CORE.UTILS
 {
@@ -80,6 +82,65 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
 
 
         }
+
+
+
+
+
+
+
+        public static byte[] ImageToBytes(BitmapSource image)
+        {
+            var encoder = new PngBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(image));
+
+            using (MemoryStream stream = new MemoryStream())
+            {
+                encoder.Save(stream);
+                return stream.ToArray();
+            }
+        }
+
+        public static BitmapImage BytesToImage(byte[] bytes)
+        {
+            using (MemoryStream stream = new MemoryStream(bytes))
+            {
+                var image = new BitmapImage();
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.StreamSource = stream;
+                image.EndInit();
+                return image;
+            }
+        }
+
+
+
+        public static BitmapImage? SelectImage()
+        {
+            // Crear un cuadro de diálogo para seleccionar archivos
+            Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
+
+            // Configurar el cuadro de diálogo para seleccionar imágenes
+            dialog.Filter = "Imágenes (*.png;*.jpg;*.jpeg;*.bmp;*.gif)|*.png;*.jpg;*.jpeg;*.bmp;*.gif|Todos los archivos (*.*)|*.*";
+            dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
+            // Mostrar el cuadro de diálogo y obtener el resultado
+            bool? result = dialog.ShowDialog();
+
+            if (result == true)
+            {
+                // Si el usuario seleccionó un archivo, cargar la imagen
+                var image = new BitmapImage(new Uri(dialog.FileName));
+                return image;
+            }
+            else
+            {
+                // Si el usuario canceló el cuadro de diálogo, devolver null
+                return null;
+            }
+        }
+
 
     }
 

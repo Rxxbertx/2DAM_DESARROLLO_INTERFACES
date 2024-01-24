@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Effects;
+using System.Windows.Media.Imaging;
 
 namespace PROYECTO_EV2_RJT.VIEW
 {
@@ -256,5 +257,18 @@ namespace PROYECTO_EV2_RJT.VIEW
             Utils.WarningMessage(infoTextProcessor, sender + " : " + warningMessage);
         }
         #endregion message events
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+            BitmapImage? img = Utils.SelectImage();
+            if (img != null && ViewModel != null)
+            {
+                ViewModel.Processor.Image = img;
+
+
+            }
+
+        }
     }
 }

@@ -6,7 +6,9 @@ using PROYECTO_EV2_RJT.VIEWMODEL;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Effects;
+using System.Windows.Media.Imaging;
 using System.Xml.Linq;
 
 namespace PROYECTO_EV2_RJT.VIEW
@@ -83,7 +85,7 @@ namespace PROYECTO_EV2_RJT.VIEW
         public void Cancel()
         {
             if (v_Warehouse != null)
-                Utils.ErrorMessage(v_Warehouse.infoTextPhone, "Operacion Cancelada");
+                Utils.ErrorMessage(v_Warehouse.infoTextBrand, "Operacion Cancelada");
             Close();
         }
 
@@ -247,5 +249,18 @@ namespace PROYECTO_EV2_RJT.VIEW
             Utils.WarningMessage(infoTextBrand, sender + " : " + warningMessage);
         }
         #endregion messages
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+            BitmapImage? img = Utils.SelectImage();
+            if (img != null && ViewModel !=null)
+            {
+                ViewModel.Brand.Image = img;
+                
+
+            }
+
+        }
     }
 }

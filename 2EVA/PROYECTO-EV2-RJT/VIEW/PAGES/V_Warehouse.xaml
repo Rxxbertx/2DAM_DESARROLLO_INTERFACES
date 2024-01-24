@@ -69,14 +69,13 @@
                                   HorizontalContentAlignment="Stretch"
                                   x:Name="PhonesGrid" 
                                   Margin="10"  
+                                  ItemsSource="{Binding PhonesCollection}"
                                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" 
                                   Style="{DynamicResource DataGridStyle}"
                                   RowStyle="{StaticResource DataGridRowStyle}"
                                   CellStyle="{StaticResource DataGridCellStyle}"
                                   Background="Gray" 
                                   SelectionMode="Single"
-                                   
-                                   
                                   VerticalAlignment="Top" 
                                   VerticalContentAlignment="Center" 
                                   FontSize="22" FontFamily="Bahnschrift" 
@@ -88,12 +87,23 @@
 
                             <DataGrid.Columns>
 
-                                <DataGridTextColumn Header="Marca" Binding="{Binding Brand}" IsReadOnly="True"/>
+                                <DataGridTemplateColumn Header="Imagen" Width="auto" MinWidth="100" >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Ellipse Width="75" Height="75" VerticalAlignment="Center" HorizontalAlignment="Center" SnapsToDevicePixels="True" >
+                                                <Ellipse.Fill>
+                                                    <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" ImageSource="{Binding Path=Image}" Stretch="Uniform"/>
+                                                </Ellipse.Fill>
+                                            </Ellipse>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Header="Marca" Binding="{Binding Brand.Name}" IsReadOnly="True"/>
                                 <DataGridTextColumn Header="Modelo" Binding="{Binding Model}" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Procesador" Binding="{Binding Processor}" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Pantalla" Binding="{Binding Screen}" IsReadOnly="True" />
-                                <DataGridTextColumn Header="Ram" Binding="{Binding Ram}" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Bateria" Binding="{Binding Battery}" IsReadOnly="True" />
+                                <DataGridTextColumn Header="Procesador" Binding="{Binding Processor.Name}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Pantalla en ''" Binding="{Binding Screen}" IsReadOnly="True" />
+                                <DataGridTextColumn Header="Ram GB" Binding="{Binding Ram}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Bateria Mah" Binding="{Binding Battery}" IsReadOnly="True" />
                                 <DataGridTextColumn Header="Sistema" Binding="{Binding Os}" IsReadOnly="True" />
 
                             </DataGrid.Columns>
@@ -240,8 +250,22 @@
                                 
                                 <DataGrid.Columns>
 
-                                    <DataGridTextColumn Header="Marca" Binding="{Binding Phone.Brand.Name}" IsReadOnly="True"/>
-                                    <DataGridTextColumn Header="Modelo" Binding="{Binding Phone.Model}" IsReadOnly="True" Width="auto"/>
+                                    <DataGridTemplateColumn Header="Marca" SortMemberPath="Phone.Brand.Name" Width="auto">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Ellipse Width="30" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" SnapsToDevicePixels="True" >
+                                                        <Ellipse.Fill>
+                                                            <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" ImageSource="{Binding Path=Phone.Brand.Image}" Stretch="Uniform"/>
+                                                        </Ellipse.Fill>
+                                                    </Ellipse>
+                                                    <TextBlock Text="{Binding Phone.Brand.Name}" Margin="5,0,0,0"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTextColumn Header="Modelo" Binding="{Binding Phone.Model}" IsReadOnly="True"/>
                                     <DataGridTextColumn Header="Capacidad" Binding="{Binding Storage.Storage}" IsReadOnly="True"/>
 
                                 </DataGrid.Columns>
@@ -322,7 +346,7 @@
                     
                   VerticalAlignment="Top" 
                   VerticalContentAlignment="Center" 
-                  FontSize="22" FontFamily="Bahnschrift" 
+                  FontSize="30" FontFamily="Bahnschrift" 
                   CanUserReorderColumns="False" 
                   CanUserDeleteRows="False" 
                   CanUserAddRows="False" 
@@ -334,7 +358,20 @@
 
                             <DataGrid.Columns>
 
-                                <DataGridTextColumn Header="Id" Binding="{Binding Id}" IsReadOnly="True"/>
+
+                                <DataGridTemplateColumn Header="Imagen" Width="auto" MinWidth="100">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Ellipse Width="75" Height="75" VerticalAlignment="Center" HorizontalAlignment="Center" SnapsToDevicePixels="True" >
+                                                <Ellipse.Fill>
+                                                    <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" ImageSource="{Binding Path=Image}" Stretch="Uniform"/>
+                                                </Ellipse.Fill>
+                                            </Ellipse>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Header="Id" Binding="{Binding Id}" IsReadOnly="True" Width="auto"/>
+                                
                                 <DataGridTextColumn Header="Marca" Binding="{Binding Name}" IsReadOnly="True"/>
 
 
@@ -400,6 +437,17 @@
 
                             <DataGrid.Columns>
 
+                                <DataGridTemplateColumn Header="Imagen" Width="auto" MinWidth="130">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Rectangle RadiusX="10" RadiusY="10" Width="75" Height="75"  VerticalAlignment="Center" HorizontalAlignment="Center" SnapsToDevicePixels="True" >
+                                                <Rectangle.Fill>
+                                                    <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" ImageSource="{Binding Path=Image}" Stretch="Uniform"/>
+                                                </Rectangle.Fill>
+                                            </Rectangle>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
                                 <DataGridTextColumn Header="Nombre" Binding="{Binding Name}" IsReadOnly="True" Width="auto"/>
                                 <DataGridTextColumn Header="Nucleos" Binding="{Binding Cores}" IsReadOnly="True" />
                                 <DataGridTextColumn Header="Gpu" Binding="{Binding Gpu}" IsReadOnly="True" Width="auto"/>

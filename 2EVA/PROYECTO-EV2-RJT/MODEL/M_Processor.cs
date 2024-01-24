@@ -2,12 +2,15 @@
 using practicaLoginRJT.database;
 using PROYECTO_EV2_RJT.CORE.CONSTANTS;
 using PROYECTO_EV2_RJT.CORE.INTERFACES;
+using PROYECTO_EV2_RJT.CORE.UTILS;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows;
+using System.Windows.Media.Imaging;
 
 namespace PROYECTO_EV2_RJT.MODEL
 {
-    public class M_Processor : ICrud<M_Processor>
+    public class M_Processor : ICrud<M_Processor>, INotifyPropertyChanged
     {
 
 
@@ -22,6 +25,9 @@ namespace PROYECTO_EV2_RJT.MODEL
         public int Cores { get; set; }
 
         public int Nanometers { get; set; }
+
+        private BitmapImage _image;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
 
         public M_Processor()
@@ -41,6 +47,16 @@ namespace PROYECTO_EV2_RJT.MODEL
             this.Cores = cores;
             this.Nanometers = nanometers;
 
+        }
+
+        public BitmapImage Image
+        {
+            get { return _image; }
+            set
+            {
+                _image = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Image)));
+            }
         }
 
 
@@ -80,6 +96,15 @@ namespace PROYECTO_EV2_RJT.MODEL
                         Manufacturer = reader.GetString(ProcessorStatics.MANUFACTURER);
                         Cores = reader.GetInt32(ProcessorStatics.CORES);
 
+                        try
+                        {
+                            byte[] image = reader.GetFieldValue<byte[]>(ProcessorStatics.IMAGE);
+                            if (image != null) Image = Utils.BytesToImage(image);
+                        }
+                        catch (Exception)
+                        {
+
+                        }
 
                     }
 
@@ -122,7 +147,13 @@ namespace PROYECTO_EV2_RJT.MODEL
 
                     DBConnection.OpenConnection(db);
 
-                    string query = "UPDATE cpu SET name_cpu = @name, nanometers_cpu = @nanometers, graphicsrender_cpu = @gpu, manufacturer_cpu = @manufacturer, cores_cpu = @cores WHERE id_cpu = @id";
+
+                    string query = "UPDATE cpu SET name_cpu = @name, nanometers_cpu = @nanometers, graphicsrender_cpu = @gpu, manufacturer_cpu = @manufacturer, cores_cpu = @cores, image_cpu = @img WHERE id_cpu = @id";
+
+                    if (Image == null)
+                    {
+                        query = "UPDATE cpu SET name_cpu = @name, nanometers_cpu = @nanometers, graphicsrender_cpu = @gpu, manufacturer_cpu = @manufacturer, cores_cpu = @cores WHERE id_cpu = @id";
+                    }
 
                     using MySqlCommand command = new(query, DBConnection.OpenConnection(db));
 
@@ -132,6 +163,11 @@ namespace PROYECTO_EV2_RJT.MODEL
                     command.Parameters.AddWithValue("@manufacturer", Manufacturer);
                     command.Parameters.AddWithValue("@cores", Cores);
                     command.Parameters.AddWithValue("@id", Id);
+                    
+                    if (Image != null) { 
+                        command.Parameters.AddWithValue("@img", Utils.ImageToBytes(Image));
+                    }
+
 
                     return command.ExecuteNonQuery() > 0 ? DBConstants.REGISTER_UPDATED : DBConstants.REGISTER_NOT_UPDATED;
 
@@ -209,7 +245,12 @@ namespace PROYECTO_EV2_RJT.MODEL
             {
                 DBConnection.OpenConnection(db);
 
-                string query = "SELECT COUNT(*) FROM cpu WHERE name_cpu = @name AND nanometers_cpu = @nanometers AND graphicsrender_cpu = @gpu AND manufacturer_cpu = @manufacturer AND cores_cpu = @cores";
+                string query = "SELECT COUNT(*) FROM cpu WHERE name_cpu = @name AND nanometers_cpu = @nanometers AND graphicsrender_cpu = @gpu AND manufacturer_cpu = @manufacturer AND cores_cpu = @cores AND image_cpu = @img";
+
+                if (Image == null)
+                {
+                    query = "SELECT COUNT(*) FROM cpu WHERE name_cpu = @name AND nanometers_cpu = @nanometers AND graphicsrender_cpu = @gpu AND manufacturer_cpu = @manufacturer AND cores_cpu = @cores";
+                }
 
                 using MySqlCommand command = new(query, DBConnection.OpenConnection(db));
                 command.Parameters.AddWithValue("@name", Name);
@@ -217,6 +258,11 @@ namespace PROYECTO_EV2_RJT.MODEL
                 command.Parameters.AddWithValue("@gpu", Gpu);
                 command.Parameters.AddWithValue("@manufacturer", Manufacturer);
                 command.Parameters.AddWithValue("@cores", Cores);
+
+                if (Image != null)
+                {
+                    command.Parameters.AddWithValue("@img", Utils.ImageToBytes(Image));
+                }
 
                 int count = Convert.ToInt32(command.ExecuteScalar());
 
@@ -246,7 +292,12 @@ namespace PROYECTO_EV2_RJT.MODEL
                 {
                     DBConnection.OpenConnection(db);
 
-                    string query = "INSERT INTO cpu (name_cpu, nanometers_cpu, graphicsrender_cpu, manufacturer_cpu, cores_cpu) VALUES (@name, @nanometers, @gpu, @manufacturer, @cores)";
+                    string query = "INSERT INTO cpu (name_cpu, nanometers_cpu, graphicsrender_cpu, manufacturer_cpu, cores_cpu, image_cpu) VALUES (@name, @nanometers, @gpu, @manufacturer, @cores, @img)";
+
+                    if (Image == null)
+                    {
+                        query = "INSERT INTO cpu (name_cpu, nanometers_cpu, graphicsrender_cpu, manufacturer_cpu, cores_cpu) VALUES (@name, @nanometers, @gpu, @manufacturer, @cores)";
+                    }
 
                     using MySqlCommand command = new(query, DBConnection.OpenConnection(db));
                     command.Parameters.AddWithValue("@name", Name);
@@ -254,6 +305,11 @@ namespace PROYECTO_EV2_RJT.MODEL
                     command.Parameters.AddWithValue("@gpu", Gpu);
                     command.Parameters.AddWithValue("@manufacturer", Manufacturer);
                     command.Parameters.AddWithValue("@cores", Cores);
+
+                    if (Image != null)
+                    {
+                        command.Parameters.AddWithValue("@img", Utils.ImageToBytes(Image));
+                    }
 
                     if (command.ExecuteNonQuery() > 0)
                     {
@@ -292,8 +348,8 @@ namespace PROYECTO_EV2_RJT.MODEL
 
         public override string ToString()
         {
-            // return this.Model + " Gpu: " + this.Gpu + " Nanometros: " + this.Nanometers + "nm Nucleos: " + this.Cores + " Fabricante: " + this.Manufacturer;
-            return this.Name;
+            return this.Name + " Gpu: " + this.Gpu + " Nanometros: " + this.Nanometers + "nm Nucleos: " + this.Cores;
+           
         }
     }
     public class M_ProcessorsCollection : ObservableCollection<M_Processor>, ICollectionCrud<M_Processor>
@@ -375,8 +431,19 @@ namespace PROYECTO_EV2_RJT.MODEL
                             Nanometers = reader.GetInt32(ProcessorStatics.NANOMETERS),
                             Gpu = reader.GetString(ProcessorStatics.GPU),
                             Manufacturer = reader.GetString(ProcessorStatics.MANUFACTURER),
-                            Cores = reader.GetInt32(ProcessorStatics.CORES)
+                            Cores = reader.GetInt32(ProcessorStatics.CORES),
                         };
+
+                        try
+                        {
+                            byte[] image = reader.GetFieldValue<byte[]>(ProcessorStatics.IMAGE);
+                            if (image != null) processor.Image = Utils.BytesToImage(image);
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+
 
 
                         this.Add(processor);

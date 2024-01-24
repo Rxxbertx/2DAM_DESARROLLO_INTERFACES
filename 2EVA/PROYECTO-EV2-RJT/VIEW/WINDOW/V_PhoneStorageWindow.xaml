@@ -60,7 +60,16 @@
 
                 <!-- Fila 1 -->
                 <TextBlock Grid.Row="0" Text="Telefono" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
-                    <ComboBox ItemsSource="{Binding PhonesCollection}" Style="{DynamicResource ModernComboBox}" Grid.Row="0" x:Name="cbxPhones" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1"/>
+                    <ComboBox ItemsSource="{Binding PhonesCollection}" SelectedItem="{Binding PhoneSelected}" Style="{DynamicResource ModernComboBox}" Grid.Row="0" x:Name="cbxPhones" Width="400" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Image}" Width="20" Height="20"/>
+                                    <TextBlock Text="{Binding}" Margin="5,0,0,0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
 
                 <!-- Fila 2 -->
 

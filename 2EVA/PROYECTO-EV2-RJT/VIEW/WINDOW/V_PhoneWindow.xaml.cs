@@ -19,7 +19,7 @@ namespace PROYECTO_EV2_RJT.VIEW
         private ExitCommand ExitCommand => new(Cancel, Key.Escape);
         private readonly V_Warehouse? v_Warehouse;
         private readonly Operation operation;
-        public VM_PhoneStorage? ViewModel;
+        public VM_Phone? ViewModel;
 
 
         private readonly int id = -1;
@@ -53,6 +53,7 @@ namespace PROYECTO_EV2_RJT.VIEW
         public void InitWindow(Page parent, Operation operation)
         {
             InputBindings.Add(new InputBinding(ExitCommand, ExitCommand.InputGesture));
+            ViewModel?.InitOtherCollections();
             DataContext = ViewModel;
             Owner.Effect = new BlurEffect();
 

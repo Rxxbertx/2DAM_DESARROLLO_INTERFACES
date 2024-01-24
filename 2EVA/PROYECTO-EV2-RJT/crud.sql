@@ -60,6 +60,8 @@ DROP TABLE IF EXISTS `dbRoberto`.`brands` ;
 CREATE TABLE IF NOT EXISTS `dbRoberto`.`brands` (
   `id_brand` INT NOT NULL AUTO_INCREMENT,
   `brand_brand` VARCHAR(45) NOT NULL,
+  `brand_image` BLOB NULL,
+
   PRIMARY KEY (`id_brand`),
   UNIQUE INDEX `brand_UNIQUE` (`brand_brand` ASC) VISIBLE)
 ENGINE = InnoDB;
@@ -77,6 +79,8 @@ CREATE TABLE IF NOT EXISTS `dbRoberto`.`cpu` (
   `graphicsrender_cpu` VARCHAR(45) NOT NULL,
   `manufacturer_cpu` VARCHAR(45) NOT NULL,
   `cores_cpu` INT UNSIGNED NOT NULL,
+  `image_cpu` BLOB NULL,
+
   PRIMARY KEY (`id_cpu`),
 ENGINE = InnoDB;
 
@@ -95,6 +99,7 @@ CREATE TABLE IF NOT EXISTS `dbRoberto`.`phones` (
   `brand_phone_brand` INT NOT NULL,
   `cpu_phone_cpu` INT NOT NULL,
   `operatingsystem_phones` VARCHAR(45) NOT NULL,
+  `image_phone` BLOB NULL,
   PRIMARY KEY (`id_phone`, `brand_phone_brand`, `cpu_phone_cpu`),
   INDEX `fk_phones_brands_idx` (`brand_phone_brand` ASC) VISIBLE,
   INDEX `fk_phones_cpu1_idx` (`cpu_phone_cpu` ASC) VISIBLE,
@@ -149,7 +154,7 @@ ENGINE = InnoDB;
 
 
 CREATE VIEW view_phones_brands_storage AS
-SELECT p.id_phone as idPhone, b.brand_brand AS brand, p.model_phone AS model, ps.storage_storage AS storage
+SELECT p.id_phone as idPhone, b.brand_brand AS brand, p.model_phone AS model, ps.storage_storage AS storage, b.brand_image as image
 FROM dbRoberto.phones p
 JOIN dbRoberto.brands b ON p.brand_phone_brand = b.id_brand
 JOIN dbRoberto.phones_storage ps ON p.id_phone = ps.id_phone;

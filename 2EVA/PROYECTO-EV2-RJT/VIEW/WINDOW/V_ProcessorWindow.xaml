@@ -60,26 +60,38 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
+
+                    <!--Fila 0-->
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Imagen (Clic en el circulo)" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+
+
+
+                    <Rectangle RadiusX="10" RadiusY="10" x:Name="ImageRectangle" MouseLeftButtonDown="Image_MouseLeftButtonDown" Grid.Row="1" Grid.Column="0" Width="150" Height="150" Margin="0,0,0,20" VerticalAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Center" Stroke="Orange" StrokeThickness="5">
+                        <Rectangle.Fill>
+                            <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" ImageSource="{Binding Processor.Image, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Stretch="Uniform"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+
                     <!-- Fila 1 -->
-                    <TextBlock Grid.Row="0" Text="Nombre" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
-                    <TextBox Text="{Binding Processor.Name}" Grid.Row="0" Style="{StaticResource RoundedTextBox}" x:Name="txtName" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                    <TextBlock Grid.Row="2" Text="Nombre" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+                    <TextBox Text="{Binding Processor.Name}" Grid.Row="2" Style="{StaticResource RoundedTextBox}" x:Name="txtName" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
                     <!-- Fila 2 -->
-                    <TextBlock Grid.Row="1" Text="Gpu" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                    <TextBox Text="{Binding Processor.Gpu}" Grid.Row="1" Style="{StaticResource RoundedTextBox}" x:Name="txtGpu" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                    <TextBlock Grid.Row="3" Text="Gpu" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <TextBox Text="{Binding Processor.Gpu}" Grid.Row="3" Style="{StaticResource RoundedTextBox}" x:Name="txtGpu" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
                     <!-- Fila 3 -->
-                    <TextBlock Grid.Row="2" Text="Nucleos" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                    <TextBox Text="{Binding Cores}" Grid.Row="2" Style="{StaticResource RoundedTextBox}" x:Name="txtCores" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                    <TextBlock Grid.Row="4" Text="Nucleos" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <TextBox Text="{Binding Cores}" Grid.Row="4" Style="{StaticResource RoundedTextBox}" x:Name="txtCores" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
                     <!-- Fila 4 -->
-                    <TextBlock Grid.Row="3" Text="Nanometros" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                    <TextBox Text="{Binding Nanometers}" Grid.Row="3" Style="{StaticResource RoundedTextBox}" x:Name="txtNanometers" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                    <TextBlock Grid.Row="5" Text="Nanometros" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <TextBox Text="{Binding Nanometers}" Grid.Row="5" Style="{StaticResource RoundedTextBox}" x:Name="txtNanometers" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
 
                     <!-- Fila 5 -->
-                    <TextBlock Grid.Row="4" Text="Fabricante" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                    <TextBox Text="{Binding Processor.Manufacturer}" Grid.Row="4" Style="{StaticResource RoundedTextBox}" x:Name="txtManufacturer" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
+                    <TextBlock Grid.Row="6" Text="Fabricante" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
+                    <TextBox Text="{Binding Processor.Manufacturer}" Grid.Row="6" Style="{StaticResource RoundedTextBox}" x:Name="txtManufacturer" Width="200" FontSize="20" Height="auto" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0"/>
 
 
                     <!-- Repite el mismo patrón para los demás elementos -->
