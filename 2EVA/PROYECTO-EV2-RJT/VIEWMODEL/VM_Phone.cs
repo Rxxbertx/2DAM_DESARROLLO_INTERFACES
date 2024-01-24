@@ -4,6 +4,7 @@ using PROYECTO_EV2_RJT.CORE.UTILS;
 using PROYECTO_EV2_RJT.MODEL;
 using System.ComponentModel;
 using System.Data.Common;
+using System.IO;
 
 namespace PROYECTO_EV2_RJT.VIEWMODEL
 {
@@ -113,6 +114,16 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             }
         }
 
+        public List<M_Storage> SelectedStorage
+        {
+            get { return Phone.Storage; }
+            set
+            {
+                Phone.Storage = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedStorage)));
+            }
+        }
+
         #endregion Properties
 
         public VM_Phone()
@@ -175,6 +186,16 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 Phone = temp;
 
 
+                foreach (M_Storage storage in Phone.Storage)
+                {
+                    SelectedStorage.Add(storage);
+
+                    SelectedStorage.Add(StoragesCollection.ToList().Find(x => x.Storage == storage.Storage));
+
+                }
+
+
+                
 
 
 
@@ -205,6 +226,8 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
 
         public bool ValidateInput()
         {
+
+            
 
 
             if (int.TryParse(Battery, out int battery))

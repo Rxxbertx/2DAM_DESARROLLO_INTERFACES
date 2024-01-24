@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Effects;
+using System.Windows.Media.Imaging;
 
 namespace PROYECTO_EV2_RJT.VIEW
 {
@@ -71,7 +72,7 @@ namespace PROYECTO_EV2_RJT.VIEW
             {
                 BtnAddOrModify.Content = "Eliminar";
                 TitlePhone.Text = "Eliminar " + TitlePhone.Text + " ?";
-                
+
 
 
             }
@@ -211,8 +212,12 @@ namespace PROYECTO_EV2_RJT.VIEW
         {
 
 
-            if (1>0) { }
-                
+            if (String.IsNullOrEmpty(txtBattery.Text) ||
+                String.IsNullOrEmpty(txtModel.Text) ||
+                String.IsNullOrEmpty(txtOS.Text) ||
+                String.IsNullOrEmpty(txtRam.Text) ||
+                String.IsNullOrEmpty(txtScreen.Text) || cbxBrand.SelectedIndex != -1 || cbxProcessor.SelectedIndex != -1)
+
 
             {
                 e.CanExecute = false;
@@ -255,7 +260,23 @@ namespace PROYECTO_EV2_RJT.VIEW
             Utils.WarningMessage(infoTextPhone, sender + " : " + warningMessage);
         }
         #endregion messages
+
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+            BitmapImage? img = Utils.SelectImage();
+            if (img != null && ViewModel != null)
+            {
+                ViewModel.Phone.Image = img;
+
+
+            }
+
+        }
+
     }
+
 
 
 }
