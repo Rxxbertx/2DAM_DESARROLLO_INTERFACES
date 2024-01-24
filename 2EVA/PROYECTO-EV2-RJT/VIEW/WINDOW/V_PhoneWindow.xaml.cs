@@ -153,6 +153,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
                 if (ViewModel.ValidateInput())
                 {
+                    ViewModel.SelectedStorage = cbxStorage.SelectedItems.Cast<M_Storage>().ToList(); ;
 
                     switch (operation)
                     {
@@ -216,7 +217,7 @@ namespace PROYECTO_EV2_RJT.VIEW
                 String.IsNullOrEmpty(txtModel.Text) ||
                 String.IsNullOrEmpty(txtOS.Text) ||
                 String.IsNullOrEmpty(txtRam.Text) ||
-                String.IsNullOrEmpty(txtScreen.Text) || cbxBrand.SelectedIndex != -1 || cbxProcessor.SelectedIndex != -1)
+                String.IsNullOrEmpty(txtScreen.Text) || cbxBrand.SelectedIndex == -1 || cbxProcessor.SelectedIndex == -1)
 
 
             {

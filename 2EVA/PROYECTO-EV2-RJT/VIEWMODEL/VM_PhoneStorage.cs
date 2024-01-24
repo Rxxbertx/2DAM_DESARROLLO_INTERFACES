@@ -4,6 +4,7 @@ using PROYECTO_EV2_RJT.CORE.UTILS;
 using PROYECTO_EV2_RJT.MODEL;
 using System.ComponentModel;
 using System.Data.Common;
+using System.Windows;
 
 namespace PROYECTO_EV2_RJT.VIEWMODEL
 {
@@ -125,6 +126,8 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             if (i == DBConstants.REGISTER_ADDED)
             {
                 InfoSuccessMessage?.Invoke("Success", "Almacenamiento añadida correctamente");
+                PhoneStorage.Storage = StorageSelected;
+                PhoneStorage.Phone = PhoneSelected;
                 PhonesStoragesCollection.Create(PhoneStorage);
                 return true;
             }
@@ -179,7 +182,9 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             int result = PhoneStorage.Update();
             if (result == DBConstants.REGISTER_UPDATED)
             {
-                InfoSuccessMessage?.Invoke("Success", "Almacenamiento actualizada correctamente");
+                InfoSuccessMessage?.Invoke("Success", "Almacenamiento actualizado correctamente");
+                PhoneStorage.Storage = StorageSelected;
+                PhoneStorage.Phone = PhoneSelected;
                 PhonesStoragesCollection.Update(i, PhoneStorage);
                 return true;
             }
@@ -192,6 +197,9 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
 
         public bool ValidateInput()
         {
+
+            PhoneStorage.Id_Phone = PhoneSelected.Id;
+            PhoneStorage.Id_Storage = StorageSelected.Storage;
 
 
             return true;

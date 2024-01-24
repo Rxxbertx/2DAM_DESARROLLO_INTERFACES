@@ -23,6 +23,9 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
         private M_ProcessorsCollection _ProcessorsCollection;
         private M_StoragesCollection _StoragesCollection;
 
+        private M_Brand _Brand;
+        private M_Processor _Processor;
+
 
         private string _battery = "";
         private string _ram = "";
@@ -39,8 +42,27 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             }
         }
 
+        public M_Brand SelectedBrand
+        {
+            get { return _Brand; }
+            set
+            {
+                _Brand = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedBrand)));
+            }
+        }
+        public M_Processor SelectedProcessor
+        {
+            get { return _Processor; }
+            set
+            {
+                _Processor = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedProcessor)));
+            }
+        }
 
-        //pasar int a string propiedaes del movil
+
+       
 
 
         public string Battery
@@ -230,6 +252,8 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             
 
 
+
+
             if (int.TryParse(Battery, out int battery))
             {
                 if (battery <= 0)
@@ -264,8 +288,6 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             }
 
 
-
-
             if (int.TryParse(Ram, out int ram))
             {
                 if (ram <= 0)
@@ -281,6 +303,32 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 InfoWarningMessage?.Invoke("Ram", "El campo debe ser numerico");
                 return false;
             }
+
+
+
+            if (SelectedBrand == null)
+            {
+                InfoWarningMessage?.Invoke("Marca", "Debe seleccionar una marca");
+                return false;
+            }
+            else
+            {
+                Phone.Brand = SelectedBrand;
+            }
+
+            if (SelectedProcessor == null)
+            {
+                InfoWarningMessage?.Invoke("Procesador", "Debe seleccionar un procesador");
+                return false;
+            }
+            else
+            {
+                Phone.Processor = SelectedProcessor;
+            }
+
+            Phone.Storage = SelectedStorage;
+            
+
 
 
             return true;

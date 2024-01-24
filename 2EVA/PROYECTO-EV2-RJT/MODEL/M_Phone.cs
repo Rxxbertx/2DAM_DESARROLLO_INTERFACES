@@ -8,10 +8,11 @@ using System.Windows.Controls;
 using System.Runtime.InteropServices;
 using System.Windows.Media.Imaging;
 using PROYECTO_EV2_RJT.CORE.UTILS;
+using System.ComponentModel;
 
 namespace PROYECTO_EV2_RJT.MODEL
 {
-    public class M_Phone : ICrud<M_Phone>
+    public class M_Phone : ICrud<M_Phone>, INotifyPropertyChanged
     {
 
         #region Propiertes
@@ -24,8 +25,23 @@ namespace PROYECTO_EV2_RJT.MODEL
         public int Ram { get; set; }
         public int Battery { get; set; }
         public float Screen { get; set; }
-        public BitmapImage Image { get; set; }
 
+        private BitmapImage _image;
+
+        public BitmapImage Image
+        {
+            get
+            {
+                return _image;
+            }
+            set
+            {
+                _image = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Image)));
+            }
+        }
+
+public event PropertyChangedEventHandler? PropertyChanged;
 
 
         #endregion Propiertes
@@ -45,6 +61,8 @@ namespace PROYECTO_EV2_RJT.MODEL
             Screen = screen;
             Image = image;
         }
+
+    
         #endregion Builders
 
         #region Methods
@@ -78,20 +96,26 @@ namespace PROYECTO_EV2_RJT.MODEL
                         command.Parameters.AddWithValue("@battery", Battery);
                         command.Parameters.AddWithValue("@id_brand", Brand.Id);
                         command.Parameters.AddWithValue("@id_processor", Processor.Id);
+                        
 
-                        if (Image != null) command.Parameters.AddWithValue("@image", Image);
+
+                        if (Image != null) command.Parameters.AddWithValue("@image", Utils.ImageToBytes(Image));
 
 
                         if (command.ExecuteNonQuery() > 0)
-                        {
+                        {   Id = (int)command.LastInsertedId;
                             command.Dispose();
                             // Actualizar los datos de almacenamiento
-                            String insertStorageQuery = "INSERT INTO phones_storage (id_phone, storage_storage) VALUES (@phoneId, @storageId)";
-                            using (MySqlCommand insertStorageCommand = new MySqlCommand(insertStorageQuery, DBConnection.OpenConnection(db)))
+
+                            foreach (M_Storage storage in Storage)
                             {
-                                insertStorageCommand.Parameters.AddWithValue("@phoneId", Id);
-                                insertStorageCommand.Parameters.AddWithValue("@storageId", Storage);
-                                insertStorageCommand.ExecuteNonQuery();
+                                String insertStorageQuery = "INSERT INTO phones_storage (id_phone, storage_storage) VALUES (@phoneId, @storageId)";
+                                using (MySqlCommand insertStorageCommand = new MySqlCommand(insertStorageQuery, DBConnection.OpenConnection(db)))
+                                {
+                                    insertStorageCommand.Parameters.AddWithValue("@phoneId", Id);
+                                    insertStorageCommand.Parameters.AddWithValue("@storageId", storage.Storage);
+                                    insertStorageCommand.ExecuteNonQuery();
+                                }
                             }
 
                             return DBConstants.REGISTER_ADDED;
@@ -102,6 +126,7 @@ namespace PROYECTO_EV2_RJT.MODEL
 
                 catch (MySqlException e)
                 {
+                    MessageBox.Show(e.Message);
                     return (int)e.ErrorCode;
                 }
 
@@ -116,11 +141,10 @@ namespace PROYECTO_EV2_RJT.MODEL
 
             try
             {
-                String query = "SELECT * FROM phones WHERE id_phone = @id and model_phone = @model and screen_phone = @screen and operatingsystem_phone = @os and ram_phone = @ram and battery_phone = @battery and brand_phone_brand = @id_brand and cpu_phone_cpu = @id_processor";
+                String query = "SELECT * FROM phones WHERE model_phone = @model and screen_phone = @screen and operatingsystem_phone = @os and ram_phone = @ram and battery_phone = @battery and brand_phone_brand = @id_brand and cpu_phone_cpu = @id_processor";
                 using (MySqlCommand command = new MySqlCommand(query, DBConnection.OpenConnection(db)))
                 {
-                    command.Parameters.AddWithValue("@name", Model);
-                    command.Parameters.AddWithValue("@id", Id);
+                    command.Parameters.AddWithValue("@model", Model);
                     command.Parameters.AddWithValue("@screen", Screen);
                     command.Parameters.AddWithValue("@os", Os);
                     command.Parameters.AddWithValue("@ram", Ram);
@@ -142,6 +166,7 @@ namespace PROYECTO_EV2_RJT.MODEL
             }
             catch (MySqlException e)
             {
+                MessageBox.Show(e.Message);
                 return (int)e.ErrorCode;
             }
         }
@@ -421,6 +446,57 @@ namespace PROYECTO_EV2_RJT.MODEL
                             phone.Ram = reader.GetInt32("ram_phone");
                             phone.Battery = reader.GetInt32("battery_phone");
                             phone.Screen = reader.GetFloat("screen_phone");
+
+
+                            try
+                            {
+                                //como leeo la imagen de brand
+
+                                int i = reader.GetOrdinal("image_cpu");
+
+                                byte[] temp = reader.GetFieldValue<byte[]>(i);
+                                if (temp != null)
+                                {
+
+                                    phone.Processor.Image = Utils.BytesToImage(temp);
+
+                                }
+
+
+
+
+                            }
+                            catch (Exception)
+                            {
+
+
+                            }
+
+
+
+                            try
+                            {
+                                //como leeo la imagen de brand
+
+                                int i = reader.GetOrdinal("brand_image");
+
+                                byte[] temp = reader.GetFieldValue<byte[]>(i);
+                                if (temp != null)
+                                {
+
+                                    phone.Brand.Image = Utils.BytesToImage(temp);
+
+                                }
+
+
+
+
+                            }
+                            catch (Exception)
+                            {
+
+                                
+                            }
 
                             try
                             {

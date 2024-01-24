@@ -90,17 +90,51 @@
                                 <DataGridTemplateColumn Header="Imagen" Width="auto" MinWidth="100" >
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Ellipse Width="75" Height="75" VerticalAlignment="Center" HorizontalAlignment="Center" SnapsToDevicePixels="True" >
-                                                <Ellipse.Fill>
+                                            <Rectangle RadiusX="10" RadiusY="10" Width="75" Height="65" VerticalAlignment="Center" HorizontalAlignment="Center" SnapsToDevicePixels="True" >
+                                                <Rectangle.Fill>
                                                     <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" ImageSource="{Binding Path=Image}" Stretch="Uniform"/>
-                                                </Ellipse.Fill>
-                                            </Ellipse>
+                                                </Rectangle.Fill>
+                                            </Rectangle>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn Header="Marca" Binding="{Binding Brand.Name}" IsReadOnly="True"/>
+                           
+                                <DataGridTemplateColumn Header="Marca" SortMemberPath="Brand.Name" Width="auto">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Ellipse Width="40" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" SnapsToDevicePixels="True" >
+                                                    <Ellipse.Fill>
+                                                        <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" ImageSource="{Binding Path=Brand.Image}" Stretch="Uniform"/>
+                                                    </Ellipse.Fill>
+                                                </Ellipse>
+                                                <TextBlock Text="{Binding Brand.Name}" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+
+
                                 <DataGridTextColumn Header="Modelo" Binding="{Binding Model}" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Procesador" Binding="{Binding Processor.Name}" IsReadOnly="True"/>
+                           
+
+                                <DataGridTemplateColumn Header="Procesador" SortMemberPath="Processor.Name" Width="*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Rectangle RadiusX="10" RadiusY="10" Width="40" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" SnapsToDevicePixels="True" >
+                                                    <Rectangle.Fill>
+                                                        <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" ImageSource="{Binding Path=Processor.Image}" Stretch="Uniform"/>
+                                                    </Rectangle.Fill>
+                                                </Rectangle>
+                                                <TextBlock Text="{Binding Processor.Name}" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+
                                 <DataGridTextColumn Header="Pantalla en ''" Binding="{Binding Screen}" IsReadOnly="True" />
                                 <DataGridTextColumn Header="Ram GB" Binding="{Binding Ram}" IsReadOnly="True"/>
                                 <DataGridTextColumn Header="Bateria Mah" Binding="{Binding Battery}" IsReadOnly="True" />
@@ -128,38 +162,6 @@
                 </Grid>
 
             </TabItem>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <TabItem x:Name="storageTab" Style="{StaticResource ModernTabItem}" FontSize="20" Header="ALMACENAMIENTO" HorizontalAlignment="Stretch">
 
 

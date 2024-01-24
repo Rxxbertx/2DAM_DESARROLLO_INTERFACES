@@ -74,7 +74,7 @@ namespace PROYECTO_EV2_RJT.MODEL
             try
             {
 
-                String query = "SELECT * FROM view_phones_brands_storage WHERE storagege = @storage AND idPhone = @Id_Phone";
+                String query = "SELECT * FROM view_phones_brands_storage WHERE storage = @storage AND idPhone = @Id_Phone";
                 using (MySqlCommand command = new MySqlCommand(query, DBConnection.OpenConnection(db)))
                 {
                     command.Parameters.AddWithValue("@storage", Id_Storage);
@@ -109,11 +109,14 @@ namespace PROYECTO_EV2_RJT.MODEL
                 try
                 {
 
-                    String query = "UPDATE phones_storage SET storage_storage = @storage WHERE id_phone = @Id_Phone";
+                    String query = "UPDATE phones_storage SET storage_storage = @storage, id_phone = @Id_Phone WHERE id_phone = @Id_Phone1 and storage_storage = @storage1";
                     using (MySqlCommand command = new MySqlCommand(query, DBConnection.OpenConnection(db)))
                     {
                         command.Parameters.AddWithValue("@Id_Phone", Id_Phone);
                         command.Parameters.AddWithValue("@storage", Id_Storage);
+                        command.Parameters.AddWithValue("@Id_Phone1", Phone.Id);
+                        command.Parameters.AddWithValue("@storage1", Storage.Storage);
+
 
                         if (command.ExecuteNonQuery() > 0)
                         {
@@ -125,6 +128,7 @@ namespace PROYECTO_EV2_RJT.MODEL
 
                 catch (MySqlException e)
                 {
+                   
                     return (int)e.ErrorCode;
                 }
             }
@@ -193,6 +197,8 @@ namespace PROYECTO_EV2_RJT.MODEL
                             Id_Storage = reader.GetInt32(StoragePhoneViewStatics.STORAGE);
                             Storage.Storage = Id_Storage;
                             Phone.Id = Id_Phone;
+
+
 
                         }
                         else
