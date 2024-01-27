@@ -3,11 +3,11 @@ using PROYECTO_EV2_RJT.CORE.INTERFACES;
 using PROYECTO_EV2_RJT.CORE.UTILS;
 using PROYECTO_EV2_RJT.MODEL;
 using System.ComponentModel;
-using System.Data.Common;
+using System.Windows.Data;
 
 namespace PROYECTO_EV2_RJT.VIEWMODEL
 {
-    public class VM_Brand : IViewModelBase, INotifyPropertyChanged, IViewModelCrud
+    public class VM_Brand : IViewModelBase, INotifyPropertyChanged, IViewModelCrud, IFilter
     {
 
         #region Properties
@@ -19,6 +19,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
         private M_Brand _brand;
         private M_BrandsCollection _brandsCollection;
 
+        public ICollectionView View { get; private set; }
         public M_Brand Brand
         {
             get { return _brand; }
@@ -28,7 +29,6 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Brand)));
             }
         }
-
         public M_BrandsCollection BrandsCollection
         {
             get { return _brandsCollection; }
@@ -36,6 +36,22 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             {
                 _brandsCollection = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(BrandsCollection)));
+                
+            }
+        }
+
+
+        private string _searchText;
+        public string SearchText
+        {
+            get { return _searchText; }
+            set
+            {
+                _searchText = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SearchText)));
+
+                // Refrescar la vista de la colección cada vez que cambia el texto de búsqueda
+                View?.Refresh();
             }
         }
 
@@ -46,8 +62,28 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             Brand = new M_Brand();
             BrandsCollection = [];
             BrandsCollection.ReadAll();
+            View = CollectionViewSource.GetDefaultView(BrandsCollection);
+            View.Filter = Filter;
         }
 
+        public bool Filter(object obj)
+        {
+
+            if (obj is M_Brand temp)
+            {
+
+                // Filtra por el nombre de la marca
+                if (!string.IsNullOrEmpty(SearchText) && !temp.Name.Contains(SearchText, StringComparison.OrdinalIgnoreCase))
+                {
+                    return false;
+                }
+                
+            }
+            return true;
+
+
+
+        }
 
         public bool Create()
         {
@@ -57,6 +93,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             {
                 InfoSuccessMessage?.Invoke("Success", "Marca añadida correctamente");
                 BrandsCollection.Create(Brand);
+                View.Refresh();
                 return true;
             }
             else
@@ -73,6 +110,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             {
                 InfoSuccessMessage?.Invoke("Success", "Marca eliminada correctamente");
                 BrandsCollection.Delete(index);
+                View?.Refresh();
                 return true;
             }
             else
@@ -103,6 +141,8 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             {
                 InfoSuccessMessage?.Invoke("Success", "Marca actualizada correctamente");
                 BrandsCollection.Update(i, Brand);
+                View.Refresh();
+
                 return true;
             }
             else
@@ -110,6 +150,8 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 DBUtils.CheckStatusOperation(InfoErrorMessage, InfoSuccessMessage, InfoWarningMessage, result, "Marca");
                 return false;
             }
+
+            
         }
 
         public bool ValidateInput()

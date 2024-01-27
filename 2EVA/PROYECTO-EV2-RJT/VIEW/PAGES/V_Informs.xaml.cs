@@ -1,5 +1,9 @@
-﻿using System.Windows;
+﻿
+
+using System.Windows;
 using System.Windows.Controls;
+using CrystalDecisions.CrystalReports.Engine;
+using PROYECTO_EV2_RJT.VIEW.WINDOW;
 
 namespace PROYECTO_EV2_RJT.VIEW
 {
@@ -8,10 +12,13 @@ namespace PROYECTO_EV2_RJT.VIEW
     /// </summary>
     public partial class V_Informs : Page
     {
+        
+
         public V_Informs()
         {
             InitializeComponent();
         }
+
 
         private void Phones_Click(object sender, RoutedEventArgs e)
         {
@@ -19,6 +26,12 @@ namespace PROYECTO_EV2_RJT.VIEW
         }
         private void Storage_Click(object sender, RoutedEventArgs e)
         {
+
+            
+            new ReportsWindow().Show();
+
+
+
 
         }
         private void Processors_Click(object sender, RoutedEventArgs e)

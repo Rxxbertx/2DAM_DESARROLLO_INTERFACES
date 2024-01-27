@@ -3,14 +3,18 @@ using PROYECTO_EV2_RJT.CORE.INTERFACES;
 using PROYECTO_EV2_RJT.CORE.UTILS;
 using PROYECTO_EV2_RJT.MODEL;
 using System.ComponentModel;
+using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace PROYECTO_EV2_RJT.VIEWMODEL
 {
-    public class VM_Processor : IViewModelBase, INotifyPropertyChanged, IViewModelCrud
+    public class VM_Processor : IViewModelBase, INotifyPropertyChanged, IViewModelCrud, IFilter
     {
         #region Propiertes
         private M_Processor _processor = new();
         private M_ProcessorsCollection _processorsCollection = new();
+
+
         private string _cores = "";
         private string _nanometers = "";
 
@@ -35,6 +39,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             }
         }
 
+
         public string Cores
         {
             get { return _cores; }
@@ -53,6 +58,12 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Nanometers)));
             }
         }
+
+
+
+
+
+
 
         #endregion Propiertes
 
@@ -113,6 +124,8 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             Processor = new M_Processor();
             ProcessorsCollection = [];
             ProcessorsCollection.ReadAll();
+            View = CollectionViewSource.GetDefaultView(ProcessorsCollection);
+            View.Filter = Filter;
 
 
         }
@@ -130,6 +143,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             {
 
                 ProcessorsCollection.Add(Processor);
+                View.Refresh();
 
                 InfoSuccessMessage?.Invoke("Info", "Procesador Añadido");
                 return true;
@@ -171,6 +185,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             {
 
                 ProcessorsCollection.Update(selectedIndex, Processor);
+                View.Refresh();
 
                 InfoSuccessMessage?.Invoke("Info", "Procesador Actualizado");
                 return true;
@@ -193,6 +208,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             {
 
                 ProcessorsCollection.Delete(selectedIndex);
+                View.Refresh();
 
                 InfoSuccessMessage?.Invoke("Info", "Procesador Eliminado");
                 return true;
@@ -218,6 +234,75 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
         #endregion Init
 
 
+        #region Filter
+
+
+        private ComboBoxItem _selectedSearchParameter;
+        private string _searchText;
+
+
+        public ICollectionView View { get; private set; }
+
+
+        public ComboBoxItem SelectedSearchParameter
+        {
+            get { return _selectedSearchParameter; }
+            set
+            {
+                _selectedSearchParameter = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedSearchParameter)));
+                View?.Refresh();
+            }
+        }
+        public string SearchText
+        {
+            get { return _searchText; }
+            set
+            {
+                _searchText = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SearchText)));
+
+                View?.Refresh();
+            }
+        }
+
+
+        public bool Filter(object obj)
+        {
+
+
+            if (obj is M_Processor processor)
+            {
+                if (SelectedSearchParameter?.Content.ToString() == "Nucleos")
+                {
+                    return processor.Cores.ToString().Contains(SearchText, StringComparison.OrdinalIgnoreCase);
+                }
+                else if (SelectedSearchParameter?.Content.ToString() == "Nanometros")
+                {
+                    return processor.Nanometers.ToString().Contains(SearchText, StringComparison.OrdinalIgnoreCase);
+                }
+                else if (SelectedSearchParameter?.Content.ToString() == "Nombre")
+                {
+                    return processor.Name.Contains(SearchText, StringComparison.OrdinalIgnoreCase);
+                }
+                else if (SelectedSearchParameter?.Content.ToString() == "Marca")
+                {
+
+                    return processor.Manufacturer.Contains(SearchText, StringComparison.OrdinalIgnoreCase);
+                }
+                else if (SelectedSearchParameter?.Content.ToString() == "Gpu")
+                {
+                    return processor.Gpu.Contains(SearchText, StringComparison.OrdinalIgnoreCase);
+                }
+
+
+            }
+            return true;
+
+        }
+
+
+        #endregion Filter
 
 
     }

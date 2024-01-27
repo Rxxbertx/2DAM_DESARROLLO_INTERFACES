@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using PROYECTO_EV2_RJT.VIEW;
+using RootLibrary.WPF.Localization;
 using System;
 using System.Diagnostics;
 using System.Windows;

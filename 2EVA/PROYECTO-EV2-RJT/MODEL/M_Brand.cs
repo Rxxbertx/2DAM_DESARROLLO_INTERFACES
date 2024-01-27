@@ -7,6 +7,7 @@ using PROYECTO_EV2_RJT.CORE.INTERFACES;
 using System.Windows.Media.Imaging;
 using PROYECTO_EV2_RJT.CORE.UTILS;
 using System.ComponentModel;
+using MessageBox = System.Windows.MessageBox;
 
 namespace PROYECTO_EV2_RJT.MODEL
 {
@@ -61,11 +62,12 @@ namespace PROYECTO_EV2_RJT.MODEL
                     if (_image == null)
                     {
                         query = "INSERT INTO brands (brand_brand) VALUES (@name)";
-                    }else
+                    }
+                    else
                     {
                         query = "INSERT INTO brands (brand_brand, brand_image) VALUES (@name, @image)";
                     }
-                    
+
                     using (MySqlCommand command = new MySqlCommand(query, DBConnection.OpenConnection(db)))
                     {
                         command.Parameters.AddWithValue("@name", Name);
@@ -119,55 +121,33 @@ namespace PROYECTO_EV2_RJT.MODEL
                 return (int)e.ErrorCode;
             }
         }
-        public int ReadWithImage()
-        {
 
-            DBConnection db = DBConnection.DBInit();
-
-            try
-            {
-
-                String query = "SELECT * FROM brands WHERE brand_brand = @name and brand_image = @image";
-
-                if (_image == null) query = "SELECT * FROM brands WHERE brand_brand = @name and brand_image is null";
-
-                using (MySqlCommand command = new MySqlCommand(query, DBConnection.OpenConnection(db)))
-                {
-                    command.Parameters.AddWithValue("@name", Name);
-                    if(_image!=null)command.Parameters.AddWithValue("@image", Utils.ImageToBytes(_image));
-
-                    using (MySqlDataReader reader = command.ExecuteReader())
-                    {
-
-                        return reader.HasRows ? DBConstants.REGISTER_FOUNDED : DBConstants.REGISTER_NOT_FOUND;
-
-                    }
-                }
-            }
-
-            catch (MySqlException e)
-            {
-                return (int)e.ErrorCode;
-            }
-        }
         public int Update()
         {
 
             DBConnection db = DBConnection.DBInit();
 
-            int i = ReadWithImage();
+            int i = Read();
 
-            if (i == DBConstants.REGISTER_NOT_FOUND)
+            if (i == DBConstants.REGISTER_NOT_FOUND || i == DBConstants.REGISTER_FOUNDED)
             {
 
                 try
                 {
 
                     String query = "UPDATE brands SET brand_brand = @name, brand_image=@image WHERE id_brand = @id";
+
+                    if (_image == null)
+                    {
+                        query = "UPDATE brands SET brand_brand = @name WHERE id_brand = @id";
+                    }
+
                     using (MySqlCommand command = new MySqlCommand(query, DBConnection.OpenConnection(db)))
                     {
                         command.Parameters.AddWithValue("@name", Name);
-                        command.Parameters.AddWithValue("@image", Utils.ImageToBytes(_image));
+
+                        if (_image != null) command.Parameters.AddWithValue("@image", Utils.ImageToBytes(_image));
+
                         command.Parameters.AddWithValue("@id", Id);
                         if (command.ExecuteNonQuery() > 0)
                         {
@@ -213,7 +193,7 @@ namespace PROYECTO_EV2_RJT.MODEL
 
                 catch (MySqlException e)
                 {
-                  return (int)e.ErrorCode;
+                    return (int)e.ErrorCode;
                 }
             }
 
@@ -332,8 +312,8 @@ namespace PROYECTO_EV2_RJT.MODEL
         }
         public void Update(int index, M_Brand brand)
         {
-
-            this[index] = brand;
+            RemoveAt(index);
+            Insert(index, brand);
 
         }
         public void Delete(int index)

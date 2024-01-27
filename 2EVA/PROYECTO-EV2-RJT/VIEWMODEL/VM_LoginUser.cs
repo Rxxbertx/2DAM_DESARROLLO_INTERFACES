@@ -4,6 +4,7 @@ using PROYECTO_EV2_RJT.MODEL;
 using PROYECTO_EV2_RJT.VIEW;
 using System.ComponentModel;
 using System.Windows;
+using Application = System.Windows.Application;
 
 
 namespace PROYECTO_EV2_RJT.VIEWMODEL

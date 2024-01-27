@@ -1,4 +1,5 @@
 ﻿using PROYECTO_EV2_RJT.CORE.UTILS;
+using PROYECTO_EV2_RJT.MODEL;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -47,7 +48,7 @@ namespace PROYECTO_EV2_RJT.VIEW
             }
 
             mainFrame.NavigationService.Navigate(new V_Home { parentWindow = this });
-            clearSelection();
+            ClearSelection();
         }
 
         public void Menu_Checked(object sender, RoutedEventArgs e)
@@ -59,6 +60,30 @@ namespace PROYECTO_EV2_RJT.VIEW
             wh.SetOwner(this);
 
             page = (Page)mainFrame.NavigationService.Content;
+
+
+            try
+            {
+                // si el usuari es basico no puede ir al almacen
+                if ((element.Equals(warehouse) || element.Equals(w_storages) || element.Equals(w_brands) || element.Equals(w_processors) || element.Equals(w_phones)) && !User.GetInstance().SpecialRole)
+                {
+                    
+                    new V_ErrorWindow("No tienes permisos para acceder al almacén, necesitas una cuenta con privilegios de administrador, " +
+                        "tus funciones se restrigen a Realizar Informes")
+                    { Owner = this }.ShowDialog();
+
+                    ClearSelection();
+                    
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+
 
             if (element.Equals(warehouse))
             {
@@ -101,6 +126,9 @@ namespace PROYECTO_EV2_RJT.VIEW
                 wh.processorTab.IsSelected = true;
                 mainFrame.NavigationService.Navigate(wh);
             }
+
+          
+
         }
 
         #region Exit
@@ -132,7 +160,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
             if (e.Content is V_Home)
             {
-                clearSelection();
+                ClearSelection();
             }
             else if ((e.Content is V_Warehouse))
             {
@@ -176,7 +204,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         }
 
-        private void clearSelection()
+        private void ClearSelection()
         {
 
             warehouse.IsChecked = false;

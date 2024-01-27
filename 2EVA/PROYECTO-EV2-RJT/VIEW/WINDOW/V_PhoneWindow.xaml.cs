@@ -54,7 +54,6 @@ namespace PROYECTO_EV2_RJT.VIEW
         public void InitWindow(Page parent, Operation operation)
         {
             InputBindings.Add(new InputBinding(ExitCommand, ExitCommand.InputGesture));
-            ViewModel?.InitOtherCollections();
             DataContext = ViewModel;
             Owner.Effect = new BlurEffect();
 
@@ -72,6 +71,15 @@ namespace PROYECTO_EV2_RJT.VIEW
             {
                 BtnAddOrModify.Content = "Eliminar";
                 TitlePhone.Text = "Eliminar " + TitlePhone.Text + " ?";
+
+                txtBattery.IsEnabled = false;
+                txtModel.IsEnabled = false;
+                txtOS.IsEnabled = false;
+                txtRam.IsEnabled = false;
+                txtScreen.IsEnabled = false;
+                cbxBrand.IsEnabled = false;
+                cbxProcessor.IsEnabled = false;
+                ImageRectangle.IsEnabled = false;
 
 
 
@@ -122,11 +130,14 @@ namespace PROYECTO_EV2_RJT.VIEW
             ViewModel.InfoErrorMessage += ShowErrorMessage;
             ViewModel.InfoSuccessMessage += ShowSuccessMessage;
             ViewModel.InfoWarningMessage += ShowWarningMessage;
+            ViewModel.SelectedItemsStorageListView += SelectItemsInListView;
+            ViewModel.InitOtherCollections();
             ViewModel.ClearData();
 
             if (id > 0 && operation == Operation.UPDATE || operation == Operation.DELETE)
             {
-
+                
+                ViewModel.Phone.Id = id;
                 Read();
 
             }
@@ -139,6 +150,18 @@ namespace PROYECTO_EV2_RJT.VIEW
 
 
             InitWindow(v_Warehouse, operation);
+
+
+        }
+
+        private void SelectItemsInListView(List<M_Storage> list)
+        {
+            
+
+            foreach (M_Storage item in list)
+            {
+                cbxStorage.SelectedItems.Add(item);
+            }
 
 
         }
@@ -161,10 +184,10 @@ namespace PROYECTO_EV2_RJT.VIEW
 
                             if (ViewModel.Create())
                             {
-                                //Utils.SuccessMessage(v_Warehouse.infoTextPhone, "Movil " + ViewModel.Phone.ToString() + " añadido correctamente");
-                                //v_Warehouse.PhonesGrid.SelectedItem = ViewModel.Phone;
+                                Utils.SuccessMessage(v_Warehouse.infoTextPhone, "Movil " + ViewModel.Phone.ToString() + " añadido correctamente");
+                                v_Warehouse.PhonesGrid.SelectedItem = ViewModel.Phone;
 
-                                //v_Warehouse.PhonesGrid.ScrollIntoView(ViewModel.Phone);
+                                v_Warehouse.PhonesGrid.ScrollIntoView(ViewModel.Phone);
                                 _ = WindowAnimationUtils.FadeOutAndClose(this);
                             }
                             break;
@@ -173,9 +196,9 @@ namespace PROYECTO_EV2_RJT.VIEW
 
                             if (ViewModel.Update(v_Warehouse.PhonesGrid.SelectedIndex))
                             {
-                                //Utils.SuccessMessage(v_Warehouse.infoTextPhone, "Movil " + ViewModel.Phone.ToString() + " modificado correctamente");
-                                //v_Warehouse.PhonesGrid.SelectedItem = ViewModel.Phone;
-                                //v_Warehouse.PhonesGrid.ScrollIntoView(ViewModel.Phone);
+                                Utils.SuccessMessage(v_Warehouse.infoTextPhone, "Movil " + ViewModel.Phone.ToString() + " modificado correctamente");
+                                v_Warehouse.PhonesGrid.SelectedItem = ViewModel.Phone;
+                                v_Warehouse.PhonesGrid.ScrollIntoView(ViewModel.Phone);
                                 _ = WindowAnimationUtils.FadeOutAndClose(this);
                             }
                             break;
@@ -186,7 +209,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
                             if (ViewModel.Delete(i))
                             {
-                                //Utils.SuccessMessage(v_Warehouse.infoTextPhone, "Movil " + ViewModel.Phone.ToString() + " eliminado correctamente");
+                                Utils.SuccessMessage(v_Warehouse.infoTextPhone, "Movil " + ViewModel.Phone.ToString() + " eliminado correctamente");
                                 Utils.UpdateDataGridToNextPosition(v_Warehouse.PhonesGrid, i);
                                 _ = WindowAnimationUtils.FadeOutAndClose(this);
 

@@ -7,6 +7,21 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="VIEW\REPORTS\Almacenamiento.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="VIEW\REPORTS\AlmacenamientosUsados.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="VIEW\REPORTS\CrystalReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="VIEW\WINDOW\ReportsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEW\WINDOW\V_ErrorWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="VIEW\WINDOW\V_PhoneWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -33,6 +48,9 @@
     <Page Update="THEME\ModernDataGrid.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="THEME\ModernListBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="THEME\ModernMenuButton.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -43,6 +61,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="THEME\RoundedTextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\WINDOW\ReportsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\WINDOW\V_ErrorWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="VIEW\WINDOW\V_PhoneStorageWindow.xaml">

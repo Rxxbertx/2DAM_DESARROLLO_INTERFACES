@@ -11,6 +11,7 @@
 
 using PROYECTO_EV2_RJT;
 using PROYECTO_EV2_RJT.VIEWMODEL;
+using RootLibrary.WPF.Localization;
 using System;
 using System.Diagnostics;
 using System.Windows;

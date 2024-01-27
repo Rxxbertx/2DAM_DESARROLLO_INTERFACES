@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:PROYECTO_EV2_RJT"
              x:Class="PROYECTO_EV2_RJT.App"
-             StartupUri="VIEW/WINDOW/V_MainWindow.xaml">
+             StartupUri="VIEW/WINDOW/ReportsWindow.xaml">
 
     <Application.Resources>
 
@@ -18,6 +18,8 @@
                 <ResourceDictionary Source="THEME/ModernTabItem.xaml"/>
                 <ResourceDictionary Source="THEME/ModernDataGrid.xaml"/>
                 <ResourceDictionary Source="THEME/ModernComboBox.xaml"/>
+                <ResourceDictionary Source="THEME/ModernListBox.xaml"/>
+                
                 
 
             </ResourceDictionary.MergedDictionaries>

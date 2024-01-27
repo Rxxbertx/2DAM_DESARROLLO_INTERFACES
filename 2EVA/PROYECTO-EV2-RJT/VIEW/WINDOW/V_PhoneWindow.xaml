@@ -121,7 +121,7 @@
 
                 <!-- Fila 5 -->
                 <TextBlock Grid.Row="6" Text="Almacenamiento" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="White"/>
-                <ListBox  Grid.Row="6" x:Name="cbxStorage" Width="300" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="100" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0" BorderBrush="Orange" ItemsSource="{Binding StoragesCollection}" SelectionMode="Multiple"/>
+                <ListBox Style="{DynamicResource ModernListBox}"  Grid.Row="6" x:Name="cbxStorage"  ItemContainerStyle="{StaticResource ModernListBoxItem}" Width="300" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="100" VerticalAlignment="Center" Grid.Column="1" Margin="0,5,0,0" BorderBrush="Orange" ItemsSource="{Binding StoragesCollection}" SelectionMode="Multiple"/>
 
                 <!-- Repite el mismo patrón para los demás elementos -->
 

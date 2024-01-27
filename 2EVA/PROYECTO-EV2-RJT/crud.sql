@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `dbRoberto`.`phones_storage` (
   CONSTRAINT `fk_phones_has_storage_phones1`
     FOREIGN KEY (`id_phone`)
     REFERENCES `dbRoberto`.`phones` (`id_phone`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `fk_phones_has_storage_storage1`
     FOREIGN KEY (`storage_storage`)

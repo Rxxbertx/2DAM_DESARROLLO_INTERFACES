@@ -5,6 +5,7 @@ using PROYECTO_EV2_RJT.VIEWMODEL;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 
 namespace PROYECTO_EV2_RJT.VIEW
@@ -16,7 +17,7 @@ namespace PROYECTO_EV2_RJT.VIEW
     {
 
         V_MainWindow? parent = null;
-        
+
         VM_Brand? vm_Brand;
         VM_Storage? vm_Storage;
         VM_Processor? vm_Processor;
@@ -28,7 +29,10 @@ namespace PROYECTO_EV2_RJT.VIEW
         {
             InitializeComponent();
 
+
         }
+
+
 
 
         private void TabControl_Selected(object sender, RoutedEventArgs e)
@@ -54,19 +58,21 @@ namespace PROYECTO_EV2_RJT.VIEW
                                 parent.w_phones.IsChecked = true;
                                 // parent.w_phones.Checked += parent.Menu_Checked; // Create the event handler back
                                 vm_Phone = new();
-                                PhonesGrid.DataContext = vm_Phone;
+                                phoneTab.DataContext = vm_Phone;
 
 
                                 break;
                             case "brandTab":
 
 
+
                                 //parent.w_brands.Checked -= parent.Menu_Checked; // Remove the event handler temporarily
                                 parent.w_brands.IsChecked = true;
                                 // parent.w_brands.Checked += parent.Menu_Checked; // Create the event handler back
-
                                 vm_Brand = new();
-                                BrandsGrid.DataContext = vm_Brand;
+                                brandTab.DataContext = vm_Brand;
+
+
 
 
                                 break;
@@ -78,8 +84,8 @@ namespace PROYECTO_EV2_RJT.VIEW
                                 // parent.w_storages.Checked += parent.Menu_Checked; // Create the event handler back
                                 vm_Storage = new();
                                 vm_PhoneStorage = new(vm_Storage);
+                                storageTab.DataContext = vm_PhoneStorage;
                                 StoragesGrid.DataContext = vm_Storage;
-                                PhonesStoragesGrid.DataContext = vm_PhoneStorage;
 
 
 
@@ -87,12 +93,12 @@ namespace PROYECTO_EV2_RJT.VIEW
                             case "processorTab":
 
 
-                                
+
                                 //parent.w_processors.Checked -= parent.Menu_Checked; // Remove the event handler temporarily
                                 parent.w_processors.IsChecked = true;
                                 //parent.w_processors.Checked += parent.Menu_Checked; // Create the event handler back
                                 vm_Processor = new();
-                                ProcessorsGrid.DataContext = vm_Processor;
+                                processorTab.DataContext = vm_Processor;
 
                                 break;
 
@@ -108,6 +114,7 @@ namespace PROYECTO_EV2_RJT.VIEW
         {
 
             parent = v_MainWindow;
+
         }
 
         #region Commands
@@ -139,6 +146,12 @@ namespace PROYECTO_EV2_RJT.VIEW
         {
             //LoadWindow(new V_PhoneWindow(this, CORE.ENUMS.Operation.UPDATE));
 
+            if (PhonesGrid.SelectedItem is M_Phone phone)
+            {
+                LoadWindow(new V_PhoneWindow(this, Operation.UPDATE, phone.Id) { ViewModel = vm_Phone });
+            }
+
+
         }
 
         private void UpdatePhone_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
@@ -155,14 +168,10 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void DeletePhone_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-
-            MessageBoxResult result = MessageBox.Show("¿Estás seguro de que quieres eliminar este movil?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-            if (result == MessageBoxResult.Yes)
+            if (PhonesGrid.SelectedItem is M_Phone phone)
             {
-                Utils.SuccessMessage(infoTextPhone, "Movil eliminado correctamente");
+                LoadWindow(new V_PhoneWindow(this, Operation.DELETE, phone.Id) { ViewModel = vm_Phone });
             }
-
         }
 
         private void DeletePhone_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
@@ -383,7 +392,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         private void CreatePhoneStorage_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
-            LoadWindow(new V_PhoneStorageWindow(this, Operation.CREATE) { ViewModel = vm_PhoneStorage});
+            LoadWindow(new V_PhoneStorageWindow(this, Operation.CREATE) { ViewModel = vm_PhoneStorage });
         }
 
         private void CreatePhoneStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
@@ -407,7 +416,7 @@ namespace PROYECTO_EV2_RJT.VIEW
                 LoadWindow(new V_PhoneStorageWindow(this, Operation.UPDATE, phoneStorage.Id_Phone, phoneStorage.Id_Storage) { ViewModel = vm_PhoneStorage });
             }
 
-            
+
         }
 
         private void UpdatePhoneStorage_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
@@ -460,7 +469,6 @@ namespace PROYECTO_EV2_RJT.VIEW
             WindowAnimationUtils.FadeIn(window);
             window.ShowDialog();
         }
-
 
     }
 }

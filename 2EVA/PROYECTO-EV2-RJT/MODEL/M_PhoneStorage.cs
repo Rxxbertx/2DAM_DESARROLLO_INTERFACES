@@ -128,7 +128,7 @@ namespace PROYECTO_EV2_RJT.MODEL
 
                 catch (MySqlException e)
                 {
-                   
+
                     return (int)e.ErrorCode;
                 }
             }
@@ -172,7 +172,7 @@ namespace PROYECTO_EV2_RJT.MODEL
 
         }
 
-        
+
         public M_PhoneStorage? ReadObject()
         {
 
@@ -205,7 +205,7 @@ namespace PROYECTO_EV2_RJT.MODEL
                         {
                             return null;
                         }
-                        
+
                         reader.Close();
                     }
                     command.Dispose();
@@ -219,11 +219,12 @@ namespace PROYECTO_EV2_RJT.MODEL
 
 
 
-            if (Storage.ReadObject() is  M_Storage storage){
+            if (Storage.ReadObject() is M_Storage storage)
+            {
 
-                
-                    Storage = storage;
-                
+
+                Storage = storage;
+
             }
 
             if (Phone.ReadObject() is M_Phone phone)
@@ -319,7 +320,9 @@ namespace PROYECTO_EV2_RJT.MODEL
         public void Update(int index, M_PhoneStorage storage)
         {
 
-            this[index] = storage;
+            RemoveAt(index);
+            Insert(index, storage);
+
 
         }
         public void Delete(int index)

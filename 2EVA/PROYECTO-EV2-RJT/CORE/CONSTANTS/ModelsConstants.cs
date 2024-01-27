@@ -19,9 +19,20 @@
     }
     public static class StorageStatics
     {
+     
         public static readonly int STORAGE = 0;
 
     }
+
+    public static class PhoneStorageStatics
+    {
+        public static readonly int ID = 0;
+        public static readonly int STORAGE = 1;
+        public static readonly int BRAND = 2;
+        public static readonly int MODEL = 3;
+        internal static readonly int BRAND_IMAGE = 4;
+    }
+
     public static class StoragePhoneViewStatics
     {
         public static readonly int ID = 0;

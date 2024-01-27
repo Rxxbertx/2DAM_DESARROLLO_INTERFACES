@@ -14,6 +14,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_home.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_menu.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/home.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/unavailable.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/informe.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/logoapp.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/minimize.png")]

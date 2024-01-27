@@ -159,6 +159,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
         public void ClearData()
         {
             Storage = new M_Storage();
+            _txtStorage = "";
         }
     }
 }

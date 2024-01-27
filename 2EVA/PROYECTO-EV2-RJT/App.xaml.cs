@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Application = System.Windows.Application;
 
 namespace PROYECTO_EV2_RJT
 {

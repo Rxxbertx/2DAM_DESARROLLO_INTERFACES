@@ -255,7 +255,8 @@ namespace PROYECTO_EV2_RJT.MODEL
         public void Update(int index, M_Storage storage)
         {
 
-            this[index] = storage;
+            RemoveAt(index);
+            Insert(index, storage);
 
         }
         public void Delete(int index)

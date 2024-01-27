@@ -1,6 +1,7 @@
 ﻿using MySqlConnector;
 using PROYECTO_EV2_RJT.MODEL;
 using System.Windows;
+using MessageBox = System.Windows.MessageBox;
 
 namespace practicaLoginRJT.database
 {
@@ -31,8 +32,8 @@ namespace practicaLoginRJT.database
         private DBConnection()
         {
             Server = "127.0.0.1";
-            Uid = "admin";
-            Password = "dam2t";
+            Uid = "basic";
+            Password = "basic";
             Database = "dbRoberto";
             Port = 3306;
         }

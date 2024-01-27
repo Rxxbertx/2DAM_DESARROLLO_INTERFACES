@@ -5,10 +5,12 @@ using PROYECTO_EV2_RJT.MODEL;
 using System.ComponentModel;
 using System.Data.Common;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace PROYECTO_EV2_RJT.VIEWMODEL
 {
-    public class VM_PhoneStorage : IViewModelBase, INotifyPropertyChanged, IViewModelCrud
+    public class VM_PhoneStorage : IViewModelBase, INotifyPropertyChanged, IViewModelCrud, IFilter
     {
 
         #region Properties
@@ -90,7 +92,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             }
         }
 
-
+ 
 
         #endregion Properties
 
@@ -104,20 +106,16 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             PhonesCollection.ReadAll();
             StoragesCollection.ReadAll();
             PhonesStoragesCollection.ReadAll();
+            View = CollectionViewSource.GetDefaultView(PhonesStoragesCollection);
+            View.Filter = Filter;
             vmStorage.StoragesCollectionUpdated += UpdatePhonesStoragesCollection;
 
         }
 
 
-        private void UpdatePhonesStoragesCollection()
-        {
-            // Actualizar PhonesStoragesCollection
-            PhonesStoragesCollection.Clear();
-            StoragesCollection.Clear();
-            PhonesStoragesCollection.ReadAll();
-            StoragesCollection.ReadAll();
-        }
 
+
+        #region CRUD
 
         public bool Create()
         {
@@ -129,6 +127,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 PhoneStorage.Storage = StorageSelected;
                 PhoneStorage.Phone = PhoneSelected;
                 PhonesStoragesCollection.Create(PhoneStorage);
+                View.Refresh();
                 return true;
             }
             else
@@ -145,6 +144,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             {
                 InfoSuccessMessage?.Invoke("Success", "Almacenamiento eliminada correctamente");
                 PhonesStoragesCollection.Delete(index);
+                View?.Refresh();
                 return true;
             }
             else
@@ -186,6 +186,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 PhoneStorage.Storage = StorageSelected;
                 PhoneStorage.Phone = PhoneSelected;
                 PhonesStoragesCollection.Update(i, PhoneStorage);
+                View.Refresh();
                 return true;
             }
             else
@@ -194,6 +195,11 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 return false;
             }
         }
+
+        #endregion CRUD
+
+
+        #region EXTRAS
 
         public bool ValidateInput()
         {
@@ -209,5 +215,83 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
         {
             PhoneStorage = new M_PhoneStorage();
         }
+
+        private void UpdatePhonesStoragesCollection()
+        {
+            // Actualizar PhonesStoragesCollection
+            PhonesStoragesCollection.Clear();
+            StoragesCollection.Clear();
+            PhonesStoragesCollection.ReadAll();
+            StoragesCollection.ReadAll();
+        }
+
+
+
+
+        #endregion EXTRAS
+
+
+
+        #region Filter
+
+
+        private ComboBoxItem _selectedSearchParameter;
+        private string _searchText;
+
+
+        public ICollectionView View { get; private set; }
+
+
+        public ComboBoxItem SelectedSearchParameter
+        {
+            get { return _selectedSearchParameter; }
+            set
+            {
+                _selectedSearchParameter = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedSearchParameter)));
+                View?.Refresh();
+            }
+        }
+        public string SearchText
+        {
+            get { return _searchText; }
+            set
+            {
+                _searchText = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SearchText)));
+
+                View?.Refresh();
+            }
+        }
+
+
+        public bool Filter(object obj)
+        {
+
+
+            if (obj is M_PhoneStorage phoneStorage)
+            {
+                if (SelectedSearchParameter?.Content.ToString() == "Marca")
+                {
+                    return phoneStorage.Phone.Brand.Name.Contains(SearchText, StringComparison.OrdinalIgnoreCase);
+                }
+                else if (SelectedSearchParameter?.Content.ToString() == "Modelo")
+                {
+                    return phoneStorage.Phone.Model.Contains(SearchText, StringComparison.OrdinalIgnoreCase);
+                }
+                else if (SelectedSearchParameter?.Content.ToString() == "Capacidad")
+                {
+                    return phoneStorage.Storage.Storage.ToString().Contains(SearchText, StringComparison.OrdinalIgnoreCase);
+                }
+
+
+            }
+            return true;
+
+        }
+
+
+        #endregion Filter
+
     }
 }

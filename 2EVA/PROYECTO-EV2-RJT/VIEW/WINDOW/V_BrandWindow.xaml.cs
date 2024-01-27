@@ -191,6 +191,9 @@ namespace PROYECTO_EV2_RJT.VIEW
                             break;
 
                     }
+                    
+                    v_Warehouse.BrandsGrid.Items.Refresh();
+
                 }
 
 

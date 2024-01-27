@@ -5,10 +5,12 @@ using PROYECTO_EV2_RJT.MODEL;
 using System.ComponentModel;
 using System.Data.Common;
 using System.IO;
+using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace PROYECTO_EV2_RJT.VIEWMODEL
 {
-    public class VM_Phone : IViewModelBase, INotifyPropertyChanged, IViewModelCrud
+    public class VM_Phone : IViewModelBase, INotifyPropertyChanged, IViewModelCrud, IFilter
     {
 
         #region Properties
@@ -16,6 +18,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
         public event Action<string, string> InfoSuccessMessage;
         public event Action<string, string> InfoWarningMessage;
         public event PropertyChangedEventHandler? PropertyChanged;
+        public event Action<List<M_Storage>> SelectedItemsStorageListView;
 
         private M_Phone _Phone;
         private M_PhonesCollection _PhonesCollection;
@@ -61,10 +64,6 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             }
         }
 
-
-       
-
-
         public string Battery
         {
             get { return _battery; }
@@ -83,7 +82,6 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Ram)));
             }
         }
-
         public string Screen
         {
             get { return _screen; }
@@ -93,8 +91,6 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Screen)));
             }
         }
-
-
 
         public M_PhonesCollection PhonesCollection
         {
@@ -146,6 +142,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             }
         }
 
+
         #endregion Properties
 
         public VM_Phone()
@@ -153,6 +150,8 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             Phone = new M_Phone();
             PhonesCollection = [];
             PhonesCollection.ReadAll();
+            View = CollectionViewSource.GetDefaultView(PhonesCollection);
+            View.Filter = Filter;
 
         }
 
@@ -173,8 +172,9 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
 
             if (i == DBConstants.REGISTER_ADDED)
             {
-                InfoSuccessMessage?.Invoke("Success", "Movil añadida correctamente");
+                InfoSuccessMessage?.Invoke("Success", "Movil añadido correctamente");
                 PhonesCollection.Create(Phone);
+                View.Refresh();
                 return true;
             }
             else
@@ -191,6 +191,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             {
                 InfoSuccessMessage?.Invoke("Success", "Movil eliminada correctamente");
                 PhonesCollection.Delete(index);
+                View.Refresh();
                 return true;
             }
             else
@@ -208,16 +209,26 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 Phone = temp;
 
 
+                List<M_Storage> tempStorage = new List<M_Storage>();
                 foreach (M_Storage storage in Phone.Storage)
                 {
-                    SelectedStorage.Add(storage);
 
-                    SelectedStorage.Add(StoragesCollection.ToList().Find(x => x.Storage == storage.Storage));
+                    tempStorage.Add(StoragesCollection.ToList().Find(x => x.Storage == storage.Storage));
+                }
 
+                if (tempStorage.Count > 0)
+                {
+                    SelectedItemsStorageListView?.Invoke(tempStorage);
                 }
 
 
-                
+                SelectedBrand = BrandsCollection.FirstOrDefault<M_Brand>(x => x.Id == Phone.Brand.Id);
+                SelectedProcessor = ProcessorsCollection.FirstOrDefault<M_Processor>(x => x.Id == Phone.Processor.Id);
+                Ram = Phone.Ram.ToString();
+                Battery = Phone.Battery.ToString();
+                Screen = Phone.Screen.ToString();
+
+
 
 
 
@@ -237,6 +248,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             {
                 InfoSuccessMessage?.Invoke("Success", "Movil actualizado correctamente");
                 PhonesCollection.Update(i, Phone);
+                View.Refresh();
                 return true;
             }
             else
@@ -249,7 +261,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
         public bool ValidateInput()
         {
 
-            
+
 
 
 
@@ -327,7 +339,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             }
 
             Phone.Storage = SelectedStorage;
-            
+
 
 
 
@@ -338,5 +350,82 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
         {
             Phone = new M_Phone();
         }
+
+        #region Filter
+
+
+        private ComboBoxItem _selectedSearchParameter;
+        private string _searchText;
+
+
+        public ICollectionView View { get; private set; }
+
+
+        public ComboBoxItem SelectedSearchParameter
+        {
+            get { return _selectedSearchParameter; }
+            set
+            {
+                _selectedSearchParameter = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedSearchParameter)));
+                View?.Refresh();
+            }
+        }
+        public string SearchText
+        {
+            get { return _searchText; }
+            set
+            {
+                _searchText = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SearchText)));
+
+                View?.Refresh();
+            }
+        }
+
+
+        public bool Filter(object obj)
+        {
+
+
+            if (obj is M_Phone phone)
+            {
+                if (SelectedSearchParameter?.Content.ToString() == "Marca")
+                {
+                    return phone.Brand.Name.ToString().Contains(SearchText, StringComparison.OrdinalIgnoreCase);
+                }
+                else if (SelectedSearchParameter?.Content.ToString() == "Modelo")
+                {
+                    return phone.Model.ToString().Contains(SearchText, StringComparison.OrdinalIgnoreCase);
+                }
+                else if (SelectedSearchParameter?.Content.ToString() == "Procesador")
+                {
+                    return phone.Processor.Name.Contains(SearchText, StringComparison.OrdinalIgnoreCase);
+                }
+                else if (SelectedSearchParameter?.Content.ToString() == "Pantalla")
+                {
+                    return phone.Screen.ToString().Contains(SearchText, StringComparison.OrdinalIgnoreCase);
+                }
+                else if (SelectedSearchParameter?.Content.ToString() == "Bateria")
+                {
+                    return phone.Battery.ToString().Contains(SearchText, StringComparison.OrdinalIgnoreCase);
+                }
+                else if (SelectedSearchParameter?.Content.ToString() == "Sistema")
+                {
+                    return phone.Os.Contains(SearchText, StringComparison.OrdinalIgnoreCase);
+                }
+                else if (SelectedSearchParameter?.Content.ToString() == "Ram")
+                {
+                    return phone.Ram.ToString().Contains(SearchText, StringComparison.OrdinalIgnoreCase);
+                }
+
+
+            }
+            return true;
+
+        }
+
+
+        #endregion Filter
     }
 }

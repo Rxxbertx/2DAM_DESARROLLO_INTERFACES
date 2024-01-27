@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PROYECTO_EV2_RJT"
-      xmlns:context="clr-namespace:PROYECTO_EV2_RJT.VIEWMODEL"
+      xmlns:context="clr-namespace:PROYECTO_EV2_RJT.VIEWMODEL" d:DataContext="{d:DesignInstance Type=context:VM_Brand}"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="V_Warehouse">
@@ -31,6 +31,8 @@
         <FontFamily>Bahnschrift</FontFamily>
     </Page.FontFamily>
 
+
+
     <!-- Rest of the XAML code -->
 
 
@@ -54,13 +56,33 @@
                 <Grid Background="Transparent" HorizontalAlignment="Stretch">
 
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
 
-                    <Border Margin="10" Grid.Row="0" CornerRadius="10" Background="#FFBDBDBD" VerticalAlignment="Top" >
+                    <Expander Margin="10,0,0,0" Grid.Row="0" Header="Busqueda" ExpandDirection="Down">
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                            <ComboBox Style="{StaticResource ModernComboBox}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200" SelectedItem="{Binding SelectedSearchParameter}">
+                                <ComboBoxItem Content="Marca"/>
+                                <ComboBoxItem Content="Modelo"/>
+                                <ComboBoxItem Content="Procesador"/>
+                                <ComboBoxItem Content="Pantalla"/>
+                                <ComboBoxItem Content="Bateria"/>
+                                <ComboBoxItem Content="Sistema"/>
+                                <ComboBoxItem Content="Ram"/>
+                                
+                            </ComboBox>
+                            <TextBox Margin="5,0,0,0" Style="{StaticResource RoundedTextBox}" HorizontalAlignment="Stretch" Width="300" HorizontalContentAlignment="Left" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+
+                    </Expander>
+
+
+                    <Border Margin="10" Grid.Row="1" CornerRadius="10" Background="#FFBDBDBD" VerticalAlignment="Top" >
                         <Border.Effect>
                             <DropShadowEffect ShadowDepth="0" BlurRadius="15" Opacity="0.75"/>
                         </Border.Effect>
@@ -69,7 +91,7 @@
                                   HorizontalContentAlignment="Stretch"
                                   x:Name="PhonesGrid" 
                                   Margin="10"  
-                                  ItemsSource="{Binding PhonesCollection}"
+                                  ItemsSource="{Binding View}"
                                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" 
                                   Style="{DynamicResource DataGridStyle}"
                                   RowStyle="{StaticResource DataGridRowStyle}"
@@ -98,7 +120,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                           
+
                                 <DataGridTemplateColumn Header="Marca" SortMemberPath="Brand.Name" Width="auto">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
@@ -116,8 +138,8 @@
 
 
 
-                                <DataGridTextColumn Header="Modelo" Binding="{Binding Model}" IsReadOnly="True"/>
-                           
+                                <DataGridTextColumn Header="Modelo" Binding="{Binding Model}" IsReadOnly="True" Width="*"/>
+
 
                                 <DataGridTemplateColumn Header="Procesador" SortMemberPath="Processor.Name" Width="*">
                                     <DataGridTemplateColumn.CellTemplate>
@@ -135,24 +157,24 @@
                                 </DataGridTemplateColumn>
 
 
-                                <DataGridTextColumn Header="Pantalla en ''" Binding="{Binding Screen}" IsReadOnly="True" />
-                                <DataGridTextColumn Header="Ram GB" Binding="{Binding Ram}" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Bateria Mah" Binding="{Binding Battery}" IsReadOnly="True" />
-                                <DataGridTextColumn Header="Sistema" Binding="{Binding Os}" IsReadOnly="True" />
+                                <DataGridTextColumn Header="Pantalla en ''" Binding="{Binding Screen}" IsReadOnly="True" Width="auto"/>
+                                <DataGridTextColumn Header="Ram GB" Binding="{Binding Ram}" IsReadOnly="True" Width="auto"/>
+                                <DataGridTextColumn Header="Bateria Mah" Binding="{Binding Battery}" IsReadOnly="True" Width="auto" />
+                                <DataGridTextColumn Header="Sistema" Binding="{Binding Os}" IsReadOnly="True" Width="auto" />
 
                             </DataGrid.Columns>
                         </DataGrid>
                     </Border>
 
                     <Button x:Name="CreatePhone" Command="local:Commands.CreatePhone"
-                            Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
+                            Margin="10" Grid.Row="2" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
 
-                    <Border Visibility="{Binding ElementName=infoTextPhone,Path=Visibility}" Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.2" Width="{Binding ElementName=infoTextPhone, Path=ActualWidth}"  Height="{Binding ElementName=infoTextPhone, Path=ActualHeight}" Background="{Binding ElementName=infoTextPhone, Path=Foreground}" CornerRadius="10"/>
+                    <Border Visibility="{Binding ElementName=infoTextPhone,Path=Visibility}" Grid.Row="3" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.2" Width="{Binding ElementName=infoTextPhone, Path=ActualWidth}"  Height="{Binding ElementName=infoTextPhone, Path=ActualHeight}" Background="{Binding ElementName=infoTextPhone, Path=Foreground}" CornerRadius="10"/>
 
-                    <TextBlock Visibility="Hidden" Padding="10" TextAlignment="Center" Grid.Row="2"  x:Name="infoTextPhone" Text="info para el user" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Visibility="Hidden" Padding="10" TextAlignment="Center" Grid.Row="3"  x:Name="infoTextPhone" Text="info para el user" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
 
-                    <StackPanel Margin="10" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <StackPanel Margin="10" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
                         <Button x:Name="UpdatePhone"  Command="local:Commands.UpdatePhone" Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="0,0,50,0" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
                         <Button x:Name="DeletePhone"  Command="local:Commands.DeletePhone" Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
@@ -169,13 +191,31 @@
                 <Grid Background="Transparent" HorizontalAlignment="Stretch">
 
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
 
-                    <Border Margin="10" Grid.Row="0" CornerRadius="10" Background="#FFBDBDBD" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+
+
+                    <Expander Margin="10,0,0,0" Grid.Row="0" Header="Busqueda" ExpandDirection="Down" HorizontalAlignment="Right" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center">
+
+                        <StackPanel Orientation="Horizontal">
+                            <ComboBox Style="{StaticResource ModernComboBox}" SelectedItem="{Binding SelectedSearchParameter}"  HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200">
+                                <ComboBoxItem Content="Marca"/>
+                                <ComboBoxItem Content="Modelo"/>
+                                <ComboBoxItem Content="Capacidad"/>
+                            </ComboBox>
+                            <TextBox Margin="5,0,0,0" Style="{StaticResource RoundedTextBox}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Width="200"/>
+                        </StackPanel>
+
+                    </Expander>
+
+
+
+                    <Border Margin="10" Grid.Row="1" CornerRadius="10" Background="#FFBDBDBD" VerticalAlignment="Top" HorizontalAlignment="Stretch">
                         <Border.Effect>
                             <DropShadowEffect ShadowDepth="0" BlurRadius="15" Opacity="0.75"/>
                         </Border.Effect>
@@ -230,7 +270,7 @@
                             <DataGrid Grid.Column="1" HorizontalAlignment="Stretch"
                   HorizontalContentAlignment="Stretch"
                   HorizontalScrollBarVisibility="Auto"
-                  ItemsSource="{Binding PhonesStoragesCollection}"
+                  ItemsSource="{Binding View}"
                   x:Name="PhonesStoragesGrid" 
                   Margin="10"  
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" 
@@ -249,7 +289,7 @@
                   CanUserAddRows="False" 
                   >
 
-                                
+
                                 <DataGrid.Columns>
 
                                     <DataGridTemplateColumn Header="Marca" SortMemberPath="Phone.Brand.Name" Width="auto">
@@ -267,7 +307,7 @@
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
 
-                                    <DataGridTextColumn Header="Modelo" Binding="{Binding Phone.Model}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Modelo" Binding="{Binding Phone.Model}" IsReadOnly="True" Width="auto"/>
                                     <DataGridTextColumn Header="Capacidad" Binding="{Binding Storage.Storage}" IsReadOnly="True"/>
 
                                 </DataGrid.Columns>
@@ -281,27 +321,27 @@
                     </Border>
 
 
-                    <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right" Margin="0,0,10,0">
+                    <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Right" Margin="0,0,10,0">
 
                         <Button x:Name="CreatePhoneStorage" Command="local:Commands.CreatePhoneStorage"   Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
 
                         <StackPanel Orientation="Horizontal">
 
-                            <Button x:Name="UpdatePhoneStorage"  Command="local:Commands.UpdatePhoneStorage" Grid.Row="1" Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="10" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
-                            <Button x:Name="DeletePhoneStorage"   Command="local:Commands.DeletePhoneStorage" Padding="5" Grid.Row="1" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
+                            <Button x:Name="UpdatePhoneStorage"  Command="local:Commands.UpdatePhoneStorage"  Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="10" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
+                            <Button x:Name="DeletePhoneStorage"   Command="local:Commands.DeletePhoneStorage" Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
 
                         </StackPanel>
 
                     </StackPanel>
-                    <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Left">
+                    <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Left">
 
                         <Button x:Name="CreateStorage" Command="local:Commands.CreateStorage"  Margin="10,0,0,0"  Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
 
                         <StackPanel Orientation="Horizontal">
 
 
-                            <Button x:Name="UpdateStorage"  Command="local:Commands.UpdateStorage" Grid.Row="1" Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="10" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
-                            <Button  x:Name="DeleteStorage" Command="local:Commands.DeleteStorage" Padding="5" Grid.Row="1" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
+                            <Button x:Name="UpdateStorage"  Command="local:Commands.UpdateStorage"  Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="10" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
+                            <Button  x:Name="DeleteStorage" Command="local:Commands.DeleteStorage" Padding="5"  Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
                         </StackPanel>
 
                     </StackPanel>
@@ -309,25 +349,41 @@
 
 
 
-                    <Border Visibility="{Binding ElementName=infoTextPhoneStorage,Path=Visibility}"  Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.2" Width="{Binding ElementName=infoTextPhoneStorage, Path=ActualWidth}"  Height="{Binding ElementName=infoTextPhoneStorage, Path=ActualHeight}" Background="{Binding ElementName=infoTextPhoneStorage, Path=Foreground}" CornerRadius="10"/>
+                    <Border Visibility="{Binding ElementName=infoTextPhoneStorage,Path=Visibility}"  Grid.Row="3" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.2" Width="{Binding ElementName=infoTextPhoneStorage, Path=ActualWidth}"  Height="{Binding ElementName=infoTextPhoneStorage, Path=ActualHeight}" Background="{Binding ElementName=infoTextPhoneStorage, Path=Foreground}" CornerRadius="10"/>
 
-                    <TextBlock  Visibility="Hidden" Padding="10" TextAlignment="Center" Grid.Row="2"  x:Name="infoTextPhoneStorage" Text="info para el user" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock  Visibility="Hidden" Padding="10" TextAlignment="Center" Grid.Row="3"  x:Name="infoTextPhoneStorage" Text="info para el user" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
 
                 </Grid>
 
             </TabItem>
             <TabItem x:Name="brandTab" Style="{StaticResource ModernTabItem}" FontSize="20"  Header="MARCAS" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent">
+
+                <TabItem.DataContext>
+                    <context:VM_Brand/>
+                </TabItem.DataContext>
+
+
+
                 <Grid Background="Transparent" HorizontalAlignment="Stretch">
 
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
 
-                    <Border Margin="10" Grid.Row="0" CornerRadius="10" Background="#FFBDBDBD" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+
+                    <Expander Margin="10,0,0,0" Grid.Row="0" Header="Busqueda" ExpandDirection="Down">
+
+                        <TextBox Style="{StaticResource RoundedTextBox}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Width="150"/>
+
+                    </Expander>
+
+
+                    <Border Margin="10" Grid.Row="1" CornerRadius="10" Background="#FFBDBDBD" VerticalAlignment="Top" HorizontalAlignment="Stretch">
                         <Border.Effect>
                             <DropShadowEffect ShadowDepth="0" BlurRadius="15" Opacity="0.75"/>
                         </Border.Effect>
@@ -335,7 +391,7 @@
                         <DataGrid HorizontalAlignment="Stretch"
                   HorizontalContentAlignment="Stretch"
                   HorizontalScrollBarVisibility="Auto"
-                   ItemsSource="{Binding BrandsCollection}"
+                   ItemsSource="{Binding View}"
                   x:Name="BrandsGrid" 
                   Margin="10"  
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" 
@@ -353,10 +409,8 @@
                   CanUserDeleteRows="False" 
                   CanUserAddRows="False" 
                   >
-                            <DataGrid.DataContext>
-                                <context:VM_Brand/>
-                            </DataGrid.DataContext>
-                          
+
+
 
                             <DataGrid.Columns>
 
@@ -373,7 +427,7 @@
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTextColumn Header="Id" Binding="{Binding Id}" IsReadOnly="True" Width="auto"/>
-                                
+
                                 <DataGridTextColumn Header="Marca" Binding="{Binding Name}" IsReadOnly="True"/>
 
 
@@ -381,13 +435,16 @@
                         </DataGrid>
                     </Border>
 
-                    <Button x:Name="CreateBrand" Command="local:Commands.CreateBrand"  Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
 
-                    <Border Visibility="{Binding ElementName=infoTextBrand,Path=Visibility}" Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.2" Width="{Binding ElementName=infoTextBrand, Path=ActualWidth}"  Height="{Binding ElementName=infoTextBrand, Path=ActualHeight}" Background="{Binding ElementName=infoTextBrand, Path=Foreground}" CornerRadius="10"/>
+                    <Button x:Name="CreateBrand" Command="local:Commands.CreateBrand"  Margin="10" Grid.Row="2" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
 
-                    <TextBlock Visibility="Hidden"  Padding="10" TextAlignment="Center" Grid.Row="2"  x:Name="infoTextBrand" Text="info para el user" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-                    <StackPanel Margin="10" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+                    <Border Visibility="{Binding ElementName=infoTextBrand,Path=Visibility}" Grid.Row="3" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.2" Width="{Binding ElementName=infoTextBrand, Path=ActualWidth}"  Height="{Binding ElementName=infoTextBrand, Path=ActualHeight}" Background="{Binding ElementName=infoTextBrand, Path=Foreground}" CornerRadius="10"/>
+
+                    <TextBlock Visibility="Hidden"  Padding="10" TextAlignment="Center" Grid.Row="3"  x:Name="infoTextBrand" Text="info para el user" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    <StackPanel Margin="10" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
                         <Button x:Name="UpdateBrand" Command="local:Commands.UpdateBrand"  Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="0,0,50,0" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
                         <Button x:Name="DeleteBrand" Command="local:Commands.DeleteBrand"  Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
                     </StackPanel>
@@ -397,16 +454,41 @@
 
             </TabItem>
             <TabItem x:Name="processorTab" Style="{StaticResource ModernTabItem}" FontSize="20" Header="PROCESADORES" HorizontalAlignment="Stretch">
+
+                <TabItem.DataContext>
+                    <context:VM_Processor/>
+                </TabItem.DataContext>
+
+
+
                 <Grid Background="Transparent" HorizontalAlignment="Stretch">
 
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
 
-                    <Border Margin="10" Grid.Row="0" CornerRadius="10" Background="#FFBDBDBD" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+
+
+                    <Expander Margin="10,0,0,0" Grid.Row="0" Header="Busqueda" ExpandDirection="Down">
+
+                        <StackPanel Orientation="Horizontal">
+                            <ComboBox Style="{StaticResource ModernComboBox}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200" SelectedItem="{Binding SelectedSearchParameter}">
+                                <ComboBoxItem Content="Nombre"/>
+                                <ComboBoxItem Content="Nucleos"/>
+                                <ComboBoxItem Content="Gpu"/>
+                                <ComboBoxItem Content="Nanometros"/>
+                                <ComboBoxItem Content="Marca"/>
+                            </ComboBox>
+                            <TextBox Margin="5,0,0,0" Style="{StaticResource RoundedTextBox}" HorizontalAlignment="Left" Width="200" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+
+                    </Expander>
+
+                    <Border Margin="10" Grid.Row="1" CornerRadius="10" Background="#FFBDBDBD" VerticalAlignment="Top" HorizontalAlignment="Stretch">
                         <Border.Effect>
                             <DropShadowEffect ShadowDepth="0" BlurRadius="15" Opacity="0.75"/>
                         </Border.Effect>
@@ -415,7 +497,6 @@
                   
                                   
                   HorizontalScrollBarVisibility="Auto"
-                  
                   x:Name="ProcessorsGrid" 
                   Margin="10"  
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}" 
@@ -424,8 +505,7 @@
                   CellStyle="{StaticResource DataGridCellStyle}"
                   Background="Gray" 
                   SelectionMode="Single"
-                  
-                    ItemsSource="{Binding ProcessorsCollection}"
+                  ItemsSource="{Binding View}"
                   VerticalAlignment="Top" 
                   VerticalContentAlignment="Center" 
                   FontSize="22" FontFamily="Bahnschrift" 
@@ -433,9 +513,7 @@
                  
                   CanUserAddRows="False" HeadersVisibility="Column" 
                   >
-                            <DataGrid.DataContext>
-                                <context:VM_Processor/>
-                            </DataGrid.DataContext>
+
 
                             <DataGrid.Columns>
 
@@ -461,16 +539,16 @@
                         </DataGrid>
                     </Border>
 
-                    <Button x:Name="CreateProcessor" Command="local:Commands.CreateProcessor"   Margin="10" Grid.Row="1" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
+                    <Button x:Name="CreateProcessor" Command="local:Commands.CreateProcessor"   Margin="10" Grid.Row="2" Style="{StaticResource RoundedButton}" Content="AÑADIR" FontSize="20" Padding="5" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  Background="gREEN" Foreground="White" />
 
-                    <Border Visibility="{Binding ElementName=infoTextProcessor,Path=Visibility}" Grid.Row="2" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.2" Width="{Binding ElementName=infoTextProcessor, Path=ActualWidth}"  Height="{Binding ElementName=infoTextProcessor, Path=ActualHeight}" Background="{Binding ElementName=infoTextProcessor, Path=Foreground}" CornerRadius="10"/>
+                    <Border Visibility="{Binding ElementName=infoTextProcessor,Path=Visibility}" Grid.Row="3" VerticalAlignment="Center"   HorizontalAlignment="Center" Opacity="0.2" Width="{Binding ElementName=infoTextProcessor, Path=ActualWidth}"  Height="{Binding ElementName=infoTextProcessor, Path=ActualHeight}" Background="{Binding ElementName=infoTextProcessor, Path=Foreground}" CornerRadius="10"/>
 
-                    <TextBlock Visibility="Hidden" Padding="10" TextAlignment="Center" Grid.Row="2"  x:Name="infoTextProcessor" Text="info para el user" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-
+                    <TextBlock Visibility="Hidden" Padding="10" TextAlignment="Center" Grid.Row="3"  x:Name="infoTextProcessor" Text="info para el user" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
 
-                    <StackPanel Margin="10" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+
+                    <StackPanel Margin="10" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
                         <Button x:Name="UpdateProcessor"  Command="local:Commands.UpdateProcessor"   Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="MODIFICAR" Margin="0,0,50,0" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FF135DA2" Foreground="White"/>
                         <Button x:Name="DeleteProcessor" Command="local:Commands.DeleteProcessor"  Padding="5" Style="{StaticResource RoundedButton}" FontWeight="Bold" Content="ELIMINAR" FontSize="23"  HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#FFD23131" Foreground="White"/>
                     </StackPanel>

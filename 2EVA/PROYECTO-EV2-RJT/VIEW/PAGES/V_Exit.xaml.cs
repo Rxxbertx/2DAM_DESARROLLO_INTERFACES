@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using Application = System.Windows.Application;
 
 namespace PROYECTO_EV2_RJT.VIEW
 {

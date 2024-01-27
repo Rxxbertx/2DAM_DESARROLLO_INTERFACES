@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Media.Imaging;
 using PROYECTO_EV2_RJT.CORE.UTILS;
 using System.ComponentModel;
+using MessageBox = System.Windows.MessageBox;
 
 namespace PROYECTO_EV2_RJT.MODEL
 {
@@ -177,7 +178,7 @@ public event PropertyChangedEventHandler? PropertyChanged;
 
             int i = Read();
 
-            if (i == DBConstants.REGISTER_NOT_FOUND)
+            if (i == DBConstants.REGISTER_NOT_FOUND || i == DBConstants.REGISTER_FOUNDED)
             {
                 try
                 {
@@ -197,7 +198,7 @@ public event PropertyChangedEventHandler? PropertyChanged;
                         command.Parameters.AddWithValue("@id_processor", Processor.Id);
                         command.Parameters.AddWithValue("@id", Id);
 
-                        if (Image != null) command.Parameters.AddWithValue("@image", Image);
+                        if (Image != null) command.Parameters.AddWithValue("@image", Utils.ImageToBytes(Image));
 
                         if (command.ExecuteNonQuery() > 0)
                         {
@@ -351,7 +352,7 @@ public event PropertyChangedEventHandler? PropertyChanged;
                         while (reader.Read())
                         {
                             M_Storage storage = new M_Storage();
-                            storage.Storage = reader.GetInt32(StorageStatics.STORAGE);
+                            storage.Storage = reader.GetInt32(PhoneStorageStatics.STORAGE);
                             if (storage == null || storage.Storage < 1) return null;
                             Storage.Add(storage);
                         }
@@ -543,7 +544,9 @@ public event PropertyChangedEventHandler? PropertyChanged;
         public void Update(int index, M_Phone phone)
         {
 
-            this[index] = phone;
+            RemoveAt(index);
+            Insert(index, phone);
+            
 
         }
         public void Delete(int index)

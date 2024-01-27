@@ -138,7 +138,7 @@ namespace PROYECTO_EV2_RJT.MODEL
 
             int i = Read();
 
-            if (i == DBConstants.REGISTER_NOT_FOUND)
+            if (i == DBConstants.REGISTER_NOT_FOUND || i == DBConstants.REGISTER_FOUNDED)
             {
 
 
@@ -245,12 +245,8 @@ namespace PROYECTO_EV2_RJT.MODEL
             {
                 DBConnection.OpenConnection(db);
 
-                string query = "SELECT COUNT(*) FROM cpu WHERE name_cpu = @name AND nanometers_cpu = @nanometers AND graphicsrender_cpu = @gpu AND manufacturer_cpu = @manufacturer AND cores_cpu = @cores AND image_cpu = @img";
+                string query = "SELECT COUNT(*) FROM cpu WHERE name_cpu = @name AND nanometers_cpu = @nanometers AND graphicsrender_cpu = @gpu AND manufacturer_cpu = @manufacturer AND cores_cpu = @cores";
 
-                if (Image == null)
-                {
-                    query = "SELECT COUNT(*) FROM cpu WHERE name_cpu = @name AND nanometers_cpu = @nanometers AND graphicsrender_cpu = @gpu AND manufacturer_cpu = @manufacturer AND cores_cpu = @cores";
-                }
 
                 using MySqlCommand command = new(query, DBConnection.OpenConnection(db));
                 command.Parameters.AddWithValue("@name", Name);
@@ -258,11 +254,6 @@ namespace PROYECTO_EV2_RJT.MODEL
                 command.Parameters.AddWithValue("@gpu", Gpu);
                 command.Parameters.AddWithValue("@manufacturer", Manufacturer);
                 command.Parameters.AddWithValue("@cores", Cores);
-
-                if (Image != null)
-                {
-                    command.Parameters.AddWithValue("@img", Utils.ImageToBytes(Image));
-                }
 
                 int count = Convert.ToInt32(command.ExecuteScalar());
 
@@ -380,7 +371,10 @@ namespace PROYECTO_EV2_RJT.MODEL
             if (index != -1)
             {
 
-                this[index] = processor;
+                
+                RemoveAt(index);
+                Insert(index, processor);
+
 
             }
 
