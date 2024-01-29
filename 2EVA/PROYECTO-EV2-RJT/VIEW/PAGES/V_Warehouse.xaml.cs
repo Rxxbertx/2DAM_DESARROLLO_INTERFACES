@@ -18,6 +18,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         V_MainWindow? parent = null;
 
+        //ViewModels
         VM_Brand? vm_Brand;
         VM_Storage? vm_Storage;
         VM_Processor? vm_Processor;
@@ -35,20 +36,21 @@ namespace PROYECTO_EV2_RJT.VIEW
 
 
 
+        // cada vez que se selecciona una pestaña se ejecuta este evento
         private void TabControl_Selected(object sender, RoutedEventArgs e)
         {
 
-            if (e.OriginalSource is TabControl tabControl)
+            if (e.OriginalSource is TabControl tabControl)// si el objeto que ha lanzado el evento es un TabControl
             {
 
-                if (tabControl.SelectedItem is TabItem tabItem)
+                if (tabControl.SelectedItem is TabItem tabItem)// si el objeto seleccionado es un TabItem
                 {
 
 
                     if (parent != null)
                     {
 
-
+                        // en función de la pestaña seleccionada, se selecciona el checkbox correspondiente y se carga el ViewModel correspondiente en el DataContext
                         switch (tabItem.Name)
                         {
                             case "phoneTab":

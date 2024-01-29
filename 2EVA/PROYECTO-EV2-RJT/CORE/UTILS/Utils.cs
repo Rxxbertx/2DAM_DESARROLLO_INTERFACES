@@ -11,20 +11,29 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
 {
     public static class Utils
     {
+        // esto es un cancellationTokenSource que se usa para cancelar el mensaje
         private static CancellationTokenSource? messageCancellation;
 
+
+        // esto es un metodo que muestra un mensaje en un textblock durante un tiempo especificado
         public static void ShowMessage(TextBlock textBlock, string message, Brush foreground, int seconds)
         {
 
+            // si hay un mensaje mostrandose lo cancela
             messageCancellation?.Cancel();
 
+            // crea un nuevo token de cancelacion
 
             messageCancellation = new CancellationTokenSource();
+
+            // muestra el mensaje
             ShowMessageForSeconds(textBlock, message, foreground, seconds, messageCancellation.Token);
         }
 
+        // esto es un metodo que muestra un mensaje en un textblock durante un tiempo especificado
         private static async void ShowMessageForSeconds(TextBlock textBlock, string message, Brush foreground, int seconds, CancellationToken cancellationToken)
         {
+            // muestra el mensaje
             textBlock.Text = message;
             textBlock.Foreground = foreground;
             textBlock.Visibility = System.Windows.Visibility.Visible;
@@ -47,6 +56,7 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
             }
         }
 
+        // esto son metodos que muestran mensajes de error, exito o advertencia
         public static void SuccessMessage(TextBlock textBlock, string message)
         {
             ShowMessage(textBlock, message, Brushes.Green, 5);
@@ -64,6 +74,8 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
 
 
 
+
+        // esto es un metodo que mueve el datagrid a la posicion anterior es decir si estas en la posicion 5 te mueve a la 4
         public static void UpdateDataGridToNextPosition(DataGrid grid, int i)
         {
             if (i > 0)
@@ -77,6 +89,7 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
             }
             if (grid.SelectedIndex != -1)
             {
+                // Mueve el scroll del DataGrid a la posición del elemento seleccionado
                 grid.ScrollIntoView(grid.SelectedItem);
             }
 
@@ -89,8 +102,10 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
 
 
 
+        // esto es un metodo que convierte una imagen a bytes
         public static byte[] ImageToBytes(BitmapSource image)
         {
+            // lo que hace es crear un encoder de png y añadirle la imagen y luego lo guarda en un stream y lo convierte a bytes
             var encoder = new PngBitmapEncoder();
             encoder.Frames.Add(BitmapFrame.Create(image));
 
@@ -101,21 +116,38 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
             }
         }
 
+        // esto es un metodo que convierte bytes a imagen
+
         public static BitmapImage BytesToImage(byte[] bytes)
         {
+            // lo que hace es crear un stream con los bytes y luego lo convierte a imagen
             using (MemoryStream stream = new MemoryStream(bytes))
             {
+                
                 var image = new BitmapImage();
-                image.BeginInit();
-                image.CacheOption = BitmapCacheOption.OnLoad;
-                image.StreamSource = stream;
-                image.EndInit();
+
+                try
+                {
+
+                    // Cargar la imagen desde el stream y devolverla
+                    image.BeginInit();
+                    
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.StreamSource = stream;
+                    image.EndInit();
+                    image.Freeze();
+                }
+                catch (Exception)
+                {
+                }
+
                 return image;
             }
         }
 
 
 
+        // esto es un metodo que selecciona una imagen abriendo un dialogo de seleccion de archivos y devuelve la imagen
         public static BitmapImage? SelectImage()
         {
             // Crear un cuadro de diálogo para seleccionar archivos
@@ -144,8 +176,11 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
 
     }
 
+    // esto es una clase que contiene metodos para animar ventanas
     public static class WindowAnimationUtils
     {
+
+        // esto es un metodo que anima una ventana para que aparezca
         public static void FadeIn(Window window)
         {
             DoubleAnimation opacityAnimation = new()
@@ -164,6 +199,7 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
             storyboard.Begin();
         }
 
+        // esto es un metodo que anima una ventana para que desaparezca y es asincrono eso quiere decir que se ejecuta en segundo plano y no bloquea la aplicacion
         public static async Task FadeOutAndClose(Window window)
         {
             DoubleAnimation opacityAnimation = new()
@@ -189,8 +225,10 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
 
     }
 
+    // esto es una clase que contiene metodos para animar paginas
     public static class PageNavigationUtils
     {
+        // esto es un metodo que anima una pagina para que aparezca
         public static void NavigateWithFadeOut(Page currentPage, Page nextPage)
         {
             if (currentPage == null || nextPage == null)
@@ -242,8 +280,10 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
         }
     }
 
+    // esto es una clase que contiene metodos de utilidad para la base de datos
     public static class DBUtils
     {
+        // esto es un metodo que comprueba el estado de una operacion y muestra un mensaje en funcion de si ha ido bien o mal
         public static void CheckStatusOperation(Action<string, string> errorAction, Action<string, string> successAction, Action<string, string> infoAction, int result, string name)
         {
             if (result == DBConstants.REGISTER_NOT_UPDATED)
@@ -300,6 +340,7 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
             }
             else if (IsMySQLIntegrityError(result))
             {
+                // Si el error es de integridad, mostrar un mensaje de error
                 HandleIntegrityError(result, errorAction, name);
             }
 
@@ -309,12 +350,13 @@ namespace PROYECTO_EV2_RJT.CORE.UTILS
 
         }
 
-
+        // esto es un metodo que comprueba si un error es de integridad
         private static bool IsMySQLIntegrityError(int errorCode)
         {
             return Enum.IsDefined(typeof(MySqlErrorCode), errorCode);
         }
 
+        // esto es un metodo que maneja un error de integridad
         private static void HandleIntegrityError(int errorCode, Action<string, string> errorAction, string name)
         {
             MySqlErrorCode mysqlErrorCode = (MySqlErrorCode)errorCode;

@@ -106,7 +106,7 @@ public event PropertyChangedEventHandler? PropertyChanged;
                         if (command.ExecuteNonQuery() > 0)
                         {   Id = (int)command.LastInsertedId;
                             command.Dispose();
-                            // Actualizar los datos de almacenamiento
+                            
 
                             foreach (M_Storage storage in Storage)
                             {

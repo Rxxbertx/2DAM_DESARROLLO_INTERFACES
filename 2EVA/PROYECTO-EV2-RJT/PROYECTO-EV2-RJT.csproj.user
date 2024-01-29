@@ -7,16 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="VIEW\REPORTS\Almacenamiento.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="VIEW\REPORTS\AlmacenamientosUsados.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="VIEW\REPORTS\CrystalReport1.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="VIEW\WINDOW\ReportsWindow.xaml.cs">
+    <Compile Update="REPORTS\Reports.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="VIEW\WINDOW\V_ErrorWindow.xaml.cs">
@@ -38,6 +29,7 @@
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Update="THEME\ModernBorder.xaml">
       <SubType>Designer</SubType>
@@ -63,7 +55,7 @@
     <Page Update="THEME\RoundedTextBox.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VIEW\WINDOW\ReportsWindow.xaml">
+    <Page Update="REPORTS\Reports.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="VIEW\WINDOW\V_ErrorWindow.xaml">

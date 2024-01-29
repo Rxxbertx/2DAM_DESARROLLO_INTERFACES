@@ -11,15 +11,19 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
     {
 
         #region Properties
+        // Eventos para mostrar mensajes
         public event Action<string, string> InfoErrorMessage;
         public event Action<string, string> InfoSuccessMessage;
         public event Action<string, string> InfoWarningMessage;
+        // Evento para notificar cambios en las propiedades
         public event PropertyChangedEventHandler? PropertyChanged;
-
+        
+        // Propiedades para la vista
         private M_Brand _brand;
         private M_BrandsCollection _brandsCollection;
 
-        public ICollectionView View { get; private set; }
+
+        // getters y setters de las propiedades para la vista
         public M_Brand Brand
         {
             get { return _brand; }
@@ -41,19 +45,6 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
         }
 
 
-        private string _searchText;
-        public string SearchText
-        {
-            get { return _searchText; }
-            set
-            {
-                _searchText = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SearchText)));
-
-                // Refrescar la vista de la colección cada vez que cambia el texto de búsqueda
-                View?.Refresh();
-            }
-        }
 
         #endregion Properties
 
@@ -62,50 +53,36 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             Brand = new M_Brand();
             BrandsCollection = [];
             BrandsCollection.ReadAll();
+
+            // Inicializar la vista de la colección con la colección de marcas y el filtro de búsqueda
             View = CollectionViewSource.GetDefaultView(BrandsCollection);
             View.Filter = Filter;
         }
 
-        public bool Filter(object obj)
-        {
-
-            if (obj is M_Brand temp)
-            {
-
-                // Filtra por el nombre de la marca
-                if (!string.IsNullOrEmpty(SearchText) && !temp.Name.Contains(SearchText, StringComparison.OrdinalIgnoreCase))
-                {
-                    return false;
-                }
-                
-            }
-            return true;
 
 
-
-        }
-
+        #region CRUD
         public bool Create()
         {
-            int i = Brand.Create();
+            int i = Brand.Create(); // guardamos el resultado de la operación de inserción 
 
-            if (i == DBConstants.REGISTER_ADDED)
+            if (i == DBConstants.REGISTER_ADDED) // si la operación ha sido exitosa
             {
-                InfoSuccessMessage?.Invoke("Success", "Marca añadida correctamente");
-                BrandsCollection.Create(Brand);
-                View.Refresh();
-                return true;
+                InfoSuccessMessage?.Invoke("Success", "Marca añadida correctamente"); // mostramos mensaje de éxito
+                BrandsCollection.Create(Brand); // añadimos la marca a la colección
+                View.Refresh(); // refrescamos la vista
+                return true; // devolvemos true
             }
-            else
-            {
-                DBUtils.CheckStatusOperation(InfoErrorMessage, InfoSuccessMessage, InfoWarningMessage, i, "Marca");
+            else // si la operación no ha sido exitosa
+            { 
+                DBUtils.CheckStatusOperation(InfoErrorMessage, InfoSuccessMessage, InfoWarningMessage, i, "Marca"); // mostramos mensaje de error
                 return false;
             }
         }
 
         public bool Delete(int index)
         {
-            int result = Brand.Delete();
+            int result = Brand.Delete(); // guardamos el resultado de la operación de borrado
             if (result == DBConstants.REGISTER_DELETED)
             {
                 InfoSuccessMessage?.Invoke("Success", "Marca eliminada correctamente");
@@ -122,10 +99,10 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
 
         public bool Read()
         {
-            M_Brand? temp = Brand.ReadObject();
+            M_Brand? temp = Brand.ReadObject(); // guardamos el resultado de la operación de lectura
             if (temp != null)
             {
-                Brand = temp;
+                Brand = temp; // si la operación ha sido exitosa, asignamos el objeto leído a la propiedad de la vista
                 return true;
             }
             else
@@ -154,15 +131,16 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             
         }
 
+        #endregion CRUD
+
         public bool ValidateInput()
         {
-            if (string.IsNullOrEmpty(_brand.Name))
+            if (string.IsNullOrEmpty(_brand.Name)) // si el nombre está vacío
             {
                 InfoErrorMessage?.Invoke("Error", "El nombre no puede estar vacio");
                 return false;
             }
-            //minimo 3 caracteres
-            if (_brand.Name.Length < 2)
+            if (_brand.Name.Length < 2) // si el nombre tiene menos de 2 caracteres
             {
                 InfoWarningMessage?.Invoke("Error", "El nombre debe tener al menos 2 caracteres");
                 return false;
@@ -173,7 +151,49 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
 
         public void ClearData()
         {
-            Brand = new M_Brand();
+            Brand = new M_Brand(); // creamos un nuevo objeto de marca para limpiar los datos
         }
+
+
+        #region Filter
+        // Propiedad para la vista de la colección
+        public ICollectionView View { get; private set; }
+
+
+        // Propiedad para el texto de búsqueda
+        private string _searchText;
+        public string SearchText
+        {
+            get { return _searchText; }
+            set
+            {
+                _searchText = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SearchText)));
+
+                // Refrescar la vista de la colección cada vez que cambia el texto de búsqueda
+                View?.Refresh();
+            }
+        }
+
+        public bool Filter(object obj)
+        {
+
+            if (obj is M_Brand temp)
+            {
+
+                // Filtra por el nombre de la marca
+                if (!string.IsNullOrEmpty(SearchText) && !temp.Name.Contains(SearchText, StringComparison.OrdinalIgnoreCase))
+                {
+                    return false;
+                }
+                
+            }
+            return true;
+
+
+
+        }
+        #endregion Filter
+
     }
 }

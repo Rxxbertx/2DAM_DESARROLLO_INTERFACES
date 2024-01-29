@@ -61,7 +61,7 @@
 
             <StackPanel DockPanel.Dock="Right" Orientation="Vertical" VerticalAlignment="Center" Margin="10">
 
-                <Image Source="/CORE/IMAGES/logoapp.png" Width="300" Height="300" />
+                <Image Source="/CORE/IMAGES/ICONS/logoapp.png" Width="300" Height="300" />
                 <TextBlock Width="300" FontFamily="Candara" Opacity="0.75" TextAlignment="Center"  Text="Aplicación de gestión de móviles, puedes crear nuevos móviles, eliminarlos, ver detalles sobre ellos y también generar informes." FontSize="15"  Foreground="#FFD08A09"  VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
 
             </StackPanel>

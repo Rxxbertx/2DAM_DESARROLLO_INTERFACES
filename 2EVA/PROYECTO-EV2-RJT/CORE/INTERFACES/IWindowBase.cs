@@ -12,6 +12,7 @@ namespace PROYECTO_EV2_RJT.CORE.INTERFACES
 {
     public  interface IWindowBase
     {
+        // esto son los eventos de la ventana base que se heredan a todas las ventanas que lo necesiten
 
         public void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e);
         public void Window_Loaded(object sender, RoutedEventArgs e);

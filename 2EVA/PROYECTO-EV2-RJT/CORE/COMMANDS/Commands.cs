@@ -56,15 +56,7 @@ namespace PROYECTO_EV2_RJT
                 );
         }
 
-        private static RoutedUICommand CreateCommand(string v)
-        {
-
-            return new RoutedUICommand(
-                               v,
-                                              v,
-                                                             typeof(Commands)
-                                                                            );
-        }
+        private static RoutedUICommand CreateCommand(string v) => new RoutedUICommand(v, v, typeof(Commands));
     }
 }
 

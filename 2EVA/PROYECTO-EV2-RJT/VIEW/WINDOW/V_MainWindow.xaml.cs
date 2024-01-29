@@ -77,9 +77,10 @@ namespace PROYECTO_EV2_RJT.VIEW
                     return;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                new V_ErrorWindow("No HAS INICIADO SESION CORRECTAMENTE")
+                { Owner = this }.ShowDialog();
                 return;
             }
 

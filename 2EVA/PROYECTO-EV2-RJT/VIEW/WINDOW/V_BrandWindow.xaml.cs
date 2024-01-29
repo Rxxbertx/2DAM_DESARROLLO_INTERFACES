@@ -94,6 +94,9 @@ namespace PROYECTO_EV2_RJT.VIEW
         {
             Owner.Effect = null;
         }
+        
+        
+        // este metodo se ejecuta cuando se carga la ventana y se encarga de inicializar los datos, asignar los eventos y comprobar que todo esta correcto
         public void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
@@ -113,15 +116,17 @@ namespace PROYECTO_EV2_RJT.VIEW
                 return;
             }
 
+            // asignamos los eventos de los mensajes
             ViewModel.InfoErrorMessage += ShowErrorMessage;
             ViewModel.InfoSuccessMessage += ShowSuccessMessage;
             ViewModel.InfoWarningMessage += ShowWarningMessage;
-            ViewModel.ClearData();
+            ViewModel.ClearData();// limpiamos los datos del modelo
 
+            // si la operacion es de actualizar o eliminar, cargamos los datos del modelo
             if (id > 0 && operation == Operation.UPDATE || operation == Operation.DELETE)
             {
                 ViewModel.Brand.Id = id;
-                Read();
+                Read();// leemos los datos del modelo
 
             }
             else if (operation != Operation.CREATE)
@@ -144,10 +149,10 @@ namespace PROYECTO_EV2_RJT.VIEW
 
             if (ViewModel != null && v_Warehouse != null)
             {
-
+                // si la validacion es correcta, ejecutamos la operacion
                 if (ViewModel.ValidateInput())
                 {
-
+                    // dependiendo de la operacion, ejecutamos una accion u otra
                     switch (operation)
                     {
                         case Operation.CREATE:
@@ -192,7 +197,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
                     }
                     
-                    v_Warehouse.BrandsGrid.Items.Refresh();
+                    
 
                 }
 
@@ -221,10 +226,12 @@ namespace PROYECTO_EV2_RJT.VIEW
 
         }
 
+        // metodo que se encarga de leer los datos del modelo 
         private void Read()
         {
             if (ViewModel != null && v_Warehouse != null)
             {
+                //si la lectura no es correcta, mostramos un mensaje de error y cerramos la ventana
                 if (!ViewModel.Read())
                 {
                     Utils.ErrorMessage(v_Warehouse.infoTextBrand, "Marca no encontrada");

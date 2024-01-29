@@ -173,7 +173,7 @@
 
             <StackPanel DockPanel.Dock="Right" Orientation="Vertical" VerticalAlignment="Bottom">
 
-                <Image Source="/CORE/IMAGES/logoapp.png" Width="305" Height="261" Opacity="0.75" />
+                <Image Source="/CORE/IMAGES/ICONS/logoapp.png" Width="305" Height="261" Opacity="0.75" />
 
             </StackPanel>
 

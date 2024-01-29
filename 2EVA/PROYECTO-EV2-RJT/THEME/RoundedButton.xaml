@@ -17,7 +17,7 @@
                         <Grid>
 
 
-                            <Image x:Name="image" Visibility="Hidden" Source="../CORE/IMAGES/close.png" Height="20" Width="20" VerticalAlignment="Center"  />
+                            <Image x:Name="image" Visibility="Hidden" Source="../CORE/IMAGES/ICONS/close.png" Height="20" Width="20" VerticalAlignment="Center"  />
 
 
                         </Grid>
@@ -74,7 +74,7 @@
                         <Grid>
 
 
-                            <Image x:Name="image" Visibility="Hidden" Source="../CORE/IMAGES/minimize.png" Height="20" Width="20" VerticalAlignment="Center"  />
+                            <Image x:Name="image" Visibility="Hidden" Source="../CORE/IMAGES/ICONS/minimize.png" Height="20" Width="20" VerticalAlignment="Center"  />
 
 
                         </Grid>
@@ -129,7 +129,7 @@
                         <Grid>
 
 
-                            <Image x:Name="image" Visibility="Hidden" Source="../CORE/IMAGES/fullscreen.png" Height="20" Width="20" VerticalAlignment="Center"  />
+                            <Image x:Name="image" Visibility="Hidden" Source="../CORE/IMAGES/ICONS/fullscreen.png" Height="20" Width="20" VerticalAlignment="Center"  />
 
 
                         </Grid>

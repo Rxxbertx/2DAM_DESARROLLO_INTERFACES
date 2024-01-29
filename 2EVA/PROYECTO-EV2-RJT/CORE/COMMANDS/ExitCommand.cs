@@ -15,7 +15,7 @@ namespace PROYECTO_EV2_RJT.CORE.COMMANDS
 
         public bool CanExecute(object? parameter)
         {
-            return true; // Puedes implementar lógica de habilitación aquí si es necesario
+            return true;
         }
 
         public void Execute(object? parameter)

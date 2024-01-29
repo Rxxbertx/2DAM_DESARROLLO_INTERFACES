@@ -63,7 +63,7 @@ namespace PROYECTO_EV2_RJT.VIEW.WINDOW {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PROYECTO-EV2-RJT;component/view/window/reportswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PROYECTO-EV2-RJT;V1.0.0.0;component/view/window/reportswindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\VIEW\WINDOW\ReportsWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -34,7 +34,7 @@ namespace practicaLoginRJT.database
             Server = "127.0.0.1";
             Uid = "basic";
             Password = "basic";
-            Database = "dbRoberto";
+            Database = "dbroberto";
             Port = 3306;
         }
 
@@ -155,6 +155,8 @@ namespace practicaLoginRJT.database
             return this;
         }
 
+
+        // Método para  rehacer la conexión a la base de datos con los nuevos datos
         public void Commit()
         {
 

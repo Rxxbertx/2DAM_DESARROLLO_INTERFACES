@@ -74,7 +74,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             }
             else if (state == LoginConstants.ERROR)
             {
-                LoginResult = "Error";
+                LoginResult = "Error NO SE PUEDE CONTECTAR A LA BASE DE DATOS";
             }
             else if (state == LoginConstants.USER_NOT_FOUND)
             {

@@ -53,7 +53,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 _Brand = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedBrand)));
             }
-        }
+        }// eleccion de marca en el combobox de la vista
         public M_Processor SelectedProcessor
         {
             get { return _Processor; }
@@ -62,7 +62,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 _Processor = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedProcessor)));
             }
-        }
+        }// eleccion de procesador en el combobox de la vista
 
         public string Battery
         {
@@ -140,7 +140,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 Phone.Storage = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedStorage)));
             }
-        }
+        }// eleccion de almacenamiento en el listview de la vista y en el modelo
 
 
         #endregion Properties
@@ -150,13 +150,14 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             Phone = new M_Phone();
             PhonesCollection = [];
             PhonesCollection.ReadAll();
-            View = CollectionViewSource.GetDefaultView(PhonesCollection);
-            View.Filter = Filter;
+            View = CollectionViewSource.GetDefaultView(PhonesCollection);// asignacion de la coleccion al view de la vista
+            View.Filter = Filter; // asignacion del filtro al view de la vista
 
         }
 
         public void InitOtherCollections()
         {
+            // inicializacion de las colecciones de marcas, procesadores y almacenamiento
             BrandsCollection = [];
             BrandsCollection.ReadAll();
             ProcessorsCollection = [];
@@ -165,10 +166,11 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             StoragesCollection.ReadAll();
         }
 
+        #region crud
 
         public bool Create()
         {
-            int i = Phone.Create();
+            int i = Phone.Create(); // creacion del movil
 
             if (i == DBConstants.REGISTER_ADDED)
             {
@@ -203,30 +205,30 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
 
         public bool Read()
         {
-            M_Phone? temp = Phone.ReadObject();
+            M_Phone? temp = Phone.ReadObject(); // lectura del movil
             if (temp != null)
             {
-                Phone = temp;
+                Phone = temp; // asignacion del movil leido al movil de la vista
 
 
-                List<M_Storage> tempStorage = new List<M_Storage>();
-                foreach (M_Storage storage in Phone.Storage)
+                List<M_Storage> tempStorage = new List<M_Storage>(); // lista temporal de almacenamiento para la asignacion al listview de la vista
+                foreach (M_Storage storage in Phone.Storage) // recorrido de la lista de almacenamiento del movil
                 {
 
-                    tempStorage.Add(StoragesCollection.ToList().Find(x => x.Storage == storage.Storage));
+                    tempStorage.Add(StoragesCollection.ToList().Find(x => x.Storage == storage.Storage)); // añadido de los almacenamientos a la lista temporal
                 }
 
                 if (tempStorage.Count > 0)
                 {
-                    SelectedItemsStorageListView?.Invoke(tempStorage);
+                    SelectedItemsStorageListView?.Invoke(tempStorage); // asignacion de la lista temporal al listview de la vista
                 }
 
 
-                SelectedBrand = BrandsCollection.FirstOrDefault<M_Brand>(x => x.Id == Phone.Brand.Id);
-                SelectedProcessor = ProcessorsCollection.FirstOrDefault<M_Processor>(x => x.Id == Phone.Processor.Id);
-                Ram = Phone.Ram.ToString();
-                Battery = Phone.Battery.ToString();
-                Screen = Phone.Screen.ToString();
+                SelectedBrand = BrandsCollection.FirstOrDefault<M_Brand>(x => x.Id == Phone.Brand.Id); // asignacion de la marca al combobox de la vista
+                SelectedProcessor = ProcessorsCollection.FirstOrDefault<M_Processor>(x => x.Id == Phone.Processor.Id); // asignacion del procesador al combobox de la vista
+                Ram = Phone.Ram.ToString(); // asignacion de la ram al textbox de la vista
+                Battery = Phone.Battery.ToString(); // asignacion de la bateria al textbox de la vista
+                Screen = Phone.Screen.ToString(); // asignacion de la pantalla al textbox de la vista
 
 
 
@@ -258,6 +260,8 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
             }
         }
 
+        #endregion crud
+
         public bool ValidateInput()
         {
 
@@ -275,7 +279,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 }
                 Phone.Battery = battery;
 
-            }
+            }// validacion de la bateria
             else
             {
                 InfoWarningMessage?.Invoke("Bateria", "El campo debe ser numerico");
@@ -292,7 +296,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 }
                 Phone.Screen = screen;
 
-            }
+            }// validacion de la pantalla
             else
             {
                 InfoWarningMessage?.Invoke("Pantalla", "El campo debe ser numerico");
@@ -309,7 +313,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 }
                 Phone.Ram = ram;
 
-            }
+            }// validacion de la ram
             else
             {
                 InfoWarningMessage?.Invoke("Ram", "El campo debe ser numerico");
@@ -318,7 +322,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
 
 
 
-            if (SelectedBrand == null)
+            if (SelectedBrand == null)// validacion de la marca
             {
                 InfoWarningMessage?.Invoke("Marca", "Debe seleccionar una marca");
                 return false;
@@ -328,7 +332,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 Phone.Brand = SelectedBrand;
             }
 
-            if (SelectedProcessor == null)
+            if (SelectedProcessor == null)// validacion del procesador
             {
                 InfoWarningMessage?.Invoke("Procesador", "Debe seleccionar un procesador");
                 return false;
@@ -338,7 +342,7 @@ namespace PROYECTO_EV2_RJT.VIEWMODEL
                 Phone.Processor = SelectedProcessor;
             }
 
-            Phone.Storage = SelectedStorage;
+            Phone.Storage = SelectedStorage;// seleccion de almacenamiento proveniente del listview de la vista
 
 
 

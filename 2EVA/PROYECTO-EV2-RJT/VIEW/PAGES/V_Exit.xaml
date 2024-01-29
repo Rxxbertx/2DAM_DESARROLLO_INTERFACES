@@ -22,7 +22,7 @@
 
         <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left">
 
-            <Image  Source="/CORE/IMAGES/salir.png" Width="200" Height="200" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+            <Image  Source="/CORE/IMAGES/ICONS/salir.png" Width="200" Height="200" HorizontalAlignment="Left" VerticalAlignment="Center"  />
             <Label Content="SALIR" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="cENTER" FontSize="40" FontWeight="Bold"/>
 
         </StackPanel>

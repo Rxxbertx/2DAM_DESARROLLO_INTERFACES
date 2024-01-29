@@ -5,6 +5,7 @@ using PROYECTO_EV2_RJT.CORE.CONSTANTS;
 using System.Windows;
 using PROYECTO_EV2_RJT.CORE.INTERFACES;
 using PROYECTO_EV2_RJT.CORE.UTILS;
+using System.Diagnostics;
 
 namespace PROYECTO_EV2_RJT.MODEL
 {
@@ -284,13 +285,13 @@ namespace PROYECTO_EV2_RJT.MODEL
                                 byte[] img = reader.GetFieldValue<byte[]>(StoragePhoneViewStatics.BRAND_IMAGE);
                                 if (img != null)
                                 {
+                                   
                                     phone_storage.Phone.Brand.Image = Utils.BytesToImage(img);
                                 }
                             }
                             catch (Exception)
                             {
 
-                                throw;
                             }
 
                             Add(phone_storage);

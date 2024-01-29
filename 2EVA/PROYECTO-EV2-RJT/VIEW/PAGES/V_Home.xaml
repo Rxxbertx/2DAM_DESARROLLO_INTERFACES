@@ -64,7 +64,7 @@
                         </Grid.RowDefinitions>
 
 
-                        <Image HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Source="/CORE/IMAGES/box.png" Width="75" Height="75"/>
+                        <Image HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Source="/CORE/IMAGES/ICONS/box.png" Width="75" Height="75"/>
 
                         <Label HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Content="ALMACEN" FontFamily="Bahnschrift" FontSize="24"/>
                         <TextBlock HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"
@@ -97,7 +97,7 @@
                         </Grid.RowDefinitions>
 
 
-                        <Image HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Source="/CORE/IMAGES/informe.png" Width="75" Height="75"/>
+                        <Image HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Source="/CORE/IMAGES/ICONS/informe.png" Width="75" Height="75"/>
 
                         <Label HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Content="INFORMES" FontFamily="Bahnschrift" FontSize="24"/>
                         <TextBlock HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"
@@ -131,7 +131,7 @@
                         </Grid.RowDefinitions>
 
 
-                        <Image HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Source="/CORE/IMAGES/help.png" Width="75" Height="75"/>
+                        <Image HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Source="/CORE/IMAGES/ICONS/help.png" Width="75" Height="75"/>
 
                         <Label HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Content="AYUDA" FontFamily="Bahnschrift" FontSize="24"/>
                         <TextBlock HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"
@@ -164,7 +164,7 @@
                         </Grid.RowDefinitions>
 
 
-                        <Image HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Source="/CORE/IMAGES/salir.png" Width="75" Height="75"/>
+                        <Image HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Source="/CORE/IMAGES/ICONS/salir.png" Width="75" Height="75"/>
 
                         <Label HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Content="SALIR" FontFamily="Bahnschrift" FontSize="24"/>
                         <TextBlock HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"

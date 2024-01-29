@@ -5,8 +5,10 @@ using System.Windows;
 
 namespace PROYECTO_EV2_RJT.MODEL
 {
+    // es una clase que se encarga de gestionar el usuario que se ha logeado en la aplicación
     class User
     {
+        // campos privados para la instancia de la clase y la contraseña del usuario
         private static User? instance;
         private readonly string password;
         private bool specialRole;
@@ -26,6 +28,7 @@ namespace PROYECTO_EV2_RJT.MODEL
             Name = name;
         }
 
+        // método para crear la instancia de la clase User es un patrón Singleton
         public static User GetInstance(string username, string password, string name)
         {
             if (instance == null)
@@ -44,6 +47,7 @@ namespace PROYECTO_EV2_RJT.MODEL
             return instance;
         }
 
+        // método para comprobar si el usuario existe en la base de datos
         public static int AuthenticateUser(string username, string password)
         {
             DBConnection db = DBConnection.DBInit();
@@ -65,23 +69,28 @@ namespace PROYECTO_EV2_RJT.MODEL
                             {
                                 string name = reader.GetString(2);
                                 id = reader.GetInt32(0);
+                                // instancia de la clase User si no existe se crea
                                 GetInstance(username, password, name);
                             }
 
                             command.Dispose();
                             reader.Close();
+
+                            // comprobamos si el usuario es un usuario especial
                             CheckAdminUsername(id);
                             return LoginConstants.SUCCESS;
                         }
+                        // si no existe entonces comprobamos si el nombre de usuario existe en la base de datos
                         else
                         {
                             command.Dispose();
                             reader.Close();
+                            // comprobamos si el nombre de usuario existe en la base de datos
                             return CheckUsername(username, db);
                         }
                     }
                 }
-                catch (MySqlException e)
+                catch (Exception e)
                 {
                     MessageBox.Show(e.Message);
                     return LoginConstants.ERROR;
@@ -94,6 +103,7 @@ namespace PROYECTO_EV2_RJT.MODEL
             }
         }
 
+        // método para comprobar si el usuario es un usuario especial
         private static void CheckAdminUsername(int id)
         {
             DBConnection db = DBConnection.DBInit();
@@ -107,6 +117,7 @@ namespace PROYECTO_EV2_RJT.MODEL
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
+                        // si el usuario es un usuario especial se le asigna el rol de administrador
                         if (reader.HasRows)
                         {
                             GetInstance().SpecialRole = true;
@@ -123,12 +134,13 @@ namespace PROYECTO_EV2_RJT.MODEL
                 }
             }
 
-
+            // si el usuario es un usuario especial se abre una conexión a la base de datos modificada con permisos de administrador
             if (GetInstance().SpecialRole) DBConnection.DBInit().ModifyConnection().Commit();
 
 
         }
 
+        // método para comprobar si el nombre de usuario existe en la base de datos
         private static int CheckUsername(string username, DBConnection db)
         {
             string query = "SELECT * FROM users WHERE username_user = @username";
@@ -141,10 +153,12 @@ namespace PROYECTO_EV2_RJT.MODEL
                 {
                     if (reader.HasRows)
                     {
+                        //si existe entonces la contraseña es incorrecta
                         return LoginConstants.PASSWORD_INCORRECT;
                     }
                     else
                     {
+                        // si no existe entonces el usuario no existe
                         return LoginConstants.USER_NOT_FOUND;
                     }
                 }

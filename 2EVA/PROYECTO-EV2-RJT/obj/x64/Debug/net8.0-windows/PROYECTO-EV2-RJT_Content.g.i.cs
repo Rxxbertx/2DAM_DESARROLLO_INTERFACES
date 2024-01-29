@@ -8,19 +8,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/box.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/close.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/box.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/close.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/help.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_home.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_menu.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/home.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/unavailable.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/informe.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/logoapp.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/minimize.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/logpassword.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/logtextbox.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/salir.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/fullscreen.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/informe.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/logoapp.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/minimize.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/logpassword.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/logtextbox.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/salir.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/fullscreen.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("reports/brandsreport.rdl")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("reports/phonereport.rdl")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("reports/processorreport.rdl")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("reports/storagereport.rdl")]
 
 

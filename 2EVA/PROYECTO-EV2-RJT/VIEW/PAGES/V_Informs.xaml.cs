@@ -2,8 +2,6 @@
 
 using System.Windows;
 using System.Windows.Controls;
-using CrystalDecisions.CrystalReports.Engine;
-using PROYECTO_EV2_RJT.VIEW.WINDOW;
 
 namespace PROYECTO_EV2_RJT.VIEW
 {
@@ -23,13 +21,16 @@ namespace PROYECTO_EV2_RJT.VIEW
         private void Phones_Click(object sender, RoutedEventArgs e)
         {
 
+            new REPORTS.Reports("PhoneReport") { Owner = Window.GetWindow(this) }.ShowDialog();
+
+
+
         }
         private void Storage_Click(object sender, RoutedEventArgs e)
         {
 
-            
-            new ReportsWindow().Show();
 
+            new REPORTS.Reports("StorageReport") { Owner = Window.GetWindow(this) }.ShowDialog();
 
 
 
@@ -37,9 +38,15 @@ namespace PROYECTO_EV2_RJT.VIEW
         private void Processors_Click(object sender, RoutedEventArgs e)
         {
 
+            new REPORTS.Reports("ProcessorReport") { Owner = Window.GetWindow(this) }.ShowDialog();
+
+
+
         }
         private void Brand_Click(object sender, RoutedEventArgs e)
         {
+
+            new REPORTS.Reports("BrandsReport") { Owner = Window.GetWindow(this) }.ShowDialog();
 
         }
 

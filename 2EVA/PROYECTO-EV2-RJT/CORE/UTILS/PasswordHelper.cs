@@ -5,6 +5,9 @@ using System.Windows.Controls;
 namespace PROYECTO_EV2_RJT.CORE
 {
     public static class PasswordHelper
+
+        // https://stackoverflow.com/questions/14809095/how-to-bind-to-a-passwordbox-in-mvvm
+        // github.com/oliverbooth/MVVMPasswordBinding/blob/master/MVVMPasswordBinding/PasswordBoxAssistant.cs
     {
         public static readonly DependencyProperty PasswordProperty =
             DependencyProperty.RegisterAttached("Password",

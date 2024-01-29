@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
-            <Image Source="/CORE/IMAGES/help.png"  Width="75" Height="75"/>
+            <Image Source="/CORE/IMAGES/ICONS/help.png"  Width="75" Height="75"/>
             <Label Content="AYUDA" FontSize="30" HorizontalAlignment="Left" FontWeight="Bold"  VerticalAlignment="Center"/>
         </StackPanel>
 

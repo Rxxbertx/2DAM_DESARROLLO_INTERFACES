@@ -17,7 +17,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
     public partial class V_PhoneWindow : Window
     {
-        private ExitCommand ExitCommand => new(Cancel, Key.Escape);
+        private ExitCommand ExitCommand => new(Cancel, Key.Escape);// comando para salir de la ventana
         private readonly V_Warehouse? v_Warehouse;
         private readonly Operation operation;
         public VM_Phone? ViewModel;
@@ -130,8 +130,8 @@ namespace PROYECTO_EV2_RJT.VIEW
             ViewModel.InfoErrorMessage += ShowErrorMessage;
             ViewModel.InfoSuccessMessage += ShowSuccessMessage;
             ViewModel.InfoWarningMessage += ShowWarningMessage;
-            ViewModel.SelectedItemsStorageListView += SelectItemsInListView;
-            ViewModel.InitOtherCollections();
+            ViewModel.SelectedItemsStorageListView += SelectItemsInListView; //asignamos el evento para que se seleccione los items en el listview de almacenamiento
+            ViewModel.InitOtherCollections();//inicializamos las colecciones de marcas y procesadores para que se muestren en los combobox
             ViewModel.ClearData();
 
             if (id > 0 && operation == Operation.UPDATE || operation == Operation.DELETE)
@@ -176,6 +176,7 @@ namespace PROYECTO_EV2_RJT.VIEW
 
                 if (ViewModel.ValidateInput())
                 {
+                    //esto es para que se actualice la lista de almacenamiento seleccionado en el viewmodel
                     ViewModel.SelectedStorage = cbxStorage.SelectedItems.Cast<M_Storage>().ToList(); ;
 
                     switch (operation)
