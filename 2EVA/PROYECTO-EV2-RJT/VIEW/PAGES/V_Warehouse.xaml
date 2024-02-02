@@ -96,6 +96,7 @@
                                   Style="{DynamicResource DataGridStyle}"
                                   RowStyle="{StaticResource DataGridRowStyle}"
                                   CellStyle="{StaticResource DataGridCellStyle}"
+                                  
                                   Background="Gray" 
                                   SelectionMode="Single"
                                   VerticalAlignment="Top" 
@@ -138,10 +139,10 @@
 
 
 
-                                <DataGridTextColumn Header="Modelo" Binding="{Binding Model}" IsReadOnly="True" Width="*"/>
+                                <DataGridTextColumn Header="Modelo" Binding="{Binding Model}" IsReadOnly="True" Width="auto" MinWidth="200"/>
 
 
-                                <DataGridTemplateColumn Header="Procesador" SortMemberPath="Processor.Name" Width="*">
+                                <DataGridTemplateColumn Header="Procesador" SortMemberPath="Processor.Name" Width="auto">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
@@ -292,7 +293,7 @@
 
                                 <DataGrid.Columns>
 
-                                    <DataGridTemplateColumn Header="Marca" SortMemberPath="Phone.Brand.Name" Width="auto">
+                                    <DataGridTemplateColumn Header="Marca" SortMemberPath="Phone.Brand.Name" Width="auto" MinWidth="200">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Horizontal">
@@ -307,8 +308,8 @@
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
 
-                                    <DataGridTextColumn Header="Modelo" Binding="{Binding Phone.Model}" IsReadOnly="True" Width="auto"/>
-                                    <DataGridTextColumn Header="Capacidad" Binding="{Binding Storage.Storage}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Modelo" Binding="{Binding Phone.Model}" IsReadOnly="True" Width="auto" MinWidth="200"/>
+                                    <DataGridTextColumn Header="Capacidad" Binding="{Binding Storage.Storage}" IsReadOnly="True" Width="*" MinWidth="50"/>
 
                                 </DataGrid.Columns>
                             </DataGrid>
