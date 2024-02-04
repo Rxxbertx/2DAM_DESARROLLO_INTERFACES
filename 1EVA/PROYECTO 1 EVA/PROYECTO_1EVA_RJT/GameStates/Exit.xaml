@@ -1,0 +1,50 @@
+﻿<Window x:Class="PROYECTO_1EVA_RJT.GameStates.Exit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROYECTO_1EVA_RJT.GameStates"
+        mc:Ignorable="d" WindowStartupLocation="CenterOwner"
+        Title="Exit" Width="800" Height="450" WindowStyle="None" ResizeMode="NoResize" Closing="Window_Closing"
+        
+        AllowsTransparency="True"
+    Background="Transparent"
+    
+    ShowInTaskbar="False"
+        >
+    <Window.Effect>
+        <DropShadowEffect/>
+    </Window.Effect>
+
+
+
+    <Grid>
+
+        <Canvas x:Name="ventanaExit">
+
+
+            <Image Height="450" Source="/recursos/ExportedIcons/Item3.png" Stretch="Fill" Width="800" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+            <Image x:Name="No" MouseLeftButtonDown="No_MouseLeftButtonDown" Height="97" Canvas.Left="400" Source="/recursos/ExportedIcons/Item5.png" Stretch="Fill" Canvas.Top="244" Width="260" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="Cross"/>
+            <Image Height="49" Source="/recursos/ExportedIcons/Item2.png" Stretch="Fill" Width="800" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image x:Name="cerrarX" MouseEnter="cerrarX_MouseEnter" MouseLeave="cerrarX_MouseLeave" MouseLeftButtonDown="No_MouseLeftButtonDown" Height="49" Canvas.Left="725" Source="/recursos/ExportedIcons/Icon_X.png" Stretch="Fill" Width="52"/>
+            <Image x:Name="Si" Height="16" Canvas.Left="156" Source="/recursos/ExportedIcons/Item2.png" Stretch="Fill" Canvas.Top="325" Width="193" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label   MouseEnter="No_MouseEnter" MouseLeave="No_MouseLeave" MouseLeftButtonDown="No_MouseLeftButtonDown" Content="NO" Canvas.Left="406" Canvas.Top="254" FontFamily="Comic Sans MS" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Center" Width="247" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label  MouseEnter="Si_MouseEnter" MouseLeave="Si_MouseLeave"  MouseLeftButtonDown="Salir_MouseLeftButtonDown" Content="Si" Canvas.Left="156" Canvas.Top="254" FontFamily="Comic Sans MS" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Center" Width="193" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label  Content="¿Desea salir de la aplicacion?" Canvas.Left="71" Canvas.Top="70" FontFamily="Comic Sans MS" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="51" Source="/recursos/ExportedIcons/Item2.png" Stretch="Fill" Width="800" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="399" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+
+
+        </Canvas>
+    </Grid>
+
+</Window>
