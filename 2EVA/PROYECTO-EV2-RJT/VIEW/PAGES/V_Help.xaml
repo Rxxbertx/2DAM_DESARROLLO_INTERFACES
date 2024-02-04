@@ -26,33 +26,270 @@
         </StackPanel>
 
         <ScrollViewer Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto">
-            <StackPanel Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
 
-                <TextBlock TextWrapping="Wrap" FontSize="16">
-                Para empezar a usar la app vas a tener en la primera pantalla una vision general de la app y lo que puede realizar.
-                
-                Tienes diferentes funciones como gestionar un almacen y realizar informes en base al almacen
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
+
+                <!-- Ventana Principal de Registro -->
+                <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10">
+        Ventana Principal de Registro
                 </TextBlock>
-                
-                <Image Source="/CORE/IMAGES/HELP_IMAGES/help_Home.png"  Width="471" Height="300"/>
-
-
                 <TextBlock TextWrapping="Wrap" FontSize="16">
-                    Tambien cuentas con un menu lateral donde realizaras las mismas acciones
+        Esta es la ventana principal de registro de la aplicación. Ingresa tus credenciales para acceder; 
+        contacta a crudapp@app.com para obtener una cuenta. Puedes solicitar una cuenta de prueba 
+        para informes o una cuenta completa para gestionar el almacén. Después de ingresar las credenciales, 
+        carga la ventana principal de la aplicación. "Ver siguiente Apartado".
                 </TextBlock>
+                <Image Source="/CORE/IMAGES/HELP_IMAGES/help_Registration.png" Width="471" Height="300" HorizontalAlignment="Center"/>
 
-                <Image Source="/CORE/IMAGES/HELP_IMAGES/help_menu.png" Height="400" Margin="10"/>
-
-
+                <!-- Ventana Principal de la Aplicación -->
+                <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,10">
+        Ventana Principal de la Aplicación
+                </TextBlock>
                 <TextBlock TextWrapping="Wrap" FontSize="16">
-                    En la pantalla de gestion de almacen puedes añadir, editar y eliminar productos de tu almacen.
+        En la ventana principal, encuentra un menú lateral con opciones. La interfaz visual atractiva incluye estilos 
+        que mejoran la presentación y efectos visuales. Recibe mensajes informativos y cuenta con accesos directos 
+        para CASA, Almacén, Subsecciones del Almacén, Informes y Ayuda, con opción para salir.
                 </TextBlock>
+                <Image Source="/CORE/IMAGES/HELP_IMAGES/help_MainWindow.png" Height="400" Width="Auto" Margin="10"/>
+
+                <!-- Sección Casa -->
+                <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,10">
+        CASA
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="16">
+        La sección "CASA" presenta accesos directos a Almacén, Informe, Ayuda y Salir.
+                </TextBlock>
+                <Image Source="/CORE/IMAGES/HELP_IMAGES/help_HomeSection.png" Height="300" Width="Auto" Margin="10"/>
+
+                <!-- Sección Almacén -->
+                <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,10">
+        ALMACÉN
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="16">
+        Desde el almacén, accede a móviles, marcas, almacenamiento y procesadores. Se explicará con más detalle en otro apartado.
+                </TextBlock>
+                <Image Source="/CORE/IMAGES/HELP_IMAGES/help_WarehouseSection.png" Height="300" Width="Auto" Margin="10"/>
+
+                <!-- Sección Informes -->
+                <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,10">
+        INFORMES
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="16">
+        Desde Informes, realiza diferentes informes. Se explicará con más detalle en otro apartado.
+                </TextBlock>
+                <Image Source="/CORE/IMAGES/HELP_IMAGES/help_ReportsSection.png" Height="300" Width="Auto" Margin="10"/>
+
+                <!-- Sección Ayuda -->
+                <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,10">
+        AYUDA
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="16">
+        En la sección de ayuda, encuentra una guía de uso de la aplicación.
+                </TextBlock>
+                <Image Source="/CORE/IMAGES/HELP_IMAGES/help_HelpSection.png" Height="300" Width="Auto" Margin="10"/>
+
+                <!-- Opción Salir -->
+                <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,10">
+        SALIR
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="16">
+        Opción para salir de la aplicación.
+                </TextBlock>
+                <Image Source="/CORE/IMAGES/HELP_IMAGES/help_ExitSection.png" Height="300" Width="Auto" Margin="10"/>
+
                 
-                
+                <Expander Header="ALMACÉN - EXPLICACION" FontSize="30">
+
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
+
+                        <!-- Almacén - Explicación -->
+                        <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold"  Margin="0,0,0,10">
+        ALMACÉN - EXPLICACIÓN
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+        Desde el almacén, puedes gestionar móviles, almacenamiento, marcas y procesadores.
+                        </TextBlock>
+
+                        <!-- Sección MÓVILES -->
+                        <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold"  Margin="0,10,0,10">
+        MOVILES (ejemplo)
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+        Puedes añadir, modificar y eliminar móviles, además de filtrar por diferentes campos en Búsqueda.
+                        </TextBlock>
+
+                        <!-- Añadir MÓVIL -->
+                        <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold"  Margin="0,10,0,10">
+        AÑADIR
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+        Al hacer clic en el botón añadir, se abrirá una ventana para rellenar la ficha del teléfono a añadir. 
+        Permite seleccionar imagen, procesador, marca y diferentes almacenamientos.
+                        </TextBlock>
+                        <Image Source="/CORE/IMAGES/HELP_IMAGES/help_AddMobile.png" Height="300" Width="Auto" HorizontalAlignment="Center" Margin="10"/>
+
+                        <!-- Eliminar MÓVIL -->
+                        <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold"  Margin="0,10,0,10">
+        ELIMINAR
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+        Puedes eliminar un móvil seleccionándolo en la tabla. Se abrirá una ventana con la confirmación del móvil a eliminar.
+                        </TextBlock>
+                        <Image Source="/CORE/IMAGES/HELP_IMAGES/help_DeleteMobile.png" Height="300" Width="Auto" HorizontalAlignment="Center" Margin="10"/>
+
+                        <!-- Modificar MÓVIL -->
+                        <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold"  Margin="0,10,0,10">
+        MODIFICAR
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+        Se abrirá una ventana con los detalles del móvil y cualquier campo es editable. 
+        Una vez has modificado el móvil a tu gusto, haz clic en modificar.
+                        </TextBlock>
+                        <Image Source="/CORE/IMAGES/HELP_IMAGES/help_EditMobile.png" Height="300" Width="Auto" HorizontalAlignment="Center" Margin="10"/>
+
+                        <!-- Búsqueda MÓVIL -->
+                        <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold"  Margin="0,10,0,10">
+        BÚSQUEDA
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+        Dispones de un filtrado especial por campos. Haz clic en Búsqueda y se desplegará un menú para seleccionar 
+        el campo e introducir el texto por el cual se busca.
+                        </TextBlock>
+                        <Image Source="/CORE/IMAGES/HELP_IMAGES/help_SearchMobile.png" Height="300" Width="Auto" HorizontalAlignment="Center" Margin="10"/>
+
+                    </StackPanel>
+
+
+                </Expander>
+
+
+
+                <Expander Header="INFORMES - EXPLICACIÓN" FontSize="30">
+                    <StackPanel Orientation="Vertical" Margin="10">
+
+                        <!-- Informes - Explicación -->
+                        <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" Margin="0,0,0,10">
+            INFORMES - EXPLICACIÓN
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            La Ventana de Informes es una herramienta diseñada para facilitar a los usuarios el acceso a información detallada 
+            sobre distintas categorías de datos en la aplicación. A continuación, se detallan las funciones principales y cómo interactuar con esta ventana:
+                        </TextBlock>
+
+                        <!-- Informes Disponibles -->
+                        <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" Margin="0,10,0,10">
+            Informes Disponibles
+                        </TextBlock>
+
+                        <!-- Teléfonos -->
+                        <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" Margin="0,10,0,10">
+            Teléfonos
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            Descripción: Obtén un informe completo sobre los teléfonos disponibles.
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            Cómo Acceder: Haz clic en el botón "Móviles".
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            Qué Puede Mostrar: Información detallada sobre modelos, especificaciones técnicas y otras características relevantes.
+                        </TextBlock>
+
+                        <!-- Almacenamiento -->
+                        <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" Margin="0,10,0,10">
+            Almacenamiento
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            Descripción: Accede a un informe detallado sobre la información relacionada con el almacenamiento de dispositivos.
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            Cómo Acceder: Haz clic en el botón "Almacenamiento".
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            Qué Puede Mostrar: Detalles sobre capacidades de almacenamiento y otras métricas relevantes.
+                        </TextBlock>
+
+                        <!-- Procesadores -->
+                        <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" Margin="0,10,0,10">
+            Procesadores
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            Descripción: Abre un informe específico sobre los procesadores utilizados en los dispositivos.
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            Cómo Acceder: Haz clic en el botón "Procesadores".
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            Qué Puede Mostrar: Información sobre la velocidad del procesador, el número de núcleos y otras características técnicas.
+                        </TextBlock>
+
+                        <!-- Marcas -->
+                        <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" Margin="0,10,0,10">
+            Marcas
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            Descripción: Accede a un informe que detalla la información relacionada con las marcas de dispositivos.
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            Cómo Acceder: Haz clic en el botón "Marcas".
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            Qué Puede Mostrar: Estadísticas sobre la popularidad de las marcas, la diversidad de modelos y otras métricas relevantes.
+                        </TextBlock>
+
+                        <!-- Interfaz Amigable -->
+                        <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" Margin="0,10,0,10">
+            Interfaz Amigable
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            Botones Claramente Etiquetados: Cada botón está etiquetado claramente con el tipo de informe al que da acceso.
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            Acceso Rápido: La interfaz proporciona una manera rápida y directa de obtener información específica.
+                        </TextBlock>
+
+                        <!-- Ventanas de Informes -->
+                        <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" Margin="0,10,0,10">
+            Ventanas de Informes
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            Ventanas Independientes: Cada informe se muestra en una ventana independiente para facilitar la visualización y la comparación.
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            Propiedad de la Ventana Principal: Todas las ventanas de informes están vinculadas a la ventana principal para una gestión coherente.
+                        </TextBlock>
+
+                        <!-- Pasos para Obtener Informes -->
+                        <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" Margin="0,10,0,10">
+            Pasos para Obtener Informes
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            1. Selecciona el Informe Deseado: Haz clic en el botón correspondiente al tipo de informe que te interese.
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+            2. Explora la Información: Dentro de cada ventana de informes, podrás explorar datos detallados, gráficos y otras representaciones visuales.
+                        </TextBlock>
+
+
+                        <Image Source="/CORE/IMAGES/HELP_IMAGES/help_ReportsSection.png" Height="300" Width="Auto" Margin="10"/>
+
+                        <Image Source="/CORE/IMAGES/HELP_IMAGES/help_PhoneReportWindow.png" Height="300" Width="Auto" Margin="10"/>
+
+
+
+                        <!-- Nota sobre Reportes -->
+                        <TextBlock TextWrapping="Wrap" FontSize="16" FontWeight="Bold" Margin="0,10,0,10">
+            **Los reportes se pueden imprimir y exportar a una multitud de archivos.
+                        </TextBlock>
+
+                    </StackPanel>
+                </Expander>
 
 
 
             </StackPanel>
+
+
         </ScrollViewer>
 
 

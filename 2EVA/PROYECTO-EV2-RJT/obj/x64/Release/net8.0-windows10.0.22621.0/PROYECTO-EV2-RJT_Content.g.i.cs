@@ -8,6 +8,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_addmobile.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_deletemobile.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_editmobile.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_exitsection.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_helpsection.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_homesection.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_mainwindow.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_phonereportwindow.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_registration.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_reportssection.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_searchmobile.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/help_images/help_warehousesection.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/box.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/close.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/images/icons/help.png")]

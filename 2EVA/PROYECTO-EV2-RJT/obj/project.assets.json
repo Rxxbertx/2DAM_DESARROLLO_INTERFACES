@@ -4327,24 +4327,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dam2t06\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Roberto\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dam2t06\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PROYECTO-EV2-RJT\\PROYECTO-EV2-RJT.csproj",
+      "projectUniqueName": "R:\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PROYECTO-EV2-RJT\\PROYECTO-EV2-RJT.csproj",
       "projectName": "PROYECTO-EV2-RJT",
-      "projectPath": "C:\\Users\\dam2t06\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PROYECTO-EV2-RJT\\PROYECTO-EV2-RJT.csproj",
-      "packagesPath": "C:\\Users\\dam2t06\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dam2t06\\Documents\\CODE\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PROYECTO-EV2-RJT\\obj\\",
+      "projectPath": "R:\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PROYECTO-EV2-RJT\\PROYECTO-EV2-RJT.csproj",
+      "packagesPath": "C:\\Users\\Roberto\\.nuget\\packages\\",
+      "outputPath": "R:\\2DAM_DESARROLLO_INTERFACES\\2EVA\\PROYECTO-EV2-RJT\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\dam2t06\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Roberto\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -40,8 +40,20 @@
     <None Remove="CORE\IMAGES\close.png" />
     <None Remove="CORE\IMAGES\fullscreen.png" />
     <None Remove="CORE\IMAGES\help.png" />
+    <None Remove="CORE\IMAGES\HELP_IMAGES\help_AddMobile.png" />
+    <None Remove="CORE\IMAGES\HELP_IMAGES\help_DeleteMobile.png" />
+    <None Remove="CORE\IMAGES\HELP_IMAGES\help_EditMobile.png" />
+    <None Remove="CORE\IMAGES\HELP_IMAGES\help_ExitSection.png" />
+    <None Remove="CORE\IMAGES\HELP_IMAGES\help_HelpSection.png" />
     <None Remove="CORE\IMAGES\HELP_IMAGES\help_Home.png" />
+    <None Remove="CORE\IMAGES\HELP_IMAGES\help_HomeSection.png" />
+    <None Remove="CORE\IMAGES\HELP_IMAGES\help_MainWindow.png" />
     <None Remove="CORE\IMAGES\HELP_IMAGES\help_menu.png" />
+    <None Remove="CORE\IMAGES\HELP_IMAGES\help_PhoneReportWindow.png" />
+    <None Remove="CORE\IMAGES\HELP_IMAGES\help_Registration.png" />
+    <None Remove="CORE\IMAGES\HELP_IMAGES\help_ReportsSection.png" />
+    <None Remove="CORE\IMAGES\HELP_IMAGES\help_SearchMobile.png" />
+    <None Remove="CORE\IMAGES\HELP_IMAGES\help_WarehouseSection.png" />
     <None Remove="CORE\IMAGES\ICONS\Home.png" />
     <None Remove="CORE\IMAGES\ICONS\Unavailable.png" />
     <None Remove="CORE\IMAGES\informe.png" />
@@ -58,6 +70,42 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="CORE\IMAGES\HELP_IMAGES\help_AddMobile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\HELP_IMAGES\help_DeleteMobile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\HELP_IMAGES\help_EditMobile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\HELP_IMAGES\help_ExitSection.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\HELP_IMAGES\help_HelpSection.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\HELP_IMAGES\help_HomeSection.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\HELP_IMAGES\help_MainWindow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\HELP_IMAGES\help_PhoneReportWindow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\HELP_IMAGES\help_Registration.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\HELP_IMAGES\help_ReportsSection.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\HELP_IMAGES\help_SearchMobile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CORE\IMAGES\HELP_IMAGES\help_WarehouseSection.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="CORE\IMAGES\ICONS\box.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -25,7 +25,7 @@
 
             <Label Padding="0" FontSize="45" FontWeight="SemiBold">CRUD APP</Label>
             <TextBlock FontSize="20" FontWeight="Light" TextWrapping="Wrap" FontFamily="Bahnschrift">                
-                App de gestion movil, puedes crear nuevos moviles, eliminarlos, ver detalles sobre ellos y tambien realizar informes
+                App de gestion móvil, puedes crear nuevos móviles, eliminarlos, ver detalles sobre ellos y también realizar informes
             </TextBlock>
 
         </StackPanel>
@@ -66,9 +66,9 @@
 
                         <Image HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Source="/CORE/IMAGES/ICONS/box.png" Width="75" Height="75"/>
 
-                        <Label HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Content="ALMACEN" FontFamily="Bahnschrift" FontSize="24"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Content="ALMACÉN" FontFamily="Bahnschrift" FontSize="24"/>
                         <TextBlock HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"
-                                   Text="Accede al almacen donde podras gestionar todos los moviles a tu gusto" TextWrapping="Wrap" FontSize="16"/>
+                                   Text="Accede al almacén donde podras gestionar todos los móviles a tu gusto" TextWrapping="Wrap" FontSize="16"/>
 
 
 
@@ -101,7 +101,7 @@
 
                         <Label HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Content="INFORMES" FontFamily="Bahnschrift" FontSize="24"/>
                         <TextBlock HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"
-                   Text="Realizar informes del almacen" TextWrapping="Wrap" FontSize="16"/>
+                   Text="Realizar informes del almacén" TextWrapping="Wrap" FontSize="16"/>
 
 
 
@@ -135,7 +135,7 @@
 
                         <Label HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Content="AYUDA" FontFamily="Bahnschrift" FontSize="24"/>
                         <TextBlock HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"
-                   Text="Seccion donde podras aprender a usar la app de una manera increible" TextWrapping="Wrap" FontSize="16"/>
+                   Text="Sección donde podras aprender a usar la app de una manera increible" TextWrapping="Wrap" FontSize="16"/>
 
 
 

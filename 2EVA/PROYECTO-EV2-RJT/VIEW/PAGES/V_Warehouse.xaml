@@ -47,12 +47,12 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="0">
             <Image Source="/CORE/IMAGES/box.png" Width="75" Height="75"/>
-            <Label Content="ALMACEN" FontFamily="Bahnschrift" FontSize="30" FontWeight="DemiBold" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <Label Content="ALMACÉN" FontFamily="Bahnschrift" FontSize="30" FontWeight="DemiBold" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" />
         </StackPanel>
 
 
         <TabControl SelectionChanged="TabControl_Selected"  x:Name="tabControl"  Grid.Row="1"  Background="Transparent"  VerticalAlignment="Top" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" BorderBrush="{x:Null}" >
-            <TabItem  x:Name="phoneTab" Style="{StaticResource ModernTabItem}" FontSize="20"  Header="MOVILES" HorizontalContentAlignment="Stretch" HorizontalAlignment="Center" Background="Transparent">
+            <TabItem  x:Name="phoneTab" Style="{StaticResource ModernTabItem}" FontSize="20"  Header="MÓVILES" HorizontalContentAlignment="Stretch" HorizontalAlignment="Center" Background="Transparent">
                 <Grid Background="Transparent" HorizontalAlignment="Stretch">
 
                     <Grid.RowDefinitions>
