@@ -1,0 +1,9 @@
+[ODBC]
+DRIVER=MySQL ODBC 8.3 ANSI Driver
+UID=basic
+USER=basic
+PORT=3306
+PASSWORD=basic
+NO_SCHEMA=1
+DB=dbroberto
+DATABASE=dbroberto
