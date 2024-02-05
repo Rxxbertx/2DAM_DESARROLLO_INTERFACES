@@ -29,8 +29,8 @@
         </Border.Effect>
 
 
-
-        <WrapPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <WrapPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
 
 
             <TextBlock x:Name="TitleProcessor" Margin="10,0,10,10" Text="Procesador" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Bahnschrift"/>
@@ -118,7 +118,7 @@
 
 
         </WrapPanel>
-
+        </ScrollViewer>
 
 
 

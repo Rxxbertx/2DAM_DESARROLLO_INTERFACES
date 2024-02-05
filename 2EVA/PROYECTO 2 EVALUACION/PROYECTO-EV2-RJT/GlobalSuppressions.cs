@@ -7,3 +7,4 @@ using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Style", "IDE1006:Estilos de nombres", Justification = "<pendiente>", Scope = "type", Target = "~T:PROYECTO_EV2_RJT.MODEL.M_Processor")]
 [assembly: SuppressMessage("Style", "IDE1006:Estilos de nombres", Justification = "<pendiente>", Scope = "type", Target = "~T:PROYECTO_EV2_RJT.MODEL.M_ProcessorsCollection")]
+
