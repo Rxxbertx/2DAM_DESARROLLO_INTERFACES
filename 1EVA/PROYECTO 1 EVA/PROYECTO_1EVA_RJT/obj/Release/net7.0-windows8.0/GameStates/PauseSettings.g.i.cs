@@ -141,7 +141,7 @@ namespace PROYECTO_1EVA_RJT.GameStates {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PROYECTO_1EVA_RJT;V1.0.0.0;component/gamestates/pausesettings.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PROYECTO_1EVA_RJT;component/gamestates/pausesettings.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\GameStates\PauseSettings.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -526,7 +526,7 @@ namespace PROYECTO_1EVA_RJT.GameStates.Levels {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PROYECTO_1EVA_RJT;V1.0.0.0;component/gamestates/levels/level2.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PROYECTO_1EVA_RJT;component/gamestates/levels/level2.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\GameStates\Levels\Level2.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
