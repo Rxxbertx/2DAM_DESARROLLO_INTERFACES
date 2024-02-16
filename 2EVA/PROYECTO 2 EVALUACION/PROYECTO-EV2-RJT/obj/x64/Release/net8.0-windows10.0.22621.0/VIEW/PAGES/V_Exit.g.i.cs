@@ -69,7 +69,7 @@ namespace PROYECTO_EV2_RJT.VIEW {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PROYECTO-EV2-RJT;component/view/pages/v_exit.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PROYECTO-EV2-RJT;V1.0.0.0;component/view/pages/v_exit.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\VIEW\PAGES\V_Exit.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

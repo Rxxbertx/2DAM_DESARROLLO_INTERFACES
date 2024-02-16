@@ -534,7 +534,7 @@ namespace PROYECTO_1EVA_RJT.GameStates.Houses {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PROYECTO_1EVA_RJT;V1.0.0.0;component/gamestates/houses/house3.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PROYECTO_1EVA_RJT;component/gamestates/houses/house3.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\GameStates\Houses\House3.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
