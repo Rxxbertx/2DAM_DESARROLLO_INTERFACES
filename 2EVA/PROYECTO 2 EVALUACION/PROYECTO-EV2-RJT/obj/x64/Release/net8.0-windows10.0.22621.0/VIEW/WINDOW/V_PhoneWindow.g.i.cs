@@ -157,7 +157,7 @@ namespace PROYECTO_EV2_RJT.VIEW {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PROYECTO-EV2-RJT;component/view/window/v_phonewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PROYECTO-EV2-RJT;V1.0.0.0;component/view/window/v_phonewindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\VIEW\WINDOW\V_PhoneWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

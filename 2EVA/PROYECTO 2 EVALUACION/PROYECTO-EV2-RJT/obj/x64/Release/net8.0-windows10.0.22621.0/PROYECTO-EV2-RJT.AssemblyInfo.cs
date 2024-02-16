@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PROYECTO-EV2-RJT")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c856a48d4a2318af0d35c30d126e4475921f944")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6dae6cce3a7a37cc103a2a2d3219195b38025df9")]
 [assembly: System.Reflection.AssemblyProductAttribute("PROYECTO-EV2-RJT")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PROYECTO-EV2-RJT")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

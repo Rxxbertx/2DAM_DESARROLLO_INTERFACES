@@ -52,6 +52,7 @@
   <ItemGroup>
     <Report Include="BrandsReport.rdl" />
     <Report Include="PhoneReport.rdl" />
+    <Report Include="Planetas.rdl" />
     <Report Include="ProcessorReport.rdl" />
     <Report Include="StorageReport.rdl" />
   </ItemGroup>

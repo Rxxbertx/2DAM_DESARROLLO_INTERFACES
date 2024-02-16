@@ -1,0 +1,19 @@
+﻿<Window x:Class="_2Eva_RJT.REPORTS.Reporte"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2Eva_RJT.REPORTS"
+                xmlns:syncfusion="clr-namespace:BoldReports.UI.Xaml;assembly=BoldReports.Wpf"       
+
+
+        mc:Ignorable="d"
+        Title="Reporte" Height="450" Width="800">
+    <Grid>
+        <syncfusion:ReportViewer x:Name="report" Background="Transparent" Margin="10" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Top" FontSize="14" EnableVirtualEvaluation="True" ShowPageLayoutControl="True" ViewMode="Print" ShowZoomControl="True">
+            <syncfusion:ReportViewer.Effect>
+                <DropShadowEffect ShadowDepth="0" BlurRadius="10"/>
+            </syncfusion:ReportViewer.Effect>
+        </syncfusion:ReportViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,62 @@
+﻿<Window x:Class="_2Eva_RJT.VIEW.V_datagrid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2Eva_RJT.VIEW"
+        xmlns:context="clr-namespace:_2Eva_RJT.VIEWMODEL"
+        mc:Ignorable="d"
+        Title="V_datagrid" Height="450" Width="800">
+
+
+
+    <Window.DataContext>
+        <context:VM_datagrid/>
+    </Window.DataContext>
+
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" Orientation="Horizontal">
+
+            <Label Content="Buscar" FontSize="20" FontFamily="Bahnschrift" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"  x:Name="txtBuscar" Width="200" Height="30" FontSize="20" FontFamily="Bahnschrift" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <DataGrid HorizontalAlignment="Center" Grid.Row="1"
+                                  HorizontalContentAlignment="Center"
+                                  x:Name="PlanetasGrid" 
+                                  Margin="10"  
+                                  ItemsSource="{Binding View}"
+                                  Background="Gray" 
+                                  SelectionMode="Single"
+                                  VerticalAlignment="Top" 
+                                  VerticalContentAlignment="Center" 
+                                  FontSize="22" FontFamily="Bahnschrift" 
+                                  CanUserReorderColumns="False" 
+                                  CanUserDeleteRows="False" 
+                                  AutoGenerateColumns="False"
+                                  CanUserAddRows="False" 
+                                  >
+
+
+            <DataGrid.Columns>
+
+
+                <DataGridTextColumn Header="CODIGO" Binding="{Binding Cod}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="NOMBRE" Binding="{Binding Nombre}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="FACTOR GRAVITACIONAL" Binding="{Binding FactorGravitacional}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="VIDA" Binding="{Binding VidaText}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+
+    </Grid>
+</Window>
